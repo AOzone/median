@@ -1,0 +1,35 @@
+{
+  "name": "median",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "make s"
+  },
+  "dependencies": {
+    "backbone": "*",
+    "backbone-super-sync": "*",
+    "coffee-script": "*",
+    "express": "*",
+    "jade": "*",
+    "node-env-file": "*",
+    "passwordless": "^1.1.0",
+    "passwordless-mongostore": "^0.1.3",
+    "sharify": "*"
+  },
+  "devDependencies": {
+    "jquery": "*",
+    "browserify": "*",
+    "stylus": "*",
+    "jadeify": "*",
+    "browserify-dev-middleware": "*",
+    "should": "*",
+    "mocha": "*",
+    "sinon": "*",
+    "benv": "*",
+    "zombie": "*",
+    "html5": "*",
+    "sqwish": "*",
+    "uglify-js": "*",
+    "caching-coffeeify": "*"
+  }
+}
