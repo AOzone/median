@@ -1,0 +1,10 @@
+extends ../../../components/layout/templates/index
+
+block body
+  .container
+    h1 Login
+    form(action="/login" method="POST")
+      .field.field--email
+        label Email
+        input(type="text" name="email")
+      button.button Login or Register

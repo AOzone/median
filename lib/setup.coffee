@@ -88,10 +88,8 @@ module.exports = (app) ->
   app.use passwordless.sessionSupport()
   app.use passwordless.acceptToken()
 
-  router.get '/login', (req, res) ->
-   res.render 'login'
-
   # Mount apps
+  app.use require "../apps/auth"
   app.use require "../apps/home"
 
 
