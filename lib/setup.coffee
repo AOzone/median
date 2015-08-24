@@ -19,6 +19,9 @@ bodyParser = require 'body-parser'
 Backbone = require 'backbone'
 sharify = require 'sharify'
 path = require 'path'
+stylus = require "stylus"
+nib = require "nib"
+rupture = require 'rupture'
 fs = require 'fs'
 
 module.exports = (app) ->
@@ -35,16 +38,24 @@ module.exports = (app) ->
 
   # Mount sharify
   app.use sharify
-
-  # Development only
-  if 'development' is sd.NODE_ENV
+    # Development only
+  if "development" is NODE_ENV
     # Compile assets on request in development
-    app.use require('stylus').middleware
-      src: path.resolve(__dirname, '../')
-      dest: path.resolve(__dirname, '../public')
-    app.use require('browserify-dev-middleware')
-      src: path.resolve(__dirname, '../')
-      transforms: [require('jadeify'), require('caching-coffeeify')]
+    app.use require("stylus").middleware
+      src: path.resolve(__dirname, "../")
+      dest: path.resolve(__dirname, "../public")
+      compile: (str, path) ->
+        stylus(str)
+        .set('filename', path)
+        .use(rupture())
+        .use(require("nib")())
+
+    app.use require("browserify-dev-middleware")
+      src: path.resolve(__dirname, "../")
+      transforms: [require("jadeify"), require('caching-coffeeify')]
+
+  # More general middleware
+  app.use express.static(path.resolve __dirname, "../public")
 
   # Test only
   if 'test' is sd.NODE_ENV
@@ -70,8 +81,7 @@ module.exports = (app) ->
   app.use passwordless.acceptToken()
 
   # Mount apps
-  app.use '/', (req, res) ->
-    res.send 'Hello world.'
+  app.use require "../apps/home"
 
   # Mount static middleware for sub apps, components, and project-wide
   fs.readdirSync(path.resolve __dirname, '../apps').forEach (fld) ->

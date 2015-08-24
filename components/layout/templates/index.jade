@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Median
+
+    link(rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon")
+    link( type='text/css', rel='stylesheet', href=('/assets/all' + sd.CSS_EXT) )
+    block styles
+
+  body
+    block body
+
+    #scripts
+      != sharify.script()
+      script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" )
+      script( src=('/assets/layout' + sd.JS_EXT) )
+      block scripts
