@@ -8,21 +8,27 @@
 SESSION_COOKIE_MAX_AGE, SESSION_COOKIE_KEY,
 COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID } = config = require "../config"
 
-passwordless = require 'passwordless'
-MongoStore = require 'passwordless-mongostore'
-mongoURI = 'mongodb://localhost/passwordless-simple-mail'
+path = require 'path'
+stylus = require "stylus"
+nib = require "nib"
+rupture = require 'rupture'
+axis = require 'axis'
+fs = require 'fs'
 express = require 'express'
+router = express.Router()
 logger = require 'morgan'
 session = require 'cookie-session'
 cookieParser = require 'cookie-parser'
 bodyParser = require 'body-parser'
 Backbone = require 'backbone'
 sharify = require 'sharify'
-path = require 'path'
-stylus = require "stylus"
-nib = require "nib"
-rupture = require 'rupture'
-fs = require 'fs'
+passwordless = require 'passwordless'
+MongoStore = require 'passwordless-mongostore'
+MemoryStore = require 'passwordless-memorystore'
+mongoURI = 'mongodb://localhost/passwordless-simple-mail'
+
+
+router = express.Router()
 
 module.exports = (app) ->
 
@@ -40,6 +46,7 @@ module.exports = (app) ->
   app.use sharify
     # Development only
   if "development" is NODE_ENV
+    console.log 'development mode'
     # Compile assets on request in development
     app.use require("stylus").middleware
       src: path.resolve(__dirname, "../")
@@ -48,6 +55,7 @@ module.exports = (app) ->
         stylus(str)
         .set('filename', path)
         .use(rupture())
+        .use(axis())
         .use(require("nib")())
 
     app.use require("browserify-dev-middleware")
@@ -74,18 +82,16 @@ module.exports = (app) ->
     maxage: SESSION_COOKIE_MAX_AGE
 
   # Passwordless Auth
-  passwordless.init new MongoStore(mongoURI)
+  passwordless.init new MemoryStore()
   passwordless.addDelivery (tokenToSend, uidToSend, recipient, callback) ->
-    # Send out a token
+    console.log 'MemoryStore', tokenToSend, uidToSend, recipient, callback
   app.use passwordless.sessionSupport()
   app.use passwordless.acceptToken()
+
+  router.get '/login', (req, res) ->
+   res.render 'login'
 
   # Mount apps
   app.use require "../apps/home"
 
-  # Mount static middleware for sub apps, components, and project-wide
-  fs.readdirSync(path.resolve __dirname, '../apps').forEach (fld) ->
-    app.use express.static(path.resolve __dirname, "../apps/#{fld}/public")
-  fs.readdirSync(path.resolve __dirname, '../components').forEach (fld) ->
-    app.use express.static(path.resolve __dirname, "../components/#{fld}/public")
-  app.use express.static(path.resolve __dirname, '../public')
+

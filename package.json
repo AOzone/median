@@ -6,6 +6,7 @@
     "start": "make s"
   },
   "dependencies": {
+    "axis": "^0.4.3",
     "backbone": "*",
     "backbone-super-sync": "*",
     "body-parser": "^1.13.3",
@@ -14,11 +15,15 @@
     "cookie-session": "^1.2.0",
     "express": "*",
     "jade": "*",
+    "jeet": "^6.1.2",
     "morgan": "^1.6.1",
+    "nib": "^1.1.0",
     "node-env-file": "*",
     "passwordless": "^1.1.0",
+    "passwordless-memorystore": "0.0.1",
     "passwordless-mongostore": "^0.1.3",
     "q": "^1.4.1",
+    "rupture": "^0.6.1",
     "sharify": "*",
     "underscore": "^1.8.3"
   },
