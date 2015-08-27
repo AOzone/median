@@ -27,7 +27,6 @@ MongoStore = require 'passwordless-mongostore'
 MemoryStore = require 'passwordless-memorystore'
 mongoURI = 'mongodb://localhost/passwordless-simple-mail'
 
-
 router = express.Router()
 
 module.exports = (app) ->
@@ -41,6 +40,11 @@ module.exports = (app) ->
 
   # Override Backbone to use server-side sync
   Backbone.sync = require 'backbone-super-sync'
+
+  # Passwordless Auth
+  passwordless.init new MemoryStore()
+  passwordless.addDelivery (tokenToSend, uidToSend, recipient, callback) ->
+    true
 
   # Mount sharify
   app.use sharify
@@ -81,12 +85,10 @@ module.exports = (app) ->
     key: SESSION_COOKIE_KEY
     maxage: SESSION_COOKIE_MAX_AGE
 
-  # Passwordless Auth
-  passwordless.init new MemoryStore()
-  passwordless.addDelivery (tokenToSend, uidToSend, recipient, callback) ->
-    console.log 'MemoryStore', tokenToSend, uidToSend, recipient, callback
+
+  # Passwordless middleware
   app.use passwordless.sessionSupport()
-  app.use passwordless.acceptToken()
+  app.use passwordless.acceptToken({ successRedirect: '/' })
 
   # Mount apps
   app.use require "../apps/auth"

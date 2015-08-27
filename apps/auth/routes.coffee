@@ -7,10 +7,8 @@ passwordless = require 'passwordless'
 @login = (req, res, next) ->
   res.render 'login'
 
-@sendToken = (req, res, next) ->
-  console.log 'req.body.email', req.body.email
-  passwordless.requestToken (user, delivery, callback) ->
+@sendToken = passwordless.requestToken (user, delivery, callback) ->
     console.log 'user', user, delivery, callback
-    callback null, req.body.email
+    callback null, user
   , (req, res) ->
     res.render 'login'
