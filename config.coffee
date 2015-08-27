@@ -17,6 +17,7 @@ module.exports =
   SESSION_COOKIE_KEY: 'median.session'
   COOKIE_DOMAIN: null
   GOOGLE_ANALYTICS_ID: null
+  SENDGRID_API_KEY: null
 
 # Override any values with env variables if they exist
 for key, val of module.exports

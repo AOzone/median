@@ -6,7 +6,7 @@
 
 { APP_URL, API_URL, NODE_ENV, SESSION_SECRET,
 SESSION_COOKIE_MAX_AGE, SESSION_COOKIE_KEY,
-COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID } = config = require "../config"
+COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID, SENDGRID_API_KEY } = config = require "../config"
 
 path = require 'path'
 stylus = require "stylus"
@@ -15,7 +15,6 @@ rupture = require 'rupture'
 axis = require 'axis'
 fs = require 'fs'
 express = require 'express'
-router = express.Router()
 logger = require 'morgan'
 session = require 'cookie-session'
 cookieParser = require 'cookie-parser'
@@ -50,7 +49,6 @@ module.exports = (app) ->
   app.use sharify
     # Development only
   if "development" is NODE_ENV
-    console.log 'development mode'
     # Compile assets on request in development
     app.use require("stylus").middleware
       src: path.resolve(__dirname, "../")
