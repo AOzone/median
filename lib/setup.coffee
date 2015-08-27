@@ -25,6 +25,7 @@ passwordless = require 'passwordless'
 MongoStore = require 'passwordless-mongostore'
 MemoryStore = require 'passwordless-memorystore'
 mongoURI = 'mongodb://localhost/passwordless-simple-mail'
+sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 
 router = express.Router()
 
@@ -43,7 +44,16 @@ module.exports = (app) ->
   # Passwordless Auth
   passwordless.init new MemoryStore()
   passwordless.addDelivery (tokenToSend, uidToSend, recipient, callback) ->
-    true
+    payload =
+      to: recipient,
+      from: 'admin@azone-terminal.co',
+      subject: 'Welcome to AZone / Login',
+      text: "Login here: #{APP_URL}?token=#{tokenToSend}&uid=#{encodeURIComponent(uidToSend)}"
+
+    sendgrid.send payload, (err, json) ->
+      console.error(err) if err
+      console.log json
+      callback json
 
   # Mount sharify
   app.use sharify
