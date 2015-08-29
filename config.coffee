@@ -17,8 +17,10 @@ module.exports =
   SESSION_COOKIE_KEY: 'median.session'
   MONGO_URL: 'mongodb://localhost/median'
   COOKIE_DOMAIN: null
+  DEFAULT_CACHE_TIME: 3600
   GOOGLE_ANALYTICS_ID: null
   SENDGRID_API_KEY: null
+  REDIS_URL: null
 
 # Override any values with env variables if they exist
 for key, val of module.exports

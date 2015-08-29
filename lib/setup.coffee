@@ -24,6 +24,7 @@ bodyParser = require 'body-parser'
 Backbone = require 'backbone'
 sharify = require 'sharify'
 sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
+cache = require './cache'
 
 mongoose = require 'mongoose'
 mongoose.connect MONGO_URL
@@ -40,7 +41,8 @@ module.exports = (app) ->
     CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
 
   # Override Backbone to use server-side sync
-  Backbone.sync = require 'backbone-super-sync'
+  Backbone.sync = require "backbone-super-sync"
+  Backbone.sync.cacheClient = cache.client
 
   # Mount sharify
   app.use sharify
