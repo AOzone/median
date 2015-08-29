@@ -15,6 +15,7 @@ module.exports =
   SESSION_SECRET: 'm3d1an'
   SESSION_COOKIE_MAX_AGE: 31536000000
   SESSION_COOKIE_KEY: 'median.session'
+  MONGO_URL: 'mongodb://localhost/median'
   COOKIE_DOMAIN: null
   GOOGLE_ANALYTICS_ID: null
   SENDGRID_API_KEY: null

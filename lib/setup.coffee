@@ -21,10 +21,6 @@ cookieParser = require 'cookie-parser'
 bodyParser = require 'body-parser'
 Backbone = require 'backbone'
 sharify = require 'sharify'
-passwordless = require 'passwordless'
-MongoStore = require 'passwordless-mongostore'
-MemoryStore = require 'passwordless-memorystore'
-mongoURI = 'mongodb://localhost/passwordless-simple-mail'
 sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 
 router = express.Router()
@@ -40,20 +36,6 @@ module.exports = (app) ->
 
   # Override Backbone to use server-side sync
   Backbone.sync = require 'backbone-super-sync'
-
-  # Passwordless Auth
-  passwordless.init new MemoryStore()
-  passwordless.addDelivery (tokenToSend, uidToSend, recipient, callback) ->
-    payload =
-      to: recipient,
-      from: 'admin@azone-terminal.co',
-      subject: 'Welcome to AZone / Login',
-      text: "Login here: #{APP_URL}?token=#{tokenToSend}&uid=#{encodeURIComponent(uidToSend)}"
-
-    sendgrid.send payload, (err, json) ->
-      console.error(err) if err
-      console.log json
-      callback json
 
   # Mount sharify
   app.use sharify
@@ -92,11 +74,6 @@ module.exports = (app) ->
     domain: COOKIE_DOMAIN
     key: SESSION_COOKIE_KEY
     maxage: SESSION_COOKIE_MAX_AGE
-
-
-  # Passwordless middleware
-  app.use passwordless.sessionSupport()
-  app.use passwordless.acceptToken({ successRedirect: '/' })
 
   # Mount apps
   app.use require "../apps/auth"
