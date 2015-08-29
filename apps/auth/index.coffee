@@ -9,7 +9,7 @@ app = module.exports = express()
 app.set "views", __dirname + "/templates"
 app.set "view engine", "jade"
 
-app.get '/login', passport.authenticate 'login',
+app.get '/login', (req, res) ->
   res.render 'login', message: req.flash 'message'
 
 app.post '/login', passport.authenticate 'login',
