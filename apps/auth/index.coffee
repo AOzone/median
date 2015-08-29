@@ -21,6 +21,15 @@ app.get '/signup', (req, res) ->
   res.render 'register', message: req.flash 'message'
 
 app.post '/signup', passport.authenticate 'signup',
-  successRedirect: '/home'
+  successRedirect: '/'
   failureRedirect: '/signup'
   failureFlash: true
+
+app.get '/logout', (req, res) ->
+  req.logout()
+  res.redirect('/')
+
+# include user object on all templates
+app.use (req, res, next) ->
+  res.locals.user = req.user
+  next()

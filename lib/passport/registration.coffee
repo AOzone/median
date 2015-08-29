@@ -40,9 +40,9 @@ module.exports = (passport) ->
             console.log 'User Registration succesful'
             done null, newUser
 
-      # Delay the execution of findOrCreateUser and execute the method
-      # in the next tick of the event loop
-      process.nextTick findOrCreateUser
+    # Delay the execution of findOrCreateUser and execute the method
+    # in the next tick of the event loop
+    process.nextTick findOrCreateUser
 
     # Generates hash using bCrypt
     createHash = (password) ->

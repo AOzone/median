@@ -2,4 +2,7 @@ extends ../../../components/layout/templates/index
 
 block body
   .container
-    h1 hello world
+    if user
+      h1 hello world #{user.username}
+    else
+      h1 hello world

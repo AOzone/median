@@ -1,0 +1,25 @@
+extends ../../../components/layout/templates/index
+
+block body
+  .container
+    h1 Register
+    form(action="/signup" method="POST")
+      .field.field--username
+        label Username
+        input(type="text" name="username")
+      .field.field--username
+        label Email
+        input(type="email" name="email")
+      .field.field--password
+        label Password
+        input(type="password" name="password")
+      .field.field--confirm-password
+        label Password (confirm)
+        input(type="password" name="confirm-password")
+      .field.field--confirm-password
+        label Age
+        input(type="text" name="age")
+      .field.field--confirm-password
+        label Gender
+        input(type="text" name="gender")
+      button.button Login
