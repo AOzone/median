@@ -2,6 +2,15 @@ Q = require 'q'
 _ = require 'underscore'
 Backbone = require "backbone"
 sd = require("sharify").data
+Contracts = require '../../collections/contracts.coffee'
 
 @index = (req, res, next) ->
-  res.render 'index', message: req.flash('message')
+  contracts = new Contracts
+  contracts.fetch
+    success: ->
+      res.locals.sd.CONTRACTS = contracts
+      res.render 'index',
+        contracts: contracts.models
+        message: req.flash 'message'
+    error: (err, contracts) ->
+      console.log 'error requesting contracts', err, contracts

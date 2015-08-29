@@ -2,7 +2,8 @@ extends ../../../components/layout/templates/index
 
 block body
   .container
-    if user
-      h1 hello world #{user.username}
-    else
-      h1 hello world
+    .list-group.list-group--contracts
+      each contract in contracts
+        .list-group-item
+          h1= contract.get('title')
+          h2= contract.get('contract')

@@ -2,6 +2,7 @@ nav
   h1 Åzone
   ul
     if user
+      li: em= user.username
       li: a(href="/logout") Log out
     else
       li: a(href="/login") Log in
