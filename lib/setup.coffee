@@ -19,6 +19,7 @@ express = require 'express'
 expressSession = require 'express-session'
 logger = require 'morgan'
 cookieParser = require 'cookie-parser'
+flash = require 'connect-flash'
 bodyParser = require 'body-parser'
 Backbone = require 'backbone'
 sharify = require 'sharify'
@@ -74,6 +75,7 @@ module.exports = (app) ->
   app.use bodyParser.urlencoded(extended: true)
   app.use cookieParser()
   app.use expressSession secret: SESSION_SECRET
+  app.use flash()
 
   # Passport
   initPassport passport, app
