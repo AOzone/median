@@ -47,6 +47,7 @@ module.exports = (app) ->
 
   # Mount sharify
   app.use sharify
+
     # Development only
   if "development" is NODE_ENV
     # Compile assets on request in development

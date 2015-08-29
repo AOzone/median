@@ -5,9 +5,7 @@
 #
 express = require "express"
 setup = require "./lib/setup"
-env = require 'node-env-file'
 
-env __dirname + '/.env'
 app = module.exports = express()
 setup app
 

@@ -23,6 +23,9 @@ module.exports =
   REDIS_URL: null
   KERNAL_API_URL: null
 
+env = require 'node-env-file'
+env __dirname + '/.env'
+
 # Override any values with env variables if they exist
 for key, val of module.exports
   val = (process.env[key] or val)
