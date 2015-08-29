@@ -17,7 +17,6 @@ axis = require 'axis'
 fs = require 'fs'
 express = require 'express'
 expressSession = require 'express-session'
-passport = require 'passport'
 logger = require 'morgan'
 cookieParser = require 'cookie-parser'
 bodyParser = require 'body-parser'
@@ -27,7 +26,8 @@ sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 
 mongoose = require 'mongoose'
 mongoose.connect MONGO_URL
-User = require '../db/models/user.coffee'
+passport = require 'passport'
+initPassport = require './passport'
 
 module.exports = (app) ->
 
@@ -76,15 +76,7 @@ module.exports = (app) ->
   app.use expressSession secret: SESSION_SECRET
 
   # Passport
-  app.use passport.initialize()
-  app.use passport.session()
-
-  passport.serializeUser (user, done) ->
-    done null, user._id
-
-  passport.deserializeUser (id, done) ->
-    User.findById id, (err, user) ->
-      done err, user
+  initPassport passport, app
 
   # Mount apps
   app.use require "../apps/auth"
