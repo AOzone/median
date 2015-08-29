@@ -1,6 +1,6 @@
 login = require './login'
 signup = require './signup'
-User = require '../models/user'
+User = require '../../db/models/user'
 
 module.exports = (passport, app) ->
 
