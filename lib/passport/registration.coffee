@@ -32,7 +32,7 @@ module.exports = (passport) ->
           newUser.gender = req.param 'gender'
           newUser.age = req.param 'age'
           # save the user
-          newUser.save(function(err) {
+          newUser.save (err) ->
             if err
               console.log "Error in saving user: #{err}"
               throw err;
@@ -46,4 +46,4 @@ module.exports = (passport) ->
 
     # Generates hash using bCrypt
     createHash = (password) ->
-      bCrypt.hashSync password, bCrypt.genSaltSync(10), null)
+      bCrypt.hashSync password, bCrypt.genSaltSync(10), null

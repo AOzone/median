@@ -1,5 +1,5 @@
 login = require './login'
-signup = require './signup'
+registration = require './registration'
 User = require '../../db/models/user'
 
 module.exports = (passport, app) ->
@@ -19,4 +19,4 @@ module.exports = (passport, app) ->
       done err, user
 
   login passport
-  signup passport
+  registration passport
