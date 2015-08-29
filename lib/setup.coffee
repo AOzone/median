@@ -7,7 +7,7 @@
 { APP_URL, API_URL, NODE_ENV, SESSION_SECRET,
 SESSION_COOKIE_MAX_AGE, SESSION_COOKIE_KEY,
 COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID, SENDGRID_API_KEY,
-MONGO_URL } = config = require "../config"
+MONGO_URL, KERNAL_API_URL } = config = require "../config"
 
 path = require 'path'
 stylus = require "stylus"
@@ -37,6 +37,7 @@ module.exports = (app) ->
   sd = sharify.data =
     API_URL: process.env.API_URL
     NODE_ENV: process.env.NODE_ENV
+    KERNAL_API_URL: KERNAL_API_URL
     JS_EXT: (if 'production' is process.env.NODE_ENV then '.min.js' else '.js')
     CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
 
