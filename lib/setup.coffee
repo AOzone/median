@@ -6,7 +6,8 @@
 
 { APP_URL, API_URL, NODE_ENV, SESSION_SECRET,
 SESSION_COOKIE_MAX_AGE, SESSION_COOKIE_KEY,
-COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID, SENDGRID_API_KEY } = config = require "../config"
+COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID, SENDGRID_API_KEY,
+MONGO_URL } = config = require "../config"
 
 path = require 'path'
 stylus = require "stylus"
@@ -24,7 +25,9 @@ Backbone = require 'backbone'
 sharify = require 'sharify'
 sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 
-router = express.Router()
+mongoose = require 'mongoose'
+mongoose.connect MONGO_URL
+User = require '../db/models/user.coffee'
 
 module.exports = (app) ->
 
