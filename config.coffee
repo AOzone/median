@@ -22,6 +22,8 @@ module.exports =
   SENDGRID_API_KEY: null
   REDIS_URL: null
   KERNAL_API_URL: null
+  ARENA_API_URL: 'http://api.are.na/v2'
+  ARENA_TOKEN: null
 
 env = require 'node-env-file'
 env __dirname + '/.env'
