@@ -1,0 +1,20 @@
+extends ../../../components/layout/templates/index
+
+block body
+  .container.container--contract
+    .contract-info
+      h2= contract.get('contract')
+      h1= contract.get('title')
+      p= contract.get('abstract')
+      if user
+        button Buy #{contract.get('ask')}
+        button Sell #{contract.get('bid')}
+    .list-group.list-group--blocks
+      h3.section-header Recent News
+      each block in blocks
+        .list-group-item
+          h1.js-block-headline= block.get('title')
+          p.block-description= block.get('description')
+
+block scripts
+   script( src=('/assets/contract' + sd.JS_EXT) )
