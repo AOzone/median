@@ -27,7 +27,7 @@
     "node-env-file": "*",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
-    "q": "^1.4.1",
+    "q": "https://registry.npmjs.org/q/-/q-1.4.1.tgz",
     "redis": "^0.12.1",
     "rupture": "^0.6.1",
     "sendgrid": "^1.9.2",
