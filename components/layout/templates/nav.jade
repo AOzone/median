@@ -1,9 +1,9 @@
 nav
-  h1 Åzone
+  h1: a(href="/") Åzone
   ul
     if user
       li: em= user.username
       li: a(href="/logout") Log out
     else
       li: a(href="/login") Log in
-      li: a(href="/login") Register
+      li: a(href="/signup") Register
