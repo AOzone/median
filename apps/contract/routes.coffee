@@ -19,7 +19,6 @@ contractMap = require '../../maps/contracts.coffee'
     contract.fetch()
     blocks.fetch(cache: true)
   ]).then ->
-    console.log 'contract', contract
     contract.set contractMap[callSign]
     res.render 'contract',
       blocks: blocks.models
