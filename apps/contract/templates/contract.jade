@@ -14,7 +14,10 @@ block body
       each block in blocks
         .list-group-item
           h1.js-block-headline= block.get('title')
-          p.block-description= block.get('description')
+          p.block-description
+            | #{block.get('description')}
+            if block.get('source')
+              strong: a(href="#{block.get('source').url}", target="_blank") Read more...
 
 block scripts
    script( src=('/assets/contract' + sd.JS_EXT) )
