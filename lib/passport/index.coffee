@@ -10,8 +10,8 @@ module.exports = (passport, app) ->
   # Passport needs to be able to serialize and deserialize users
   # to support persistent login sessions
   passport.serializeUser (user, done) ->
-      console.log 'serializing user: ', user
-      done null, user._id
+    console.log 'serializing user: ', user
+    done null, user._id
 
   passport.deserializeUser (id, done) ->
     User.findById id, (err, user) ->

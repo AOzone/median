@@ -7,8 +7,8 @@ block body
       h1= contract.get('title')
       p= contract.get('abstract')
       if user
-        button Buy #{contract.get('ask')}
-        button Sell #{contract.get('bid')}
+        button Buy @ #{contract.get('ask')}
+        button Sell @ #{contract.get('bid')}
     .list-group.list-group--blocks
       h3.section-header Recent News
       each block in blocks
