@@ -14,7 +14,7 @@ app.get '/login', (req, res) ->
 
 app.post '/login', passport.authenticate 'login',
   successRedirect: '/'
-  failureRedirect: '/'
+  failureRedirect: '/login'
   failureFlash: true
 
 app.get '/signup', (req, res) ->

@@ -5,5 +5,6 @@ block body
     .list-group.list-group--contracts
       each contract in contracts
         .list-group-item
-          h1= contract.get('title')
-          h2= contract.get('contract')
+          a(href="/contract/#{contract.get('contract')}")
+            h1= contract.get('title')
+            h2= contract.get('contract')
