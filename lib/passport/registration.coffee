@@ -1,6 +1,8 @@
 LocalStrategy = require('passport-local').Strategy
 User = require '../../db/models/user'
+Account = require '../../models/account'
 bCrypt = require 'bcrypt-nodejs'
+Q = require 'q'
 
 module.exports = (passport) ->
 
@@ -31,14 +33,20 @@ module.exports = (passport) ->
           newUser.email = req.param 'email'
           newUser.gender = req.param 'gender'
           newUser.age = req.param 'age'
-          # save the user
-          newUser.save (err) ->
-            if err
-              console.log "Error in saving user: #{err}"
-              throw err;
 
+          # open the trading account
+          account = new Account id: newUser.username
+
+          Q.all [
+            account.save
+            newUser.save
+          ]
+          .then ->
             console.log 'User Registration succesful'
             done null, newUser
+          .catch ->
+            console.log "Error in saving user: #{err}"
+            throw err;
 
     # Delay the execution of findOrCreateUser and execute the method
     # in the next tick of the event loop
