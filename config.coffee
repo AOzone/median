@@ -24,6 +24,7 @@ module.exports =
   KERNAL_API_URL: null
   ARENA_API_URL: 'http://api.are.na/v2'
   ARENA_TOKEN: null
+  OPENING_CREDIT: 1000
 
 env = require 'node-env-file'
 env __dirname + '/.env'
