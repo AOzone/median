@@ -1,6 +1,8 @@
 login = require './login'
 registration = require './registration'
 User = require '../../db/models/user'
+Account = require '../../models/account'
+_ = require 'underscore'
 Q = require 'q'
 
 module.exports = (passport, app) ->
@@ -12,11 +14,18 @@ module.exports = (passport, app) ->
   # to support persistent login sessions
   passport.serializeUser (user, done) ->
     console.log 'serializing user: ', user
-    done null, user._id
+    done null, user.get('_id')
 
   passport.deserializeUser (id, done) ->
     User.findById id, (err, user) ->
-      done err, user
+      account = new Account id: user?.username
+      account.fetch
+        success: ->
+          done err, account.set
+            _id: user.id
+            username: user.username
+        error: (account, error) ->
+          done err, user
 
   login passport
   registration passport
