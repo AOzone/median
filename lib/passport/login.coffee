@@ -13,12 +13,12 @@ module.exports = (passport) ->
       # Username does not exist, log the error and redirect back
       unless user
         console.log "User Not Found with username: #{username} "
-        done null, false, req.flash 'message', 'User Not found.'
+        return done null, false, message: 'User Not found.'
 
       # User exists but wrong password, log the error
       unless isValidPassword user, password
         console.log "Invalid Password"
-        done null, false, req.flash 'message', 'Invalid Password'
+        return done null, false, message: 'Invalid Password'
 
       # User and password both match, return user from done method
       # which will be treated like success

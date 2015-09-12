@@ -18,15 +18,8 @@ module.exports = (passport, app) ->
   passport.deserializeUser (id, done) ->
     balance = new Balance id: id
 
-    Q.all [
-       User.findById id
-       balance.fetch
-    ]
-    .spread (user, balance)->
-      console.log 'hey man, a user and a balance', user, balance
+    User.findById id, (err, user) ->
       done err, user
-    .catch ->
-
 
   login passport
   registration passport

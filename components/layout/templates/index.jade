@@ -9,10 +9,9 @@ html
 
   body
     include ./nav
-    include ./flash
-    block body
-
-
+    main
+      include ./flash
+      block body
 
     #scripts
       != sharify.script()
