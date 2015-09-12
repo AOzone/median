@@ -5,4 +5,4 @@ module.exports = mongoose.model 'User',
   password: String
   email: String
   gender: String
-  age: String
+  birthday: Date

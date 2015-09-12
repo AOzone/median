@@ -17,9 +17,11 @@ block body
         label Password (confirm)
         input(type="password" name="confirm-password")
       .field.field--confirm-password
-        label Age
-        input(type="text" name="age")
+        label Birthday (optional)
+        input(type="date" name="birthday")
       .field.field--confirm-password
-        label Gender
-        input(type="text" name="gender")
+        label Gender (optional)
+        select(name="gender")
+          each book, i in books
+            option(value=i) Book #{book}
       button.button Login

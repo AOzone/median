@@ -4,6 +4,7 @@
 
 express = require "express"
 passport = require 'passport'
+genders = ''
 
 app = module.exports = express()
 app.set "views", __dirname + "/templates"
@@ -18,7 +19,9 @@ app.post '/login', passport.authenticate 'login',
   failureFlash: true
 
 app.get '/signup', (req, res) ->
-  res.render 'register', message: req.flash 'error'
+  res.render 'register',
+    message: req.flash 'error'
+    genders: {}
 
 app.post '/signup', passport.authenticate 'signup',
   successRedirect: '/'

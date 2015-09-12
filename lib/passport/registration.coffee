@@ -32,21 +32,28 @@ module.exports = (passport) ->
           newUser.password = createHash password
           newUser.email = req.param 'email'
           newUser.gender = req.param 'gender'
-          newUser.age = req.param 'age'
+          newUser.birthday = req.param 'birthday'
 
           # open the trading account
           account = new Account id: newUser.username
 
-          Q.all [
-            account.save
-            newUser.save
-          ]
-          .then ->
-            console.log 'User Registration succesful'
+          # Q.all [
+          #   newUser.save
+          # ]
+          # .then ->
+          #   console.log 'User Registration succesful', newUser
+          #   done null, newUser
+          # .catch ->
+          #   console.log "Error in saving user: #{err}"
+          #   throw err;
+
+          newUser.save (err) ->
+            if err
+              console.log 'error creating user', err
+              throw err
+
+            console.log 'User Registration succesful', newUser
             done null, newUser
-          .catch ->
-            console.log "Error in saving user: #{err}"
-            throw err;
 
     # Delay the execution of findOrCreateUser and execute the method
     # in the next tick of the event loop
