@@ -5,6 +5,7 @@ block body
     .contract-info
       h2= contract.get('contract')
       h1= contract.get('title')
+      h3= contract.get('motto')
       p= contract.get('abstract')
       if user
         button.js-buy Buy @ #{contract.get('ask')}
