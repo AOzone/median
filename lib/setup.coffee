@@ -19,6 +19,7 @@ express = require 'express'
 expressSession = require 'express-session'
 logger = require 'morgan'
 cookieParser = require 'cookie-parser'
+session = require 'cookie-session'
 flash = require 'connect-flash'
 bodyParser = require 'body-parser'
 Backbone = require 'backbone'
@@ -80,7 +81,12 @@ module.exports = (app) ->
   app.use bodyParser.json()
   app.use bodyParser.urlencoded(extended: true)
   app.use cookieParser()
-  app.use expressSession secret: SESSION_SECRET
+  app.use session
+    cookie: secure: true
+    secret: SESSION_SECRET
+    domain: COOKIE_DOMAIN
+    key: SESSION_COOKIE_KEY
+    maxage: SESSION_COOKIE_MAX_AGE
   app.use flash()
 
   # Passport

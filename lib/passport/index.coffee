@@ -1,7 +1,6 @@
 login = require './login'
 registration = require './registration'
 User = require '../../db/models/user'
-Balance = require '../../models/balance'
 Q = require 'q'
 
 module.exports = (passport, app) ->
@@ -16,8 +15,6 @@ module.exports = (passport, app) ->
     done null, user._id
 
   passport.deserializeUser (id, done) ->
-    balance = new Balance id: id
-
     User.findById id, (err, user) ->
       done err, user
 
