@@ -8,7 +8,7 @@
   "dependencies": {
     "axis": "^0.4.3",
     "backbone": "*",
-    "backbone-super-sync": "*",
+    "backbone-super-sync": "^1.1.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.13.3",
     "coffee-script": "*",
