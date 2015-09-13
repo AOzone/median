@@ -26,8 +26,9 @@ module.exports =
   ARENA_API_TOKEN: null
   OPENING_CREDIT: 1000
 
-env = require 'node-env-file'
-env __dirname + '/.env'
+if module.exports.NODE_ENV is "development"
+  env = require 'node-env-file'
+  env __dirname + '/.env'
 
 # Override any values with env variables if they exist
 for key, val of module.exports
