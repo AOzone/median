@@ -18,6 +18,10 @@ module.exports = (passport, app) ->
 
   passport.deserializeUser (id, done) ->
     User.findById id, (err, user) ->
+      if err or !user
+        console.log "Error logging in #{err}"
+        return done err, null, message: 'Error fetching user. Try again or contact azone@guggenheim.org'
+
       account = new Account id: user?.username
       account.fetch
         success: ->

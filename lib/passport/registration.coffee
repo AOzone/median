@@ -15,12 +15,12 @@ module.exports = (passport) ->
         # In case of any error, return using the done method
         if err
           console.log "Error in SignUp: #{err}"
-          return done err
+          return done err, message: 'Error signing up. Try again or contact azone@guggenheim.org'
 
         # user already exists
         if user
           console.log "User already exists with username: #{username}"
-          return done null, false, req.flash 'message','User Already Exists'
+          return done null, false, message: "User already exists with username: #{username}"
 
         else
           # if there is no user with that email
@@ -35,25 +35,20 @@ module.exports = (passport) ->
           newUser.birthday = req.param 'birthday'
 
           # open the trading account
-          account = new Account id: newUser.username
-
-          # Q.all [
-          #   newUser.save
-          # ]
-          # .then ->
-          #   console.log 'User Registration succesful', newUser
-          #   done null, newUser
-          # .catch ->
-          #   console.log "Error in saving user: #{err}"
-          #   throw err;
+          account = new Account _id: newUser.username
 
           newUser.save (err) ->
             if err
               console.log 'error creating user', err
               throw err
 
-            console.log 'User Registration succesful', newUser
-            done null, newUser
+            account.save null,
+              success: ->
+                console.log 'User Registration succesful', newUser
+                done null, newUser
+              error: (account, err, response) ->
+                console.log 'Something went wrong during registration', account, err, response
+                done null, newUser
 
     # Delay the execution of findOrCreateUser and execute the method
     # in the next tick of the event loop
