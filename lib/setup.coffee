@@ -7,7 +7,8 @@
 { APP_URL, API_URL, NODE_ENV, SESSION_SECRET,
 SESSION_COOKIE_MAX_AGE, SESSION_COOKIE_KEY,
 COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID, SENDGRID_API_KEY,
-MONGO_URL, KERNAL_API_URL, ARENA_API_URL, OPENING_CREDIT } = config = require "../config"
+MONGO_URL, KERNAL_API_URL, ARENA_API_URL, OPENING_CREDIT,
+S3_KEY, S3_SECRET, S3_BUCKET, CDN_URL } = config = require "../config"
 
 path = require 'path'
 stylus = require "stylus"
@@ -16,6 +17,7 @@ rupture = require 'rupture'
 axis = require 'axis'
 fs = require 'fs'
 express = require 'express'
+bucketAssets = require 'bucket-assets'
 expressSession = require 'express-session'
 logger = require 'morgan'
 cookieParser = require 'cookie-parser'
@@ -76,6 +78,9 @@ module.exports = (app) ->
   if 'test' is sd.NODE_ENV
     # Mount fake API server
     app.use '/__api', require('../test/helpers/integration.coffee').api
+
+  # Assets
+  app.use bucketAssets()
 
   # Sessions
   app.use logger('dev')

@@ -25,9 +25,14 @@ module.exports =
   ARENA_API_URL: 'http://api.are.na/v2'
   ARENA_API_TOKEN: null
   OPENING_CREDIT: 1000
+  S3_KEY: null
+  S3_SECRET: null
+  S3_BUCKET: null
+  CDN_URL: null
 
-val = (process.env.NODE_ENV or val)
-module.exports.NODE_ENV = try JSON.parse(val) catch then val
+if process.env.NODE_ENV?
+  val = (process.env.NODE_ENV or val)
+  module.exports.NODE_ENV = try JSON.parse(val) catch then val
 
 if module.exports.NODE_ENV is "development"
   env = require 'node-env-file'
