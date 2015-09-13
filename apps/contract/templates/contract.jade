@@ -8,8 +8,10 @@ block body
       h3= contract.get('motto')
       p= contract.get('abstract')
       if user
-        button.js-buy Buy @ #{contract.get('ask')}
-        button.js-sell Sell @ #{contract.get('bid')}
+        if user.canMakeTransaction('buy', contract).success
+          a(href="#{contract.href()}/buy").button.js-buy Buy @ #{contract.get('ask')}
+        if user.canMakeTransaction('sell', contract).success
+          a(href="#{contract.href()}/sell").button.js-sell Sell @ #{contract.get('bid')}
     .list-group.list-group--blocks
       h3.section-header Recent News
       each block in blocks
@@ -21,4 +23,4 @@ block body
               strong: a(href="#{block.get('source').url}", target="_blank") Read more...
 
 block scripts
-   script( src=('/assets/contract' + sd.JS_EXT) )
+  script( src=('/assets/contract' + sd.JS_EXT) )

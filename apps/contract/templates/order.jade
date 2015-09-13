@@ -1,0 +1,12 @@
+extends ../../../components/layout/templates/index
+
+block body
+  .container.container--order
+    h1.confirm-transaction.center #{transaction} 1 share of #{contract.id} @ #{price}?
+
+    form.center(method="post", action="#{contract.href()}/#{transaction}/confirm")
+      input(type="submit", value="Confirm")
+      a.button(href="#{contract.href()}") Cancel
+
+block scripts
+   script( src=('/assets/order' + sd.JS_EXT) )
