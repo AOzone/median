@@ -26,6 +26,9 @@ module.exports =
   ARENA_API_TOKEN: null
   OPENING_CREDIT: 1000
 
+val = (process.env.NODE_ENV or val)
+module.exports.NODE_ENV = try JSON.parse(val) catch then val
+
 if module.exports.NODE_ENV is "development"
   env = require 'node-env-file'
   env __dirname + '/.env'
