@@ -21,4 +21,10 @@ test: assets
 assets:
 	$(BIN)/ezel-assets
 
+deploy:
+	$(BIN)/ezel-assets
+	$(BIN)/bucket-assets --bucket median-production
+	heroku config:set COMMIT_HASH=$(shell git rev-parse --short HEAD) --app=azone-terminal
+	git push --force git@heroku.com:azone-terminal.git
+
 .PHONY: test assets
