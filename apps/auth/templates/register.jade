@@ -22,6 +22,6 @@ block body
       .field.field--confirm-password
         label Gender (optional)
         select(name="gender")
-          each book, i in books
-            option(value=i) Book #{book}
+          each gender in genders
+            option(value=gender) #{gender}
       button.button Login
