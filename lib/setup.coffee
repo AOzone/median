@@ -41,6 +41,7 @@ module.exports = (app) ->
     KERNAL_API_URL: KERNAL_API_URL
     ARENA_API_URL: ARENA_API_URL
     OPENING_CREDIT: OPENING_CREDIT
+    APP_URL:  APP_URL
     JS_EXT: (if 'production' is process.env.NODE_ENV then '.min.js' else '.js')
     CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
 
