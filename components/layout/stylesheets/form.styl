@@ -7,6 +7,12 @@ input[type='text'], input[type='password'], , input[type='email']
 label
   label block
 
-.button, button
+.button, button, input[type="submit"]
   button()
   background-color #000
+  border 1px solid #000
+
+  &:hover
+    background-color #fff
+    color #000
+    border 1px solid #000

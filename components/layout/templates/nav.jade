@@ -1,6 +1,6 @@
 nav
   h1: a(href="/") Åzone
-  ul
+  ul.nav--right
     if user
       li: em= user.get('username')
       li: strong Å#{user.get('balance')}
