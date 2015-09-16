@@ -1,12 +1,20 @@
 Backbone = require 'backbone'
 { KERNAL_API_URL } = require '../config.coffee'
 transactionMap = require '../maps/transactions'
+{ authTokenPair } = require '../lib/util/token'
 _ = require 'underscore'
 
 module.exports = class Account extends Backbone.Model
 
   url: ->
     "#{KERNAL_API_URL}/accounts/#{@idOr_id()}"
+
+  sync: (method, model, options = {})->
+    { authId, authToken } = authTokenPair()
+    options.data ?= {}
+    options.data = _.extend options.data, { auth_id: authId, auth_token: authToken }
+    console.log 'options', options
+    super
 
   idOr_id: ->
     @id or @get('_id')
