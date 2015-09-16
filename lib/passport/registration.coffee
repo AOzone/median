@@ -1,6 +1,7 @@
 LocalStrategy = require('passport-local').Strategy
 User = require '../../db/models/user'
 Account = require '../../models/account'
+{ OPENING_CREDIT } = require '../../config.coffee'
 bCrypt = require 'bcrypt-nodejs'
 Q = require 'q'
 
@@ -36,6 +37,7 @@ module.exports = (passport) ->
 
           # open the trading account
           account = new Account _id: newUser.username
+          account.url = "#{account.url()}/open/#{OPENING_CREDIT}"
 
           newUser.save (err) ->
             if err

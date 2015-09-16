@@ -24,7 +24,7 @@ module.exports = (passport, app) ->
 
       account = new Account id: user?.username
       account.fetch
-        success: ->
+        success: (account, response)->
           done err, account.set
             _id: user.id
             username: user.username
