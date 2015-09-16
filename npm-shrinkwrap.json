@@ -4504,6 +4504,11 @@
       "from": "jquery@*",
       "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.1.4.tgz"
     },
+    "js-sha256": {
+      "version": "0.3.0",
+      "from": "js-sha256@",
+      "resolved": "https://registry.npmjs.org/js-sha256/-/js-sha256-0.3.0.tgz"
+    },
     "mocha": {
       "version": "2.2.5",
       "from": "mocha@*",
