@@ -13,7 +13,6 @@ module.exports = class Account extends Backbone.Model
     { authId, authToken } = authTokenPair()
     options.data ?= {}
     options.data = _.extend options.data, { auth_id: authId, auth_token: authToken }
-    console.log 'options', options
     super
 
   idOr_id: ->
