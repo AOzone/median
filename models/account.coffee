@@ -23,8 +23,10 @@ module.exports = class Account extends Backbone.Model
       position.contract is contract.get('id')
 
   makeTransaction: ({ transaction, contract, block_id }, options) ->
+    { authId, authToken } = authTokenPair()
     order = new Backbone.Model
-    order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/1"
+    params = "?auth_id=#{authId}&auth_token=#{authToken}"
+    order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{block_id}#{params}"
     order.save null, options
 
   canMakeTransaction: (transaction, contract) ->
