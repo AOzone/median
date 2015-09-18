@@ -102,5 +102,6 @@ module.exports = (app) ->
   app.use require "../apps/auth"
   app.use require "../apps/home"
   app.use require "../apps/contract"
+  app.use require "../apps/portfolio"
 
 

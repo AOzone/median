@@ -1,0 +1,20 @@
+extends ../../../components/layout/templates/index
+
+block body
+  .container.container--portfolio
+    table.portfolio-list
+      thead
+        tr
+          td
+          td Current Price
+          td Purchase Price
+          td Total Gain
+          td Shares
+          td Market Value
+          td
+      tbody
+        for position in positions
+          include ./position
+
+block scripts
+   script( src=asset('/assets/portfolio.js')  )
