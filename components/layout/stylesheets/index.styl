@@ -1,4 +1,10 @@
+@import 'variables'
+
 normalize-css()
+
+body
+  color text-color
+  background background-color
 
 *
   box-sizing border-box
@@ -23,6 +29,10 @@ p
 
 [class^='js-']
   cursor pointer
+
+a, a:hover, a:visited
+  color text-color
+  text-decoration none
 
 @import 'fonts'
 @import 'util'

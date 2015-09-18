@@ -1,10 +1,12 @@
+@import 'variables'
+
 nav
-  nav 1 #fff #000 true
+  nav 1 background-color text-color true
   top 0
-  background #fff
+  background background-color
   box-shadow 1px 1px rgba(0,0,0,0.01)
   a
-    color #000
+    color text-color
     text-decoration none
   h1
     padding 0
@@ -12,9 +14,9 @@ nav
 
 .list-group
   a
-    color #000
+    color text-color
     text-decoration none
     display block
     padding 2px
-  a:hover
-    background-color #eee
+    background-color background-color
+    hover-lighten(3%)

@@ -2,7 +2,7 @@ nav
   h1: a(href="/") Åzone
   ul.nav--right
     if user
-      li: em= user.get('username')
+      li: a(href="/portfolio"): em= user.get('username')
       li: strong Å#{user.get('balance')}
       li: a(href="/logout") Log out
     else
