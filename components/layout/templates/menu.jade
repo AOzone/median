@@ -1,0 +1,13 @@
+mixin menu_item()
+  if pageTitle != attributes.title
+    li: h1: a(href="#{attributes.href}") #[span.is-hidden Åzone] #{attributes.title}
+
+.nav__menu
+  h1
+    | Åzone
+    | #{pageTitle}
+  ul
+    +menu_item()(title='Futures' href='/')
+    +menu_item()(title='Portfolio' href='/portfolio')
+    li: h1 &nbsp;
+    +menu_item()(title='Log out' href='/logout')

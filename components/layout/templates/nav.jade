@@ -1,10 +1,15 @@
 nav
-  h1: a(href="/") Åzone
-  ul.nav--right
+  .nav__left
+    h1
+      | Åzone
+      | #{pageTitle}
+    include ./menu
+  .nav__mark
+    h1: a(href="/") Å
+  ul.nav__right
     if user
-      li: a(href="/portfolio"): em= user.get('username')
-      li: strong Å#{user.get('balance')}
-      li: a(href="/logout") Log out
+      li: h1: a(href="/portfolio")= user.get('username')
+      li: h1: #[strong= user.get('balance')]Å
     else
-      li: a(href="/login") Log in
-      li: a(href="/signup") Register
+      li: h1: a(href="/login") Log in
+      li: h1: a(href="/signup") Register

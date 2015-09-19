@@ -10,7 +10,7 @@ body
   box-sizing border-box
 
 main
-  margin 80px 0
+  margin (unit * 8) 0
 
 .container
   width 90%
@@ -22,6 +22,24 @@ main
 p
   paragraph()
 
+h1
+  h1()
+
+h2
+  h2()
+
+h3
+  h3()
+
+h4
+  h4()
+
+h5
+  h5()
+
+h6
+  h6()
+
 .section-header
   padding 4px 0
   border-top 1px solid #eee
@@ -30,7 +48,7 @@ p
 [class^='js-']
   cursor pointer
 
-a, a:hover, a:visited
+a
   color text-color
   text-decoration none
 
@@ -38,3 +56,4 @@ a, a:hover, a:visited
 @import 'util'
 @import 'form'
 @import 'nav'
+@import 'table'
