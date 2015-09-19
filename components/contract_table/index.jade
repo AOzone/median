@@ -1,0 +1,18 @@
+table.contract-list.is-large
+  thead
+    tr
+      td
+      td Name
+      td Buy
+      td Sell
+      td Gain
+  tbody
+    for contract in contracts
+      tr
+        td #{contract.get('contract')}
+        td
+          a(href="#{contract.href()}") #{contract.get('title')}
+          p.is-not-displayed=contract.get('abstract')
+        td #{contract.get('ask')}
+        td #{contract.get('bid')}
+        td
