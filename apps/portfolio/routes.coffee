@@ -7,7 +7,7 @@ Positions = require '../../collections/positions.coffee'
 @index = (req, res, next) ->
   return unless req.user
 
-  positions = new Positions req.user.get('open_positions')
+  positions = new Positions req.user.get('open_positions'), parse: true
 
   Q.allSettled(
     positions.map (position) -> position.fetch()

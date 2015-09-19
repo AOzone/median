@@ -1,26 +1,25 @@
 extends ../../../components/layout/templates/index
-
+block vars
+  - pageTitle = contract.id
 block body
   .container.container--contract
-    .contract-info
-      h2= contract.get('contract')
-      h1= contract.get('title')
-      h3= contract.get('motto')
-      p= contract.get('abstract')
+    .contract--transactions.is-centered
       if user
         if user.canMakeTransaction('buy', contract).success
           a(href="#{contract.href()}/buy").button.js-buy Buy @ #{contract.get('ask')}
         if user.canMakeTransaction('sell', contract).success
           a(href="#{contract.href()}/sell").button.js-sell Sell @ #{contract.get('bid')}
-    .list-group.list-group--blocks
-      h3.section-header Recent News
-      each block in blocks
-        .list-group-item
-          h1.js-block-headline= block.get('title')
-          p.block-description
-            | #{block.get('description')}
-            if block.get('source')
-              strong: a(href="#{block.get('source').url}", target="_blank") Read more...
+    - contracts = [contract]
+    include ../../../components/contract_table/index
+    //- .list-group.list-group--blocks
+    //-   h4.section-header Recent News
+    //-   each block in blocks
+    //-     .list-group-item
+    //-       h2.js-block-headline= block.get('title')
+    //-       p.block-description
+    //-         | #{block.get('description')}
+    //-         if block.get('source')
+    //-           strong: a(href="#{block.get('source').url}", target="_blank") Read more...
 
 block scripts
   script( src=asset('/assets/contract.js') )

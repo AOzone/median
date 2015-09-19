@@ -1,8 +1,9 @@
 extends ../../../components/layout/templates/index
-
+block vars
+  - pageTitle = 'Portfolio'
 block body
   .container.container--portfolio
-    table.portfolio-list
+    table.portfolio-list.is-large
       thead
         tr
           td

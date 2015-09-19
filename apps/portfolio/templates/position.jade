@@ -8,10 +8,10 @@
 //-   td
 
 tr.portfolio-list__position
-  td: a(href="/contract/#{position.get('contract')}", target="_blank") #{position.get('contract')}
-  td Å#{position.get('bid')}
-  td Å#{position.get('avg_price')}
+  td: a(href="/contract/#{position.get('contract')}") #{position.get('contract')}
+  td #{position.get('bid')}Å
+  td #{position.get('avg_price')}Å
   td.green %#{position.gainOrLoss()}
   td #{position.get('qty')}
-  td.green Å#{position.value()}
+  td.green #{position.value()}Å
   td

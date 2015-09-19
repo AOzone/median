@@ -1,10 +1,6 @@
 extends ../../../components/layout/templates/index
-
+block vars
+  - pageTitle = 'Futures'
 block body
   .container
-    .list-group.list-group--contracts
-      each contract in contracts
-        .list-group-item
-          a(href="/contract/#{contract.get('contract')}")
-            h1= contract.get('title')
-            h2= contract.get('contract')
+    include ../../../components/contract_table/index
