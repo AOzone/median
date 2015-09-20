@@ -2,6 +2,8 @@ extends ../../../components/layout/templates/index
 block vars
   - pageTitle = contract.id
 block body
+  #chart.contract__tick-chart
+    //- rendered via client
   .container.container--contract
     .contract--transactions.is-centered
       if user

@@ -3,6 +3,7 @@ _ = require 'underscore'
 Backbone = require "backbone"
 sd = require("sharify").data
 Contract = require '../../models/contract.coffee'
+Chart = require '../../collections/chart.coffee'
 Blocks = require '../../collections/blocks.coffee'
 contractMap = require '../../maps/contracts.coffee'
 transactionMap = require '../../maps/transactions.coffee'
@@ -15,10 +16,12 @@ fetchContract = (callSign, next, cb)->
 
   contract = new Contract id: callSign
   blocks = new Blocks [], id: channelId
+  tick_chart = new Chart [], { id: callSign, type: '1tick' }
 
   Q.all([
     contract.fetch()
     blocks.fetch(cache: true)
+    tick_chart.fetch()
   ]).then ->
     # set any additional metadata
     contract.set contractMap[callSign]
@@ -26,6 +29,7 @@ fetchContract = (callSign, next, cb)->
     dfd.resolve
       contract: contract
       blocks: blocks
+      chart: tick_chart
   .catch (err, message) ->
     dfd.reject err, message
   .done()
@@ -33,11 +37,15 @@ fetchContract = (callSign, next, cb)->
   dfd.promise
 @show = (req, res, next) ->
   callSign = req.params.id
-  fetchContract(callSign, next).then ({ contract, blocks }) ->
+  fetchContract(callSign, next).then ({ contract, blocks, chart }) ->
+
+    res.locals.sd.TICK_CHART = chart.toJSON()
+    res.locals.sd.CONTRACT = contract.toJSON()
 
     res.render 'contract',
       blocks: blocks.models
       contract: contract
+      chart: chart
       message: req.flash 'error'
 
   .done()
@@ -71,8 +79,6 @@ fetchContract = (callSign, next, cb)->
     unless success
       req.flash 'error', reason
       return res.redirect "/contract/#{contract.id}"
-
-    console.log 'transaction', transaction
 
     req.user.makeTransaction { transaction: transaction, contract: contract },
       success: ->

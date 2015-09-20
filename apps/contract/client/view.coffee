@@ -1,5 +1,8 @@
 Backbone = require 'backbone'
 Backbone.$ = $
+sd = require("sharify").data
+Chart = require '../../../collections/chart.coffee'
+{ initTickChart } = require '../../../components/tick_chart/index.coffee'
 
 module.exports.ContractView = class ContractView extends Backbone.View
   events:
@@ -14,3 +17,8 @@ module.exports.ContractView = class ContractView extends Backbone.View
 module.exports.init = ->
   new ContractView
     el: $('.container--contract')
+
+  chart = new Chart sd.TICK_CHART, {id: sd.CONTRACT.id, type: '1tick'}
+  initTickChart chart, $('#chart')
+
+
