@@ -13,7 +13,7 @@ Positions = require '../../collections/positions.coffee'
     positions.map (position) -> position.fetch()
   ).then ->
     res.render 'index',
-      positions: positions.models
+      positions: positions
   .catch (error) ->
     console.log 'error', error
     next()

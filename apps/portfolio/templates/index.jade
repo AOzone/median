@@ -3,19 +3,32 @@ block vars
   - pageTitle = 'Portfolio'
 block body
   .container.container--portfolio
-    table.portfolio-list.is-large
-      thead
-        tr
-          td
-          td Current Price
-          td Purchase Price
-          td Total Gain
-          td Shares
-          td Market Value
-          td
-      tbody
-        for position in positions
-          include ./position
+    if positions.length
+      table.portfolio-list.is-large
+        thead
+          tr
+            td
+            td Current Price
+            td Purchase Price
+            td Total Gain
+            td Shares
+            td Market Value
+            td
+        tbody
+          for position in positions.models
+            include ./position
+        tfooter
+          tr
+            td
+            td
+            td
+            td.green %#{positions.totalPercentageGain()}
+            td
+            td.green #{positions.totalMarketValue()}Å
+            td
+    else
+      .error.is-centered
+        h3 No positions yet
 
 block scripts
    script( src=asset('/assets/portfolio.js')  )
