@@ -5,14 +5,14 @@ module.exports.initTickChart = (chart, $container) ->
   height = $container.height()
   margin = {top: 20, right: 20, bottom: 30, left: 50}
 
-  x = d3.time.scale().range [0, width - 52]
+  x = d3.scale.linear().range [0, width - 52]
   y = d3.scale.linear().range [height, 0]
 
   xAxis = d3.svg.axis().scale(x).orient("bottom")
   yAxis = d3.svg.axis().scale(y).orient("left")
 
   line = d3.svg.line()
-    .x((point) -> x(Date.parse(point.get('timestamp'))))
+    .x((point, index) -> x(index))
     .y((point) -> y(parseInt(point.get('close'))))
 
   svg = d3.select("#chart")
@@ -22,7 +22,7 @@ module.exports.initTickChart = (chart, $container) ->
     .append("g")
     .attr("transform", "translate(#{margin.left}, #{margin.top})")
 
-  x.domain d3.extent chart.models, (point) -> Date.parse(point.get('timestamp'))
+  x.domain d3.extent chart.models, (point, index) -> index
   y.domain d3.extent chart.models, (point) -> parseInt(point.get('close'))
 
   svg.append("g")
