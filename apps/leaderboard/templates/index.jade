@@ -1,0 +1,19 @@
+extends ../../../components/layout/templates/index
+block vars
+  - pageTitle = 'Leaderboard'
+block body
+  .container.container--leaderboard
+    if accounts.length
+      table.account-list.is-large
+        thead
+          tr
+            td Name
+            td Market Value
+        tbody
+          for account in accounts.models
+            tr
+              td: a(href="/portfolio/#{account.get('trader_id')}") #{account.get('trader_id')}
+              td #{account.get('nav')}Å
+    else
+      .error.is-centered
+        h3 No positions yet

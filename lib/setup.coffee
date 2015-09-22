@@ -103,5 +103,6 @@ module.exports = (app) ->
   app.use require "../apps/home"
   app.use require "../apps/contract"
   app.use require "../apps/portfolio"
+  app.use require "../apps/leaderboard"
 
 
