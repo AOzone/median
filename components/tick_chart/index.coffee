@@ -5,9 +5,7 @@ module.exports.initTickChart = (chart, $container) ->
   height = $container.height()
   margin = {top: 20, right: 20, bottom: 30, left: 50}
 
-  parseDate = d3.time.format("%d-%b-%y").parse
-
-  x = d3.time.scale().range [0, width]
+  x = d3.time.scale().range [0, width - 52]
   y = d3.scale.linear().range [height, 0]
 
   xAxis = d3.svg.axis().scale(x).orient("bottom")
@@ -23,8 +21,6 @@ module.exports.initTickChart = (chart, $container) ->
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(#{margin.left}, #{margin.top})")
-    .attr('viewBox',"0 0 #{Math.min(width,height)} #{Math.min(width,height)}" )
-    .attr('preserveAspectRatio','xMinYMin')
 
   x.domain d3.extent chart.models, (point) -> Date.parse(point.get('timestamp'))
   y.domain d3.extent chart.models, (point) -> parseInt(point.get('close'))
