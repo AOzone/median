@@ -7,8 +7,8 @@ table.contract-list.is-large
       td Sell
       td Gain
   tbody
-    for contract in contracts
-      tr
+    for contract, index in contracts
+      tr(class= index == 0 ? 'is-active' : '')
         td #{contract.get('contract')}
         td
           a(href="#{contract.href()}") #{contract.get('title')}

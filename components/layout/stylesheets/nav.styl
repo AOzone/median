@@ -1,4 +1,5 @@
 @import 'variables'
+@import 'nib'
 
 nav
   nav 1 background-color text-color true
@@ -36,7 +37,8 @@ nav
     pointer-events all
 
 .nav__menu
-  display none
+  transition 0.5s
+  opacity 0
   width 30%
   height 100%
   position fixed
@@ -44,8 +46,8 @@ nav
   top 0
   left 0
   padding 20px
-  background-color darken(background-color, 10%)
-
+  background linear-gradient(left, white, rgba(255,255,255, 0.0))
+  visibility hidden
   > ul
     reset-list()
     text-align left
@@ -58,4 +60,6 @@ nav
     float none
     hover-lighten 30%
   &:hover .nav__menu
-    display block
+    transition opacity 0.5s
+    opacity 1
+    visibility visible

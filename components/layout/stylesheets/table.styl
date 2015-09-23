@@ -14,9 +14,11 @@ table
     text-align left
   td:last-child
     padding-right 0
+  tbody tr
+    cursor pointer
   tbody tr:hover
     background-color darken(background-color, 3%)
-  tbody tr:nth-child(1)
+  tbody tr.is-active
     .is-not-displayed
       display block
   p

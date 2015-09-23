@@ -1,2 +1,4 @@
+{ initLayout } = require '../components/layout/client/index.coffee'
+
 $ ->
-  console.log 'hello world'
+  initLayout()
