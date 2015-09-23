@@ -2,26 +2,28 @@ extends ../../../components/layout/templates/index
 block vars
   - pageTitle = contract.id
 block body
-  #chart.contract__tick-chart
+  section#chart.contract__tick-chart
     //- rendered via client
   .container.container--contract
-    .contract--transactions.is-centered
+    section.contract--transactions.is-centered
       if user
         if user.canMakeTransaction('buy', contract).success
           a(href="#{contract.href()}/buy").button.js-buy Buy @ #{contract.get('ask')}
         if user.canMakeTransaction('sell', contract).success
           a(href="#{contract.href()}/sell").button.js-sell Sell @ #{contract.get('bid')}
-    - contracts = [contract]
-    include ../../../components/contract_table/index
-    //- .list-group.list-group--blocks
-    //-   h4.section-header Recent News
-    //-   each block in blocks
-    //-     .list-group-item
-    //-       h2.js-block-headline= block.get('title')
-    //-       p.block-description
-    //-         | #{block.get('description')}
-    //-         if block.get('source')
-    //-           strong: a(href="#{block.get('source').url}", target="_blank") Read more...
+    section.contract__table
+      - contracts = [contract]
+      include ../../../components/contract_table/index
+    section.contract__news
+      h4.section-header Recent News
+      .grid.grid--blocks
+        each block in blocks
+          .grid__item
+            h2.js-block-headline= block.get('title')
+            p.block-description
+              | #{block.get('description')}
+            if block.get('source')
+              p: a(href="#{block.get('source').url}", target="_blank") Read more...
 
 block scripts
   script( src=asset('/assets/contract.js') )
