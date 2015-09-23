@@ -15,6 +15,7 @@ stylus = require "stylus"
 nib = require "nib"
 rupture = require 'rupture'
 axis = require 'axis'
+jeet = require 'jeet'
 fs = require 'fs'
 express = require 'express'
 bucketAssets = require 'bucket-assets'
@@ -64,6 +65,7 @@ module.exports = (app) ->
         stylus(str)
         .set('filename', path)
         .use(rupture())
+        .use(jeet())
         .use(axis())
         .use(require("nib")())
 
