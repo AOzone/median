@@ -2624,6 +2624,11 @@
         }
       }
     },
+    "d3": {
+      "version": "3.5.6",
+      "from": "d3@",
+      "resolved": "https://registry.npmjs.org/d3/-/d3-3.5.6.tgz"
+    },
     "emailjs": {
       "version": "0.3.16",
       "from": "emailjs@",
