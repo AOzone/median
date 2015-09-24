@@ -19,6 +19,7 @@ jeet = require 'jeet'
 fs = require 'fs'
 express = require 'express'
 bucketAssets = require 'bucket-assets'
+artsyError = require 'artsy-error-handler'
 expressSession = require 'express-session'
 logger = require 'morgan'
 cookieParser = require 'cookie-parser'
@@ -107,4 +108,7 @@ module.exports = (app) ->
   app.use require "../apps/portfolio"
   app.use require "../apps/leaderboard"
 
-
+  # Finally 404 and error handling middleware when the request wasn't handled
+  # successfully by anything above.
+  artsyError.handlers app,
+    template: path.resolve(__dirname, '../components/layout/templates/error.jade')
