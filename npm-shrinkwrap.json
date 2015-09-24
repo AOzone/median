@@ -4,8 +4,8 @@
   "dependencies": {
     "artsy-error-handler": {
       "version": "0.0.5",
-      "from": "git+ssh://git@github.com:artsy/artsy-error-handler.git",
-      "resolved": "git+ssh://git@github.com:artsy/artsy-error-handler.git#841cc9138d9f0b832cc374755bc703f3eac0bd13"
+      "from": "git://github.com/artsy/artsy-error-handler.git",
+      "resolved": "git://github.com/artsy/artsy-error-handler.git#841cc9138d9f0b832cc374755bc703f3eac0bd13"
     },
     "axis": {
       "version": "0.4.3",

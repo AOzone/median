@@ -6,7 +6,7 @@
     "start": "make s"
   },
   "dependencies": {
-    "artsy-error-handler": "git+ssh://git@github.com:artsy/artsy-error-handler.git",
+    "artsy-error-handler": "git://github.com/artsy/artsy-error-handler.git",
     "axis": "^0.4.3",
     "backbone": "*",
     "backbone-super-sync": "^1.1.1",
