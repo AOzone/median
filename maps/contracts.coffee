@@ -18,7 +18,7 @@ module.exports =
   IMMU:
     channel_id: 33218
   LONG:
-    channel_id: 33217
+    channel_id: 34051
   DBAN:
     channel_id: 33216
   HBAN:

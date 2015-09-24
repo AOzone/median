@@ -17,7 +17,6 @@ fetchContract = (callSign, next, cb)->
   contract = new Contract id: callSign
   blocks = new Blocks [], id: channelId
   tick_chart = new Chart [], { id: callSign, type: '1tick' }
-
   Q.all([
     contract.fetch()
     blocks.fetch(cache: true)
@@ -48,6 +47,7 @@ fetchContract = (callSign, next, cb)->
       chart: chart
       message: req.flash 'error'
 
+  .catch next
   .done()
 
 @order = (req, res, next) ->
@@ -66,7 +66,7 @@ fetchContract = (callSign, next, cb)->
       contract: contract
       transaction: transaction
       price: contract.get transactionMap[transaction]
-
+  .catch next
   .done()
 
 @transaction = (req, res, next) ->
@@ -88,7 +88,7 @@ fetchContract = (callSign, next, cb)->
       error: (account, error)->
         req.flash 'error', error
         res.redirect "/contract/#{contract.id}"
-
+  .catch next
   .done()
 
 
