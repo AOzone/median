@@ -1,0 +1,14 @@
+extends ./index
+
+block vars
+  - asset = asset || function(p){ return p }
+
+block body
+  main#error-handler.container
+    if code === 404
+      h1 404
+      pre The page you were looking for doesn't exist.
+    else
+      h1 Internal Error
+      if detail
+        pre= detail
