@@ -1,0 +1,41 @@
+@import '../../node_modules/jeet/stylus/jeet'
+
+.news-divider
+  clear both
+  border none
+  border-bottom 1px solid border-color
+  outline none
+  height 1px
+
+  +below(900px)
+    display none
+
+.news__item__callsigns
+  clearfix()
+  margin-bottom unit
+
+.news__item
+  column(1/2, cycle: 2)
+  margin 3% 0
+  min-height 400px
+  position relative
+
+  &:nth-child(2n)
+    // border-left 1px solid #000
+
+  &:nth-child(2n+1)
+    clear none
+
+  +below(900px)
+    column(1, cycle: 1)
+
+.news__item__description
+  margin-bottom unit * 2
+
+.news__item__meta
+  position absolute
+  bottom 0
+  width 100%
+
+.news__item__source-domain
+  float right

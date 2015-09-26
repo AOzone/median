@@ -1,0 +1,5 @@
+.grid.grid--news
+  each item, index in news.models
+    include item.jade
+    if index % 2
+      hr.news-divider
