@@ -16,7 +16,7 @@ module.exports = class Positions extends Backbone.Model
     ((gain / purchased) * 100).toFixed(2)
 
   value: ->
-    price = parseInt(@get('ask'))
+    price = parseInt(@get('bid'))
     qty = parseInt(@get('qty'))
 
     price * qty

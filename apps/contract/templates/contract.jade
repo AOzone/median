@@ -16,14 +16,7 @@ block body
       include ../../../components/contract_table/index
     section.contract__news
       h4.section-header Recent News
-      .grid.grid--blocks
-        each block in blocks
-          .grid__item
-            h2.js-block-headline= block.get('title')
-            p.block-description
-              | #{block.get('description')}
-            if block.get('source')
-              p: a(href="#{block.get('source').url}", target="_blank") Read more...
+      include ../../../components/news_list/templates/index
 
 block scripts
   script( src=asset('/assets/contract.js') )

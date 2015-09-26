@@ -42,7 +42,7 @@ fetchContract = (callSign, next, cb)->
     res.locals.sd.CONTRACT = contract.toJSON()
 
     res.render 'contract',
-      blocks: blocks.models
+      news: blocks
       contract: contract
       chart: chart
       message: req.flash 'error'
@@ -62,7 +62,7 @@ fetchContract = (callSign, next, cb)->
       return res.redirect "/contract/#{contract.id}"
 
     res.render 'order',
-      blocks: blocks.models
+      news: blocks
       contract: contract
       transaction: transaction
       price: contract.get transactionMap[transaction]
