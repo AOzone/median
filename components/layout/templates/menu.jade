@@ -8,7 +8,10 @@ mixin menu_item()
     | #{pageTitle}
   ul
     +menu_item()(title='Futures' href='/')
-    +menu_item()(title='Portfolio' href='/portfolio')
+    if user
+      +menu_item()(title='Portfolio' href='/portfolio')
+    +menu_item()(title='News' href='/news')
     +menu_item()(title='Leaderboard' href='/leaderboard')
     li: h1 &nbsp;
-    +menu_item()(title='Log out' href='/logout')
+    if user
+      +menu_item()(title='Log out' href='/logout')
