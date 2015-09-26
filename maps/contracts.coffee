@@ -39,3 +39,17 @@ module.exports =
     channel_id: 33208
   NEUT:
     channel_id: 33207
+  DEVO:
+    channel_id: 33218
+  NOID:
+    channel_id: 34069
+  EXCO:
+    channel_id: 34061
+  LESS:
+    channel_id: 34065
+  ASTR:
+    channel_id: 34099
+  UVAC:
+    channel_id: 34052
+  OFF:
+    channel_id: 34120
