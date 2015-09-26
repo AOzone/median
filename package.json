@@ -51,9 +51,7 @@
     "should": "*",
     "mocha": "*",
     "sinon": "*",
-    "benv": "*",
     "zombie": "*",
-    "html5": "*",
     "sqwish": "*",
     "uglify-js": "*",
     "caching-coffeeify": "*"
