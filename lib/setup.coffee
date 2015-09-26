@@ -107,6 +107,7 @@ module.exports = (app) ->
   app.use require "../apps/contract"
   app.use require "../apps/portfolio"
   app.use require "../apps/leaderboard"
+  app.use require "../apps/news"
 
   # Finally 404 and error handling middleware when the request wasn't handled
   # successfully by anything above.
