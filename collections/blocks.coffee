@@ -4,11 +4,12 @@ _ = require 'underscore'
 Block = require '../models/block.coffee'
 
 module.exports = class Blocks extends BaseArenaCollection
+  model: Block
 
-  url: -> "#{sd.ARENA_API_URL}/channels/#{@id}/contents"
+  url: -> "#{sd.ARENA_API_URL}/channel/#{@id}/search"
 
   initialize: ( models, { @id } )->
     super
 
   parse: (data) ->
-    data.contents
+    data.blocks
