@@ -5040,6 +5040,11 @@
       "from": "https://registry.npmjs.org/q/-/q-1.4.1.tgz",
       "resolved": "https://registry.npmjs.org/q/-/q-1.4.1.tgz"
     },
+    "query-params": {
+      "version": "0.0.1",
+      "from": "query-params@",
+      "resolved": "https://registry.npmjs.org/query-params/-/query-params-0.0.1.tgz"
+    },
     "redis": {
       "version": "0.12.1",
       "from": "redis@",

@@ -33,6 +33,7 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "q": "https://registry.npmjs.org/q/-/q-1.4.1.tgz",
+    "query-params": "0.0.1",
     "redis": "^0.12.1",
     "rupture": "^0.6.1",
     "sendgrid": "^1.9.2",
