@@ -13,7 +13,7 @@ block body
           for account in accounts.models
             tr
               td: a(href="/portfolio/#{account.get('trader_id')}") #{account.get('trader_id')}
-              td #{account.get('nav')}Å
+              td #{account.get('net_liquidation_value')}Å
     else
       .error.is-centered
         h3 No positions yet
