@@ -11,3 +11,5 @@ Accounts = require '../../collections/accounts.coffee'
     success: ->
       res.render 'index',
         accounts: accounts
+    error: (err, response) ->
+      next err
