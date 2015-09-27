@@ -2,7 +2,7 @@ d3 = require 'd3'
 
 module.exports.initTickChart = (chart, $container) ->
   width = $container.width()
-  height = $container.height()
+  height = 560
   margin = {top: 20, right: 20, bottom: 30, left: 50}
 
   x = d3.scale.linear().range [0, width - 52]
