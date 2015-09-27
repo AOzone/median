@@ -3,8 +3,10 @@ if item.get('source')
     .news__item__top
       .news__item__callsigns
         each callSign in item.callSignArray()
-          - var contract = { id: callSign }
-          include ../../callsign/templates/index.jade
+          - contract = contracts.findWhere({'contract': callSign})
+          - block_id = item.id
+          if contract
+            include ../../callsign/templates/index.jade
       .news__item__relative-date= item.updatedAtAgo()
 
     a(href="#{item.get('source').url}", target="_blank")

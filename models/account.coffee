@@ -6,8 +6,7 @@ _ = require 'underscore'
 
 module.exports = class Account extends Backbone.Model
 
-  url: ->
-    "#{KERNAL_API_URL}/accounts/#{@idOr_id()}"
+  url: -> "#{KERNAL_API_URL}/accounts/#{@idOr_id()}"
 
   sync: (method, model, options = {})->
     { authId, authToken } = authTokenPair()
@@ -20,13 +19,14 @@ module.exports = class Account extends Backbone.Model
 
   holdsPosition: (contract) ->
     _.any @get('open_positions'), (position) ->
-      position.contract is contract.get('id')
+      position.contract is contract.get('contract')
 
   makeTransaction: ({ transaction, contract, block_id }, options) ->
     { authId, authToken } = authTokenPair()
     order = new Backbone.Model
     params = "?auth_id=#{authId}&auth_token=#{authToken}"
     order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{block_id}#{params}"
+    console.log 'order', order
     order.save null, options
 
   canMakeTransaction: (transaction, contract) ->
