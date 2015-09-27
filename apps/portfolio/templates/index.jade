@@ -22,9 +22,9 @@ block body
             td
             td
             td
-            td.green %#{positions.totalPercentageGain()}
+            td.js-gain-color(data-gain="#{positions.totalPercentageGain()}") %#{positions.totalPercentageGain()}
             td
-            td.green #{positions.totalMarketValue()}Å
+            td.js-gain-color(data-gain="#{positions.totalPercentageGain()}") #{positions.totalMarketValue()}Å
             td
     else
       .error.is-centered

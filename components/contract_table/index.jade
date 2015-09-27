@@ -15,4 +15,5 @@ table.contract-list.is-large
           p.is-not-displayed=contract.get('abstract')
         td #{contract.get('ask')}Å
         td #{contract.get('bid')}Å
-        td
+        td.js-gain-color(data-gain="#{contract.get('gain_percent')}")
+          | #{contract.get('gain_percent')}%
