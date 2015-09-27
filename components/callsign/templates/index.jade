@@ -1,1 +1,13 @@
-.call-sign #{contract.id}
+.call-sign
+  .call-sign__id #{contract.get('contract')}
+  if user
+    .call-sign__bubble
+      if block_id
+        - params = "?block_id=" + block_id
+      else
+        - params = ""
+
+      if user.canMakeTransaction('buy', contract).success
+        a(href="#{contract.href()}/buy#{params}").js-buy Buy @ #{contract.get('ask')}Å
+      if user.canMakeTransaction('sell', contract).success
+        a(href="#{contract.href()}/sell#{params}").js-sell Sell @ #{contract.get('bid')}Å

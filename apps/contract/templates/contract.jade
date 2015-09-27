@@ -12,8 +12,8 @@ block body
         if user.canMakeTransaction('sell', contract).success
           a(href="#{contract.href()}/sell").button.js-sell Sell @ #{contract.get('bid')}
     section.contract__table
-      - contracts = [contract]
-      include ../../../components/contract_table/index
+      //- - contracts = [contract]
+      //- include ../../../components/contract_table/index
     section.contract__news
       h4.section-header Recent News
       include ../../../components/news_list/templates/index

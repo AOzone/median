@@ -1,6 +1,27 @@
 .call-sign
+  position relative
+  float left
+  margin-right 8px
+  cursor pointer
+  &:hover .call-sign__bubble
+    display block
+
+.call-sign__id
   padding 8px 16px
   border 1px solid border-color
-  float left
   border-radius 20px
-  margin-right 8px
+
+.call-sign__bubble
+  display none
+  bubble top left background-blue-color
+  position absolute
+  min-width unit * 6
+  background background-blue-color
+  border-radius 2px
+  text-align center
+  a
+    color white
+    display block
+    h5()
+  a:hover
+    color darken(white, 20%)
