@@ -1,5 +1,6 @@
 extends ../../../components/layout/templates/index
-
+block vars
+  - pageTitle = contract.get('contract')
 block body
   section.contract__about.container
     .contract__callsign

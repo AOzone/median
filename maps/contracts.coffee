@@ -1,39 +1,39 @@
 module.exports =
-  HSTY:
+  CRON:
     channel_id: 33225
-  AIPO:
+  ALGO:
     channel_id: 33224
-  SFAM:
+  CFAM:
     channel_id: 33223
-  VMEM:
+  MMMN:
     channel_id: 33222
   EXCZ:
     channel_id: 33221
-  MIND:
+  DCOG:
     channel_id: 33155
   ROBO:
     channel_id: 33220
-  GIDP:
-    channel_id: 33219
+  COMM:
+    channel_id: 34064
   IMMU:
     channel_id: 33218
   LONG:
     channel_id: 34051
-  DBAN:
+  DIMY:
     channel_id: 33216
-  HBAN:
+  PHDR:
     channel_id: 33215
   DNET:
     channel_id: 33213
   SNGL:
     channel_id: 33212
-  NOIP:
+  COIP:
     channel_id: 33210
-  UNIC:
+  BSIC:
     channel_id: 33209
   DRUG:
     channel_id: 33203
-  "10HR":
+  VOLE:
     channel_id: 33204
   ENGY:
     channel_id: 33208
@@ -43,7 +43,7 @@ module.exports =
     channel_id: 33218
   NOID:
     channel_id: 34069
-  EXCO:
+  EXTR:
     channel_id: 34061
   LESS:
     channel_id: 34065
@@ -51,5 +51,5 @@ module.exports =
     channel_id: 34099
   UVAC:
     channel_id: 34052
-  OFF:
+  PRIM:
     channel_id: 34120

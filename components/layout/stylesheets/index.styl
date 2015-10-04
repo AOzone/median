@@ -58,8 +58,8 @@ pre
 
 .section-header
   padding 4px 0
-  border-top 1px solid #eee
-  border-bottom 1px solid #eee
+  border-top 1px solid border-color
+  border-bottom 1px solid border-color
 
 [class^='js-']
   cursor pointer
@@ -67,6 +67,10 @@ pre
 a
   color text-color
   text-decoration none
+
+section
+  clearfix()
+  margin-bottom unit * 4
 
 @import 'fonts'
 @import 'util'
