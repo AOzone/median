@@ -8,3 +8,8 @@ module.exports.initLayout = ->
     gain = $(this).data 'gain'
     color = getColor parseFloat gain
     $(this).css color: "##{color}"
+
+  $('.js-gain-bg-color').each (index) ->
+    gain = $(this).data 'gain'
+    color = getColor parseFloat gain
+    $(this).css backgroundColor: "##{color}"
