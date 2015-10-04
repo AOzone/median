@@ -25,7 +25,7 @@ module.exports =
   KERNAL_SECRET: null
   ARENA_API_URL: 'http://api.are.na/v2'
   ARENA_API_TOKEN: null
-  OPENING_CREDIT: 1000
+  OPENING_CREDIT: 10000
   S3_KEY: null
   S3_SECRET: null
   S3_BUCKET: null
