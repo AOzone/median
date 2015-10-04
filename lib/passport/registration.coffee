@@ -1,7 +1,8 @@
 LocalStrategy = require('passport-local').Strategy
 User = require '../../db/models/user'
 Account = require '../../models/account'
-{ OPENING_CREDIT } = require '../../config.coffee'
+{ authTokenPair } = require '../util/token'
+{ OPENING_CREDIT, KERNAL_API_URL  } = require '../../config.coffee'
 bCrypt = require 'bcrypt-nodejs'
 Q = require 'q'
 
@@ -36,21 +37,25 @@ module.exports = (passport) ->
           newUser.birthday = req.param 'birthday'
 
           # open the trading account
-          account = new Account _id: newUser.username
-          account.url = "#{account.url()}/open/#{OPENING_CREDIT}"
+          { authId, authToken } = authTokenPair()
+          account = new Account()
+          account.url = "#{KERNAL_API_URL}/accounts/#{username}/open/#{OPENING_CREDIT}"
+          account.url = "#{account.url}?auth_id=#{authId}&auth_token=#{authToken}"
 
-          newUser.save (err) ->
-            if err
-              console.log 'error creating user', err
-              throw err
-
-            account.save null,
-              success: ->
-                console.log 'User Registration succesful', newUser
-                done null, newUser
-              error: (account, err, response) ->
-                console.log 'Something went wrong during registration', account, err, response
-                done null, newUser
+          account.save null,
+            success: (account, response)->
+              if response.success
+                newUser.save (err) ->
+                  if err
+                    console.log 'error creating user', err
+                    return done err, message: 'Error signing up. Try again or contact azone@guggenheim.org'
+                  done null, newUser
+              else
+                console.log 'error creating user', err, response
+                done null, false, message: response.message
+            error: (account, err, response) ->
+              console.log 'Something went wrong during registration', account, err, response
+              done null, false, message: response.message
 
     # Delay the execution of findOrCreateUser and execute the method
     # in the next tick of the event loop

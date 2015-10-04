@@ -6,7 +6,6 @@ _ = require 'underscore'
 Q = require 'q'
 
 module.exports = (passport, app) ->
-
   app.use passport.initialize()
   app.use passport.session()
 
