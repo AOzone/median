@@ -26,7 +26,7 @@ module.exports.init = ->
   chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
   initTickChart chart, $('#chart')
 
-  $('body').css 'backgroundColor': "##{getColor(contract.get('gain_percent'))}"
+  $('main').css 'backgroundColor': "##{getColor(contract.get('gain_percent'))}"
 
 
 

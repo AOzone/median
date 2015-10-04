@@ -13,15 +13,14 @@ html
     block styles
 
   body
-    include ./nav
-    include ./modal
-    main
-      include ./flash
-      block body
-    footer
-      include ./footer
-
-    #scripts
+    .wrapper
+      include ./nav
+      include ./modal
+      main
+        include ./flash
+        block body
+      footer
+        include ./footer
       != sharify.script()
       script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" )
       script( src=asset('/assets/layout.js') )

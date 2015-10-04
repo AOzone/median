@@ -9,7 +9,9 @@ nav
   ul.nav__right
     if user
       li: h1: a(href="/portfolio")= user.get('username')
-      li: h1: #[strong= user.get('balance')]Å
+      li: h1
+        strong=user.get('balance')
+        | Å
     else
       li: h1: a(href="/login") Log in
       li: h1: a(href="/signup") Register

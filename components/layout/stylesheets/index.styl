@@ -2,6 +2,16 @@
 
 normalize-css()
 
+html, body
+  margin 0
+  padding 0
+  height 100%
+
+.wrapper
+  min-height 100%
+  position relative
+  padding-bottom 320px + (unit * 4)
+
 body
   color text-color
   background background-color
@@ -10,7 +20,7 @@ body
   box-sizing border-box
 
 main
-  margin (unit * 8) 0 0
+  padding (unit * 8) 0 0
 
 .container
   padding 0 5%
