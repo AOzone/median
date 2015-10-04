@@ -1,11 +1,24 @@
 .field
   field left
 
-input[type='text'], input[type='password'], , input[type='email']
+input[type='text'], input[type='password'], input[type='email'], input[type='date']
   input()
+  border none
+  border-radius 0
+  box-shadow none
+  border-bottom 2px solid transparent
+
+  &:focus
+    background-color transparent
+    border none
+    box-shadow none
+    border-bottom 2px solid darken(green-darker-color, 10%)
 
 label
   label block
+  font-family Work Sans Medium
+  font-size .8rem
+  color darken(green-darker-color, 10%)
 
 a.button, button, input[type="submit"]
   button()
@@ -17,3 +30,20 @@ a.button, button, input[type="submit"]
     background-color #fff
     color #000
     border 1px solid #000
+
+.button--circle
+  height unit * 5
+  width unit * 5
+  border-radius unit * 5
+  background-color green-darker-color
+  border none
+  font-weight normal
+  margin-top unit * 2
+  text-transform uppercase
+  text-align center
+  font-family Work Sans Thin
+
+  &:hover
+    background-color darken(green-darker-color, 10%)
+    color #fff
+    border none
