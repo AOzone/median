@@ -39,19 +39,25 @@ nav
 .nav__menu
   transition 0.5s
   opacity 0
-  width 30%
-  height 100%
+  width 100%
+  height auto
   position fixed
   z-index z-index-menu
   top 0
   left 0
   padding 20px
-  background linear-gradient(left, white, rgba(255,255,255, 0))
+  background background-blue-color
   visibility hidden
+  color light-text-color
   > ul
     reset-list()
     text-align left
     float none
+  ul li a, h1
+    color light-text-color
+
+    &:hover
+      color darken(light-text-color, 20%)
 
 .nav__left
   float left

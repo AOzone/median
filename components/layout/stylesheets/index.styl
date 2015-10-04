@@ -26,7 +26,11 @@ main
   padding 0 5%
 
 .flash
-  flash()
+  background black
+  color #0f0
+  padding unit
+  font-family Atlas Typewriter Regular
+  margin-bottom unit * 2
 
 p
   paragraph()
@@ -50,9 +54,7 @@ h6
   h6()
 
 pre
-  background black
-  color #0f0
-  padding unit
+  @extends .flash
 
 .section-header
   padding 4px 0
