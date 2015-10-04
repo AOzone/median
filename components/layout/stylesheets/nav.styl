@@ -12,6 +12,7 @@ nav
   h1
     font-size 1.8rem
     margin 0
+    font-weight normal
   ul
     padding 0
     text-align right
@@ -66,6 +67,61 @@ nav
     float none
     hover-lighten 30%
   &:hover .nav__menu
-    transition opacity 0.5s
+    transition opacity 0.2s
     opacity 1
     visibility visible
+
+.user_menu__overlay
+  transition 0.2s
+  opacity 0
+  width unit * 18
+  height 100%
+  position fixed
+  z-index z-index-menu
+  top 0
+  right 0
+  background background-blue-color
+  text-align center
+  visibility hidden
+  color light-text-color
+
+.user_menu:hover .user_menu__overlay
+  transition opacity 0.2s
+  opacity 1
+  visibility visible
+
+.user_menu__overlay .user_menu__inner
+  position relative
+  height 100%
+  width 100%
+  text-transform uppercase
+
+.user_menu__overlay .user_menu__portfolio
+  position absolute
+  width 100%
+  top unit
+  left 0
+  padding unit
+
+  a
+    color light-text-color
+
+.portfolio-stat__value
+  margin (unit  * 2) 0 0
+  font-weight normal
+  font-family Work Sans Thin
+
+.portfolio-stat__label
+  color darken(light-text-color, 40%)
+
+.user_menu__bottom
+  position absolute
+  width 100%
+  bottom 0
+  left 0
+  padding unit
+  border-top 1px solid lighten(background-blue-color, 10%)
+
+  a
+    color darken(light-text-color, 20%)
+

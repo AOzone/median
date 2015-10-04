@@ -6,12 +6,10 @@ nav
     include ./menu
   .nav__mark
     h1: a(href="/") Å
-  ul.nav__right
-    if user
-      li: h1: a(href="/portfolio")= user.get('username')
-      li: h1
-        strong=user.get('balance')
-        | Å
-    else
+
+  if user
+    include ./user_menu
+  else
+    ul.nav__right
       li: h1: a(href="/login") Log in
       li: h1: a(href="/signup") Register
