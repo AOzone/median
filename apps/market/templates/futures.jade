@@ -1,0 +1,8 @@
+extends ../../../components/layout/templates/index
+block vars
+  - pageTitle = 'Futures Market'
+block body
+  include tabs
+  .container
+    include ./future_circles
+    include ../../../components/contract_table/index

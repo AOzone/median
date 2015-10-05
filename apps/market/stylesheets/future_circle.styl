@@ -1,0 +1,45 @@
+@import '../../../node_modules/jeet/stylus/jeet'
+
+.future-circle
+  column(1/6, cycle: 6)
+  height 300px
+  font-family Atlas Typewriter Regular
+  font-size .8rem
+  line-height 1.4rem
+
+  +above(1400px)
+    column(1/7, uncycle: 6, cycle: 7)
+
+  +below(800px)
+    column(1/4, uncycle: 6, cycle: 4)
+
+  +below(500px)
+    column(1/2, uncycle: 4, cycle: 2)
+
+  &:hover
+    .future-circle__callsign
+      text-decoration underline
+
+.future-circle__callsign
+  font-family Atlas Typewriter Bold
+
+.future-circle__circle-outer
+  height 70%
+  width 100%
+  display table
+
+.future-circle__circle-inner
+  display table-cell
+  width 100%
+  height 100%
+  vertical-align middle
+
+.future-circle__circle-circle
+  display block
+  content ""
+  height auto
+  width 100%
+  padding-top 100%
+  background-color green-color
+  border-radius 50%
+  margin 0 auto

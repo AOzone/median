@@ -1,0 +1,13 @@
+section.future-circles
+  for contract, index in contracts.models
+    a.future-circle(href="#{contract.href()}")
+      .future-circle__circle-outer
+        .future-circle__circle-inner
+          - gp = Math.abs(contract.get('gain_percent'))
+          //- /style="width: #{gp}%; padding-top: #{gp}%"
+          .future-circle__circle-circle.js-gain-bg-color(
+            data-gain="#{contract.get('gain_percent')}"
+          )
+      .future-circle__callsign #{contract.get('contract')}
+      .future-circle__title #{contract.get('title')}
+      .future-circle__bid-ask #{contract.get('ask')}Å / #{contract.get('bid')}Å
