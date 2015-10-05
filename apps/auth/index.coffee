@@ -14,7 +14,7 @@ app.get '/login', (req, res) ->
   res.render 'login', message: req.flash 'error'
 
 app.post '/login', passport.authenticate 'login',
-  successRedirect: '/'
+  successRedirect: '/portfolio'
   failureRedirect: '/login'
   failureFlash: true
 
@@ -24,7 +24,7 @@ app.get '/signup', (req, res) ->
     genders: genders
 
 app.post '/signup', passport.authenticate 'signup',
-  successRedirect: '/'
+  successRedirect: '/market'
   failureRedirect: '/signup'
   failureFlash: true
 
