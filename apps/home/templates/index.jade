@@ -2,5 +2,13 @@ extends ../../../components/layout/templates/index
 block vars
   - pageTitle = 'Futures'
 block body
+  .landing-outer
+    #index-heatmap.index-heatmap
+    .index-overlay-outer
+      h2 The Åzone Futures Market is currently 62% #[strong SAFE]
   .container
-    include ../../../components/contract_table/index
+    section.news
+      include ../../../components/news_list/templates/index
+
+block scripts
+  script( src=asset('/assets/home.js') )

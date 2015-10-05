@@ -7,7 +7,7 @@ table.contract-list.is-large
       td Sell
       td Gain
   tbody
-    for contract, index in contracts
+    for contract, index in contracts.models
       tr(class= index == 0 ? 'is-active' : '')
         td #{contract.get('contract')}
         td
