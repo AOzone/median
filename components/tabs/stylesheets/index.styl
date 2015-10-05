@@ -1,0 +1,25 @@
+.tab--container
+  border-bottom 1px solid border-color
+  text-transform uppercase
+  margin-bottom unit * 2
+
+ul.tab--container__nav
+  inline-list unit * 2
+  text-align center
+
+ul li.tab--container__nav__item
+  float none
+  display inline-block
+  color text-color
+  margin-bottom -1px
+
+  &.is-active
+    color text-color
+    border-bottom 2px solid text-color
+
+.tab-content
+  display none
+  padding unit * 1.5
+
+  &.is-active
+    display block

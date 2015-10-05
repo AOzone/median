@@ -1,0 +1,7 @@
+mixin tab(path, slug, title)
+  li.tab--container__nav__item(class= tab == slug ? "tab--container__nav__item--#{slug} is-active" : "tab--container__nav__item--#{slug}" )
+    h4: a(href="/#{path}/#{slug}") #{title}
+
+.tab--container
+  ul.tab--container__nav
+    block tabs
