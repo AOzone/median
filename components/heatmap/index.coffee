@@ -10,8 +10,8 @@ module.exports =
         gradient:
           0.1: '#0AFFCD'
           0.95: '#235AFF'
-        maxOpacity: .9
-        radius: 50
+        maxOpacity: 1
+        radius: 20
         blur: .99
 
       width = (+window.getComputedStyle(document.body).width.replace(/px/,''))
@@ -22,11 +22,11 @@ module.exports =
       min = Math.min.apply(Math, extremas)
       t = []
 
-      for filename in [1..400]
+      for filename in [1..900]
         x = (Math.random() * (width / 2)) >> 0
         y = (Math.random() * (height/ 2)) >> 0
         c = ((Math.random() * max-min) >> 0) + min
-        r = (Math.random() * 80) >> 0
+        r = (Math.random() * 100) >> 0
         t.push({ x: x * 2, y: y * 2, value: c, radius: r })
 
       heatmap.setData
