@@ -1,7 +1,7 @@
 Backbone = require 'backbone'
 { KERNAL_API_URL } = require '../config.coffee'
-transactionMap = require '../maps/transactions'
-{ authTokenPair } = require '../lib/util/token'
+transactionMap = require '../maps/transactions.coffee'
+{ authTokenPair } = require '../lib/util/token.coffee'
 _ = require 'underscore'
 
 module.exports = class Account extends Backbone.Model
@@ -16,6 +16,9 @@ module.exports = class Account extends Backbone.Model
 
   idOr_id: ->
     @id or @get('_id')
+
+  orNull: ->
+    if sd.CURRENT_USER then new @(sd.CURRENT_USER) else null
 
   holdsPosition: (contract) ->
     _.any @get('open_positions'), (position) ->
