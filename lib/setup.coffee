@@ -30,6 +30,7 @@ Backbone = require 'backbone'
 sharify = require 'sharify'
 sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 cache = require './cache'
+addLocals = require './middleware/add_locals'
 
 mongoose = require 'mongoose'
 mongoose.connect MONGO_URL
@@ -101,8 +102,13 @@ module.exports = (app) ->
   # Passport
   initPassport passport, app
 
-  # Mount apps
+  # Auth
   app.use require "../apps/auth"
+
+  # Middleware
+  app.use addLocals
+
+  # Mount apps
   app.use require "../apps/home"
   app.use require "../apps/market"
   app.use require "../apps/contract"

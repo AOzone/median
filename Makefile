@@ -10,7 +10,11 @@ BIN = node_modules/.bin
 
 # Start the server
 s:
-	$(BIN)/coffee index.coffee
+	foreman start
+
+# Start the server using forever
+sf:
+	$(BIN)/forever $(BIN)/coffee --nodejs --max_old_space_size=960 index.coffee
 
 # Run all of the project-level tests, followed by app-level tests
 test: assets

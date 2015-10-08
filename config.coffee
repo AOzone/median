@@ -31,14 +31,6 @@ module.exports =
   S3_BUCKET: null
   CDN_URL: null
 
-if process.env.NODE_ENV?
-  val = (process.env.NODE_ENV or val)
-  module.exports.NODE_ENV = try JSON.parse(val) catch then val
-
-if module.exports.NODE_ENV is "development"
-  env = require 'node-env-file'
-  env __dirname + '/.env'
-
 # Override any values with env variables if they exist
 for key, val of module.exports
   val = (process.env[key] or val)
