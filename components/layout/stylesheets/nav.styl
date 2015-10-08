@@ -19,6 +19,12 @@ nav
   .nav--right h1
     font-weight normal
 
+body.is-dark
+  nav, nav h1, nav a
+    color light-text-color !important
+  .nav__mark > h1
+    border 1px solid rgba(255,255,255, 0.5)
+
 .nav__mark
   padding unit
   width 100%
@@ -33,7 +39,6 @@ nav
     float none
     border-radius 50%
     border 1px solid rgba(0,0,0, 0.5)
-    // background-color background-color
     padding 10px 24px
     pointer-events all
 

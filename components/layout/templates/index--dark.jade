@@ -1,0 +1,24 @@
+- pageTitle = 'Futures Market'
+block vars
+
+doctype html
+html
+  head
+    title
+      | Åzone
+      | #{pageTitle}
+    link(rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon")
+    link( type='text/css', rel='stylesheet', href=asset('/assets/all.css') )
+    block styles
+
+  body.is-dark
+    .wrapper
+      include ./nav
+      include ./modal
+      main
+        include ./flash
+        block body
+      != sharify.script()
+      script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" )
+      script( src=asset('/assets/layout.js') )
+      block scripts

@@ -1,6 +1,6 @@
 Backbone = require 'backbone'
 sd = require("sharify").data
-Account = require '../models/account'
+Account = require '../models/account.coffee'
 _ = require 'underscore'
 
 module.exports = class Accounts extends Backbone.Collection

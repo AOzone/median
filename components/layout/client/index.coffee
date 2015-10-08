@@ -1,8 +1,12 @@
 { initTableView } = require '../../contract_table/index.coffee'
-{ getColor } = require '../../color/index.coffee'
+{ initConfirmTrade } = require '../../confirm_trade/client/index.coffee'
+{ getColor, lightOrDark } = require '../../color/index.coffee'
+
+require 'jquery.transition'
 
 module.exports.initLayout = ->
   initTableView()
+  initConfirmTrade()
 
   $('.js-gain-color').each (index) ->
     gain = $(this).data 'gain'

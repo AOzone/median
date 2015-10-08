@@ -16,6 +16,10 @@ body
   color text-color
   background background-color
 
+body.is-dark
+  background-color background-blue-color
+  color light-text-color
+
 *
   box-sizing border-box
 
@@ -71,6 +75,12 @@ a
 section
   clearfix()
   margin-bottom unit * 4
+
+force-hardware-acceleration()
+  transform translate3d(0, 0, 0)
+
+prevent-content-shift()
+  transform translateZ(0)
 
 @import 'fonts'
 @import 'util'
