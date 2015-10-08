@@ -3,8 +3,11 @@ Backbone.$ = $
 sd = require("sharify").data
 Chart = require '../../../collections/chart.coffee'
 Contract = require '../../../models/contract.coffee'
+Contracts = require '../../../collections/contracts.coffee'
+Blocks = require '../../../collections/blocks.coffee'
+NewsListView = require '../../../components/news_list/client/index.coffee'
 { initTickChart } = require '../../../components/tick_chart/index.coffee'
-{ getColor } = require '../../../components/color/index.coffee'
+{ getColor, lightOrDark } = require '../../../components/color/index.coffee'
 
 module.exports.ContractView = class ContractView extends Backbone.View
   events:
@@ -18,15 +21,20 @@ module.exports.ContractView = class ContractView extends Backbone.View
 
 module.exports.init = ->
   contract = new Contract sd.CONTRACT
+  contracts = new Contracts sd.ALL_CONTRACTS
+  news = new Blocks sd.BLOCKS, id: contract.id
 
   new ContractView
     el: $('.container--contract')
     model: contract
 
+  new NewsListView(
+    el: $('section.contract__news')
+    collection: news
+    contracts: contracts
+  ).postRender()
+
   chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
   initTickChart chart, $('#chart')
 
   $('main').css 'backgroundColor': "##{getColor(contract.get('gain_percent'))}"
-
-
-

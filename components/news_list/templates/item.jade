@@ -1,7 +1,7 @@
 if item.get('source')
   .news__item
     .news__item__top
-      .news__item__callsigns
+      .news__item__callsigns(data-item_id=item.id)
         each callSign in item.callSignArray()
           - contract = contracts.findWhere({'contract': callSign})
           - block_id = item.id

@@ -1,14 +1,15 @@
-extends ../../../components/layout/templates/index
+extends ../../../components/layout/templates/index--dark
 
 block body
   .container.container--order
-    h1.confirm-transaction.center #{transaction} 1 share of #{contract.id} @ #{price}?
+    .container--order__confirm
+      h1.confirm-transaction.center #{transaction} 1 share of #{contract.id} @ #{price}?
 
-    form.center(method="post", action="#{contract.href()}/#{transaction}/confirm")
-      if block_id
-        input(type="hidden", name="block_id", value="#{block_id}")
-      input(type="submit", value="Confirm")
-      a.button(href="#{contract.href()}") Cancel
+      form.center(method="post", action="#{contract.href()}/#{transaction}/confirm")
+        if block_id
+          input(type="hidden", name="block_id", value="#{block_id}")
+        input(type="submit", value="Confirm")
+        a.button(href="#{contract.href()}") Cancel
 
 block scripts
    script( src=asset('/assets/order.js')  )

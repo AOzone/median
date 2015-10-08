@@ -40,12 +40,15 @@ fetchContract = (callSign, next, cb)->
   .done()
 
   dfd.promise
+
 @show = (req, res, next) ->
   callSign = req.params.id
   fetchContract(callSign, next).then ({ contract, blocks, chart, contracts }) ->
 
     res.locals.sd.TICK_CHART = chart.toJSON()
     res.locals.sd.CONTRACT = contract.toJSON()
+    res.locals.sd.ALL_CONTRACTS = contracts.toJSON()
+    res.locals.sd.BLOCKS = blocks.toJSON()
 
     res.render 'contract',
       news: blocks
