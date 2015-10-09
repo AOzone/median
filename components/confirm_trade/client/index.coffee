@@ -5,18 +5,19 @@ mediator = require '../../../lib/mediator.coffee'
 template = -> require('../templates/index.jade') arguments...
 
 module.exports.ConfirmTradeView = class ConfirmTradeView extends Backbone.View
+  className: 'v-outer'
 
-  initialize: ({ @model, @title, @block_id }) ->
+  initialize: ({ @model, @title, @block_id, @transaction }) ->
     # nothin yet
 
-  render: ->
-    console.log 'model'
+  render: =>
     @$el.html template
       contract: @model
       title: @title
       block_id: @block_id
+      transaction: @transaction
 
-    this
+    return this
 
 module.exports.initConfirmTrade = ->
   mediator.on 'confirm:trade', (options) ->

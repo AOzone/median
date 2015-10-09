@@ -47,3 +47,18 @@ a.button, button, input[type="submit"]
     background-color darken(green-darker-color, 10%)
     color #fff
     border none
+
+input[type="submit"].button--modal, .button--modal
+  transition 0.2s all
+  border-radius 0
+  background transparent
+  border 2px solid lighten(background-blue-color, 20%)
+  color lighten(background-blue-color, 20%)
+  text-transform uppercase
+  font-family Work Sans Light
+  padding unit (unit*1.5)
+  font-size 1.15rem
+
+  &:hover
+    color green-darker-color
+    border-color green-darker-color

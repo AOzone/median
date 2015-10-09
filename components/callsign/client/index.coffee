@@ -9,15 +9,15 @@ module.exports = class CallSignView extends Backbone.View
     'click .js-make-transaction' : 'triggerConfirmModal'
 
   initialize: ({ @model, @item }) ->
-    console.log 'model', @model
     # nothin yet
 
-  triggerConfirmModal: ->
+  triggerConfirmModal: (e)->
     if @item?
       mediator.trigger 'confirm:trade',
         model: @model
         title: @item.get('title')
         block_id: @item.id
+        transaction: $(e.currentTarget).data('transaction')
 
   render: ->
     @$el.html template

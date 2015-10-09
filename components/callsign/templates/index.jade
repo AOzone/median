@@ -8,6 +8,6 @@
         - params = ""
 
       if user.canMakeTransaction('buy', contract).success
-        a(data-transaction="buy").js-make-transaction Buy @ #{contract.get('ask')}Å
+        a.js-make-transaction(data-transaction="buy") Buy @ #{contract.get('ask')}Å
       if user.canMakeTransaction('sell', contract).success
-        a(data-transaction="sell").js-make-transaction Sell @ #{contract.get('bid')}Å
+        a.js-make-transaction(data-transaction="sell") Sell @ #{contract.get('bid')}Å

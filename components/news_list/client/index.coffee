@@ -26,7 +26,6 @@ module.exports = class NewsListView extends Backbone.View
         callSignSelector = ".call-sign[data-contract_id=#{callSign}]"
 
         contract = @contracts.findWhere({'contract': callSign})
-        console.log 'contract', contract, callSign, @contracts
 
         new CallSignView
           el: $("#{itemSelector} #{callSignSelector}")

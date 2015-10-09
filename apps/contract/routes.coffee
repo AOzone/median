@@ -85,6 +85,7 @@ fetchContract = (callSign, next, cb)->
   .done()
 
 @transaction = (req, res, next) ->
+  console.log 'making transaction', req.user
   return next() unless req.user
   transaction = req.params.transaction
 
@@ -92,14 +93,17 @@ fetchContract = (callSign, next, cb)->
   block_id = req.body.block_id
 
   fetchContract(callSign, next).then ({ contract, blocks }) ->
+    console.log 'we got the contract', contract
 
     { success, reason } = req.user.canMakeTransaction transaction, contract
     unless success
+      console.log 'reason', reason
       req.flash 'error', reason
       return res.redirect "/contract/#{contract.id}"
 
     req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id },
-      success: ->
+      success: (model, response)->
+        console.log 'success', response
         # refresh user balance
         req.logIn req.user, (err) ->
           res.redirect "/contract/#{contract.id}"
