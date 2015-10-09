@@ -1,3 +1,5 @@
+@import 'variables'
+
 .field
   field left
 
@@ -49,7 +51,7 @@ a.button, button, input[type="submit"]
     border none
 
 input[type="submit"].button--modal, .button--modal
-  transition 0.2s all
+  transition all 0.3s
   border-radius 0
   background transparent
   border 2px solid lighten(background-blue-color, 20%)
@@ -58,7 +60,12 @@ input[type="submit"].button--modal, .button--modal
   font-family Work Sans Light
   padding unit (unit*1.5)
   font-size 1.15rem
+  outline none
 
   &:hover
     color green-darker-color
     border-color green-darker-color
+
+  &:active, &:focus
+    color light-text-color
+    border-color light-text-color
