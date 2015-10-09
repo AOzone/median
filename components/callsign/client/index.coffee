@@ -1,6 +1,7 @@
 Backbone = require 'backbone'
 mediator = require '../../../lib/mediator.coffee'
 Account = require '../../../models/account.coffee'
+transactionMap = require '../../../maps/transactions.coffee'
 
 template = -> require('../templates/index.jade') args...
 
@@ -18,6 +19,7 @@ module.exports = class CallSignView extends Backbone.View
         title: @item.get('title')
         block_id: @item.id
         transaction: $(e.currentTarget).data('transaction')
+        map: transactionMap
 
   render: ->
     @$el.html template

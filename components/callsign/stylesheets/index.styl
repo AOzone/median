@@ -5,7 +5,7 @@
   margin-right 8px
   cursor pointer
   &:hover .call-sign__bubble
-    display block
+    display table
 
 .call-sign__id
   padding 8px 16px
@@ -14,15 +14,26 @@
 
 .call-sign__bubble
   display none
-  bubble top left background-blue-color
+  box-shadow 1px 1px 1px rgba(0,0,0,0.2)
   position absolute
-  min-width unit * 8
+  bottom 103%
   background background-blue-color
   border-radius 2px
   text-align center
-  a
+  font-family Work Sans Thin
+
+  a.js-make-transaction
+    display table-cell
+    padding unit * 0.75
     color light-text-color
-    display block
-    h5()
+    border-right 1px solid light-text-color
+
+  a.js-make-transaction:last-child
+    border-right none
+
+  label
+    color light-text-color
+    font-family Work Sans Thin
+
   a:hover
     color darken(light-text-color, 20%)
