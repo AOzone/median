@@ -14,7 +14,7 @@ Contracts = require '../../collections/contracts.coffee'
   ]
   .then ->
     res.locals.sd.BLOCKS = blocks
-    res.locals.sd.CONTRACTS = contracts
+    res.locals.sd.ALL_CONTRACTS = contracts
     res.render 'index',
       news: blocks
       contracts: contracts
