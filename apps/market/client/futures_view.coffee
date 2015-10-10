@@ -10,5 +10,5 @@ module.exports.init = ->
   contracts.each (contract) ->
     mc = contracts.relativeMarketCap contract
     $("#contract_#{contract.get('contract')} .future-circle__circle").css
-      width: "#{(mc * 6) * 100}%"
-      paddingTop: "#{(mc * 6) * 100}%"
+      width: "#{mc}%"
+      paddingTop: "#{mc}%"
