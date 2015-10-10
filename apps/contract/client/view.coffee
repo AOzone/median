@@ -6,7 +6,7 @@ Contract = require '../../../models/contract.coffee'
 Contracts = require '../../../collections/contracts.coffee'
 Blocks = require '../../../collections/blocks.coffee'
 NewsListView = require '../../../components/news_list/client/index.coffee'
-{ initTickChart } = require '../../../components/tick_chart/index.coffee'
+{ initTickChart, updateTickChart } = require '../../../components/tick_chart/index.coffee'
 { getColor, lightOrDark } = require '../../../components/color/index.coffee'
 
 module.exports.ContractView = class ContractView extends Backbone.View
@@ -36,5 +36,7 @@ module.exports.init = ->
 
   chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
   initTickChart chart, $('#chart')
+
+  $(window).on 'resize', -> updateTickChart chart, $('#chart')
 
   $('main').css 'backgroundColor': "##{getColor(contract.get('gain_percent'))}"
