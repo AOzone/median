@@ -1,0 +1,50 @@
+#index-heatmap-key
+  position absolute
+  height 100vh
+  top 0
+  margin-top 0
+  width 100%
+
+.index-heatmap, .index-overlay-outer
+  position absolute
+  width 100%
+  height 100%
+  top 0
+  left 0
+
+.heatmap-key
+  position absolute
+  color text-color
+  h5()
+
+.heatmap-key__x1
+  // left center
+  height 100%
+  text-align center
+  left unit
+  transform rotate(-90deg)
+
+  h5
+    vertically-align()
+
+.heatmap-key__x2
+  // right center
+  height 100%
+  text-align center
+  right unit
+  transform rotate(90deg)
+
+  h5
+    vertically-align()
+
+.heatmap-key__y1
+  // bottom center
+  bottom unit
+  width 100%
+  text-align center
+
+.heatmap-key__y2
+  // top center
+  top (unit * 4)
+  width 100%
+  text-align center
