@@ -11,3 +11,6 @@ module.exports = class Contract extends Backbone.Model
 
   idOrContract: ->
     @get('contract') or @id
+
+  getMarketCap: ->
+    parseInt(@get('market_cap')) + 1
