@@ -72,7 +72,7 @@ fetchContract = (callSign, next, cb)->
     { success, reason } = req.user.canMakeTransaction transaction, contract
     unless success
       req.flash 'error', reason
-      return res.redirect "/contract/#{contract.id}"
+      return res.redirect "/future/#{contract.id}"
 
     res.render 'order',
       news: blocks
@@ -97,20 +97,20 @@ fetchContract = (callSign, next, cb)->
     { success, reason } = req.user.canMakeTransaction transaction, contract
     unless success
       req.flash 'error', reason
-      return res.redirect "/contract/#{contract.id}"
+      return res.redirect "/future/#{contract.id}"
 
     req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id },
       success: (model, response)->
         unless response.success
           req.flash 'error', error
-          return res.redirect "/contract/#{contract.id}"
+          return res.redirect "/future/#{contract.id}"
 
         # refresh user balance
         req.logIn req.user, (err) ->
-          res.redirect "/contract/#{contract.id}"
+          res.redirect "/future/#{contract.id}"
       error: (account, error)->
         req.flash 'error', error
-        res.redirect "/contract/#{contract.id}"
+        res.redirect "/future/#{contract.id}"
   .catch next
   .done()
 

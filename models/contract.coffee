@@ -7,7 +7,7 @@ module.exports = class Contract extends Backbone.Model
     "#{sd.KERNAL_API_URL}/contracts/#{@id}"
 
   href: ->
-    "#{sd.APP_URL}/contract/#{@idOrContract()}"
+    "#{sd.APP_URL}/market/futures/#{@idOrContract()}"
 
   idOrContract: ->
     @get('contract') or @id

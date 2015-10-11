@@ -111,7 +111,7 @@ module.exports = (app) ->
   # Mount apps
   app.use require "../apps/home"
   app.use require "../apps/market"
-  app.use require "../apps/contract"
+  app.use require "../apps/future"
   app.use require "../apps/portfolio"
   app.use require "../apps/leaderboard"
   app.use require "../apps/news"
