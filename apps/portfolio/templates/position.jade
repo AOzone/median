@@ -8,7 +8,7 @@
 //-   td
 
 tr.portfolio-list__position
-  td(data-th="callsign"): a(href="/contract/#{position.get('contract')}") #{position.get('contract')}
+  td(data-th="callsign"): a(href="/market/futures/#{position.get('contract')}") #{position.get('contract')}
   td(data-th="current price") #{position.get('bid')}Å
   td(data-th="purchase price") #{position.get('avg_price')}Å
   td(data-th="total gain / loss").js-gain-color(data-gain="#{position.gainOrLoss()}") %#{position.gainOrLoss()}
