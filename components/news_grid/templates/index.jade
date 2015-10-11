@@ -1,3 +1,9 @@
 .grid.grid--news
+  if isURL
+    .news____grid-item.news____grid-item--add(data-query=query)
+      h2.news__grid-item__title Add a new tip to the Åzone Futures market
+
+      .news__grid-item__meta
+        .news__grid-item__source-domain= query
   each item, index in news.models
     include item.jade

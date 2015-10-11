@@ -12,4 +12,4 @@ module.exports = class Blocks extends BaseArenaCollection
     super
 
   parse: (data) ->
-    data.blocks
+    _.flatten _.values _.pick(data, ['contents', 'followers', 'users', 'channels', 'following', 'blocks', 'results'])
