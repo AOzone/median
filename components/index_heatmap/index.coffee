@@ -27,6 +27,7 @@ module.exports =
         0: color1
         1: color2
       blur: 1
+      maxOpacity: 0.9
 
     width = (+window.getComputedStyle(document.body).width.replace(/px/,''))
     height = (+window.getComputedStyle(document.body).height.replace(/px/,''))
@@ -36,12 +37,12 @@ module.exports =
       contract = contracts.findWhere({'contract': contractKey})
       x = normalizeIndexPlot plot[_.keys(plot)[0]], width
       y = normalizeIndexPlot plot[_.keys(plot)[2]], height
-      v = contract.get('gain_percent') / 100
+      v = if contract.get('gain_percent') < 0 then 0 else contract.get('gain_percent') / 100
       r = contracts.relativeMarketCap contract
       plots.push({ x: x, y: y, value: v, radius: r * 8 })
 
     heatmap.setData
-      max: 4
+      max: 2
       data: plots
 
     window.onresize = ->
