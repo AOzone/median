@@ -13,7 +13,6 @@ block body
             td Total Gain
             td Shares
             td Market Value
-            td
         tbody
           for position in positions.models
             include ./position
@@ -25,7 +24,6 @@ block body
             td.js-gain-color(data-gain="#{positions.totalPercentageGain()}") %#{positions.totalPercentageGain()}
             td
             td.js-gain-color(data-gain="#{positions.totalPercentageGain()}") #{positions.totalMarketValue()}Å
-            td
     else
       .error.is-centered
         h3 No positions yet

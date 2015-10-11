@@ -33,10 +33,26 @@ table
     font-family Work Sans
 
   +below(900px)
+    tbody tr.is-active .is-not-displayed
+      display none
     td
-      padding unit
+      display block
+      padding (unit / 2)
+      text-align left
+      border-top none
+      &:before
+        content attr(data-th)": "
+        font-family Atlas Typewriter Bold
+        color text-color
+        text-transform uppercase
+    td:nth-child(1)
+      padding-left (unit / 2)
+    td:last-child
+      padding-bottom (unit * 2)
+      margin-bottom (unit * 2)
+      border-bottom 1px solid border-color
     thead
-      font-family Work Sans SemiBold
+      display none
     &.is-large tbody
       h5()
       font-weight normal

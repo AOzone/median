@@ -8,10 +8,9 @@
 //-   td
 
 tr.portfolio-list__position
-  td: a(href="/contract/#{position.get('contract')}") #{position.get('contract')}
-  td #{position.get('bid')}Å
-  td #{position.get('avg_price')}Å
-  td.js-gain-color(data-gain="#{position.gainOrLoss()}") %#{position.gainOrLoss()}
-  td #{position.get('qty')}
-  td.js-gain-color(data-gain="#{position.gainOrLoss()}") #{position.value()}Å
-  td
+  td(data-th="callsign"): a(href="/contract/#{position.get('contract')}") #{position.get('contract')}
+  td(data-th="current price") #{position.get('bid')}Å
+  td(data-th="purchase price") #{position.get('avg_price')}Å
+  td(data-th="total gain / loss").js-gain-color(data-gain="#{position.gainOrLoss()}") %#{position.gainOrLoss()}
+  td(data-th="no. of shares") #{position.get('qty')}
+  td(data-th="market value").js-gain-color(data-gain="#{position.gainOrLoss()}") #{position.value()}Å

@@ -9,11 +9,11 @@ table.contract-list.is-large
   tbody
     for contract, index in contracts.models
       tr(class= index == 0 ? 'is-active' : '')
-        td #{contract.get('contract')}
-        td
+        td(data-th="callsign") #{contract.get('contract')}
+        td(data-th="name")
           a(href="#{contract.href()}") #{contract.get('title')}
           p.is-not-displayed=contract.get('abstract')
-        td #{contract.get('ask')}Å
-        td #{contract.get('bid')}Å
-        td.js-gain-color(data-gain="#{contract.get('gain_percent')}")
+        td(data-th="buy") #{contract.get('ask')}Å
+        td(data-th="sell") #{contract.get('bid')}Å
+        td(data-th="gain").js-gain-color(data-gain="#{contract.get('gain_percent')}")
           | #{contract.get('gain_percent')}%
