@@ -1,4 +1,4 @@
-{ init } = require '../apps/contract/client/order_view.coffee'
+{ init } = require '../apps/future/client/order_view.coffee'
 
 $ ->
   init()
