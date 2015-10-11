@@ -5,7 +5,8 @@ _ = require 'underscore'
 module.exports = class BaseArenaModel extends Backbone.Model
 
   sync: (method, model, options)->
-    options?.headers['X-AUTH-TOKEN'] = "#{ARENA_API_TOKEN}"
+    options.headers ?= {}
+    options.headers['X-AUTH-TOKEN'] = "#{ARENA_API_TOKEN}"
     super
 
 

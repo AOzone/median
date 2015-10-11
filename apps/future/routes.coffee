@@ -5,9 +5,11 @@ sd = require("sharify").data
 Contract = require '../../models/contract.coffee'
 Contracts = require '../../collections/contracts.coffee'
 Chart = require '../../collections/chart.coffee'
+Block = require '../../models/block.coffee'
 Blocks = require '../../collections/blocks.coffee'
 contractMap = require '../../maps/contracts.coffee'
 transactionMap = require '../../maps/transactions.coffee'
+title = require 'url-to-title'
 
 fetchContract = (callSign, next, cb)->
   dfd = Q.defer()
@@ -60,32 +62,23 @@ fetchContract = (callSign, next, cb)->
   .catch next
   .done()
 
-@order = (req, res, next) ->
+@addNews = (req, res, next) ->
   return next() unless req.user
-  transaction = req.params.transaction
-
+  url = req.body.url
   callSign = req.params.id
-  block_id = req.query.block_id
+  channelId = contractMap[callSign]?.channel_id
+  blocks = new Blocks [], id: channelId
+  block = new Block source: url
 
-  fetchContract(callSign, next).then ({ contract, blocks }) ->
-
-    { success, reason } = req.user.canMakeTransaction transaction, contract
-    unless success
-      req.flash 'error', reason
-      return res.redirect "/market/futures/#{contract.id}"
-
-    res.render 'order',
-      news: blocks
-      contract: contract
-      transaction: transaction
-      price: contract.get transactionMap[transaction]
-      block_id: block_id
-
-  .catch next
-  .done()
+  title url, (err, title) ->
+    blocks.create block.toJSON(),
+      url: "#{sd.ARENA_API_URL}/channels/#{channelId}/blocks"
+      wait: true
+      success: (block) ->
+        res.send JSON.stringify block_id: block.id, title: title
+      error: res.backboneError
 
 @transaction = (req, res, next) ->
-  console.log 'making transaction', req.user
   return next() unless req.user
   transaction = req.params.transaction
 
