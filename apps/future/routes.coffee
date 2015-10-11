@@ -75,7 +75,7 @@ fetchContract = (callSign, next, cb)->
       url: "#{sd.ARENA_API_URL}/channels/#{channelId}/blocks"
       wait: true
       success: (block) ->
-        res.send JSON.stringify block_id: block.id, title: title
+        res.send block_id: block.id, title: title
       error: res.backboneError
 
 @transaction = (req, res, next) ->
