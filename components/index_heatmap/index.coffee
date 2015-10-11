@@ -12,7 +12,6 @@ module.exports =
 
     window.onload = ->
       createHeatmap container_id, map, contracts
-      createHeatmap container_id, map, contracts
 
   plotHeatmapKeys: plotHeatmapKeys = (container_id, map) ->
     keys = _.keys _.values(map)[0]
@@ -47,5 +46,4 @@ module.exports =
 
     window.onresize = ->
       $("##{container_id}").html ""
-      createHeatmap container_id, map, contracts
       createHeatmap container_id, map, contracts

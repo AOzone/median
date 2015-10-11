@@ -9,6 +9,11 @@ footer
   line-height 1.6rem
   color light-text-color
 
+  +below(900px)
+    font-size .8rem
+    height auto
+    padding-bottom unit * 4
+
 .footer-logo
   position absolute
   top unit * 2
@@ -16,6 +21,12 @@ footer
 
   svg, svg path
     fill light-text-color !important
+
+  +below(900px)
+    position static
+    padding unit * 2
+    svg, svg path
+      width 100%
 
 .footer-nav
   position absolute
@@ -26,6 +37,17 @@ footer
     inline-list unit * 2
     text-transform uppercase
 
+  +below(900px)
+    bottom 0
+    left 0
+    width 100%
+    padding unit
+
+    ul
+      font-size .6rem
+      inline-list unit
+      margin 0 auto
+
 .footer-arena-credit
   width 300px
   position absolute
@@ -33,8 +55,18 @@ footer
   bottom unit * 2
   text-transform uppercase
 
+  +below(900px)
+    width 100%
+    position static
+    padding unit
+
 .footer-right-credit
   width 300px
   position absolute
   right unit * 2
   top unit * 2
+
+  +below(900px)
+    width 100%
+    position static
+    padding unit

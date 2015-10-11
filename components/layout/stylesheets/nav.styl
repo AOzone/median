@@ -6,17 +6,33 @@ nav
   background transparent
   padding unit
   height auto
+  max-width 100%
   box-shadow 1px 1px rgba(0,0,0,0)
   border-bottom none
+
   h1
     font-size 1.8rem
     margin 0
     font-weight normal
+
   ul
     padding 0
     text-align right
+
   .nav--right h1
     font-weight normal
+
+  +below(900px)
+    position absolute
+    max-width 100vw
+    padding (unit / 2)
+
+    h1
+      font-size 1rem
+      padding-left (unit/2)
+
+    ul li
+      margin-right (unit/2)
 
 body.is-dark
   nav, nav h1, nav a
@@ -33,6 +49,7 @@ body.is-dark
   top 0
   height 100%
   pointer-events none
+
   > h1
     display inline-block
     float none
@@ -40,6 +57,9 @@ body.is-dark
     border 1px solid rgba(0,0,0, 0.5)
     padding 10px 24px
     pointer-events all
+
+  +below(900px)
+    display none
 
 .nav__menu
   transition 0.5s
@@ -60,7 +80,6 @@ body.is-dark
     float none
   ul li a, h1
     color light-text-color
-
     &:hover
       color darken(light-text-color, 20%)
 
@@ -88,6 +107,9 @@ body.is-dark
   text-align center
   visibility hidden
   color light-text-color
+
+  +below(900px)
+    display none
 
 .user_menu:hover .user_menu__overlay
   transition opacity 0.2s

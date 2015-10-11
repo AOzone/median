@@ -1,5 +1,6 @@
 @import 'variables'
 @import '../../../node_modules/nib'
+@import '../../../node_modules/jeet/stylus/jeet'
 
 normalize-css()
 
@@ -27,6 +28,9 @@ body.is-dark
 main
   transition background 0.5s ease-in-out-sine
   padding (unit * 8) 0 0
+
+  +below(900px)
+    padding (unit * 4) 0 0
 
 .container
   padding 0 5%
@@ -60,18 +64,28 @@ p
 
 h1
   h1()
+  +below(900px)
+    h2()
 
 h2
   h2()
+  +below(900px)
+    h3()
 
 h3
   h3()
+  +below(900px)
+    h4()
 
 h4
   h4()
+  +below(900px)
+    h5()
 
 h5
   h5()
+  +below(900px)
+    h6()
 
 h6
   h6()
