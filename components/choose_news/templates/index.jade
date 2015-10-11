@@ -1,0 +1,13 @@
+.modal-body--choose-news.center
+  .choose-news-dialog.center
+    .choose-news-dialog--inner
+      h4 Connect a news item to make the trade
+      h2
+        span.capitalize #{transaction}&nbsp;
+        strong #{contract.get('bid')}Å&nbsp;
+        | of&nbsp;
+        strong #{contract.get('title')}&nbsp;
+        | based on:
+
+  .choose-news-grid
+    include ../../news_grid/templates/index

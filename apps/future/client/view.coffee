@@ -6,6 +6,7 @@ Contract = require '../../../models/contract.coffee'
 Contracts = require '../../../collections/contracts.coffee'
 Blocks = require '../../../collections/blocks.coffee'
 NewsListView = require '../../../components/news_list/client/index.coffee'
+CallSignView = require '../../../components/callsign/client/index.coffee'
 { initTickChart, updateTickChart } = require '../../../components/tick_chart/index.coffee'
 { getColor, lightOrDark } = require '../../../components/color/index.coffee'
 
@@ -33,6 +34,10 @@ module.exports.init = ->
     collection: news
     contracts: contracts
   ).postRender()
+
+  new CallSignView
+    el: $(".contract__callsign")
+    model: contract
 
   chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
   initTickChart chart, $('#chart')

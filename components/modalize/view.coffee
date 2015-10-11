@@ -15,6 +15,8 @@ module.exports = class Modalize extends Backbone.View
     { @subView, @dimensions } = _.defaults options, @defaults
     $(window).on 'keyup.modalize', @escape
 
+    @subView.once 'close', @close, @
+
   state: (state, callback = $.noop) -> _.defer =>
     @$el
       .attr 'data-state', state

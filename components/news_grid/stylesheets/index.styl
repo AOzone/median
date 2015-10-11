@@ -1,0 +1,31 @@
+.grid--news
+  clearfix()
+  height auto
+
+.news____grid-item
+  column(1/4, cycle: 4)
+  height 300px
+  color text-color
+  border 1px solid border-color
+  border-radius 4px
+  margin-bottom 3%
+  text-align left
+  padding unit
+  cursor pointer
+  transition all 0.2s ease-in-out-sine
+  position relative
+
+  &:hover
+    background-color darken(background-color, 10%)
+
+  &.is-selected
+    background-color darken(background-color, 30%)
+
+.news__grid-item__title
+  font-family Atlas Typewriter Bold
+  font-size 1.1rem
+
+.news__grid-item__meta
+  position absolute
+  bottom unit
+  left unit
