@@ -95,7 +95,7 @@ fetchContract = (callSign, next, cb)->
     req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id },
       success: (model, response)->
         unless response.success
-          req.flash 'error', error
+          req.flash 'error', response?.message
           return res.redirect "/market/futures/#{contract.id}"
 
         # refresh user balance
