@@ -31,6 +31,7 @@ sharify = require 'sharify'
 sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 cache = require './cache'
 addLocals = require './middleware/add_locals'
+marketStatus = require './middleware/market_status'
 
 mongoose = require 'mongoose'
 mongoose.connect MONGO_URL
@@ -108,6 +109,7 @@ module.exports = (app) ->
 
   # Middleware
   app.use addLocals
+  app.use marketStatus
 
   # Mount apps
   app.use require "../apps/home"
