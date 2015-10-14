@@ -1,0 +1,64 @@
+.nav-overlay
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index z-index-menu + 1
+  display none
+  &[data-state='active']
+    > .nav-overlay-backdrop
+    > .nav-overlay-close
+    > .nav-overlay-menu
+      opacity 1
+    > .nav-overlay-menu
+      transform translateY(0)
+
+.nav-overlay-close
+  position absolute
+  top 0
+  right 0
+  font-size 3rem
+  color white
+  line-height 1
+  cursor pointer
+  padding 40px
+  transition opacity 0.25s
+  opacity 0
+  &:hover
+    opacity 0.5
+
+.nav-overlay-backdrop
+  position absolute
+  background-color rgba(white, 0.75)
+  top 0
+  right 0
+  bottom 0
+  left 0
+  opacity 0
+  transition opacity 0.25s
+
+.nav-overlay-menu
+  position absolute
+  top 0
+  right 0
+  left 0
+  padding 40px 40px 50px 40px
+  background-color black
+  transform translateY(-100%)
+  opacity 0
+  transition transform 0.25s, opacity 0.25s
+
+.nav-overlay-menu-item
+  display block
+  color white
+  font-size 1.5rem
+  line-height 1.25
+  overflow ellipsis
+  > span:first-child
+    opacity 0
+  &:hover > span:first-child
+    opacity 1
+  +below(768px)
+    > span:first-child
+      display none
