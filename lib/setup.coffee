@@ -101,6 +101,9 @@ module.exports = (app) ->
     maxage: SESSION_COOKIE_MAX_AGE
   app.use flash()
 
+  # Check current market status before anything
+  app.use marketStatus
+
   # Passport
   initPassport passport, app
 
@@ -109,7 +112,6 @@ module.exports = (app) ->
 
   # Middleware
   app.use addLocals
-  app.use marketStatus
 
   # Mount apps
   app.use require "../apps/home"
@@ -118,6 +120,7 @@ module.exports = (app) ->
   app.use require "../apps/portfolio"
   app.use require "../apps/leaderboard"
   app.use require "../apps/news"
+  app.use require "../apps/sorry"
 
   # Finally 404 and error handling middleware when the request wasn't handled
   # successfully by anything above.
