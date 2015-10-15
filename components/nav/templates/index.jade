@@ -21,7 +21,10 @@ mixin nav-overlay-menu-item(name, href)
 nav.nav
   .nav-cell.nav-header
     a.js-nav-overlay-open
-      | Åzone Futures Market
+      | Åzone
+      = ' '
+      span Futures Market
+      include ../../../public/images/chevron-down.svg
 
   .nav-cell
     .nav-mark Å

@@ -12,11 +12,16 @@
 .nav-cell
   width (100% / 3)
   text-align center
+  +below(break)
+    width 50%
 
 .nav-header
   font-size 1.8rem
-  +below(768px)
-    font-size 1.2rem
+  +below(break)
+    &:last-child
+      font-size 1.2rem
+    span
+      display none
 
 .nav-mark
   display inline-block
@@ -28,7 +33,7 @@
   text-align center
   font-size 1.5rem
   font-weight bold
-  +below(768px)
+  +below(break)
     display none
 
 .nav-sub
@@ -41,6 +46,6 @@
     transition opacity 0.25s
     &:hover
       opacity 0.5
-    +below(768px)
+    +below(break)
       display block
       padding 0
