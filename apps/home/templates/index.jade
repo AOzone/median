@@ -7,7 +7,22 @@ block body
   .landing-overlay-outer
     h2 The Åzone Futures Market is currently 62% #[strong SAFE]
   .container
+    section.about
+      .section-header
+        .section-header__title About
+        .section-header__description
+          | Åzone Futures Market is an online Guggenheim exhibition that allows you to take a position on the effects of a world increasingly shaped by emerging technologies.
+          br
+          a(href="/about") Read more
+      canvas#about__spinning-globe(width="1200" height="400")
+        //- rendered on the client
     section.news
+      .section-header
+        .section-header__title Tips
+        .section-header__description
+          | Follow and contribute to the sharing of breaking news and information about each future as they unfold in the present.
+          br
+          a(href="/news") See all news
       include ../../../components/news_list/templates/index
 
 block scripts

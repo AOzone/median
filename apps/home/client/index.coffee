@@ -4,6 +4,7 @@ NewsListView = require '../../../components/news_list/client/index.coffee'
 Blocks = require '../../../collections/blocks.coffee'
 Contracts = require '../../../collections/contracts.coffee'
 map = require '../../../maps/indices/basic.coffee'
+spinningGlobe = require './components/spinning_globe/index.js'
 
 module.exports.init = ->
   contracts = new Contracts sd.CONTRACTS
@@ -15,3 +16,5 @@ module.exports.init = ->
     collection: news
     contracts: contracts
   ).postRender()
+
+  spinningGlobe 'about__spinning-globe'
