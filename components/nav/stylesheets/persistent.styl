@@ -8,21 +8,18 @@
   left 0
   z-index z-index-menu
   padding 40px
-  +below(break)
-    display block
-    clearfix()
 
 .nav-cell
   width (100% / 3)
   text-align center
   +below(break)
     width 50%
-    float left
 
 .nav-header
   font-size 1.8rem
   +below(break)
-    font-size 1.2rem
+    &:last-child
+      font-size 1.2rem
     span
       display none
 
