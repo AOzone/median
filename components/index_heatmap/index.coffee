@@ -45,6 +45,8 @@ module.exports =
       max: 2
       data: plots
 
+    $("##{container_id}").addClass('is-visible')
+
     window.onresize = ->
       $("##{container_id}").html ""
       createHeatmap container_id, map, contracts
