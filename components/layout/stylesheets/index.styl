@@ -1,7 +1,8 @@
-@import 'variables'
-@import '../../../node_modules/nib'
-@import '../../../node_modules/jeet/stylus/jeet'
-@import '../../../node_modules/rupture/rupture/index'
+@require 'variables'
+@require '../../../node_modules/nib'
+@require '../../../node_modules/axis/axis'
+@require '../../../node_modules/jeet/stylus/jeet'
+@require '../../../node_modules/rupture/rupture/index'
 
 normalize-css()
 
@@ -98,11 +99,6 @@ h1, h2, h3, h4, h5, h6
 
 pre
   @extends .flash
-
-.section-header
-  padding 4px 0
-  border-top 1px solid border-color
-  border-bottom 1px solid border-color
 
 [class^='js-']
   cursor pointer

@@ -23,7 +23,7 @@ nav.nav
     a.js-nav-overlay-open
       | Åzone
       = ' '
-      span Futures Market
+      span= pageTitle
       include ../../../public/images/chevron-down.svg
 
   .nav-cell
@@ -35,7 +35,7 @@ nav.nav
         | #{user.get('username')} #{user.get('balance')}Å
   else
     .nav-cell.nav-sub
-      a( href='/market' )
+      a( href='/signup' )
         | Trade Now
       a( href='/login' )
         | Sign In
