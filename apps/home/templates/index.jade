@@ -13,17 +13,42 @@ block body
         .section-header__description
           | Åzone Futures Market is an online Guggenheim exhibition that allows you to take a position on the effects of a world increasingly shaped by emerging technologies.
           br
-          a(href="/about") Read more
-      canvas#about__spinning-globe(width="1200" height="400")
-        //- rendered on the client
+          a(href="/information") Read more
+      #about__spinning-globe-container
+        canvas#about__spinning-globe(width="1200" height="400")
+          //- rendered on the client
+        #about__spinning-globe-future-list
+          for contract, index in contracts.models
+            h3= contract.get('title')
+    section.futures
+      .section-header
+        .section-header__title Futures
+        .section-header__description
+          | Sign up and receive 10,000 cåin (Å), the Åzone currency, to take a position on the future world you would like to live in by investing in the market.
+          br
+          a(href="/market") See all futures
     section.news
       .section-header
-        .section-header__title Tips
+        .section-header__title Hot Tips
         .section-header__description
           | Follow and contribute to the sharing of breaking news and information about each future as they unfold in the present.
           br
           a(href="/news") See all news
       include ../../../components/news_list/templates/index
+    section.blog
+      .section-header
+        .section-header__title Blog
+        .section-header__description
+          | Follow the blog for regular updates as these early days of the market will be quite unstable. Once prices settle, interventions by various contributors, from artists and architects to theorists and strategists, will be announced.
+          br
+          a(href="/") Go to blog
+    section.leaderboards
+      .section-header
+        .section-header__title
+        .section-header__description
+          | Make an impact in the market as a top forecaster, influencer or activist and you may be profiled on the blog and invited to advise on upcoming Guggenheim programs.
+          br
+          a(href="/leaderboard") See leaderboards
 
 block scripts
   script( src=asset('/assets/home.js') )

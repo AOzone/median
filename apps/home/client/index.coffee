@@ -18,3 +18,15 @@ module.exports.init = ->
   ).postRender()
 
   spinningGlobe 'about__spinning-globe'
+
+  $('#about__spinning-globe-future-list h3:gt(0)').hide()
+
+  setInterval ->
+    $('#about__spinning-globe-future-list :first-child').fadeOut(2000)
+       .next('h3').fadeIn(4000)
+       .end().appendTo('#about__spinning-globe-future-list')
+
+  , 6000
+
+  $(window).resize ->
+    $('#about__spinning-globe').height $('#about__spinning-globe').width() / 3

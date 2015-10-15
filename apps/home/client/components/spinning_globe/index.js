@@ -1,5 +1,5 @@
 
-var sphereRad = 480;
+var sphereRad = 680;
 var radius_sp = 2;
 
 //for debug messages
@@ -89,7 +89,7 @@ module.exports = function(id) {
     //random acceleration factors - causes some random motion
     randAccelX = 0.1;
     randAccelY = 0.1;
-    randAccelZ = 0.1;
+    randAccelZ = 1.1;
 
     gravity = 0.01; //try changing to a positive number (not too large, for example 0.3), or negative for floating upwards.
 
@@ -100,10 +100,10 @@ module.exports = function(id) {
     sphereCenterZ = -3 - sphereRad;
 
     //alpha values will lessen as particles move further back, causing depth-based darkening:
-    zeroAlphaDepth = -750;
+    zeroAlphaDepth = -850;
 
     turnSpeed = 2*Math.PI/3000; //the sphere will rotate at this speed (one complete rotation every 1600 frames).
-    turnAngle = 2; //initial angle
+    turnAngle = 10000; //initial angle
 
     timer = setInterval(onTimer, 10/24);
   }
