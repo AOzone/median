@@ -7,7 +7,10 @@
   right 0
   left 0
   z-index z-index-menu
-  padding 40px
+  padding unit * 2
+
+  +below(break)
+    padding unit
 
 .nav-cell
   width (100% / 3)
@@ -15,13 +18,20 @@
   +below(break)
     width 50%
 
+  &:first-child
+    text-align left
+
+  &:last-child
+    text-align right
+
 .nav-header
   font-size 1.8rem
   +below(break)
-    &:last-child
-      font-size 1.2rem
+    font-size 1.2rem
     span
       display none
+    svg
+      width 10px
 
 .nav-mark
   display inline-block
