@@ -8,6 +8,6 @@ routes = require "./routes"
 app = module.exports = express()
 app.set "views", __dirname + "/templates"
 app.set "view engine", "jade"
-app.get "/market/futures/:id", routes.show
-app.post "/market/futures/:id/add_news", routes.addNews
-app.post "/market/futures/:id/:transaction(buy|sell)/confirm", routes.transaction
+app.get "/investing/futures/:id", routes.show
+app.post "/investing/futures/:id/add_news", routes.addNews
+app.post "/investing/futures/:id/:transaction(buy|sell)/confirm", routes.transaction

@@ -90,20 +90,20 @@ fetchContract = (callSign, next, cb)->
     { success, reason } = req.user.canMakeTransaction transaction, contract
     unless success
       req.flash 'error', reason
-      return res.redirect "/market/futures/#{contract.id}"
+      return res.redirect contract.href()
 
     req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id },
       success: (model, response)->
         unless response.success
           req.flash 'error', response?.message
-          return res.redirect "/market/futures/#{contract.id}"
+          return res.redirect contract.href()
 
         # refresh user balance
         req.logIn req.user, (err) ->
-          res.redirect "/market/futures/#{contract.id}"
+          res.redirect contract.href()
       error: (account, error)->
         req.flash 'error', error
-        res.redirect "/market/futures/#{contract.id}"
+        res.redirect contract.href()
   .catch next
   .done()
 

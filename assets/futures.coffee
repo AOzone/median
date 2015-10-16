@@ -1,4 +1,4 @@
-{ init } = require '../apps/market/client/futures_view.coffee'
+{ init } = require '../apps/investing/client/futures_view.coffee'
 
 $ ->
   init()
