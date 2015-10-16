@@ -1,0 +1,19 @@
+.blog-post
+  if post.get('featured_image')
+    .blog-post__header-image
+      a(href="/blog/" + post.get('slug'))
+        img(src=post.get('featured_image') + '?w=1400')
+
+  .blog-post__title=post.get('title')
+
+  .blog-post__date=post.getFormattedDate()
+
+  .blog-post__content!=post.get('content')
+
+  .blog-post__tags
+    for tag in post.get('tags')
+      a.blog-post__tag(href="/market/futures/" + tag.name)=tag.name
+
+  .blog-post__author
+    .blog-post__author__name=post.get('author').first_name + ' ' + post.get('author').last_name
+    .blog-post__author__description=post.getAuthorDescription()
