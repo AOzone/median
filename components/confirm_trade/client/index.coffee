@@ -7,8 +7,15 @@ template = -> require('../templates/index.jade') arguments...
 module.exports.ConfirmTradeView = class ConfirmTradeView extends Backbone.View
   className: 'v-outer'
 
+  events:
+    'click .button--modal' : 'disableButton'
+
   initialize: ({ @model, @title, @block_id, @transaction }) ->
     # nothin yet
+
+  disableButton: ->
+    @$('.button--modal').prop "disabled",true
+    @$('form').submit()
 
   render: =>
     @$el.html template

@@ -75,6 +75,8 @@ module.exports.ChooseNewsView = class ChooseNewsView extends Backbone.View
       query: @getQuery()
 
   selectOrCreateNews: (e) ->
+    @$(e.currentTarget).addClass 'is-disabled'
+
     if $(e.currentTarget).data('query')
       @createNews e
     else
