@@ -1,6 +1,7 @@
 extends ../../../components/layout/templates/index
 block vars
   - pageTitle = 'Futures'
+  - wrapperClass = 'wrapper--post-footer'
 block body
   .landing-outer
     include ../../../components/index_heatmap/index
@@ -12,6 +13,9 @@ block body
     include ./news.jade
     include ./blog.jade
     include ./leaderboard.jade
+
+block post_footer
+  include ../../../components/footer_signup/templates/index
 
 block scripts
   script( src=asset('/assets/home.js') )

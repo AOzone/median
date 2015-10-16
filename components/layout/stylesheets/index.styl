@@ -15,16 +15,22 @@ html, body
   min-height 100%
   position relative
   padding-bottom 320px + (unit * 4)
+  background background-grey-color
 
 body
   color text-color
   background background-grey-color
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+  position relative
+  z-index 0
 
 body.is-dark
   background-color background-blue-color
   color light-text-color
+
+  .wrapper
+    background-color background-blue-color
 
 *
   box-sizing border-box
