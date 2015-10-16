@@ -30,6 +30,7 @@ module.exports =
   S3_SECRET: null
   S3_BUCKET: null
   CDN_URL: null
+  WORDPRESS_API_URL: 'https://public-api.wordpress.com/rest/v1.1/sites/azonemarket.wordpress.com'
 
 # Override any values with env variables if they exist
 for key, val of module.exports
