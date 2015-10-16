@@ -12,7 +12,7 @@ table.contract-list.is-large
         td(data-th="callsign") #{contract.get('contract')}
         td(data-th="name")
           a(href="#{contract.href()}") #{contract.get('title')}
-          p.is-not-displayed=contract.get('abstract')
+          p=contract.get('abstract')
         td(data-th="buy") #{contract.get('ask')}Å
         td(data-th="sell") #{contract.get('bid')}Å
         td(data-th="gain").js-gain-color(data-gain="#{contract.get('gain_percent')}")
