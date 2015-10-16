@@ -1,27 +1,30 @@
 extends ../../../components/layout/templates/index
 block vars
   - pageTitle = "Register"
+  - wrapperClass = "wrapper--gradient"
 block body
   .container.container__auth
-    form(action="/signup" method="POST")
-      .field.field--username
-        label Username
-        input(type="text" name="username" placeholder="Username")
-      .field.field--username
-        label Email
-        input(type="email" name="email" placeholder="Email")
-      .field.field--password
-        label Password
-        input(type="password" name="password" placeholder="Password")
-      .field.field--confirm-password
-        label Password (confirm)
-        input(type="password" name="confirm-password" placeholder="Confirm password")
-      .field.field--confirm-password
-        label Date of birth (optional)
-        input(type="date" name="birthday" placeholder="Date of birth")
-      .field.field--confirm-password
-        label Gender (optional)
-        select(name="gender")
-          each gender in genders
-            option(value=gender) #{gender}
-      button.button.button--circle Create account
+    .v-outer
+      .v-inner
+        form(action="/signup" method="POST")
+          .field.field--username
+            label Username
+            input(type="text" name="username" placeholder="Username")
+          .field.field--username
+            label Email
+            input(type="email" name="email" placeholder="Email")
+          .field.field--password
+            label Password
+            input(type="password" name="password" placeholder="Password")
+          .field.field--dob
+            label Date of birth (optional)
+            input(type="date" name="birthday" placeholder="Date of birth")
+          .field.field--city
+            label Current city (optional)
+            input(type="text" name="city" placeholder="Current city")
+          .field.field--confirm-password
+            label Gender (optional)
+            select(name="gender")
+              each gender in genders
+                option(value=gender) #{gender}
+          button.button--modal Create account

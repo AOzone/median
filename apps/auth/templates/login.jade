@@ -1,13 +1,16 @@
 extends ../../../components/layout/templates/index
 block vars
   - pageTitle = "Log in"
+  - wrapperClass = "wrapper--gradient"
 block body
   .container.container__auth
-    form.auth-form(action="/login" method="POST")
-      .field.field--username
-        label Username
-        input(type="text" name="username" placeholder="Username")
-      .field.field--password
-        label Password
-        input(type="password" name="password" placeholder="Password")
-      button.button.button--circle Login
+    .v-outer
+      .v-inner
+        form.auth-form(action="/login" method="POST")
+          .field.field--username
+            label Username
+            input(type="text" name="username" placeholder="Username")
+          .field.field--password
+            label Password
+            input(type="password" name="password" placeholder="Password")
+          button.button--modal Login

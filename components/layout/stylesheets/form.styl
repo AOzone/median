@@ -8,30 +8,35 @@ input[type='text'], input[type='password'], input[type='email'], input[type='dat
   border none
   border-radius 0
   box-shadow none
-  border-bottom 2px solid transparent
+  background-color transparent
+  border-bottom 2px solid border-color
 
   &:focus
     background-color transparent
     border none
     box-shadow none
-    border-bottom 2px solid darken(green-darker-color, 10%)
+    border-bottom 2px solid darken(border-color, 60%)
+
+::-webkit-input-placeholder
+  color light-text-color
+:-moz-placeholder
+  color light-text-color
+::-moz-placeholder
+  color light-text-color
+:-ms-input-placeholder
+  color light-text-color
+
+::-webkit-datetime-edit-text, /* this makes the slashes in dd/mm/yyyy grey */
+::-webkit-datetime-edit-day-field[aria-valuetext=blank],
+::-webkit-datetime-edit-month-field[aria-valuetext=blank],
+::-webkit-datetime-edit-year-field[aria-valuetext=blank]
+  color light-text-color
 
 label
   label block
   font-family Work Sans Medium
   font-size .8rem
-  color darken(green-darker-color, 10%)
-
-a.button, button, input[type="submit"]
-  button()
-  background-color #000
-  border 1px solid #000
-  color #fff
-
-  &:hover
-    background-color #fff
-    color #000
-    border 1px solid #000
+  color light-text-color
 
 .button--circle
   height unit * 5

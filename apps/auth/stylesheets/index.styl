@@ -1,7 +1,17 @@
 .container__auth
+  margin-top -(unit * 6)
   text-align center
+  height 100vh
+  position relative
 
-.container__auth .field
-  margin 0 auto
-  width 250px
-  padding-bottom (unit / 2)
+.container__auth
+  .field
+    margin 0 auto
+    width 250px
+    padding-bottom unit
+  .button--modal
+    margin-top unit * 2
+
+    &:hover
+      color background-blue-color
+      border-color background-blue-color
