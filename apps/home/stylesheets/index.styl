@@ -23,14 +23,27 @@
   font-size 1.8rem
   border-top 1px solid border-color
   border-bottom 1px solid border-color
+
+  +below(768px)
+    display block
+    font-size 1.2rem
+
 .section-header__title
   flex 1
   text-align center
+  +below(768px)
+    text-align left
+    text-decoration underline
+    margin-bottom unit
+
 .section-header__description
   flex 1
   padding-right 20%
   > a
     opacity 0.5
+
+  +below(768px)
+    padding-right 0
 
 @import 'about'
 @import 'futures'

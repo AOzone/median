@@ -1,19 +1,18 @@
-if item.get('source')
-  .news__item
-    .news__item__top
-      .news__item__callsigns(data-item_id=item.id)
-        each callSign in item.callSignArray()
-          - contract = contracts.findWhere({'contract': callSign})
-          - block_id = item.id
-          if contract
-            include ../../callsign/templates/index.jade
-      .news__item__relative-date= item.updatedAtAgo()
+.news__item
+  .news__item__top
+    .news__item__callsigns(data-item_id=item.id)
+      each callSign in item.callSignArray()
+        - contract = contracts.findWhere({'contract': callSign})
+        - block_id = item.id
+        if contract
+          include ../../callsign/templates/index.jade
+    .news__item__relative-date= item.updatedAtAgo()
 
-    a(href="#{item.get('source').url}", target="_blank")
-      h2.news__item__title= item.get('title')
-      p.news__item__description
-        | #{item.get('description')}
+  a(href="#{item.get('source').url}", target="_blank")
+    h2.news__item__title= item.get('title')
+    p.news__item__description
+      | #{item.get('description')}
 
-    .news__item__meta
-      .news__item__trade-count &nbsp;
-      a(href="#{item.get('source').url}", target="_blank").news__item__source-domain= item.sourceDomain()
+  .news__item__meta
+    .news__item__trade-count &nbsp;
+    a(href="#{item.get('source').url}", target="_blank").news__item__source-domain= item.sourceDomain()

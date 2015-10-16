@@ -17,6 +17,8 @@ module.exports.init = ->
     contracts: contracts
   ).postRender()
 
+
+  # spinning globe
   spinningGlobe 'about__spinning-globe'
 
   $('#about__spinning-globe-future-list h3:gt(0)').hide()
@@ -28,5 +30,6 @@ module.exports.init = ->
 
   , 6000
 
+  $('#about__spinning-globe').height $('#about__spinning-globe').width() / 3
   $(window).resize ->
     $('#about__spinning-globe').height $('#about__spinning-globe').width() / 3

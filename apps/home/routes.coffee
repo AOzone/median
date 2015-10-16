@@ -9,7 +9,7 @@ Contracts = require '../../collections/contracts.coffee'
   contracts = new Contracts []
 
   Q.all [
-    blocks.fetch()
+    blocks.fetch data: per: 10
     contracts.fetch()
   ]
   .then ->

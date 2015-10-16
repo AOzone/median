@@ -1,0 +1,34 @@
+.home-list--news
+  margin-top unit * 2
+
+.home-news__item
+  float left
+  width 25%
+  height 300px
+  padding unit
+  position relative
+
+  &:first-child, &:nth-last-child(2)
+    width 50%
+
+    h5
+      h2()
+
+  +below(768px)
+    width 50%
+    padding (unit/2)
+
+    &:first-child, &:nth-last-child(2)
+      h5
+        h5()
+
+  .news__item__meta
+    right unit
+    bottom unit
+
+  .news__item__source-domain
+    width 80px
+    text-overflow ellipsis
+    overflow hidden
+    white-space nowrap
+    font-size .8rem

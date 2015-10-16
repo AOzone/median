@@ -18,6 +18,3 @@ module.exports = class News extends Blocks
 
   initialize: ( models, options )->
     @setOptions options
-
-  parse: ( data ) ->
-    data.blocks
