@@ -1,4 +1,4 @@
-Q = require 'q'
+Q = require 'bluebird-q'
 _ = require 'underscore'
 sd = require("sharify").data
 News = require '../../collections/news.coffee'

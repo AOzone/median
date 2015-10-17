@@ -247,6 +247,18 @@
       "from": "bcrypt-nodejs@",
       "resolved": "https://registry.npmjs.org/bcrypt-nodejs/-/bcrypt-nodejs-0.0.3.tgz"
     },
+    "bluebird-q": {
+      "version": "1.0.3",
+      "from": "bluebird-q@",
+      "resolved": "https://registry.npmjs.org/bluebird-q/-/bluebird-q-1.0.3.tgz",
+      "dependencies": {
+        "bluebird": {
+          "version": "2.10.2",
+          "from": "bluebird@^2.8.0",
+          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-2.10.2.tgz"
+        }
+      }
+    },
     "body-parser": {
       "version": "1.13.3",
       "from": "body-parser@",
