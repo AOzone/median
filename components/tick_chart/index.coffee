@@ -4,13 +4,17 @@ module.exports =
   initTickChart: initTickChart = (chart, $container) ->
     width = $container.width()
     height = 260
-    margin = {top: 20, right: 20, bottom: 30, left: 50}
+    margin = {top: 40, right: 0, bottom: 30, left: 40}
 
     x = d3.scale.linear().range [0, width - 52]
     y = d3.scale.linear().range [height, 0]
 
     xAxis = d3.svg.axis().scale(x).orient("bottom")
-    yAxis = d3.svg.axis().scale(y).orient("left")
+    yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .innerTickSize(-width)
+      .tickFormat((d) -> "#{d}Å")
 
     line = d3.svg.line()
       .x((point, index) -> x(index))
@@ -27,24 +31,30 @@ module.exports =
     y.domain d3.extent chart.models, (point) -> parseInt(point.get('close'))
 
     svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
 
     svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis)
+      .attr("class", "y axis")
+      .call(yAxis)
       .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Å")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
 
     svg.append("path")
-        .datum(chart.models)
-        .attr("class", "line")
-        .attr("d", line)
+      .datum(chart.models)
+      .attr("class", "line")
+      .attr("d", line)
+
+    svg.selectAll("circle")
+      .data(chart.models)
+      .enter().append("circle")
+      .attr("r", 6)
+      .attr("cx", (d, index) -> x(index) )
+      .attr("cy", (d, index) -> y(d.get('close')) )
+      .attr("data-block-id", (d, index) -> d.get('block_id'))
 
   updateTickChart: updateTickChart = (chart, container) ->
     d3.select("#chart svg").remove()

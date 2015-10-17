@@ -8,7 +8,7 @@ Blocks = require '../../../collections/blocks.coffee'
 NewsListView = require '../../../components/news_list/client/index.coffee'
 CallSignView = require '../../../components/callsign/client/index.coffee'
 { initTickChart, updateTickChart } = require '../../../components/tick_chart/index.coffee'
-{ getColor, lightOrDark } = require '../../../components/color/index.coffee'
+{ getColor } = require '../../../components/color/index.coffee'
 
 module.exports.ContractView = class ContractView extends Backbone.View
   events:
@@ -39,9 +39,18 @@ module.exports.init = ->
     el: $(".contract__callsign")
     model: contract
 
+  # tick chart
   chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
   initTickChart chart, $('#chart')
-
   $(window).on 'resize', -> updateTickChart chart, $('#chart')
 
-  $('main').css 'backgroundColor': "##{getColor(contract.get('gain_percent'))}"
+  sticky = new Waypoint.Sticky
+    element: $('.contract__tick-chart')[0]
+
+  $('.news__item').waypoint
+    handler: (direction)->
+      $('circle').hide()
+      block_id = $(this.element).data('block-id')
+      $("circle[data-block-id=#{block_id}]").show()
+
+  $('.contract__tick-chart').css 'backgroundColor': "##{getColor(contract.get('gain_percent'))}"

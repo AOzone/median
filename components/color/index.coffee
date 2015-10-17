@@ -32,15 +32,3 @@ module.exports =
     b = Math.ceil(parseInt(color1.substring(4,6), 16) * _ratio + parseInt(color2.substring(4,6), 16) * (1 - _ratio))
 
     middle = toHex(r) + toHex(g) + toHex(b)
-
-$.cssHooks.backgroundColor =
-  get: (elem)  ->
-    if (elem.currentStyle)
-      bg = elem.currentStyle["backgroundColor"]
-    else if (window.getComputedStyle)
-      bg = document.defaultView.getComputedStyle(elem, null).getPropertyValue("background-color")
-    if (bg.search("rgb") == -1)
-      bg
-    else
-      bg = bg.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
-      "#" + toHex(bg[1]) + toHex(bg[2]) + toHex(bg[3])

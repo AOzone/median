@@ -44,7 +44,8 @@
     "sendgrid": "^1.9.2",
     "sharify": "*",
     "underscore": "^1.8.3",
-    "url-to-title": "^1.0.6"
+    "url-to-title": "^1.0.6",
+    "waypoints": "^4.0.0"
   },
   "devDependencies": {
     "jquery": "*",

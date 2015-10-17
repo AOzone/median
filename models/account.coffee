@@ -29,13 +29,10 @@ module.exports = class Account extends Backbone.Model
     order = new Backbone.Model
     params = "?auth_id=#{authId}&auth_token=#{authToken}"
 
-    if is_new
-      flag = "*"
-    if comment
-      params = "#{params}&comment=#{comment}"
-
+    flag = if is_new then "*" else ""
     order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{flag}#{block_id}#{params}"
 
+    options.data = "comment=#{comment}"
     order.save null, options
 
   canMakeTransaction: (transaction, contract) ->

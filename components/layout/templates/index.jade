@@ -2,6 +2,8 @@
 - bodyClass = ''
 - footerClass = ''
 - wrapperClass = ''
+- mainStyle = ''
+
 block vars
 
 doctype html
@@ -20,7 +22,7 @@ html
       include ../../nav/templates/index
       include ./modal
       include ./market_status
-      main
+      main(style=mainStyle)
         include ./flash
         block body
       footer(class=footerClass)

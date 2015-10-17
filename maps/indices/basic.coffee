@@ -1,7 +1,9 @@
 module.exports =
   AGRO:
-    SCOP: -0.20
-    CTRL: -0.80
+    PERSONAL: -0.20
+    COMMUNAL: -0.80
+    SAFE: 0.20
+    FREE: 0.80
   ALGO:
     SCOP: 1.00
     CTRL: -1.00

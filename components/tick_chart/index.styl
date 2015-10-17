@@ -1,21 +1,34 @@
 #chart
   font 10px sans-serif
   width 95%
-  padding-right unit
-  padding-bottom unit * 3
+  margin 0 auto
 
   svg
     clearfix()
+    color light-text-color
+    fill light-text-color
 
 .axis path, .axis line
   fill none
-  stroke #000
+  stroke light-text-color
   shape-rendering crispEdges
 
 .x.axis path
   display none
 
+.y.axis .tick
+  line
+    stroke rgba(255, 255, 255, 0.2)
+  &:first-child line
+    stroke rgba(255, 255, 255, 1)
+  text:after
+    content 'Å'
+    display inline-block
+
+path.domain
+  display none
+
 .line
   fill none
-  stroke text-color
+  stroke light-text-color
   stroke-width 2px

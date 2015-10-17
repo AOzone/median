@@ -1,11 +1,14 @@
+# jquery libs
+require '../../../node_modules/waypoints/lib/jquery.waypoints.js'
+require '../../../node_modules/waypoints/lib/shortcuts/sticky.js'
+require 'jquery.transition'
+
 _ = require 'underscore'
 { initTableView } = require '../../contract_table/index.coffee'
 { initConfirmTrade } = require '../../confirm_trade/client/index.coffee'
 { initChooseNews } = require '../../choose_news/client/index.coffee'
 { getColor, lightOrDark } = require '../../color/index.coffee'
 initNav = require '../../nav/client/index.coffee'
-
-require 'jquery.transition'
 
 module.exports.initLayout = ->
   initTableView()

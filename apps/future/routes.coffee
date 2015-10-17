@@ -9,6 +9,7 @@ Block = require '../../models/block.coffee'
 Blocks = require '../../collections/blocks.coffee'
 contractMap = require '../../maps/contracts.coffee'
 transactionMap = require '../../maps/transactions.coffee'
+{ getColor } = require '../../components/color/index.coffee'
 title = require 'url-to-title'
 
 fetchContract = (callSign, next, cb)->
@@ -20,13 +21,13 @@ fetchContract = (callSign, next, cb)->
   contract = new Contract id: callSign
   contracts = new Contracts []
   blocks = new Blocks [], id: channelId
-  tick_chart = new Chart [], { id: callSign, type: '1tick' }
+  tickChart = new Chart [], { id: callSign, type: '1tick' }
 
   Q.all([
     contract.fetch()
     contracts.fetch()
     blocks.fetch(cache: true)
-    tick_chart.fetch()
+    tickChart.fetch()
   ]).then ->
     # set any additional metadata
     contract.set contractMap[callSign]
@@ -35,7 +36,7 @@ fetchContract = (callSign, next, cb)->
       contract: contract
       contracts: contracts
       blocks: blocks
-      chart: tick_chart
+      chart: tickChart
 
   .catch (err, message) ->
     dfd.reject err, message
@@ -52,12 +53,15 @@ fetchContract = (callSign, next, cb)->
     res.locals.sd.ALL_CONTRACTS = contracts.toJSON()
     res.locals.sd.BLOCKS = blocks.toJSON()
 
+    bgColor = getColor(contract.get('gain_percent'))
+
     res.render 'contract',
       news: blocks
       contract: contract
       contracts: contracts
       chart: chart
       message: req.flash 'error'
+      bgColor: bgColor
 
   .catch next
   .done()
@@ -85,6 +89,7 @@ fetchContract = (callSign, next, cb)->
   callSign = req.params.id
   block_id = req.body.block_id
   is_new = req.body.is_new
+  comment = req.body.comment
 
   fetchContract(callSign, next).then ({ contract, blocks }) ->
 
@@ -93,7 +98,7 @@ fetchContract = (callSign, next, cb)->
       req.flash 'error', reason
       return res.redirect contract.href()
 
-    req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id, is_new: is_new },
+    req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id, is_new: is_new, comment: comment },
       success: (model, response)->
         unless response.success
           req.flash 'error', response?.message

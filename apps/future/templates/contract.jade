@@ -1,8 +1,11 @@
 extends ../../../components/layout/templates/index
+
 block vars
   - pageTitle = contract.get('contract')
+  - mainStyle = "background-color:#" + bgColor
+
 block body
-  section.contract__about.container
+  section.contract__about
     .contract__callsign
       include ../../../components/callsign/templates/index
     .contract__copy
