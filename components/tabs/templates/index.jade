@@ -1,7 +1,15 @@
-mixin tab(path, slug, title)
-  li.tab--container__nav__item(class= tab == slug ? "tab--container__nav__item--#{slug} is-active" : "tab--container__nav__item--#{slug}" )
-    h4: a(href="/#{path}/#{slug}") #{title}
+- function isActive(path) {
+-   var currentPath;
+-   path = path.replace(/\/$/, ''); // Strip trailing slash
+-   currentPath = sd.CURRENT_PATH.replace(/\/$/, ''); // Strip trailing slash
+-   return path === currentPath;
+- };
 
-.tab--container
-  ul.tab--container__nav
-    block tabs
+- function activeClass(path) { if (sd && sd.CURRENT_PATH) return isActive(path) ? 'is-active' : 'is-inactive'; };
+
+mixin tab(href, title)
+  a.tab( href= href, class= activeClass(href) )
+    = title
+
+nav.tabs
+  block tabs
