@@ -1,116 +1,145 @@
 module.exports =
-  DCOG:
-    FREE: 1.00
-    SAFE: -1.00
-    FAIR: -0.80
-    DOOM: 0.80
-  MMMN:
-    FREE: 0.95
-    SAFE: -0.95
-    FAIR: -0.75
-    DOOM: 0.75
-  DRUG:
-    FREE: 0.90
-    SAFE: -0.90
-    FAIR: 0.40
-    DOOM: -0.40
-  COMM:
-    FREE: 0.90
-    SAFE: -0.90
-    FAIR: -1.00
-    DOOM: 1.00
-  LONG:
-    FREE: 0.80
-    SAFE: -0.80
-    FAIR: -0.80
-    DOOM: 0.80
-  EXTR:
-    FREE: 0.80
-    SAFE: -0.80
-    FAIR: -0.95
-    DOOM: 0.95
-  DEVO:
-    FREE: 0.70
-    SAFE: -0.70
-    FAIR: -0.90
-    DOOM: 0.90
-  NEUT:
-    FREE: 0.60
-    SAFE: -0.60
-    FAIR: 0.95
-    DOOM: -0.95
-  COIP:
-    FREE: 0.60
-    SAFE: -0.60
-    FAIR: 0.90
-    DOOM: -0.90
-  EXCZ:
-    FREE: 0.50
-    SAFE: -0.50
-    FAIR: 0.70
-    DOOM: -0.70
-  CFAM:
-    FREE: 0.40
-    SAFE: -0.40
-    FAIR: 0.70
-    DOOM: -0.70
-  VOLE:
-    FREE: 0.30
-    SAFE: -0.30
-    FAIR: -0.20
-    DOOM: 0.20
-  BSIC:
-    FREE: 0.10
-    SAFE: -0.10
-    FAIR: 1.00
-    DOOM: -1.00
-  NOID:
-    FREE: 0.00
-    SAFE: 0.00
-    FAIR: -0.70
-    DOOM: 0.70
+  AGRO:
+    SCOP: -0.20
+    CTRL: -0.80
   ALGO:
-    FREE: -0.10
-    SAFE: 0.10
-    FAIR: 0.80
-    DOOM: -0.80
-  PHDR:
-    FREE: -0.20
-    SAFE: 0.20
-    FAIR: 0.00
-    DOOM: 0.00
-  ROBO:
-    FREE: -0.30
-    SAFE: 0.30
-    FAIR: 0.20
-    DOOM: -0.20
-  DNET:
-    FREE: -0.50
-    SAFE: 0.50
-    FAIR: -0.60
-    DOOM: 0.60
+    SCOP: 1.00
+    CTRL: -1.00
+  ANON:
+    SCOP: -0.60
+    CTRL: 0.85
+  BETA:
+    SCOP: -1.00
+    CTRL: 0.70
+  BIOM:
+    SCOP: -0.30
+    CTRL: 0.50
+  BSIC:
+    SCOP: -0.10
+    CTRL: 0.00
+  CFAM:
+    SCOP: -0.10
+    CTRL: 0.90
+  CHNA:
+    SCOP: 0.30
+    CTRL: 0.00
+  COIP:
+    SCOP: 0.50
+    CTRL: 0.80
   CRON:
-    FREE: -0.60
-    SAFE: 0.60
-    FAIR: 0.95
-    DOOM: -0.95
+    SCOP: 0.80
+    CTRL: -0.10
+  DCEN:
+    SCOP: -0.65
+    CTRL: 0.15
+  DIRC:
+    SCOP: 0.90
+    CTRL: 0.90
+  DRIV:
+    SCOP: -0.85
+    CTRL: -1.00
+  DRUG:
+    SCOP: 0.10
+    CTRL: 0.90
+  DTAX:
+    SCOP: 0.35
+    CTRL: -0.40
   ENGY:
-    FREE: -0.80
-    SAFE: 0.80
-    FAIR: 0.60
-    DOOM: -0.60
-  PRIM:
-    FREE: -0.90
-    SAFE: 0.90
-    FAIR: -0.50
-    DOOM: 0.50
+    SCOP: 0.80
+    CTRL: -0.70
+  FARM:
+    SCOP: 0.15
+    CTRL: -0.35
+  GENO:
+    SCOP: -0.70
+    CTRL: 0.70
+  HELP:
+    SCOP: -0.40
+    CTRL: -0.30
+  INTR:
+    SCOP: 0.30
+    CTRL: 0.30
   LESS:
-    FREE: -0.95
-    SAFE: 0.95
-    FAIR: 0.50
-    DOOM: -0.50
-  ASTR:
-    FREE: -1.00
-    SAFE: 1.00
-    FAIR: -0.10
-    DOOM: 0.10
+    SCOP: 0.10
+    CTRL: -0.75
+  LIQD:
+    SCOP: 0.90
+    CTRL: 0.65
+  LUDD:
+    SCOP: 0.90
+    CTRL: -0.80
+  MAGC:
+    SCOP: 0.40
+    CTRL: 0.40
+  MEMA:
+    SCOP: -0.20
+    CTRL: -0.20
+  MIGR:
+    SCOP: -0.30
+    CTRL: 0.60
+  MINE:
+    SCOP: 0.20
+    CTRL: 0.20
+  MORE:
+    SCOP: -0.50
+    CTRL: -0.50
+  NEUT:
+    SCOP: 0.00
+    CTRL: 0.50
+  NOID:
+    SCOP: -1.00
+    CTRL: 1.00
+  NONH:
+    SCOP: 1.00
+    CTRL: 0.00
+  NURO:
+    SCOP: -0.25
+    CTRL: 0.10
+  PLAN:
+    SCOP: 0.85
+    CTRL: -0.45
+  PLUN:
+    SCOP: 0.70
+    CTRL: 0.60
+  PMED:
+    SCOP: -1.00
+    CTRL: -0.20
+  PRID:
+    SCOP: -0.90
+    CTRL: 0.90
+  PROS:
+    SCOP: -0.50
+    CTRL: 0.50
+  RISK:
+    SCOP: -0.50
+    CTRL: -0.90
+  ROBO:
+    SCOP: -0.65
+    CTRL: -0.60
+  SERV:
+    SCOP: 0.00
+    CTRL: -0.75
+  SIMS:
+    SCOP: 0.00
+    CTRL: 0.25
+  SUPR:
+    SCOP: -0.85
+    CTRL: -0.40
+  TRVL:
+    SCOP: 0.00
+    CTRL: 0.95
+  UPRO:
+    SCOP: 0.45
+    CTRL: -0.80
+  VCOM:
+    SCOP: 0.35
+    CTRL: -0.20
+  WATR:
+    SCOP: 0.10
+    CTRL: 0.00
+  WSTE:
+    SCOP: 0.65
+    CTRL: -0.30
+  WTHR:
+    SCOP: 0.70
+    CTRL: 1.00
