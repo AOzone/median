@@ -1,15 +1,17 @@
 extends ../../../components/layout/templates/index
 
-blocks vars
+block vars
   - pageTitle = 'Blog'
 
 block body
-  .blog-posts
-    for post in posts.models
-      include ./post.jade
+  .container--blog
+    .blog-posts
+      for post in posts.models
+        include ./post.jade
 
-  nav.blog-nav
-    if posts.getNextPageUrl()
-      a.blog__nav-link(href=posts.getNextPageUrl())=Next
-    if posts.getPreviousPageUrl()
-      a.blog__nav-link(href=posts.getPreviousPageUrl())=Previous
+    .container
+      nav.blog-nav
+        if posts.getNextPageUrl()
+          a.blog__nav-link(href=posts.getNextPageUrl())=Next
+        if posts.getPreviousPageUrl()
+          a.blog__nav-link(href=posts.getPreviousPageUrl())=Previous

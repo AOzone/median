@@ -5,6 +5,7 @@
 #
 express = require "express"
 setup = require "./lib/setup"
+{ RESTART_INTERVAL } = require "./config"
 
 app = module.exports = express()
 setup app
@@ -14,3 +15,6 @@ setup app
 app.listen process.env.PORT, ->
   console.log "Listening on port " + process.env.PORT
   process.send? "listening"
+
+# Reboot for memory leak
+setTimeout process.exit, RESTART_INTERVAL

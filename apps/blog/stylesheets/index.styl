@@ -1,0 +1,76 @@
+.container--blog
+  margin-top -(unit * 8)
+  overflow hidden
+
+.blog-post__container
+  margin 0 (unit * 8)
+
+  +below(900px)
+    margin 0 (unit * 4)
+
+  +below(600px)
+    margin 0 unit
+
+.blog-post__header-image
+  height 600px
+  width 100%
+  background-size cover
+  background-repeat no-repeat
+  background-position center center
+  margin-bottom unit * 4
+
+  +below(900px)
+    height 400px
+    margin-bottom unit
+
+  +below(600px)
+    height 300px
+
+.blog-post__main
+  position relative
+
+.blog-post__date
+  font-family Atlas Typewriter Bold
+  position absolute
+  left 0
+
+  +below(600px)
+    position static
+
+.blog-post__main
+  img, p, div
+    max-width 100% !important
+
+  .wp-caption
+    margin (unit * 2) 0 (unit * 2) 20%
+    text-align left
+    width auto !important
+
+    +below(600px)
+      margin (unit * 2) 0 (unit * 2) 10%
+
+  .wp-caption-text
+    font-family Atlas Typewriter Bold
+    margin 0
+    margin-left 0
+    font-size .8rem
+
+  p, .blog-post__meta
+    font-size 1.2rem
+    margin (unit * 2) 0 (unit * 2) 30%
+
+    +below(600px)
+      margin (unit * 2) 0 (unit * 2) 20%
+
+.blog-post__tags
+  clearfix()
+  margin-bottom unit * 2
+
+.blog-post__author
+  padding unit 0
+  margin unit 0
+  border-top 2px solid border-color
+  border-bottom 2px solid border-color
+
+.blog-post__author__name
+  font-family Work Sans SemiBold
