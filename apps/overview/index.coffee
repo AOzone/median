@@ -8,6 +8,6 @@ app.set 'view engine', 'jade'
 app.get '/overview', (req, res) -> res.redirect '/overview/about'
 app.get '/overview/about', routes.about
 app.get '/overview/contact', routes.contact
-app.get '/overview/press', routes.press
+app.get '/overview/credits', routes.credits
 app.get '/overview/glossary', routes.glossary
 app.get '/overview/terms', routes.terms

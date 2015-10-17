@@ -4,8 +4,8 @@
 @contact = (req, res, next) ->
   res.render 'contact'
 
-@press = (req, res, next) ->
-  res.render 'press'
+@credits = (req, res, next) ->
+  res.render 'credits'
 
 @glossary = (req, res, next) ->
   res.render 'glossary'
