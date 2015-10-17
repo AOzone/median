@@ -36,13 +36,13 @@ module.exports =
     for contractKey, plot of map
       contract = contracts.findWhere({'contract': contractKey})
       x = normalizeIndexPlot plot[_.keys(plot)[0]], width
-      y = normalizeIndexPlot plot[_.keys(plot)[2]], height
+      y = normalizeIndexPlot plot[_.keys(plot)[1]], height
       v = if contract.get('gain_percent') < 0 then 0 else contract.get('gain_percent') / 100
       r = contracts.relativeMarketCap contract
-      plots.push({ x: x, y: y, value: v, radius: r * 8 })
+      plots.push({ x: x, y: y, value: v, radius: r * 15 })
 
     heatmap.setData
-      max: 2
+      max: 3
       data: plots
 
     $("##{container_id}").addClass('is-visible')
