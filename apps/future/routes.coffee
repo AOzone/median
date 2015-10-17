@@ -84,6 +84,7 @@ fetchContract = (callSign, next, cb)->
 
   callSign = req.params.id
   block_id = req.body.block_id
+  is_new = req.body.is_new
 
   fetchContract(callSign, next).then ({ contract, blocks }) ->
 
@@ -92,7 +93,7 @@ fetchContract = (callSign, next, cb)->
       req.flash 'error', reason
       return res.redirect contract.href()
 
-    req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id },
+    req.user.makeTransaction { transaction: transaction, contract: contract, block_id: block_id, is_new: is_new },
       success: (model, response)->
         unless response.success
           req.flash 'error', response?.message

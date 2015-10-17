@@ -84,18 +84,18 @@ module.exports.ChooseNewsView = class ChooseNewsView extends Backbone.View
 
   createNews: (e) ->
     $.ajax
-      url: "#{sd.APP_URL}/market/futures/#{@model.get('contract')}/add_news"
+      url: "#{sd.APP_URL}/investing/futures/#{@model.get('contract')}/add_news"
       type: "POST"
       data:
         url: @getQuery()
       success: (response) =>
-        console.log 'response', response
         mediator.trigger 'confirm:trade',
           model: @model
           title: response.title
           block_id: response.block_id
           transaction: @transaction
           map: transactionMap
+          is_new: true
 
         @trigger 'close'
 
