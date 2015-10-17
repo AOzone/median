@@ -30,13 +30,11 @@ module.exports = class Account extends Backbone.Model
     params = "?auth_id=#{authId}&auth_token=#{authToken}"
 
     if is_new
-      marker = "*"
+      flag = "*"
     if comment
       params = "#{params}&comment=#{comment}"
 
-    order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{marker}#{block_id}#{params}"
-
-    console.log 'url', order.url
+    order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{flag}#{block_id}#{params}"
 
     order.save null, options
 
