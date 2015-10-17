@@ -35,6 +35,7 @@ module.exports = (passport) ->
           newUser.email = req.param 'email'
           newUser.gender = req.param 'gender'
           newUser.birthday = req.param 'birthday'
+          newUser.city = req.param 'city'
 
           # open the trading account
           { authId, authToken } = authTokenPair()
