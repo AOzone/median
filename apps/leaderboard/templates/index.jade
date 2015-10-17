@@ -11,7 +11,6 @@ block body
             td Market Value
         tbody
           for account in accounts.models
-            - console.log('account', account)
             tr
               td(data-th="name"): a(href="/portfolio/#{account.get('trader_id')}") #{account.get('trader_id')}
               td(data-th="total market value") #{account.get('net_liquidation_value')}Å

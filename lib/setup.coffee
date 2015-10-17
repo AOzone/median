@@ -123,7 +123,6 @@ module.exports = (app) ->
   app.use require "../apps/news"
   app.use require "../apps/blog"
   app.use require "../apps/sorry"
-  app.use require "../apps/information"
 
   # Finally 404 and error handling middleware when the request wasn't handled
   # successfully by anything above.

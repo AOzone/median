@@ -9,19 +9,19 @@ block body
         form(action="/signup" method="POST")
           .field.field--username
             label Username
-            input(type="text" name="username" placeholder="Username")
+            input(type="text" name="username")
           .field.field--username
             label Email
-            input(type="email" name="email" placeholder="Email")
+            input(type="email" name="email")
           .field.field--password
             label Password
-            input(type="password" name="password" placeholder="Password")
+            input(type="password" name="password")
           .field.field--dob
             label Date of birth (optional)
-            input(type="date" name="birthday" placeholder="Date of birth")
+            input(type="date" name="birthday")
           .field.field--city
             label Current city (optional)
-            input(type="text" name="city" placeholder="Current city")
+            input(type="text" name="city")
           .field.field--confirm-password
             label Gender (optional)
             select(name="gender")

@@ -1,7 +1,14 @@
-@index = (req, res, next) ->
-  page = res.locals.sd.TAB = "about"
-  res.render page
+@about = (req, res, next) ->
+  res.render 'about'
 
-@page = (req, res, next) ->
-  page = res.locals.sd.TAB = req.params.page
-  res.render page
+@contact = (req, res, next) ->
+  res.render 'contact'
+
+@press = (req, res, next) ->
+  res.render 'press'
+
+@glossary = (req, res, next) ->
+  res.render 'glossary'
+
+@terms = (req, res, next) ->
+  res.render 'terms'
