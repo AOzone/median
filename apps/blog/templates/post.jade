@@ -13,7 +13,7 @@
       .blog-post__meta
         .blog-post__tags
           for tag in post.get('tags')
-            .call-sign
+            .call-sign(data-contract_id=tag.name)
               a.call-sign__id(href="/investing/futures/" + tag.name)=tag.name
 
         .blog-post__author
