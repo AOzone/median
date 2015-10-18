@@ -11,6 +11,6 @@ tr.portfolio-list__position
   td(data-th="callsign"): a(href="/investing/futures/#{position.get('contract')}") #{position.get('contract')}
   td(data-th="current price") #{position.get('bid')}Å
   td(data-th="purchase price") #{position.get('avg_price')}Å
-  td(data-th="total gain / loss").js-gain-color(data-gain="#{position.gainOrLoss()}") %#{position.gainOrLoss()}
+  td(data-th="total gain / loss").js-gain-color(data-gain="#{position.gainOrLoss()}") %#{position.get('gain_percent')}
   td(data-th="no. of shares") #{position.get('qty')}
-  td(data-th="market value").js-gain-color(data-gain="#{position.gainOrLoss()}") #{position.value()}Å
+  td(data-th="market value").js-gain-color(data-gain="#{position.get('gain_percent')}") #{position.value()}Å

@@ -9,12 +9,12 @@
 
   svg
     clearfix()
-    color text-color
-    fill text-color
+    color light-text-color
+    fill light-text-color
 
 .axis path, .axis line
   fill none
-  stroke text-color
+  stroke light-text-color
   shape-rendering crispEdges
 
 .x.axis path
@@ -24,7 +24,7 @@
   line
     stroke rgba(255, 255, 255, 0.2)
   &:first-child line
-    stroke text-color
+    stroke light-text-color
   text:after
     content 'Å'
     display inline-block
@@ -34,5 +34,5 @@ path.domain
 
 .line
   fill none
-  stroke text-color
+  stroke light-text-color
   stroke-width 2px

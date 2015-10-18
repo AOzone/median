@@ -17,6 +17,7 @@ module.exports.ChooseNewsView = class ChooseNewsView extends Backbone.View
     'keyup #choose-news-search-input' : 'onKeyUp'
 
   initialize: ({ @model, @blocks, @transaction }) ->
+    @blocks.fetch success: @render
     @collection = new Blocks [], id: null
     @collection.url = "#{sd.ARENA_API_URL}/user/azone-futures-market/search"
 

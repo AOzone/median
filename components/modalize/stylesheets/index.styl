@@ -30,6 +30,10 @@
   bottom 0
   left 0
 
+.modalize--gray .modalize
+.modalize--gray .modalize-backdrop
+  top 136px
+
 .modalize-backdrop
   display flex
   align-items center
@@ -42,7 +46,7 @@
   position relative
   margin 0 auto
   text-align left
-  // overflow-y auto
+  overflow-y auto
   -webkit-overflow-scrolling touch
   background-color background-blue-color
   height 100%
@@ -50,6 +54,9 @@
 
   &.is-notransition
     transition none !important
+
+.modalize--gray .modalize-dialog
+  background-color background-grey-color
 
 .modalize-close
   position absolute
@@ -65,6 +72,11 @@
   prevent-content-shift()
   &:hover
     opacity 1
+
+.modalize--gray .modalize-close
+  color text-color
+  left auto
+  right 25px
 
 .modalize-body
   height 100%

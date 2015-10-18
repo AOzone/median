@@ -10,14 +10,6 @@ module.exports.init = ->
   contracts = new Contracts sd.CONTRACTS
   initHeatmap 'index-heatmap', map, contracts
 
-  news = new Blocks sd.BLOCKS, id: null
-  new NewsListView(
-    el: $('section.news')
-    collection: news
-    contracts: contracts
-  ).postRender()
-
-
   # spinning globe
   spinningGlobe 'about__spinning-globe'
 

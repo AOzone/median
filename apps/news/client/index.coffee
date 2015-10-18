@@ -6,9 +6,3 @@ Contracts = require '../../../collections/contracts.coffee'
 module.exports.initNews = ->
   contracts = new Contracts sd.ALL_CONTRACTS
   news = new Blocks sd.BLOCKS, id: null
-
-  new NewsListView(
-    el: $('section.contract__news')
-    collection: news
-    contracts: contracts
-  ).postRender()
