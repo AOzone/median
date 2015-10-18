@@ -24,6 +24,14 @@ module.exports = (passport) ->
           console.log "User already exists with username: #{username}"
           return done null, false, message: "User already exists with username: #{username}"
 
+        if !password
+          console.log "No password: #{username}"
+          return done null, false, message: "Please enter a password to use with your account"
+
+        if !req.param 'email'
+          console.log "No password: #{username}"
+          return done null, false, message: "Please enter an email address to use with your account"
+
         else
           # if there is no user with that email
           # create the user
