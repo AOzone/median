@@ -43,6 +43,7 @@
     "redis": "^0.12.1",
     "rupture": "^0.6.1",
     "sendgrid": "^1.9.2",
+    "serve-favicon": "^2.3.0",
     "sharify": "*",
     "underscore": "^1.8.3",
     "url-to-title": "^1.0.6",
