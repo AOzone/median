@@ -113,5 +113,19 @@ fetchContract = (callSign, next, cb)->
   .catch next
   .done()
 
+@tooltip = (req, res, next) ->
+  status = res.locals.status
+  item_id = req.query.item_id
+  item_title = req.query.item_title
+  contract = new Contract id: req.params.id
+
+  contract.fetch
+    success: ->
+      bgColor = getColor(contract.get('gain_percent'))
+      res.render 'tooltip',
+        contract: contract
+        bgColor: bgColor
+        item_id: item_id
+        item_title: item_title
 
 

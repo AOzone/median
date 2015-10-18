@@ -3,7 +3,7 @@
     text-transform capitalize
 
 .contract__about
-  color text-color
+  color light-text-color
   padding 0 unit * 2
   margin-bottom 0
 
@@ -20,7 +20,7 @@
   clearfix()
 
   .call-sign__id
-    border-color text-color
+    border-color light-text-color
     font-size 1.4rem
 
   +below(768px)
@@ -67,7 +67,7 @@
     position fixed
     top 0
     z-index z-index-menu - 1
-    box-shadow inset 0 -10px 10px -10px rgba(0, 0, 0, 0.2)
+    box-shadow inset 0 -10px 10px -10px rgba(0, 0, 0, 0.1)
 
   circle
     display none
@@ -108,3 +108,6 @@
 
 .container--order__confirm
   vertically-align()
+
+@import 'tip'
+@import 'tooltip'

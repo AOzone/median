@@ -7,29 +7,58 @@ Contracts = require '../../../collections/contracts.coffee'
 Blocks = require '../../../collections/blocks.coffee'
 NewsListView = require '../../../components/news_list/client/index.coffee'
 CallSignView = require '../../../components/callsign/client/index.coffee'
+modalize = require '../../../components/modalize/index.coffee'
 { initTickChart, updateTickChart } = require '../../../components/tick_chart/index.coffee'
 { getColor } = require '../../../components/color/index.coffee'
 
-module.exports.ContractView = class ContractView extends Backbone.View
+template = -> require('../templates/tip.jade') arguments...
+
+module.exports = class TipView extends Backbone.View
+
+  initialize: ({@item, @transactions}) ->
+    # no op
+
+  render: =>
+    @$el.html template
+      item: @item
+      transactions: @transactions
+
+    return this
+
+
+module.exports = class ContractRouter extends Backbone.Router
+  routes:
+    'tip/:id': 'showTip'
+
+  initialize: ({ @news, @chart }) ->
+    # no op
+
+  showTip: (id) ->
+    item = @news.get(id)
+    transactions = @chart.where block_id: id
+
+    view = new TipView
+      item: item
+      transactions: transactions
+
+    modal = modalize view, className: 'modalize modalize--gray'
+    modal.open()
 
 
 module.exports.init = ->
   contract = new Contract sd.CONTRACT
   contracts = new Contracts sd.ALL_CONTRACTS
   news = new Blocks sd.BLOCKS, id: contract.id
+  chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
 
-  new NewsListView(
-    el: $('section.contract__news')
-    collection: news
-    contracts: contracts
-  ).postRender()
+  # tip router
+  new ContractRouter
+    news: news
+    chart: chart
 
-  new CallSignView
-    el: $(".contract__callsign")
-    model: contract
+  Backbone.history.start()
 
   # tick chart
-  chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
   initTickChart chart, $('#chart')
   $(window).on 'resize', -> updateTickChart chart, $('#chart')
 
