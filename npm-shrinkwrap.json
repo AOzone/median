@@ -4067,6 +4067,11 @@
         }
       }
     },
+    "numeral": {
+      "version": "1.5.3",
+      "from": "numeral@",
+      "resolved": "https://registry.npmjs.org/numeral/-/numeral-1.5.3.tgz"
+    },
     "parse-domain": {
       "version": "0.1.2",
       "from": "parse-domain@",
@@ -4990,6 +4995,11 @@
           }
         }
       }
+    },
+    "waypoints": {
+      "version": "4.0.0",
+      "from": "waypoints@",
+      "resolved": "https://registry.npmjs.org/waypoints/-/waypoints-4.0.0.tgz"
     },
     "zombie": {
       "version": "4.0.13",

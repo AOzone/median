@@ -34,6 +34,7 @@
     "morgan": "^1.6.1",
     "nib": "^1.1.0",
     "node-env-file": "*",
+    "numeral": "^1.5.3",
     "parse-domain": "^0.1.2",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",

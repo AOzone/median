@@ -16,10 +16,10 @@ block body
       .contract__meta
         .contract__value
           .contract__meta__label Value
-          h3.contract__meta__value #{contract.get('bid')}Å
+          h3.contract__meta__value #{contract.formattedPrice('bid')}
         .contract__value
           .contract__meta__label Gain
-          h3.contract__meta__value #{contract.get('gain_percent')}%
+          h3.contract__meta__value #{contract.formattedGain()}
   section.contract__tick-chart
     #chart
       //- rendered via client
