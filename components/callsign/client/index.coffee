@@ -27,6 +27,8 @@ module.exports =
         bid: contract_bid
         ask: contract_ask
 
+      console.log "contract.formatPrice('bid')", contract.formattedPrice('bid')
+
       if item_id && item_title
         mediator.trigger 'confirm:trade',
           model: contract

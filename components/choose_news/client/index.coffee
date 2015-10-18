@@ -62,7 +62,6 @@ module.exports.ChooseNewsView = class ChooseNewsView extends Backbone.View
       data:
         q: query
         per: 20
-        auth_token: ARENA_API_TOKEN
       success: => @searchLoaded()
 
   searchLoaded: ->

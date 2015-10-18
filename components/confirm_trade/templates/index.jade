@@ -2,11 +2,11 @@
   .modal-body--confirm-trade.center
     h2
       span.capitalize #{transaction}&nbsp;
-      strong #{contract.formatPrice('bid')}Å&nbsp;
+      strong #{contract.formattedPrice('bid')}Å&nbsp;
       | of&nbsp;
       strong #{contract.get('title')}&nbsp;
       | based on&nbsp;
-      strong #{title}
+      strong "#{title}"
       | ?
 
     form(method="post", action="#{contract.href()}/#{transaction}/confirm")

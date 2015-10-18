@@ -17,16 +17,24 @@
   width 10%
   float left
   margin-right unit
+  padding-right unit
   clearfix()
 
   .call-sign
-    letter-spacing 1px
-    top -11px
+
+    // top -11px
+    width 100px
+
+  .call-sign__icon
+    svg path
+      fill #fff
+
+  .call-sign__id
+    padding-top (unit / 2)
 
   +below(768px)
     float none
     width 100%
-    height auto
     margin-bottom unit
 
 .contract__copy
