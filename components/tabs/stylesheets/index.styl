@@ -18,9 +18,6 @@ break = 768px
   &.is-inactive
     border-color transparent !important
 
-  &.is-active,  &.is-inactive:hover
-    color rgba(255,255,255,1)
-
   +below(break)
     font-size 0.6rem
     letter-spacing 0
@@ -30,3 +27,6 @@ body.is-dark
     &, *
       color rgba(255, 255, 255, 0.7)
       border-color white
+
+    .is-active,  .is-inactive:hover
+      color rgba(255,255,255,1)
