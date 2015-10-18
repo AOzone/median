@@ -1,55 +1,75 @@
 module.exports =
-  CRON:
-    channel_id: 33225
-  ALGO:
-    channel_id: 33224
-  CFAM:
-    channel_id: 33223
-  MMMN:
-    channel_id: 33222
-  EXCZ:
-    channel_id: 33221
-  DCOG:
-    channel_id: 33155
-  ROBO:
-    channel_id: 33220
-  COMM:
-    channel_id: 34064
-  IMMU:
-    channel_id: 33218
-  LONG:
-    channel_id: 34051
-  DIMY:
-    channel_id: 33216
-  PHDR:
-    channel_id: 33215
-  DNET:
-    channel_id: 33213
-  SNGL:
-    channel_id: 33212
-  COIP:
-    channel_id: 33210
-  BSIC:
-    channel_id: 33209
   DRUG:
     channel_id: 33203
-  VOLE:
-    channel_id: 33204
-  ENGY:
-    channel_id: 33208
-  NEUT:
-    channel_id: 33207
-  DEVO:
-    channel_id: 33218
   NOID:
     channel_id: 34069
-  EXTR:
-    channel_id: 34061
+  COIP:
+    channel_id: 33210
+  PROS:
+    channel_id: 33221
+  DCEN:
+    channel_id: 34959
+  PLUN:
+    channel_id: 34977
+  VCOM:
+    channel_id: 34983
+  SUPR:
+    channel_id: 34981
+  PMED:
+    channel_id: 34975
+  AGRO:
+    channel_id: 34963
+  MEMA:
+    channel_id: 33222
+  PRID:
+    channel_id: 34064
+  WATR:
+    channel_id: 34962
+  FARM:
+    channel_id: 34978
+  WSTE:
+    channel_id: 34984
+  WTHR:
+    channel_id: 34965
   LESS:
     channel_id: 34065
-  ASTR:
-    channel_id: 34099
-  UVAC:
-    channel_id: 34052
-  PRIM:
+  CFAM:
+    channel_id: 33223
+  LUDD:
     channel_id: 34120
+  MORE:
+    channel_id: 34971
+  LIQD:
+    channel_id: 34964
+  NONH:
+    channel_id: 34972
+  SERV:
+    channel_id: 34980
+  MAGC:
+    channel_id: 34968
+  BETA:
+    channel_id: 34974
+  RISK:
+    channel_id: 34969
+  SIMS:
+    channel_id: 34951
+  ANON:
+    channel_id: 34955
+  ROBO:
+    channel_id: 33220
+  ALGO:
+    channel_id: 33224
+  UPRO:
+    channel_id: 33204
+  DRIV:
+    channel_id: 33215
+  BIOM:
+    channel_id: 34966
+  INTR:
+    channel_id: 34061
+  BSIC:
+    channel_id: 33209
+  URGY:
+    channel_id: 35105
+  DATA:
+    channel_id: 35104
