@@ -2,15 +2,19 @@
   font 10px sans-serif
   width 95%
   margin 0 auto
+  min-height 30vh
+
+  +below(768px)
+    min-height 30vh
 
   svg
     clearfix()
-    color light-text-color
-    fill light-text-color
+    color text-color
+    fill text-color
 
 .axis path, .axis line
   fill none
-  stroke light-text-color
+  stroke text-color
   shape-rendering crispEdges
 
 .x.axis path
@@ -20,7 +24,7 @@
   line
     stroke rgba(255, 255, 255, 0.2)
   &:first-child line
-    stroke rgba(255, 255, 255, 1)
+    stroke text-color
   text:after
     content 'Å'
     display inline-block
@@ -30,5 +34,5 @@ path.domain
 
 .line
   fill none
-  stroke light-text-color
+  stroke text-color
   stroke-width 2px

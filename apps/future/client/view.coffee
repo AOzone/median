@@ -11,23 +11,12 @@ CallSignView = require '../../../components/callsign/client/index.coffee'
 { getColor } = require '../../../components/color/index.coffee'
 
 module.exports.ContractView = class ContractView extends Backbone.View
-  events:
-    'click .js-block-headline' : 'expandNews'
 
-  expandNews: (e) ->
-    e.preventDefault()
-    $current = $(e.currentTarget)
-    @$('.list-group-item.is-active').removeClass('is-active')
-    $current.closest('.list-group-item').addClass('is-active')
 
 module.exports.init = ->
   contract = new Contract sd.CONTRACT
   contracts = new Contracts sd.ALL_CONTRACTS
   news = new Blocks sd.BLOCKS, id: contract.id
-
-  new ContractView
-    el: $('.container--contract')
-    model: contract
 
   new NewsListView(
     el: $('section.contract__news')
@@ -48,6 +37,8 @@ module.exports.init = ->
     element: $('.contract__tick-chart')[0]
 
   $('.news__item').waypoint
+    offset: ->
+      $('.contract__tick-chart').outerHeight() + $('nav').outerHeight() + 100
     handler: (direction)->
       $('circle').hide()
       block_id = $(this.element).data('block-id')

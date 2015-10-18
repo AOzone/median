@@ -14,6 +14,10 @@
   &:last-child
     display none
 
+.news__item__relative-date
+  font-family Work Sans SemiBold
+  font-size .9rem
+
 .news__item__callsigns
   clearfix()
   margin-bottom unit
@@ -21,7 +25,7 @@
 .news__item
   column(1, cycle: 1)
   margin 3% 0
-  min-height 400px
+  min-height 300px
   position relative
 
   &:nth-child(2n+1)
@@ -29,6 +33,11 @@
 
   +below(900px)
     column(1, cycle: 1)
+
+.news__item__title
+
+  +below(900px)
+    h5()
 
 .news__item__description
   margin-bottom unit * 2

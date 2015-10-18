@@ -3,7 +3,7 @@ d3 = require 'd3'
 module.exports =
   initTickChart: initTickChart = (chart, $container) ->
     width = $container.width()
-    height = 260
+    height = $container.height()
     margin = {top: 40, right: 0, bottom: 30, left: 40}
 
     x = d3.scale.linear().range [0, width - 52]
@@ -15,6 +15,7 @@ module.exports =
       .orient("left")
       .innerTickSize(-width)
       .tickFormat((d) -> "#{d}Å")
+      .ticks(parseInt(height/25))
 
     line = d3.svg.line()
       .x((point, index) -> x(index))
