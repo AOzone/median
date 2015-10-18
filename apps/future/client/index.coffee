@@ -52,11 +52,15 @@ module.exports.init = ->
   chart = new Chart sd.TICK_CHART, {id: contract.id, type: '1tick'}
 
   # tip router
-  new ContractRouter
+  router = new ContractRouter
     news: news
     chart: chart
 
   Backbone.history.start()
+
+  # handle news clicks
+  $('body').on 'click', '.news__item', (e)->
+    router.navigate "tip/#{$(e.currentTarget.data('block_id'))}", trigger: true
 
   # tick chart
   initTickChart chart, $('#chart')
