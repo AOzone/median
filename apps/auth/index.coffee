@@ -24,7 +24,7 @@ app.get '/signup', (req, res) ->
     genders: genders
 
 app.post '/signup', passport.authenticate 'signup',
-  successRedirect: '/market'
+  successRedirect: '/investing'
   failureRedirect: '/signup'
   failureFlash: true
 
