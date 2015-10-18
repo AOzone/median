@@ -24,6 +24,9 @@ module.exports = class Account extends Backbone.Model
   formatBalance: ->
     "#{numeral(@get('balance')).format('0,0')}Å"
 
+  formatCurrency: (attr) ->
+    "#{numeral(@get(attr)).format('0,0')}Å"
+
   holdsPosition: (contract) ->
     _.any @get('open_positions'), (position) ->
       position.contract is contract.get('contract')

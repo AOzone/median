@@ -1,0 +1,21 @@
+.container.container--leaderboard
+    if accounts.length
+      table.account-list
+        thead
+          tr
+            td Rank
+            td Investor
+            td(class=activeClass('/leaderboard/forecasters')) Net Worth
+            td(class=activeClass('/leaderboard/influencers')) Tip Rewards
+            td(class=activeClass('/leaderboard/activists')) Trades
+        tbody
+          for account, index in accounts.models
+            tr
+              td.is-active(data-th="rank")= index + 1
+              td.is-active(data-th="name"): a(href="/portfolio/#{account.get('trader_id')}") #{account.get('trader_id')}
+              td(data-th="net worth" class=activeClass('/leaderboard/forecasters')) #{account.formatCurrency('net_worth')}
+              td(data-th="tip rewards" class=activeClass('/leaderboard/influencers')) #{account.get('tip_rewards')}
+              td(data-th="trades" class=activeClass('/leaderboard/activists')) #{account.get('trades')}
+    else
+      .error.is-centered
+        h3 No positions yet
