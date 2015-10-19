@@ -45,7 +45,7 @@ module.exports = [
     azone_username: ''
     azone_reviews: []
     azone_funds: []
-  }
+  } 
   ,
   {
     name: 'Louise Drulhe'
