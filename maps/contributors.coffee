@@ -309,7 +309,7 @@ module.exports = [
   ,
   {
     name: 'Ben Vickers'
-    location: 'London'
+    location: 'Nomadic'
     links: ['[Website](http://www.benvickers.net/)', '[@benvickers_](https://twitter.com/benvickers_)']
     bio: 'Ben Vickers is a curator, writer, explorer, technologist and luddite. Currently Curator of Digital at the Serpentine Galleries, is Co-Director of LIMAZULU Project Space, Co-Chair of Transmediale 2016, a Near Now Fellow and facilitator for the open-source development of unMonastery, a new civically minded social space prototyped in Matera, Southern Italy during 2014 and now set to replicate throughout Europe and further afield in 2015/16.'
     azone_username: ''
