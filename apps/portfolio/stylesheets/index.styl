@@ -1,0 +1,64 @@
+.future-title
+  font-family Atlas Typewriter Regular
+
+.portfolio-list__position
+  .call-sign
+    padding 16px
+
+  .call-sign__icon
+    padding-top 1px
+    svg path
+      fill #fff
+
+  +below(900px)
+    .call-sign
+      display inline-block
+      width 100px
+
+  td
+    vertical-align middle
+
+.container--portfolio-bio
+  margin-top -(unit * 8)
+  height 80vh
+
+  +below(900px)
+    margin-top 0
+
+.portfolio-stats
+  margin-top unit * 4
+
+  +below(900px)
+    margin-top unit
+
+.portfolio-stat
+  display inline-block
+  margin 0 (unit * 2)
+
+  +below(900px)
+    margin-bottom unit
+
+.portfolio-stat__value
+  font-size 3.5rem
+  margin-bottom unit
+
+  +below(900px)
+    margin-bottom 0
+    font-size 2.5rem
+
+.portfolio-stat__label
+  text-transform uppercase
+  opacity 0.7
+
+#portfolio-treemap
+  width 100%
+  height 90vh
+  position relative
+  margin-bottom (unit * 2)
+
+.node
+  overflow hidden
+  position absolute
+  padding-left unit
+  h5
+    font-family Atlas Typewriter Bold

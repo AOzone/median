@@ -32,8 +32,11 @@ nav.nav
 
   if user
     .nav-cell.nav-header
-      a( href='/portfolio' )
-        | #{user.get('username')}&nbsp;&nbsp;&nbsp;#{user.formatBalance()}
+      if isActive("/portfolio/" + user.get('username'))
+        a.nav-logout( href="/logout" ) Log out
+      else
+        a( href="/portfolio/#{user.get('username')}" )
+          | #{user.get('username')}&nbsp;&nbsp;&nbsp;#{user.formatBalance()}
   else
     .nav-cell.nav-sub
       a( href='/signup' )
