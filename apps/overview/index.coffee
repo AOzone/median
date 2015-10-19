@@ -11,3 +11,4 @@ app.get '/overview/contact', routes.contact
 app.get '/overview/credits', routes.credits
 app.get '/overview/glossary', routes.glossary
 app.get '/overview/terms', routes.terms
+app.get '/contributors', routes.contributors

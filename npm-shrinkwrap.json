@@ -2,6 +2,23 @@
   "name": "median",
   "version": "0.0.1",
   "dependencies": {
+    "artsy-backbone-mixins": {
+      "version": "0.0.20",
+      "from": "artsy-backbone-mixins@git://github.com/artsy/artsy-backbone-mixins.git",
+      "resolved": "git://github.com/artsy/artsy-backbone-mixins.git#2a34d8726809e8ed48b2e7ad32ed33335cd8270f",
+      "dependencies": {
+        "marked": {
+          "version": "0.3.5",
+          "from": "marked@*",
+          "resolved": "https://registry.npmjs.org/marked/-/marked-0.3.5.tgz"
+        },
+        "qs": {
+          "version": "2.4.2",
+          "from": "qs@^2.4.1",
+          "resolved": "https://registry.npmjs.org/qs/-/qs-2.4.2.tgz"
+        }
+      }
+    },
     "artsy-error-handler": {
       "version": "0.0.5",
       "from": "artsy-error-handler@git://github.com/artsy/artsy-error-handler.git",

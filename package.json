@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "artsy-error-handler": "git://github.com/artsy/artsy-error-handler.git",
+    "artsy-backbone-mixins": "git://github.com/artsy/artsy-backbone-mixins.git",
     "axis": "^0.4.3",
     "backbone": "*",
     "backbone-super-sync": "^1.1.1",
