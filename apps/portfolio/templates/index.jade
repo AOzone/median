@@ -1,29 +1,54 @@
 extends ../../../components/layout/templates/index
+
 block vars
-  - pageTitle = 'Portfolio'
+  - bodyClass = 'is-dark'
+
+block tabs
+  +tab("/portfolio/" + account.id, "portfolio")
+
 block body
+  .container.container--portfolio-bio
+    .v-outer
+      .v-inner.center
+        h1 #{account.id}
+        .portfolio-stats
+          .portfolio-stat
+            .portfolio-stat__value #{account.formatCurrency('net_liquidation_value')}
+            .portfolio-stat__label Net Worth
+          .portfolio-stat
+            .portfolio-stat__value #{account.totalGain()}
+            .portfolio-stat__label Gain
+          .portfolio-stat
+            .portfolio-stat__value #{account.formatCurrency('balance')}
+            .portfolio-stat__label Cash Balance
+  include ../../../components/tabs/templates/index
+  #portfolio-treemap
+    //- rendered on the client
   .container.container--portfolio
     if positions.length
-      table.portfolio-list.is-large
+      table.portfolio-list.account-list
         thead
           tr
             td
+            td Future
+            td Shares
             td Current Price
             td Purchase Price
             td Total Gain
-            td Shares
             td Market Value
         tbody
           for position in positions.models
-            include ./position
-        tfooter
-          tr
-            td
-            td
-            td
-            td.js-gain-color(data-gain="#{positions.totalPercentageGain()}") %#{positions.totalPercentageGain()}
-            td
-            td.js-gain-color(data-gain="#{positions.totalPercentageGain()}") #{positions.totalMarketValue()}Å
+            tr.portfolio-list__position
+              td.is-active(data-th="callsign")
+                - contract = position
+                include ../../../components/callsign/templates/index
+              td.is-active.future-title(data-th="future") #{position.get('title')}
+              td.is-active(data-th="no. of shares") #{position.get('qty')}
+              td.is-active(data-th="current price") #{position.formattedPrice('current_price')}
+              td.is-active(data-th="purchase price") #{position.formattedPrice('avg_price')}
+              td.is-active(data-th="total gain / loss").js-gain-color(data-gain="#{position.get('gain_percent')}") #{position.formattedGain('gain_loss')}
+              td.is-active(data-th="market value").js-gain-color(data-gain="#{position.get('gain_percent')}") #{position.formattedPrice('current_value')}
+
     else
       .error.is-centered
         h3 No positions yet

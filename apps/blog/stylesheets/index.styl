@@ -37,7 +37,7 @@
   +below(600px)
     position static
 
-.blog-post__main
+.blog-post__content
   img, p, div
     max-width 100% !important
 
@@ -55,16 +55,20 @@
     margin-left 0
     font-size .8rem
 
-  p, .blog-post__meta
-    font-size 1.2rem
-    margin (unit * 2) 0 (unit * 2) 30%
+.blog-post__content p, .blog-post__meta
+  font-size 1.2rem
+  margin (unit * 2) 0 (unit * 2) 30%
 
-    +below(600px)
-      margin (unit * 2) 0 (unit * 2) 20%
+  +below(600px)
+    margin (unit * 2) 0 (unit * 2) 20%
 
 .blog-post__tags
   clearfix()
   margin-bottom unit * 2
+
+  .call-sign
+    max-width 120px !important
+    float left
 
 .blog-post__author
   padding unit 0

@@ -10,7 +10,7 @@ module.exports.ConfirmTradeView = class ConfirmTradeView extends Backbone.View
   events:
     'click .button--modal' : 'disableButton'
 
-  initialize: ({ @model, @title, @block_id, @transaction }) ->
+  initialize: ({ @model, @title, @block_id, @transaction, @is_new}) ->
     # nothin yet
 
   disableButton: ->
@@ -23,6 +23,7 @@ module.exports.ConfirmTradeView = class ConfirmTradeView extends Backbone.View
       title: @title
       block_id: @block_id
       transaction: @transaction
+      is_new: @is_new
 
     return this
 

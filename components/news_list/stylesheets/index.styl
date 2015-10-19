@@ -14,14 +14,18 @@
   &:last-child
     display none
 
+.news__item__relative-date
+  font-family Work Sans Medium
+  font-size 0.8rem
+
 .news__item__callsigns
   clearfix()
   margin-bottom unit
 
 .news__item
-  column(1/2, cycle: 2)
+  column(1, cycle: 1)
   margin 3% 0
-  min-height 400px
+  min-height 300px
   position relative
 
   &:nth-child(2n+1)
@@ -29,6 +33,11 @@
 
   +below(900px)
     column(1, cycle: 1)
+
+.news__item__title
+
+  +below(900px)
+    h5()
 
 .news__item__description
   margin-bottom unit * 2
@@ -38,5 +47,17 @@
   bottom 0
   width 100%
 
+.news__item__callsigns
+  clearfix()
+  margin-bottom unit * 2
+
+  .call-sign
+    max-width 120px !important
+    float left
+
 .news__item__source-domain
   float right
+  color rgba(14,14,37,0.5) !important
+
+  &:hover
+    color rgba(14,14,37,1) !important

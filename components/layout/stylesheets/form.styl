@@ -10,21 +10,13 @@ input[type='text'], input[type='password'], input[type='email'], input[type='dat
   box-shadow none
   background-color transparent
   border-bottom 2px solid border-color
+  font-family Atlas Typewriter Regular
 
   &:focus
     background-color transparent
     border none
     box-shadow none
     border-bottom 2px solid darken(border-color, 60%)
-
-::-webkit-input-placeholder
-  color light-text-color
-:-moz-placeholder
-  color light-text-color
-::-moz-placeholder
-  color light-text-color
-:-ms-input-placeholder
-  color light-text-color
 
 ::-webkit-datetime-edit-text, /* this makes the slashes in dd/mm/yyyy grey */
 ::-webkit-datetime-edit-day-field[aria-valuetext=blank],
@@ -59,17 +51,17 @@ input[type="submit"].button--modal, .button--modal
   transition all 0.3s
   border-radius 0
   background transparent
-  border 2px solid rgba(255, 255, 255, 0.5)
-  color rgba(255, 255, 255, 0.5)
+  border 1px solid rgba(255,255,255,0.5)
+  color rgba(255,255,255,0.5)
   text-transform uppercase
-  font-family Work Sans Light
-  padding unit (unit*1.5)
+  font-family Work Sans Medium
+  padding 20px 30px
   font-size 1.15rem
   outline none
 
   &:hover
-    color green-darker-color
-    border-color green-darker-color
+    color rgba(255,255,255,1) !important
+    border-color 1px solid rgba(255,255,255,1) !important
 
   &:active, &:focus
     color light-text-color

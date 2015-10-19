@@ -1,0 +1,23 @@
+table.account-list
+  font-family Work Sans Medium
+  font-size 1.2rem
+
+  td:first-child, td:last-child
+    text-align center
+
+  td
+    opacity 0.5
+
+  td.is-active
+    opacity 1
+
+  tr:hover
+    background-color darken(background-blue-color, 20%)
+
+  +below(900px)
+    td:before
+     color light-text-color
+     font-size 0.8rem
+
+    td:first-child, td:last-child
+      text-align left

@@ -1,12 +1,13 @@
-.call-sign(data-contract_id=contract.get('contract'))
+- showBorder = shouldSetBorder == true ? true :  false
+
+.call-sign(
+  data-contract_id=contract.get('contract')
+  data-item_id=itemId
+  data-item_title=itemTitle
+  data-show_border="#{showBorder}"
+)
+  .call-sign__icon
+    include ../../../public/images/callsign.svg
   .call-sign__id #{contract.get('contract')}
-  if user
-    .call-sign__bubble
-      if user.canMakeTransaction('buy', contract).success
-        a.js-make-transaction(data-transaction="buy")
-          label Buy
-          | #{contract.get('ask')}Å
-      if user.canMakeTransaction('sell', contract).success
-        a.js-make-transaction(data-transaction="sell")
-          label Sell
-          | #{contract.get('bid')}Å
+
+- shouldSetBorder = false

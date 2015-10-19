@@ -1,5 +1,5 @@
-color1 = '0AFFCD'
-color2 = '235AFF'
+green = '00e5bf'
+blue = '235AFF'
 ratio = 0.5
 min = -10
 max = 10
@@ -8,7 +8,6 @@ new_max = 1
 
 module.exports =
   lightOrDark: (hex)->
-    console.log 'hex', hex
     if (parseInt(hex, 16) > 0xffffff/2) then 'light' else 'dark'
 
   bound: bound = (_number) ->
@@ -27,20 +26,8 @@ module.exports =
   getColor: getColor = (percentage) ->
     _ratio = ratio percentage
 
-    r = Math.ceil(parseInt(color1.substring(0,2), 16) * _ratio + parseInt(color2.substring(0,2), 16) * (1 - _ratio))
-    g = Math.ceil(parseInt(color1.substring(2,4), 16) * _ratio + parseInt(color2.substring(2,4), 16) * (1 - _ratio))
-    b = Math.ceil(parseInt(color1.substring(4,6), 16) * _ratio + parseInt(color2.substring(4,6), 16) * (1 - _ratio))
+    r = Math.ceil(parseInt(green.substring(0,2), 16) * _ratio + parseInt(blue.substring(0,2), 16) * (1 - _ratio))
+    g = Math.ceil(parseInt(green.substring(2,4), 16) * _ratio + parseInt(blue.substring(2,4), 16) * (1 - _ratio))
+    b = Math.ceil(parseInt(green.substring(4,6), 16) * _ratio + parseInt(blue.substring(4,6), 16) * (1 - _ratio))
 
     middle = toHex(r) + toHex(g) + toHex(b)
-
-$.cssHooks.backgroundColor =
-  get: (elem)  ->
-    if (elem.currentStyle)
-      bg = elem.currentStyle["backgroundColor"]
-    else if (window.getComputedStyle)
-      bg = document.defaultView.getComputedStyle(elem, null).getPropertyValue("background-color")
-    if (bg.search("rgb") == -1)
-      bg
-    else
-      bg = bg.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
-      "#" + toHex(bg[1]) + toHex(bg[2]) + toHex(bg[3])

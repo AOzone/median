@@ -2,42 +2,99 @@
   &:first-letter
     text-transform capitalize
 
+.contract__about
+  color light-text-color
+  padding 0 unit * 2
+  margin-bottom 0
+
+  +below(768px)
+    padding 0 unit
+
 .container--contract
   background background-grey-color
 
 .contract__callsign
   width 10%
   float left
+  margin-right unit
+  padding-right unit
+  clearfix()
+
+  .call-sign
+
+    // top -11px
+    width 100px
+
+  .call-sign__icon
+    svg path
+      fill #fff
 
   .call-sign__id
-    border-color black
-    font-size 1.4rem
+    padding-top (unit / 2)
+
+  +below(768px)
+    float none
+    width 100%
+    margin-bottom unit
 
 .contract__copy
   width 50%
   float left
   font-size 1.2rem
   vertical-align top
+  line-height 1.6rem
 
   h2
     margin-top 0
     font-family Atlas Typewriter Bold
 
+  +below(768px)
+    float none
+    width 100%
+
 .contract__meta
   margin-top (unit * 2)
+
+.contract__meta__label
+  font-size 1rem
 
 .contract__value
   float left
   margin-right (unit * 2)
 
+  h3
+    margin-top 0
+
 .contract__tick-chart
-  padding (unit * 2) 0
+  padding-top (unit * 4)
+  padding-bottom (unit * 2)
+  margin-bottom 0
+  padding-right unit
+
+  &.stuck
+    width 100%
+    position fixed
+    top 0
+    z-index z-index-menu - 1
+    box-shadow inset 0 -10px 10px -10px rgba(0, 0, 0, 0.1)
+
+  circle
+    display none
+
+  +below(768px)
+    padding-top unit * 2
+    padding-bottom unit
 
 .contract--transactions
   margin (unit * 2) 0
 
 .contract__news
-  padding-top (unit * 2)
+  width 65%
+  margin 0 auto
+  padding (unit * 2) 0
+
+  +below(768px)
+    width 100%
 
 .news__item__title
   font-family Atlas Typewriter Bold
@@ -60,3 +117,6 @@
 
 .container--order__confirm
   vertically-align()
+
+@import 'tip'
+@import 'tooltip'

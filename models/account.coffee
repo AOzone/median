@@ -2,6 +2,7 @@ Backbone = require 'backbone'
 { KERNAL_API_URL } = require '../config.coffee'
 transactionMap = require '../maps/transactions.coffee'
 { authTokenPair } = require '../lib/util/token.coffee'
+numeral = require 'numeral'
 _ = require 'underscore'
 
 module.exports = class Account extends Backbone.Model
@@ -20,15 +21,32 @@ module.exports = class Account extends Backbone.Model
   orNull: ->
     if sd.CURRENT_USER then new @(sd.CURRENT_USER) else null
 
+  formatBalance: ->
+    "#{numeral(@get('balance')).format('0,0')}Å"
+
+  formatCurrency: (attr) ->
+    "#{numeral(@get(attr)).format('0,0')}Å"
+
+  totalGain: ->
+    total = _.reduce @get('open_positions'), (memo, position) ->
+      memo + position.current_value
+    , 0
+
+    "#{numeral(total).format('0,0')}Å"
+
   holdsPosition: (contract) ->
     _.any @get('open_positions'), (position) ->
       position.contract is contract.get('contract')
 
-  makeTransaction: ({ transaction, contract, block_id }, options) ->
+  makeTransaction: ({ transaction, contract, block_id, is_new, comment }, options) ->
     { authId, authToken } = authTokenPair()
     order = new Backbone.Model
     params = "?auth_id=#{authId}&auth_token=#{authToken}"
-    order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{block_id}#{params}"
+
+    flag = if is_new then "*" else ""
+    order.url = "#{@url()}/#{transaction}/#{contract.id}/block_id/#{flag}#{block_id}#{params}"
+
+    options.data = "comment=#{comment}"
     order.save null, options
 
   canMakeTransaction: (transaction, contract) ->

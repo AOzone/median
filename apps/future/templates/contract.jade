@@ -1,9 +1,14 @@
 extends ../../../components/layout/templates/index
+
 block vars
   - pageTitle = contract.get('contract')
+  - mainStyle = "background-color:#" + bgColor
+  - bodyClass = 'is-light-nav'
+
 block body
-  section.contract__about.container
+  section.contract__about
     .contract__callsign
+      - var shouldSetBorder = true
       include ../../../components/callsign/templates/index
     .contract__copy
       h2.contract__title= contract.get('title')
@@ -11,16 +16,15 @@ block body
       .contract__meta
         .contract__value
           .contract__meta__label Value
-          h3.contract__meta__value #{contract.get('bid')}Å
+          h3.contract__meta__value #{contract.formattedPrice('bid')}
         .contract__value
           .contract__meta__label Gain
-          h3.contract__meta__value #{contract.get('gain_percent')}%
+          h3.contract__meta__value #{contract.formattedGain()}
   section.contract__tick-chart
     #chart
       //- rendered via client
   .container.container--contract
     section.contract__news
-      h4.section-header Recent News
       include ../../../components/news_list/templates/index
 
 block scripts

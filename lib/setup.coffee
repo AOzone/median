@@ -32,6 +32,7 @@ sendgrid  = require('sendgrid')(SENDGRID_API_KEY) if SENDGRID_API_KEY
 cache = require './cache'
 addLocals = require './middleware/add_locals'
 marketStatus = require './middleware/market_status'
+favicon = require 'serve-favicon'
 
 mongoose = require 'mongoose'
 mongoose.connect MONGO_URL
@@ -79,6 +80,7 @@ module.exports = (app) ->
 
   # More general middleware
   app.use express.static(path.resolve __dirname, "../public")
+  app.use favicon(path.resolve __dirname, '../public/images/favicon.ico')
 
   # Test only
   if 'test' is sd.NODE_ENV

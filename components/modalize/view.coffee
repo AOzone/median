@@ -12,7 +12,7 @@ module.exports = class Modalize extends Backbone.View
     'click .js-modalize-close': 'close'
 
   initialize: (options = {}) ->
-    { @subView, @dimensions } = _.defaults options, @defaults
+    { @subView, @dimensions, @className } = _.defaults options, @defaults
     $(window).on 'keyup.modalize', @escape
 
     @subView.once 'close', @close, @
@@ -22,6 +22,8 @@ module.exports = class Modalize extends Backbone.View
       .attr 'data-state', state
       .one $.support?.transition?.end, callback
       .emulateTransitionEnd 250
+
+    $('body').attr 'data-state', "modal-#{state}"
 
   dialog: (state, callback = $.noop) ->
     duration = {

@@ -1,8 +1,11 @@
+footer-break = 1020px
+
 .wrapper.no-footer
   footer
     display none
+
 footer
-  font-family Work Sans Light
+  font-family Work Sans Medium
   background-color background-blue-color
   min-height 320px
   width 100%
@@ -15,7 +18,7 @@ footer
   a
     color light-text-color
 
-  +below(900px)
+  +below(footer-break)
     font-size .8rem
     height auto
     padding-bottom unit * 4
@@ -28,7 +31,7 @@ footer
   svg, svg path
     fill light-text-color !important
 
-  +below(900px)
+  +below(footer-break)
     position static
     padding unit * 2
     svg, svg path
@@ -48,7 +51,7 @@ footer
     height 25px
     fill light-text-color
 
-  +below(900px)
+  +below(footer-break)
     bottom 0
     top auto
     left 0
@@ -61,25 +64,25 @@ footer
       margin 0 auto
 
 .footer-arena-credit
-  width 300px
+  width 350px
   position absolute
   right unit * 2
   top unit * 2
   text-transform uppercase
 
-  +below(900px)
+  +below(footer-break)
     width 100%
     position static
     padding unit
 
 .footer-right-credit
-  width 300px
+  width 350px
   position absolute
   right unit * 2
   bottom unit * 2
-  font-size 0.8rem
+  font-size 0.5rem
 
-  +below(900px)
+  +below(footer-break)
     width 100%
     position static
     padding unit

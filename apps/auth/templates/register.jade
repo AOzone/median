@@ -9,13 +9,13 @@ block body
         form(action="/signup" method="POST")
           .field.field--username
             label Username
-            input(type="text" name="username")
+            input(type="text" name="username" required)
           .field.field--username
             label Email
-            input(type="email" name="email")
+            input(type="email" name="email" required)
           .field.field--password
             label Password
-            input(type="password" name="password")
+            input(type="password" name="password" required)
           .field.field--dob
             label Date of birth (optional)
             input(type="date" name="birthday")

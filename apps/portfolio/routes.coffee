@@ -5,26 +5,21 @@ sd = require("sharify").data
 Account = require '../../models/account.coffee'
 Positions = require '../../collections/positions.coffee'
 
-renderPortfolio = (positions, req, res, next) ->
-  positions = new Positions positions, parse: true
-
-  Q.allSettled(
-    positions.map (position) -> position.fetch()
-  ).then ->
-    res.render 'index',
-      positions: positions
-  .catch (error) ->
-    console.log 'error', error
-    next()
-  .done()
-
 @index = (req, res, next) ->
-  return unless req.user
+  id = req.params.id or req.user.id
 
-  if req.params.id
-    account = new Account id: req.params.id
-    account.fetch
-      success: ->
-        renderPortfolio account.get('open_positions'), req, res, next
-  else
-    renderPortfolio req.user.get('open_positions'), req, res, next
+  account = new Account id: id
+  account.fetch
+    success: ->
+      positions = new Positions account.get('open_positions')
+
+      Q.allSettled(
+        positions.map (position) -> position.fetch()
+      ).then ->
+        res.locals.sd.POSITIONS = positions.toJSON()
+        res.locals.sd.ACCOUNT = account.toJSON()
+
+        res.render 'index',
+          positions: positions
+          account: account
+      .catch res.backboneError

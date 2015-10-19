@@ -2,6 +2,8 @@
 - bodyClass = ''
 - footerClass = ''
 - wrapperClass = ''
+- mainStyle = ''
+include mixins
 block vars
 
 doctype html
@@ -12,6 +14,7 @@ html
       | #{pageTitle}
     link(rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon")
     link( type='text/css', rel='stylesheet', href=asset('/assets/all.css') )
+    link( type='text/css', rel='stylesheet', href=asset('/assets/tooltipster.css') )
     meta(name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0")
     block styles
 
@@ -20,7 +23,7 @@ html
       include ../../nav/templates/index
       include ./modal
       include ./market_status
-      main
+      main(style=mainStyle)
         include ./flash
         block body
       footer(class=footerClass)
