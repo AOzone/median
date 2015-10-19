@@ -151,7 +151,7 @@ module.exports = [
     name: 'Daniel Keller'
     location: 'Berlin'
     links: [ '(are.na/daniel-keller](https://www.are.na/daniel-keller)']
-    bio: 'Daniel Keller was born in Detroit and now lives and works in Berlin. In 2012 he became Director of Absolute Vitality Inc, a Wyoming based corporation-sculpture co-owned by the artist and a group of private collectors. Daniel Keller\'s wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration. Keller, alongside the artist Nik Kosmas form a collective called AIDS-3D which explores techno-utopianism along with other popular notions of progress.'
+    bio: 'Daniel Keller, born 1986, is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration from the perspective of the post-studio \'prosumer imagineer\' artist operating within global networks.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
