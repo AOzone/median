@@ -11,8 +11,6 @@ module.exports =
     channel_id: 34959
   PLUN:
     channel_id: 34977
-  VCOM:
-    channel_id: 34983
   SUPR:
     channel_id: 34981
   PMED:
