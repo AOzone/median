@@ -22,39 +22,21 @@ module.exports =
   CFAM:
     SCOP: -0.10
     CTRL: 0.90
-  CHNA:
-    SCOP: 0.30
-    CTRL: 0.00
   COIP:
     SCOP: 0.50
     CTRL: 0.80
-  CRON:
-    SCOP: 0.80
-    CTRL: -0.10
   DCEN:
     SCOP: -0.65
     CTRL: 0.15
-  DIRC:
-    SCOP: 0.90
-    CTRL: 0.90
   DRIV:
     SCOP: -0.85
     CTRL: -1.00
   DRUG:
     SCOP: 0.10
     CTRL: 0.90
-  DTAX:
-    SCOP: 0.35
-    CTRL: -0.40
-  ENGY:
-    SCOP: 0.80
-    CTRL: -0.70
   FARM:
     SCOP: 0.15
     CTRL: -0.35
-  GENO:
-    SCOP: -0.70
-    CTRL: 0.70
   HELP:
     SCOP: -0.40
     CTRL: -0.30
