@@ -67,3 +67,7 @@ module.exports =
     channel_id: 34061
   BSIC:
     channel_id: 33209
+  URGY:
+    channel_id: 35105
+  DATA:
+    channel_id: 35104
