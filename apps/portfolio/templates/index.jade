@@ -16,6 +16,9 @@ block body
             .portfolio-stat__value #{account.formatCurrency('net_liquidation_value')}
             .portfolio-stat__label Net Worth
           .portfolio-stat
+            .portfolio-stat__value #{account.totalPortfolioValue()}
+            .portfolio-stat__label Portfolio Value
+          .portfolio-stat
             .portfolio-stat__value #{account.totalGain()}
             .portfolio-stat__label Gain
           .portfolio-stat
@@ -46,8 +49,8 @@ block body
               td.is-active(data-th="no. of shares") #{position.get('qty')}
               td.is-active(data-th="current price") #{position.formattedPrice('current_price')}
               td.is-active(data-th="purchase price") #{position.formattedPrice('avg_price')}
-              td.is-active(data-th="total gain / loss").js-gain-color(data-gain="#{position.get('gain_percent')}") #{position.formattedGain('gain_loss')}
-              td.is-active(data-th="market value").js-gain-color(data-gain="#{position.get('gain_percent')}") #{position.formattedPrice('current_value')}
+              td.is-active(data-th="total gain / loss").js-gain-color(data-gain="#{position.get('gain_loss')}") #{position.formattedGain('gain_loss')}
+              td.is-active(data-th="market value").js-gain-color(data-gain="#{position.get('gain_loss')}") #{position.formattedPrice('current_value')}
 
     else
       .error.is-centered

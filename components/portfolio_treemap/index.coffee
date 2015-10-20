@@ -24,7 +24,7 @@ module.exports =
       .enter().append("div")
       .attr("class", "node")
       .call(treePosition)
-      .style("background", (d) -> "##{getColor(d.gain_loss / 100)}")
+      .style("background", (d) -> "##{getColor(d.gain_loss)}")
       .html((d) -> template contract: new Contract d )
 
   treePosition: treePosition = ->

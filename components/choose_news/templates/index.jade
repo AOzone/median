@@ -4,7 +4,7 @@
       h4 Connect a news item to make the trade
       h2
         span.capitalize #{transaction}&nbsp;
-        strong #{contract.get('bid')}Å&nbsp;
+        strong #{contract.formattedPrice('bid')}&nbsp;
         | of&nbsp;
         strong #{contract.get('title')}&nbsp;
         | based on:
