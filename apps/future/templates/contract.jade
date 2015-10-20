@@ -8,18 +8,8 @@ block vars
 block body
   section.contract__about
     .contract__callsign
-      a.call-sign(
-        class='call-sign--sm'
-        data-contract_id=contract.get('contract')
-        data-contract_gain=contract.get('gain_percent')
-        data-show_border="true"
-        href=contract.href()
-      )
-        .call-sign__icon
-          include ../../../public/images/callsign.svg
-        .call-sign__id
-          .v-outer
-            .v-inner #{contract.get('contract')}
+      - var shouldSetBorder = true
+      include ../../../components/callsign/templates/index
     .contract__copy
       h2.contract__title= contract.get('title')
       .contract__abstract= contract.get('abstract')
