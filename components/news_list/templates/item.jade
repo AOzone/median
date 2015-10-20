@@ -7,13 +7,11 @@
     p.news__item__description
       | #{item.get('description')}
 
-  .news__item__meta
-    .news__item__callsigns(data-item_id=item.id)
-      each callSign in item.callSignArray()
-        - contract = contracts.findWhere({'contract': callSign})
-        - itemId = item.id
-        - itemTitle = item.get('title')
-        if contract
-          include ../../callsign/templates/index.jade
-    .news__item__trade-count &nbsp;
-    a(href="#{item.get('source').url}", target="_blank").news__item__source-domain= item.sourceDomain()
+  .news__item__callsigns(data-item_id=item.id)
+    each callSign in item.callSignArray()
+      - contract = contracts.findWhere({'contract': callSign})
+      - itemId = item.id
+      - itemTitle = item.get('title')
+      if contract
+        include ../../callsign/templates/index.jade
+  a(href="#{item.get('source').url}", target="_blank").news__item__source-domain= item.sourceDomain()

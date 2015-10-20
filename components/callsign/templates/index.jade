@@ -1,13 +1,18 @@
 - showBorder = shouldSetBorder == true ? true :  false
 
-.call-sign(
+a.call-sign.js-svg-fill-color(
+  class=callSignSize ? callSignSize : 'call-sign--sm'
   data-contract_id=contract.get('contract')
+  data-contract_gain=contract.get('gain_percent')
   data-item_id=itemId
   data-item_title=itemTitle
   data-show_border="#{showBorder}"
+  href=contract.href()
 )
   .call-sign__icon
     include ../../../public/images/callsign.svg
-  .call-sign__id #{contract.get('contract')}
+  .call-sign__id
+    .v-outer
+      .v-inner #{contract.get('contract')}
 
 - shouldSetBorder = false
