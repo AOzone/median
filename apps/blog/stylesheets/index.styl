@@ -30,7 +30,9 @@
   position relative
 
 .blog-post__date
-  font-family Atlas Typewriter Bold
+  font-family Work Sans Medium
+  font-size .9rem
+  line-height 1.4rem
   position absolute
   left 0
 
@@ -50,17 +52,22 @@
       margin (unit * 2) 0 (unit * 2) 10%
 
   .wp-caption-text
-    font-family Atlas Typewriter Bold
+    font-family Work Sans Medium
     margin 0
     margin-left 0
-    font-size .8rem
+    font-size .75rem
 
 .blog-post__content p, .blog-post__meta
-  font-size 1.2rem
+  font-size 1.0rem
+  line-height 1.625rem
   margin (unit * 2) 0 (unit * 2) 30%
 
   +below(600px)
     margin (unit * 2) 0 (unit * 2) 20%
+
+.blog-post__meta
+  font-size 0.875rem
+  line-height 1.25rem
 
 .blog-post__tags
   clearfix()
@@ -73,8 +80,10 @@
 .blog-post__author
   padding unit 0
   margin unit 0
-  border-top 2px solid border-color
-  border-bottom 2px solid border-color
+  border-top 1px solid border-color
+  border-bottom 1px solid border-color
+  font-size 0.875rem
+  line-height 1.25rem
 
 .blog-post__author__name
-  font-family Work Sans SemiBold
+  font-family Work Sans Medium
