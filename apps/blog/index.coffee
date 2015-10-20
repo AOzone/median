@@ -9,5 +9,5 @@ app = module.exports = express()
 app.set "views", __dirname + "/templates"
 app.set "view engine", "jade"
 
-app.get "/blog", routes.index
-app.get "/blog/:slug", routes.single
+app.get "/review", routes.index
+app.get "/review/:slug", routes.single

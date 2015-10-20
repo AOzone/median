@@ -1,5 +1,9 @@
 .list--news
-  clearfix()
+  width 65%
+  margin 0 auto
+
+  +below(768px)
+    width 100%
 
 .news-divider
   clear both
@@ -7,9 +11,7 @@
   border-bottom 1px solid border-color
   outline none
   height 1px
-
-  +below(900px)
-    display none
+  margin-top unit
 
   &:last-child
     display none
@@ -18,46 +20,37 @@
   font-family Work Sans Medium
   font-size 0.8rem
 
-.news__item__callsigns
-  clearfix()
-  margin-bottom unit
-
 .news__item
-  column(1, cycle: 1)
-  margin 3% 0
-  min-height 300px
+  padding unit 0
   position relative
 
-  &:nth-child(2n+1)
-    clear none
-
-  +below(900px)
-    column(1, cycle: 1)
-
 .news__item__title
+  font-family Atlas Typewriter Bold
 
   +below(900px)
     h5()
 
 .news__item__description
-  margin-bottom unit * 2
+  padding-bottom unit * 2
 
 .news__item__meta
   position absolute
-  bottom 0
   width 100%
+  bottom 0
 
 .news__item__callsigns
-  clearfix()
-  margin-bottom unit * 2
-
+  position absolute
+  bottom 0
+  left 0
   .call-sign
     max-width 120px !important
-    float left
 
 .news__item__source-domain
-  float right
+  position absolute
+  bottom 0
+  right 0
   color rgba(14,14,37,0.5) !important
+  line-height 47px
 
   &:hover
     color rgba(14,14,37,1) !important

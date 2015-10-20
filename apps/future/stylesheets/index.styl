@@ -21,16 +21,14 @@
   clearfix()
 
   .call-sign
-
-    // top -11px
     width 100px
 
   .call-sign__icon
     svg path
-      fill #fff
+      fill #fff !important
 
   .call-sign__id
-    padding-top (unit / 2)
+    color #fff
 
   +below(768px)
     float none
@@ -89,12 +87,7 @@
   margin (unit * 2) 0
 
 .contract__news
-  width 65%
-  margin 0 auto
   padding (unit * 2) 0
-
-  +below(768px)
-    width 100%
 
 .news__item__title
   font-family Atlas Typewriter Bold

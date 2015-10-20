@@ -2,19 +2,9 @@
   font-family Atlas Typewriter Regular
 
 .portfolio-list__position
-  .call-sign
-    padding 16px
-
   .call-sign__icon
-    padding-top 1px
     svg path
       fill #fff
-
-  +below(900px)
-    .call-sign
-      display inline-block
-      width 100px
-
   td
     vertical-align middle
 
@@ -55,6 +45,12 @@
   height 90vh
   position relative
   margin-bottom (unit * 2)
+
+table.portfolio-list.account-list
+  td:first-child
+    text-align left
+  td:last-child
+    text-align right
 
 .node
   overflow hidden

@@ -18,7 +18,7 @@ module.exports = class Contract extends Backbone.Model
 
   formattedGain: (attr = 'gain_percent')->
     mark = if @get(attr) > 0 then "+" else ""
-    "#{mark}#{numeral(@get(attr)).format('0.00%')}"
+    "#{mark}#{@get(attr)}%"
 
   formattedPrice: (type) ->
     "#{numeral(@get(type)).format('0,0')}Å"

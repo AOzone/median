@@ -90,8 +90,8 @@ module.exports = [
   {
     name: 'Sam Hart'
     location: 'New York City'
-    links: ['[Website](http://hxrts.com/)', '[@hxrts](https://twitter.com/hxrts)']
-    bio: 'Sam Hart is a scientist, publisher, and artist based in New York. His interests include complex systems modelling and developing strategies that advance a more ethical technoculture. Hart works as a Bioinformatician at Sloan Kettering\'s Reis-Filho Lab, where he investigates the mechanisms of cancer evolution. He is also Co-Founder and Editor-in-Chief of AVANT.org, an internet project space for critical interdisciplinarity.'
+    links: ['[Website](http://hxrts.com/)', '[AVANT.org](http://avant.org)', '[@hxrts](https://twitter.com/hxrts)']
+    bio: 'Sam Hart is a scientist, publisher, and artist based in New York. His interests include complex systems modelling and developing strategies that advance a more ethical technoculture. Hart works as a Bioinformatician at Sloan Kettering\'s Reis-Filho Lab, where he investigates mechanisms of cancer evolution. He is also Co-Founder and Editor-in-Chief of AVANT.org, an internet project space for critical interdisciplinarity.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -150,8 +150,8 @@ module.exports = [
   {
     name: 'Daniel Keller'
     location: 'Berlin'
-    links: [ '(are.na/daniel-keller](https://www.are.na/daniel-keller)']
-    bio: 'Daniel Keller was born in Detroit and now lives and works in Berlin. In 2012 he became Director of Absolute Vitality Inc, a Wyoming based corporation-sculpture co-owned by the artist and a group of private collectors. Daniel Keller\'s wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration. Keller, alongside the artist Nik Kosmas form a collective called AIDS-3D which explores techno-utopianism along with other popular notions of progress.'
+    links: [ '[Website](dnlklr.com)', '[@dnlklr](https://twitter.com/dnlklr)','[are.na/daniel-keller](https://www.are.na/daniel-keller)']
+    bio: 'Daniel Keller, born 1986, is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d since 2007 and independently since 2012. He was co-organizer of TEDxVaduz in 2012 and Director and CEO of Absolute Vitality Inc., a Wyoming-incorporated sculpture.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -309,9 +309,9 @@ module.exports = [
   ,
   {
     name: 'Ben Vickers'
-    location: 'London'
+    location: 'Nomadic'
     links: ['[Website](http://www.benvickers.net/)', '[@benvickers_](https://twitter.com/benvickers_)']
-    bio: 'Ben Vickers is a curator, writer, network analyst, technologist and luddite. He is currently Curator of Digital at the Serpentine Gallery, co-runs LIMAZULU Project Space, is an active member of EdgeRyders, leads Brighton University’s Professional \'Reality\' Development Program and facilitates the development of unMonastery, a new kind of social space designed to serve the local communities of towns or small cities throughout Europe in solving key social and infrastructural problems.'
+    bio: 'Ben Vickers is a curator, writer, explorer, technologist and luddite. Currently Curator of Digital at the Serpentine Galleries, is Co-Director of LIMAZULU Project Space, Co-Chair of Transmediale 2016, a Near Now Fellow and facilitator for the open-source development of unMonastery, a new civically minded social space prototyped in Matera, Southern Italy during 2014 and now set to replicate throughout Europe and further afield in 2015/16.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []

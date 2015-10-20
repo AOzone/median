@@ -1,17 +1,32 @@
 .call-sign
+  display inline-block
   position relative
   font-family Atlas Typewriter Bold
-  margin-right 8px
   cursor pointer
-  padding 13px 16px
   letter-spacing 1px
+  margin-right unit
+
+  &.call-sign--md
+    height 56px
+    width 100px
+
+  &.call-sign--sm
+    height 47px
+    width 80px
+
+  &.call-sign--x-sm
+    height 30px
+    width 80px
 
 .call-sign__icon
   position absolute
-  top 2px
-  left 0
-  width 100%
-  height 100%
-
+  top 0
+  svg
+    width 100%
+    height 100%
+  // nothign
 .call-sign__id
   text-align center
+  position absolute
+  width 100%
+  height 100%

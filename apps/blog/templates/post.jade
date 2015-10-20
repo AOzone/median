@@ -13,10 +13,15 @@
       .blog-post__meta
         .blog-post__tags
           for tag in post.get('tags')
-            .call-sign(data-contract_id=tag.name)
+            a.call-sign.call-sign--sm(
+              data-contract_id=tag.name
+              href="/investing/futures/" + tag.name
+            )
               .call-sign__icon
                 include ../../../public/images/callsign.svg
-              a.call-sign__id(href="/investing/futures/" + tag.name)=tag.name
+              .call-sign__id
+                .v-outer
+                  .v-inner=tag.name
 
         .blog-post__author
           .blog-post__author__name=post.get('author').first_name + ' ' + post.get('author').last_name

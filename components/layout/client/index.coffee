@@ -28,3 +28,8 @@ module.exports.initLayout = ->
     gain = $(this).data 'gain'
     color = getColor parseFloat gain
     $(this).css backgroundColor: "##{color}"
+
+  $('.js-svg-fill-color').each (index) ->
+    gain = $(this).data 'contract_gain'
+    color = getColor parseFloat gain
+    $(this).find('svg path').css fill: "##{color}"

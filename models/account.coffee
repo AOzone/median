@@ -27,9 +27,16 @@ module.exports = class Account extends Backbone.Model
   formatCurrency: (attr) ->
     "#{numeral(@get(attr)).format('0,0')}Å"
 
-  totalGain: ->
+  totalPortfolioValue: ->
     total = _.reduce @get('open_positions'), (memo, position) ->
       memo + position.current_value
+    , 0
+
+    "#{numeral(total).format('0,0')}Å"
+
+  totalGain: ->
+    total = _.reduce @get('open_positions'), (memo, position) ->
+      memo + position.gain_loss
     , 0
 
     "#{numeral(total).format('0,0')}Å"
