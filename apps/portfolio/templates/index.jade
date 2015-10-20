@@ -32,7 +32,7 @@ block body
       table.portfolio-list.account-list
         thead
           tr
-            td
+            td Symbol
             td Future
             td Shares
             td Current Price
@@ -42,7 +42,7 @@ block body
         tbody
           for position in positions.models
             tr.portfolio-list__position
-              td.is-active(data-th="callsign")
+              td.is-active(data-th="Symbol")
                 - contract = position
                 include ../../../components/callsign/templates/index
               td.is-active.future-title(data-th="future") #{position.get('title')}
