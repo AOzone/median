@@ -41,7 +41,7 @@ module.exports =
     channel_id: 34964
   NONH:
     channel_id: 34972
-  SERV:
+  TAPP:
     channel_id: 34980
   MAGC:
     channel_id: 34968
