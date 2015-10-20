@@ -140,7 +140,7 @@ module.exports = [
   {
     name: 'Indy Johar'
     location: 'London'
-    links: ['[about.me/indy.johar](https://about.me/indy.johar)','[project00.cc](http://www.project00.cc/)' '[@indy_johar](https://twitter.com/indy_johar)']
+    links: ['[about.me/indy.johar](https://about.me/indy.johar)','[project00.cc](http://www.project00.cc/)', '[@indy_johar](https://twitter.com/indy_johar)']
     bio: 'Indy Johar is an architect, co-founder of [00](project00.cc) and a Senior Innovation Associate with the Young Foundation. Johar, on behalf of 00, has co-founded multiple social ventures from Impact Hub Westminster to Impact Hub Birmingham and has also co-led research projects such as The Compendium for the Civic Economy. Johar is an Advisor to the Earth Security Initiative and a director of WikiHouse Foundation and Civic Systems Laboratory.'
     azone_username: ''
     azone_reviews: []
