@@ -1,0 +1,17 @@
+for transaction in transactions
+  .transaction
+    .transaction-action
+      - contract = contracts.findWhere({'contract': transaction.get('contract')})
+      if contract
+        a(href="/portfolio/#{transaction.get('trader_id')}")= transaction.get('trader_id')
+        - verb = transaction.get('order_type') == 'BUY' ? 'bought' : 'sold'
+        | &nbsp;
+        | #{verb}
+        | &nbsp;
+        a(href="/investing/futures/#{transaction.get('contract')}")= contract.get('title')
+        | &nbsp;
+        | for #{transaction.get('trade_price')}Å
+    if transaction.get('trade_comment')
+      .transaction-comment= transaction.get('trade_comment')
+    .transaction-date= transaction.get('timestamp')
+

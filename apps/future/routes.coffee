@@ -4,6 +4,7 @@ Backbone = require "backbone"
 sd = require("sharify").data
 Contract = require '../../models/contract.coffee'
 Contracts = require '../../collections/contracts.coffee'
+Transactions = require '../../collections/transactions.coffee'
 Chart = require '../../collections/chart.coffee'
 Block = require '../../models/block.coffee'
 Blocks = require '../../collections/blocks.coffee'
@@ -112,6 +113,13 @@ fetchContract = (callSign, next, cb)->
         res.redirect contract.href()
   .catch next
   .done()
+
+@transactions = (req, res, next) ->
+  transactions = new Transactions [], id: req.params.block_id
+
+  transactions.fetch
+    success: ->
+      res.send transactions.toJSON()
 
 @tooltip = (req, res, next) ->
   status = res.locals.status

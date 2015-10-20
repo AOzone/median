@@ -4,6 +4,7 @@ sd = require("sharify").data
 Chart = require '../../../collections/chart.coffee'
 Contract = require '../../../models/contract.coffee'
 Contracts = require '../../../collections/contracts.coffee'
+Transactions = require '../../../collections/transactions.coffee'
 Blocks = require '../../../collections/blocks.coffee'
 NewsListView = require '../../../components/news_list/client/index.coffee'
 CallSignView = require '../../../components/callsign/client/index.coffee'
@@ -12,38 +13,52 @@ modalize = require '../../../components/modalize/index.coffee'
 { getColor } = require '../../../components/color/index.coffee'
 
 template = -> require('../templates/tip.jade') arguments...
+transactionTemplate = -> require('../templates/transaction_list.jade') arguments...
 
 module.exports = class TipView extends Backbone.View
 
-  initialize: ({@item, @transactions}) ->
-    # no op
+  initialize: ({@item, @contracts}) ->
+    @collection.on 'sync', @renderTransactions, @
 
   render: =>
     @$el.html template
       item: @item
-      transactions: @transactions
+      contracts: @contracts
+
+    @postRender()
 
     return this
+
+  postRender: ->
+    @collection.url = "#{sd.APP_URL}/transactions/#{@item.id}"
+    @collection.fetch()
+
+  renderTransactions: ->
+    @$('.tip-transactions').html transactionTemplate transactions: @collection.models, contracts: @contracts
 
 
 module.exports = class ContractRouter extends Backbone.Router
   routes:
+    '': 'closeTip'
     'tip/:id': 'showTip'
 
-  initialize: ({ @news, @chart }) ->
+  initialize: ({ @news, @chart, @contracts }) ->
     # no op
+
+  closeTip: ->
+    @modal?.close()
 
   showTip: (id) ->
     item = @news.get(id)
-    transactions = @chart.where block_id: id
+    tips = new Transactions [], id: id
 
     view = new TipView
       item: item
-      transactions: transactions
+      contracts: @contracts
+      collection: tips
 
-    modal = modalize view, className: 'modalize modalize--gray'
-    modal.open()
-
+    @modal = modalize view, className: 'modalize modalize--gray'
+    @modal.open()
 
 module.exports.init = ->
   contract = new Contract sd.CONTRACT
@@ -55,12 +70,15 @@ module.exports.init = ->
   router = new ContractRouter
     news: news
     chart: chart
+    contracts: contracts
 
   Backbone.history.start()
 
   # handle news clicks
   $('body').on 'click', '.news__item', (e)->
-    router.navigate "tip/#{$(e.currentTarget.data('block_id'))}", trigger: true
+    e.preventDefault()
+    id = $(e.currentTarget).data('block-id')
+    router.navigate "tip/#{id}", trigger: true
 
   # tick chart
   initTickChart chart, $('#chart')
