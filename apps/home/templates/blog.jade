@@ -8,5 +8,5 @@ section.blog
 
   .home-contributors-list
     for person, index in contributors
-      - random = Math.random() * 10
+      - random = (Math.random() * 20) - 10
       .home-contributor.js-gain-color(data-gain=random)= person.name
