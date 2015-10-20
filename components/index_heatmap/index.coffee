@@ -43,7 +43,7 @@ module.exports =
         plots.push({ x: x, y: y, value: v, radius: r * 10 })
 
     heatmap.setData
-      max: 4
+      max: 2
       data: plots
 
     $("##{container_id}").addClass('is-visible')
