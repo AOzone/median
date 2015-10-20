@@ -5,3 +5,8 @@ section.blog
       | Read the review for regular updates, including announcements about interventions by various contributors—from artists and architects to theorists and strategists—after the early days of rapid price fluctuations have stabilized.
       br
       a(href="/") See all contributors
+
+  .home-contributors-list
+    for person, index in contributors
+      - random = Math.random() * 10
+      .home-contributor.js-gain-color(data-gain=random)= person.name
