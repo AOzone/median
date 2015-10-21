@@ -3,15 +3,18 @@ _ = require 'underscore'
 sd = require("sharify").data
 News = require '../../collections/news.coffee'
 Contracts = require '../../collections/contracts.coffee'
+Indices = require '../../collections/indices.coffee'
 contributors = require '../../maps/contributors.coffee'
 
 @index = (req, res, next) ->
   blocks = new News []
   contracts = new Contracts []
+  indices = new Indices []
 
   Q.all [
     blocks.fetch data: per: 10
     contracts.fetch()
+    indices.fetch()
   ]
   .then ->
     res.locals.sd.BLOCKS = blocks
@@ -23,5 +26,6 @@ contributors = require '../../maps/contributors.coffee'
       news: blocks
       contracts: contracts
       contributors: contributors
+      statement: indices.statement()
   .catch next
   .done()
