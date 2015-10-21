@@ -1,7 +1,7 @@
 - function activeClass(path) { if (sd && sd.CURRENT_PATH) return isActive(path) ? 'is-active' : 'is-inactive'; };
 
 mixin tab(href, title)
-  a.tab( href= href, class= activeClass(href) )
+  a.tab( href= href, class="#{activeClass(href)} tab--#{title}"  )
     = title
 
 nav.tabs

@@ -5,28 +5,15 @@ block vars
 
 block tabs
   +tab("/portfolio/" + account.id, "portfolio")
+  if account.id == user.id
+    +tab("/portfolio/" + account.id + "/alerts", "alerts")
 
 block body
-  .container.container--portfolio-bio
-    .v-outer
-      .v-inner.center
-        h1 #{account.id}
-        .portfolio-stats
-          .portfolio-stat
-            .portfolio-stat__value #{account.formatCurrency('net_liquidation_value')}
-            .portfolio-stat__label Net Worth
-          .portfolio-stat
-            .portfolio-stat__value #{account.totalPortfolioValue()}
-            .portfolio-stat__label Portfolio Value
-          .portfolio-stat
-            .portfolio-stat__value #{account.totalGain()}
-            .portfolio-stat__label Gain
-          .portfolio-stat
-            .portfolio-stat__value #{account.formatCurrency('balance')}
-            .portfolio-stat__label Cash Balance
+  include account-top
   include ../../../components/tabs/templates/index
-  #portfolio-treemap
-    //- rendered on the client
+  if positions.length
+    #portfolio-treemap
+      //- rendered on the client
   .container.container--portfolio
     if positions.length
       table.portfolio-list.account-list
@@ -49,8 +36,8 @@ block body
               td.is-active(data-th="no. of shares") #{position.get('qty')}
               td.is-active(data-th="current price") #{position.formattedPrice('current_price')}
               td.is-active(data-th="purchase price") #{position.formattedPrice('avg_price')}
-              td.is-active(data-th="total gain / loss").js-gain-color(data-gain="#{position.get('gain_loss')}") #{position.formattedGain('gain_loss')}
-              td.is-active(data-th="market value").js-gain-color(data-gain="#{position.get('gain_loss')}") #{position.formattedPrice('current_value')}
+              td.is-active.js-gain-color(data-th="total gain / loss" data-gain="#{position.get('gain_loss')}") #{position.formattedGain('gain_loss')}
+              td.is-active.js-gain-color(data-th="market value" data-gain="#{position.get('gain_loss')}") #{position.formattedPrice('current_value')}
 
     else
       .error.is-centered

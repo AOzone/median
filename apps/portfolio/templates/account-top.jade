@@ -1,0 +1,17 @@
+.container.container--portfolio-bio
+  .v-outer
+    .v-inner.center
+      h1 #{account.id}
+      .portfolio-stats
+        .portfolio-stat
+          .portfolio-stat__value #{account.formatCurrency('net_liquidation_value')}
+          .portfolio-stat__label Net Worth
+        .portfolio-stat
+          .portfolio-stat__value #{account.totalPortfolioValue()}
+          .portfolio-stat__label Portfolio Value
+        .portfolio-stat
+          .portfolio-stat__value #{account.totalGain()}
+          .portfolio-stat__label Gain
+        .portfolio-stat
+          .portfolio-stat__value #{account.formatCurrency('balance')}
+          .portfolio-stat__label Cash Balance

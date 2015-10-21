@@ -9,3 +9,4 @@ app.set "views", __dirname + "/templates"
 app.set "view engine", "jade"
 app.get "/portfolio", routes.index
 app.get "/portfolio/:id", routes.index
+app.get "/portfolio/:id/alerts", routes.alerts
