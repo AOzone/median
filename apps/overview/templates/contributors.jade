@@ -15,7 +15,7 @@ block body
           .section-header__title
             h3= person.name
           .section-header__description
-            p= person.bio
+            p!= markdown(person.bio)
             .contributor-location= person.location
             .contributor-links
               each link in person.links
