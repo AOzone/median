@@ -151,7 +151,7 @@ module.exports = [
     name: 'Daniel Keller'
     location: 'Berlin'
     links: [ '[Website](dnlklr.com)', '[@dnlklr](https://twitter.com/dnlklr)','[are.na/daniel-keller](https://www.are.na/daniel-keller)']
-    bio: 'Daniel Keller, born 1986, is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d since 2007 and independently since 2012. He was co-organizer of TEDxVaduz in 2012 and Director and CEO of Absolute Vitality Inc., a Wyoming-incorporated sculpture.'
+    bio: 'Daniel Keller is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d since 2007 and independently since 2012. He was co-organizer of TEDxVaduz in 2012 and Director and CEO of Absolute Vitality Inc., a Wyoming-incorporated sculpture.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
