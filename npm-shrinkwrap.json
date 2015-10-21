@@ -4128,6 +4128,11 @@
       "from": "https://registry.npmjs.org/q/-/q-1.4.1.tgz",
       "resolved": "https://registry.npmjs.org/q/-/q-1.4.1.tgz"
     },
+    "qs": {
+      "version": "5.2.0",
+      "from": "qs@",
+      "resolved": "https://registry.npmjs.org/qs/-/qs-5.2.0.tgz"
+    },
     "query-params": {
       "version": "0.0.1",
       "from": "query-params@",
