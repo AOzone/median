@@ -1,6 +1,6 @@
 - showBorder = shouldSetBorder == true ? true :  false
 
-a.call-sign.js-svg-fill-color(
+.call-sign.js-svg-fill-color(
   class=callSignSize ? callSignSize : 'call-sign--sm'
   data-contract_id=contract.get('contract')
   data-contract_gain=contract.get('gain_percent')
@@ -14,5 +14,4 @@ a.call-sign.js-svg-fill-color(
   .call-sign__id
     .v-outer
       .v-inner #{contract.get('contract')}
-
 - shouldSetBorder = false
