@@ -20,8 +20,6 @@ table
     text-align left
   td:last-child
     padding-right 0
-  tbody tr
-    cursor pointer
   tbody +quantity-at-least(2, tr)
     &:hover
       background-color darken(background-grey-color, 3%)
@@ -46,7 +44,10 @@ table
         content attr(data-th)": "
         font-family Atlas Typewriter Bold
         color text-color
-        text-transform uppercase
+        text-transform capitalize
+        display block
+      .call-sign
+        margin-top unit
     td:nth-child(1)
       padding-left (unit / 2)
     td:last-child
@@ -55,6 +56,7 @@ table
       border-bottom 1px solid border-color
     thead
       display none
-    &.is-large tbody
+    td.is-large
       h5()
       font-weight normal
+      vertical-align middle
