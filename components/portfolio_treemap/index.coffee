@@ -6,15 +6,16 @@ template = -> require('./node.jade') arguments...
 
 module.exports =
   initTreeMap: initTreeMap = (positions, $container) ->
+    container_id = $container.attr('id')
     width = $container.width()
     height = $container.height()
 
     treemap = d3.layout.treemap()
       .size([width, height])
       .sticky(true)
-      .value((d) -> d.current_value )
+      .value((d) -> d.current_value || d.market_cap )
 
-    div = d3.select("#portfolio-treemap").append("div")
+    div = d3.select("##{container_id}").append("div")
       .style("position", "relative")
       .style("width", width + "px")
       .style("height", height + "px")
@@ -25,7 +26,10 @@ module.exports =
       .attr("class", "node")
       .call(treePosition)
       .style("background", (d) -> "##{getColor(d.gain_percent)}")
-      .html((d) -> template contract: new Contract d )
+      .html((d) ->
+        console.log 'd', d
+        template contract: new Contract d
+      )
 
   treePosition: treePosition = ->
     this.style("left", (d) ->  d.x + "px")
@@ -34,5 +38,6 @@ module.exports =
       .style("height", (d) -> Math.max(0, d.dy - 1) + "px")
 
   updateTreeMap: updateTreeMap = (positions, $container) ->
-    d3.select("#portfolio-treemap > div").remove()
+    container_id = $container.attr('id')
+    d3.select("##{container_id} > div").remove()
     initTreeMap positions, $container

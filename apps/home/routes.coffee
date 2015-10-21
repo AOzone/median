@@ -5,6 +5,7 @@ News = require '../../collections/news.coffee'
 Contracts = require '../../collections/contracts.coffee'
 Indices = require '../../collections/indices.coffee'
 contributors = require '../../maps/contributors.coffee'
+tech = require '../../maps/tech.coffee'
 
 @index = (req, res, next) ->
   blocks = new News []
@@ -25,6 +26,7 @@ contributors = require '../../maps/contributors.coffee'
     res.render 'index',
       news: blocks
       contracts: contracts
+      tech: _.shuffle tech
       contributors: contributors
       statement: indices.statement()
   .catch next
