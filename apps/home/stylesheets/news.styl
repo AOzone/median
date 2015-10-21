@@ -1,5 +1,8 @@
 .home-list--news
   margin-top unit * 2
+  border-left 1px solid border-color
+  border-top 1px solid border-color
+  clearfix()
 
 .home-news__item
   float left
@@ -7,6 +10,8 @@
   height 300px
   padding unit
   position relative
+  border-bottom 1px solid border-color
+  border-right 1px solid border-color
 
   &:first-child, &:nth-last-child(2)
     width 50%
@@ -22,13 +27,17 @@
       h5
         h5()
 
-  .news__item__meta
-    right unit
-    bottom unit
+.news__item__source-domain
+  position absolute
+  right unit
+  bottom 0
+  width 80px
+  text-overflow ellipsis
+  overflow hidden
+  white-space nowrap
+  font-size .8rem
 
-  .news__item__source-domain
-    width 80px
-    text-overflow ellipsis
-    overflow hidden
-    white-space nowrap
-    font-size .8rem
+.news__item__callsign
+  position absolute
+  left (unit/2)
+  bottom 0

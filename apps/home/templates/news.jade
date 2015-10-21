@@ -1,18 +1,25 @@
 section.news
-  .section-header
-    .section-header__title Hot Tips
-    .section-header__description
-      | Follow and contribute to the sharing of breaking news and information about each future as it unfolds in the present.
-      br
-      a(href="/news") See all tips
-  .home-list--news
-    each item, index in news.models
-      .home-news__item
-        .news__item__top
-          .news__item__relative-date= item.updatedAtAgo()
+  .container
+    .section-header
+      .section-header__title Hot Tips
+      .section-header__description
+        | Follow and contribute to the sharing of breaking news and information about each future as it unfolds in the present.
+        br
+        a(href="/news") See all tips
+    .home-list--news
+      each item, index in news.models
+        .home-news__item
+          .news__item__top
+            .news__item__relative-date= item.updatedAtAgo()
 
-        a(href="#{item.get('source').url}", target="_blank")
-          h5.news__item__title= item.get('title')
+          a(href="#{item.get('source').url}", target="_blank")
+            h5.news__item__title= item.get('title')
 
-        .news__item__meta
+          .news__item__callsign
+            each callSign in item.callSignArray()
+              - contract = contracts.findWhere({'contract': callSign})
+              - itemId = item.id
+              - itemTitle = item.get('title')
+              if contract
+                include ../../../components/callsign/templates/index.jade
           a(href="#{item.get('source').url}", target="_blank").news__item__source-domain= item.sourceDomain()

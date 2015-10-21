@@ -1,12 +1,13 @@
 section.blog
-  .section-header
-    .section-header__title Review
-    .section-header__description
-      | Read the review for regular updates, including announcements about interventions by various contributors—from artists and architects to theorists and strategists—after the early days of rapid price fluctuations have stabilized.
-      br
-      a(href="/contributors") See all contributors
+  .container
+    .section-header
+      .section-header__title Review
+      .section-header__description
+        | Read the review for regular updates, including announcements about interventions by various contributors—from artists and architects to theorists and strategists—after the early days of rapid price fluctuations have stabilized.
+        br
+        a(href="/contributors") See all contributors
 
-  .home-contributors-list
-    for person, index in contributors
-      - random = (Math.random() * 20) - 10
-      .home-contributor.js-gain-color(data-gain=random)= person.name
+    .home-contributors-list
+      for person, index in contributors
+        - random = (Math.random() * 20) - 10
+        .home-contributor.js-gain-color(data-gain=random)= person.name

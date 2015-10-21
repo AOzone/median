@@ -7,17 +7,17 @@ block body
     include ../../../components/index_heatmap/index
   .landing-overlay-outer
     h2
-      | The Åzone Futures Market is
+      | The future is
       br
-      strong looking 62% more SAFE
+      strong looking #{statement}
       br
       | than yesterday
-  .container
-    include ./about.jade
-    include ./futures.jade
-    include ./news.jade
-    include ./blog.jade
-    include ./leaderboard.jade
+
+  include ./about.jade
+  include ./futures.jade
+  include ./news.jade
+  include ./blog.jade
+  include ./leaderboard.jade
 
 block post_footer
   include ../../../components/footer_signup/templates/index
