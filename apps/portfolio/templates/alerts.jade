@@ -11,7 +11,7 @@ mixin tip_alert(reward)
   .single-alert
     - s = reward.citations > 1 ? 's' : ''
     - block = blocks.get(reward.block_id)
-    .alert-title +#{reward.rewards}
+    .alert-title +#{reward.rewards}Å
     .alert-body You received a hot tip reward for #{reward.citations} new trade#{s} on
     .alert-news-headline
       .alert-news-headline__callsigns
