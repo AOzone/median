@@ -9,6 +9,10 @@ Chart = require '../../collections/chart.coffee'
 Blocks = require '../../collections/blocks.coffee'
 contractMap = require '../../maps/contracts.coffee'
 
+pickRandomCallsign = ->
+  signs = _.keys contractMap
+  (_.shuffle signs)[0]
+
 @index = (req, res, next) ->
   contracts = new Contracts []
   indices = new Indices []
@@ -26,7 +30,7 @@ contractMap = require '../../maps/contracts.coffee'
   .done()
 
 @futureDefinition = (req, res, next) ->
-  callSign = req.params.callsign
+  callSign = req.params.callsign || pickRandomCallsign()
   contract = new Contract id: callSign
 
   Q.all [
@@ -42,7 +46,7 @@ contractMap = require '../../maps/contracts.coffee'
 
 @allFutures  = (req, res, next) ->
   contracts = new Contracts []
-  highlighted = req.params.callsign
+  highlighted = req.params.callsign || pickRandomCallsign()
 
   Q.all [
     contracts.fetch()
@@ -57,7 +61,7 @@ contractMap = require '../../maps/contracts.coffee'
   .done()
 
 @futureTips = (req, res, next) ->
-  callSign = req.params.callsign
+  callSign = req.params.callsign || pickRandomCallsign()
   channelId = contractMap[callSign]?.channel_id
   blocks = new Blocks [], id: channelId
 
@@ -73,7 +77,7 @@ contractMap = require '../../maps/contracts.coffee'
   .done()
 
 @futureTick = (req, res, next) ->
-  callSign = req.params.callsign
+  callSign = req.params.callsign || pickRandomCallsign()
   contract = new Contract id: callSign
   chart = new Chart [], { id: callSign, type: '1tick' }
 
