@@ -13,7 +13,19 @@ mixin tip_alert(reward)
     - block = blocks.get(reward.block_id)
     .alert-title +#{reward.rewards}
     .alert-body You received a hot tip reward for #{reward.citations} new trade#{s} on
-    .alert-news-headline #{block.get('title')}
+    .alert-news-headline
+      .alert-news-headline__callsigns
+        for contract in reward.contracts
+          a.call-sign.call-sign--sm(
+            data-contract_id=contract
+            href="/investing/futures/" + contract
+          )
+            .call-sign__icon
+              include ../../../public/images/callsign.svg
+            .call-sign__id
+              .v-outer
+                .v-inner=contract
+      | #{block.get('title')}
 
 block vars
   - bodyClass = 'is-dark'
