@@ -3,6 +3,13 @@ extends ../../../components/layout/templates/index--exhibition
 block body
   .landing-outer
     include ../../../components/index_heatmap/index
+  .landing-overlay-outer
+    h2
+      | The future is
+      br
+      strong looking #{statement}
+      br
+      | than yesterday
 
 block scripts
    script( src=asset('/assets/exhibition_index.js')  )
