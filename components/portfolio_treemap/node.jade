@@ -1,3 +1,3 @@
 h5: a(href=contract.href()) #{contract.get('title')}
 
-h1 #{contract.get('market_cap')}Å
+h1 #{numeral(contract.get('market_cap')).format('0,0')}Å
