@@ -34,8 +34,6 @@ Contracts = require '../../collections/contracts.coffee'
   .then ->
     res.locals.sd.CONTRACTS = contracts
 
-    console.log 'highlighted', highlighted
-
     res.render 'all_futures',
       contracts: contracts
       highlighted: highlighted
