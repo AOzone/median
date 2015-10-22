@@ -60,3 +60,12 @@ table
       h5()
       font-weight normal
       vertical-align middle
+
+.is-dark
+  table td
+    border-top 1px solid light-border-color
+  +below(768px)
+    table td
+      border none
+    table td:last-child
+      border-bottom 1px solid light-border-color
