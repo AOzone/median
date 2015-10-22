@@ -111,7 +111,7 @@ module.exports = [
     name: 'Sam Hart'
     location: 'New York City'
     links: ['[hxrts.com](http://hxrts.com/)', '[AVANT.org](http://avant.org)', '[@hxrts](https://twitter.com/hxrts)']
-    bio: 'Sam Hart is a scientist, publisher, and artist based in New York. His interests include complex systems modelling and developing strategies that advance a more ethical technoculture. Hart works as a Bioinformatician at Sloan Kettering\'s Reis-Filho Lab, where he investigates mechanisms of cancer evolution. He is also Co-Founder and Editor-in-Chief of AVANT.org, an internet project space for critical interdisciplinarity.'
+    bio: 'Sam Hart is a scientist, publisher, and artist concentrating on complex systems modelling and strategies advancing a more ethically sound technoculture. Sam works as a Bioinformatician at Sloan Kettering\'s Reis Lab, where he investigates mechanisms of cancer evolution and is Co-Founder + Editor-in-Chief of AVANT.org, an internet project space for critical interdisciplinarity.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
