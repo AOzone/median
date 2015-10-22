@@ -1,14 +1,11 @@
 
 .future-circles.future-circles--bigboard
-  margin-top 100px
-  margin-left 180px
+  margin-top 200px
+  margin-left 160px
 
   .future-circle
     column(1/9, uncycle: 5, cycle: 9)
     height 150px
 
-  .future-circle__circle
-    opacity 0.7
-
-  .future-circle__circle.is-highlighted
-    opacity 1
+    &.is-highlighted
+      border 1px solid #fff
