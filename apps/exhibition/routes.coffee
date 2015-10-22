@@ -6,6 +6,8 @@ Indices = require '../../collections/indices.coffee'
 Contracts = require '../../collections/contracts.coffee'
 Contract = require '../../models/contract.coffee'
 Chart = require '../../collections/chart.coffee'
+Blocks = require '../../collections/blocks.coffee'
+contractMap = require '../../maps/contracts.coffee'
 
 @index = (req, res, next) ->
   contracts = new Contracts []
@@ -24,7 +26,19 @@ Chart = require '../../collections/chart.coffee'
   .done()
 
 @futureDefinition = (req, res, next) ->
-  res.render 'definition'
+  callSign = req.params.callsign
+  contract = new Contract id: callSign
+
+  Q.all [
+    contract.fetch()
+  ]
+  .then ->
+    res.locals.sd.CONTRACT = contract.toJSON()
+
+    res.render 'definition',
+      contract: contract
+  .catch next
+  .done()
 
 @allFutures  = (req, res, next) ->
   contracts = new Contracts []
@@ -43,7 +57,20 @@ Chart = require '../../collections/chart.coffee'
   .done()
 
 @futureTips = (req, res, next) ->
-  res.render 'tips'
+  callSign = req.params.callsign
+  channelId = contractMap[callSign]?.channel_id
+  blocks = new Blocks [], id: channelId
+
+  Q.all [
+    blocks.fetch()
+  ]
+  .then ->
+    res.locals.sd.BLOCKS = blocks
+
+    res.render 'tips',
+      news: blocks
+  .catch next
+  .done()
 
 @futureTick = (req, res, next) ->
   callSign = req.params.callsign

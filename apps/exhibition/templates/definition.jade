@@ -1,0 +1,14 @@
+extends ../../../components/layout/templates/index--exhibition
+
+block body
+  section.contract__about
+    .contract__copy
+      h2.contract__title= contract.get('title')
+      .contract__abstract= contract.get('abstract')
+      .contract__meta
+        .contract__value
+          .contract__meta__label Value
+          h3.contract__meta__value #{contract.formattedPrice('bid')}
+        .contract__value
+          .contract__meta__label Gain
+          h3.contract__meta__value #{contract.formattedGain()}
