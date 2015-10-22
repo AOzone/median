@@ -278,6 +278,16 @@ module.exports = [
   }
   ,
   {
+    name: 'Emily Segal'
+    location: 'New York City'
+    links: ['[khole.net](http://khole.net/)', '[emilysegal.net](http://emilysegal.net/)', '[@khole_emily](https://twitter.com/khole_emily)']
+    bio: 'Emily Segal is an artist and brand consultant based in in New York. She co-founded K-HOLE, the trend forecasting group and art collective. Previously, she was a strategist for corporate branding projects at Wolff Olins and a contributing editor at the contemporary culture magazine 032c in Berlin. She has lectured on branding and consumer culture at the DLD conference, MoMA PS1, Serpentine Gallery, and TEDxVaduz, among others.'
+    azone_username: ''
+    azone_reviews: []
+    azone_funds: []
+  }
+  ,
+  {
     name: 'Jack Self'
     location: 'London'
     links: ['[jackself.com](http://www.jackself.com/)', '[@jack_self](https://twitter.com/jack_self)']
