@@ -7,7 +7,7 @@ module.exports = ->
   $navOverlayOpen = $('.js-nav-overlay-open')
   $navOverlayClose = $('.js-nav-overlay-close')
 
-  unless $('body').hasClass 'is-light-nav'
+  unless $('body').hasClass('is-light-nav') or $('body').hasClass('is-exhibition')
     myElement = document.querySelector("nav.nav")
     headroom  = new Headroom(myElement)
     headroom.init()

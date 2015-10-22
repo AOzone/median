@@ -1,0 +1,26 @@
+- pageTitle = 'Futures Market'
+- bodyClass = 'is-exhibition'
+- footerClass = ''
+- wrapperClass = ''
+- mainStyle = ''
+include mixins
+block vars
+
+doctype html
+html
+  head
+    title
+      | Åzone
+      | #{pageTitle}
+    link(rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon")
+    link( type='text/css', rel='stylesheet', href=asset('/assets/all.css') )
+    block styles
+
+  body(class=bodyClass)
+    .wrapper(class=wrapperClass)
+      main(style=mainStyle)
+        block body
+    != sharify.script()
+    script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" )
+    script( src=asset('/assets/layout.js') )
+    block scripts
