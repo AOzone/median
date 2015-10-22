@@ -321,7 +321,7 @@ module.exports = [
     name: 'Morgan Sutherland'
     location: 'New York City'
     links: ['[morgansutherland.com](http://morgansutherland.com/)', '[@msutherl](https://twitter.com/msutherl)', '[are.na/morgan-sutherland](https://www.are.na/morgan-sutherland)']
-    bio: 'Morgan Suther­land works between the art and tech worlds as consul­tant, researcher, designer, and devel­oper. Currently he works with Are.na, Diakron, and OS Fund. Previ­ously he was artist-in-residence at Intel Labs, UX designer at Octopart, and research assis­tant devel­op­ing respon­sive environ­ments with the Topological Media Lab.'
+    bio: 'Morgan Suther­land works between the art and tech worlds as consul­tant, researcher, designer, and developer. Currently he works with Diakron and OS Fund. Previously he was artist-in-residence at Intel Labs, UX designer at Octopart, and research assistant devel­op­ing responsive environments with the Topological Media Lab.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
