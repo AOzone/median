@@ -5,7 +5,7 @@ mixin rank_alert(rank, title)
     .single-alert
       .alert-title Congratulations!
       .alert-body You are now the #{numeral(rank).format('0o')} ranked #{title} on the market
-      .alert-link: a(href="/leaderboards/#{title}s") See Leaderboard
+      .alert-link: a(href="/leaderboard/#{title}s") See Leaderboard
 
 mixin tip_alert(reward)
   .single-alert
