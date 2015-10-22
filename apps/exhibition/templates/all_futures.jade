@@ -1,0 +1,17 @@
+extends ../../../components/layout/templates/index--exhibition
+
+//- 1920 x 1080
+
+block body
+  section.future-circles.future-circles--bigboard
+    for contract, index in contracts.models
+      a.future-circle(href="#{contract.href()}" id="contract_#{contract.get('contract')}")
+        .future-circle__circle-outer
+          .future-circle__circle-inner
+            .future-circle__circle.js-gain-bg-color(
+              class=contract.get('contract') == highlighted ? 'is-highlighted' : '',
+              data-gain="#{contract.get('gain_percent')}"
+            )
+
+block scripts
+   script( src=asset('/assets/exhibition_futures.js')  )

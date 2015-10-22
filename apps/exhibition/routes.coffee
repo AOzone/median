@@ -26,14 +26,19 @@ Contracts = require '../../collections/contracts.coffee'
 
 @allFutures  = (req, res, next) ->
   contracts = new Contracts []
+  highlighted = req.params.callsign
 
   Q.all [
     contracts.fetch()
   ]
   .then ->
     res.locals.sd.CONTRACTS = contracts
+
+    console.log 'highlighted', highlighted
+
     res.render 'all_futures',
       contracts: contracts
+      highlighted: highlighted
   .catch next
   .done()
 
