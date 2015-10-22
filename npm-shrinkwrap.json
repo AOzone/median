@@ -3363,6 +3363,11 @@
         }
       }
     },
+    "headroom.js": {
+      "version": "0.7.1",
+      "from": "headroom.js@",
+      "resolved": "https://registry.npmjs.org/headroom.js/-/headroom.js-0.7.1.tgz"
+    },
     "heatmap.js": {
       "version": "2.0.1",
       "from": "heatmap.js@",

@@ -1,9 +1,16 @@
 _ = require 'underscore'
+Headroom = require 'headroom.js'
+
 
 module.exports = ->
   $navOverlay = $('.js-nav-overlay')
   $navOverlayOpen = $('.js-nav-overlay-open')
   $navOverlayClose = $('.js-nav-overlay-close')
+
+  unless $('body').hasClass 'is-light-nav'
+    myElement = document.querySelector("nav.nav")
+    headroom  = new Headroom(myElement)
+    headroom.init()
 
   $navOverlayOpen.click (e) ->
     e.preventDefault()

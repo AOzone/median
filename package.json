@@ -25,6 +25,7 @@
     "express-session": "^1.11.3",
     "ezel-assets": "0.0.13",
     "forever": "^0.15.1",
+    "headroom.js": "^0.7.1",
     "heatmap.js": "^2.0.1",
     "jade": "*",
     "jeet": "^6.1.2",
