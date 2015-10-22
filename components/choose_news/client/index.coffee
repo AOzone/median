@@ -114,6 +114,7 @@ module.exports.ChooseNewsView = class ChooseNewsView extends Backbone.View
       news: @blocks
       contract: @model
       transaction: @transaction
+      map: transactionMap
 
     @postRender()
 
