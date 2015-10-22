@@ -4,17 +4,21 @@ extends ../../../components/layout/templates/index--exhibition
 
 block body
   section.future-circles.future-circles--bigboard
+    - row = 1
     for contract, index in contracts.models
+      - highlightClass = contract.get('contract') == highlighted ? 'is-highlighted' : ''
       a.future-circle(
         href="#{contract.href()}",
         id="contract_#{contract.get('contract')}",
-        class=contract.get('contract') == highlighted ? 'is-highlighted' : ''
+        class="#{highlightClass} row--#{row}"
       )
         .future-circle__circle-outer
           .future-circle__circle-inner
             .future-circle__circle.js-gain-bg-color(
               data-gain="#{contract.get('gain_percent')}"
             )
+      if ((index + 1) / 9) % 1 == 0
+        - row++
 
 block scripts
    script( src=asset('/assets/exhibition_futures.js')  )

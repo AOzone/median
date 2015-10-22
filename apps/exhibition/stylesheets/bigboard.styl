@@ -1,11 +1,45 @@
 
 .future-circles.future-circles--bigboard
-  margin-top 210px
+  margin-top 200px
   margin-left 158px
 
   .future-circle
     column(1/9, uncycle: 5, cycle: 9)
-    height 200px
+    height 175px
+
+    &.row--1
+      height 215px
+
+    &.row--2
+      height 120px
+
+    &.row--3
+      height 198px
 
     &.is-highlighted
       border 1px solid #fff
+
+    // &:nth-child(9n + 2)
+    //   margin-left -3px
+
+    &:nth-child(9n + 3)
+      margin-left -10px
+
+    &:nth-child(9n + 4)
+      margin-left -10px
+
+    &:nth-child(9n + 5)
+      margin-left -10px
+
+    &:nth-child(9n + 6)
+      margin-left -10px
+
+    &:nth-child(9n + 7)
+      margin-left -5px
+
+    &:nth-child(9n + 8)
+      margin-left -5px
+
+    &:nth-child(9n)
+      float left
+      margin-left -5px
