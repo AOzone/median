@@ -4,7 +4,7 @@
   style="background-color:#" + bgColor
 )
   h6 Trade
-  .callsign__title= contract.get('title')
+  a.callsign__title(href=contract.href())= contract.get('title')
   .callsign__gain #{mark}#{contract.get('gain_percent')}%
 
   .callsign__transactions
