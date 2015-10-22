@@ -229,7 +229,7 @@ module.exports = [
   ,
   {
     name: 'Sascha Pohflepp'
-    location: 'San Diego'
+    location: 'Berlin'
     links: ['[pohflepp.net](http://pohflepp.net/)', '[@plugimi](https://twitter.com/plugimi)']
     bio: 'Sascha Pohflepp is a German-born artist, researcher and writer. Notable exhibitions include Talk To Me at MoMA New York, _Hyperlinks_ at the Art Institute of Chicago, _ Micro Impact_ at Boijmans Van Beuningen Museum Rotterdam, _Pre-History of the Image_ at STUK Kunstencentrum Leuven, and _Science Fiction: New Death_ at FACT Liverpool. Pohflepp’s work has won two Honorary Mentions from the VIDA Art and Artificial Life Awards and in June 2015 was shortlisted for the Berlin Art Prize.'
     azone_username: ''
