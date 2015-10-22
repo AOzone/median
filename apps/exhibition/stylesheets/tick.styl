@@ -1,3 +1,12 @@
 .is-exhibition
   .contract__tick-chart, #chart
     height 1080px
+
+    .focusLine
+      stroke rgb(255, 255, 255)
+      stroke-width 1
+      transition transform 20s
+
+      &.animated
+        transform translateX(1920px)
+

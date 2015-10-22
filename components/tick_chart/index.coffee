@@ -58,6 +58,8 @@ module.exports =
       .attr("cy", (d, index) -> y(d.get('close')) )
       .attr("data-block-id", (d, index) -> d.get('block_id'))
 
+    { svg: svg, d3: d3, width: width, height: height }
+
   updateTickChart: updateTickChart = (chart, container) ->
     d3.select("#chart svg").remove()
     initTickChart chart, container
