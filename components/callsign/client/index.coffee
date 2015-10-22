@@ -6,8 +6,6 @@ contractMap = require '../../../maps/contracts.coffee'
 
 module.exports =
   initCallSign: ->
-    return unless sd.CURRENT_USER
-
     $('body').on 'click', '.js-make-transaction:not(.disabled)', (e) ->
       $target = $(e.currentTarget)
 
