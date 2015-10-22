@@ -4,6 +4,8 @@ sd = require("sharify").data
 News = require '../../collections/news.coffee'
 Indices = require '../../collections/indices.coffee'
 Contracts = require '../../collections/contracts.coffee'
+Contract = require '../../models/contract.coffee'
+Chart = require '../../collections/chart.coffee'
 
 @index = (req, res, next) ->
   contracts = new Contracts []
@@ -44,4 +46,20 @@ Contracts = require '../../collections/contracts.coffee'
   res.render 'tips'
 
 @futureTick = (req, res, next) ->
-  res.render 'tick'
+  callSign = req.params.callsign
+  contract = new Contract id: callSign
+  chart = new Chart [], { id: callSign, type: '1tick' }
+
+  Q.all [
+    contract.fetch()
+    chart.fetch()
+  ]
+  .then ->
+    res.locals.sd.TICK_CHART = chart.toJSON()
+    res.locals.sd.CONTRACT = contract.toJSON()
+
+    res.render 'tick',
+      contract: contract
+      chart: chart
+  .catch next
+  .done()

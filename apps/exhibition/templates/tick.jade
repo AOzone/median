@@ -1,0 +1,9 @@
+extends ../../../components/layout/templates/index--exhibition
+
+block body
+  section.contract__tick-chart
+    #chart
+      //- rendered via client
+
+block scripts
+   script( src=asset('/assets/exhibition_tick.js')  )
