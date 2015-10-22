@@ -1,15 +1,18 @@
 .future-circle
-  column(1/6, cycle: 6)
+  column(1/5, cycle: 5)
   height 300px
   font-family Atlas Typewriter Regular
+  font-weight bold
   font-size .8rem
   line-height 1.4rem
+  position relative
+  display block
 
   +above(1400px)
-    column(1/7, uncycle: 6, cycle: 7)
+    column(1/6, uncycle: 5, cycle: 6)
 
   +below(800px)
-    column(1/4, uncycle: 6, cycle: 4)
+    column(1/4, uncycle: 5, cycle: 4)
 
   +below(500px)
     column(1/2, uncycle: 4, cycle: 2)
@@ -19,7 +22,14 @@
       text-decoration underline
 
 .future-circle__callsign
-  font-family Atlas Typewriter Bold
+  text-align center
+  position relative
+
+  .call-sign
+    margin-right 0
+
+.future-circle__title
+  text-align center
 
 .future-circle__circle-outer
   height 70%

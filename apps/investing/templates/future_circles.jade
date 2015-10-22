@@ -6,6 +6,6 @@ section.future-circles
           .future-circle__circle.js-gain-bg-color(
             data-gain="#{contract.get('gain_percent')}"
           )
-      .future-circle__callsign #{contract.get('contract')}
+      .future-circle__callsign
+        include ../../../components/callsign/templates/index
       .future-circle__title #{contract.get('title')}
-      .future-circle__bid-ask #{contract.formattedPrice('ask')} / #{contract.formattedPrice('bid')}

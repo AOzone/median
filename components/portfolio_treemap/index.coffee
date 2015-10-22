@@ -1,5 +1,6 @@
 d3 = require 'd3'
 Contract = require '../../models/contract.coffee'
+numeral = require 'numeral'
 { getColor } = require '../color/index.coffee'
 
 template = -> require('./node.jade') arguments...
@@ -27,8 +28,7 @@ module.exports =
       .call(treePosition)
       .style("background", (d) -> "##{getColor(d.gain_percent)}")
       .html((d) ->
-        console.log 'd', d
-        template contract: new Contract d
+        template contract: new Contract(d), numeral: numeral
       )
 
   treePosition: treePosition = ->

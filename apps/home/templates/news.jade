@@ -5,15 +5,15 @@ section.news
       .section-header__description
         | Follow and contribute to the sharing of breaking news and information about each future as it unfolds in the present.
         br
-        a(href="/news") See all tips
+        a(href="/tips") See all tips
     .home-list--news
       each item, index in news.models
         .home-news__item
           .news__item__top
             .news__item__relative-date= item.updatedAtAgo()
 
-          a(href="#{item.get('source').url}", target="_blank")
-            h5.news__item__title= item.get('title')
+          a(href="/investing/futures/#{item.callSignArray()[0]}#tip/#{item.id}")
+            h5.news__item__title= item.smartTruncate('title', 80)
 
           .news__item__callsign
             each callSign in item.callSignArray()

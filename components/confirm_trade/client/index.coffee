@@ -1,6 +1,7 @@
 Backbone = require 'backbone'
 modalize = require '../../modalize/index.coffee'
 mediator = require '../../../lib/mediator.coffee'
+transactionMap = require '../../../maps/transactions.coffee'
 
 template = -> require('../templates/index.jade') arguments...
 
@@ -23,6 +24,7 @@ module.exports.ConfirmTradeView = class ConfirmTradeView extends Backbone.View
       title: @title
       block_id: @block_id
       transaction: @transaction
+      map: transactionMap
       is_new: @is_new
 
     return this

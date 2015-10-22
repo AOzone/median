@@ -34,6 +34,9 @@
 .modalize--gray .modalize-backdrop
   top 110px
 
+  +below(768px)
+    top 60px
+
 .modalize-backdrop
   display flex
   align-items center
@@ -77,6 +80,10 @@
   color text-color
   left auto
   right 25px
+
+  +below(768px)
+    right 10px
+    top 10px
 
 .modalize-body
   height 100%

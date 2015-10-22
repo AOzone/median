@@ -1,0 +1,57 @@
+.tab--alerts:after
+  content ''
+  display block
+  width 10px
+  height 10px
+  background-color light-text-color
+  border-radius 10px
+  position absolute
+  right calc(50% \- 5px)
+  top -20px
+
+.alert-block
+  display flex
+  width 65%
+  border-bottom 1px solid light-border-color
+  margin 0 auto
+  padding (unit * 2) 0
+
+  +below(768px)
+    display block
+    font-size 1.2rem
+    width 90%
+
+.single-alert
+  border-bottom 1px solid light-border-color
+  margin-bottom unit
+  padding-bottom unit
+
+.alert-block .single-alert:last-child
+  border-bottom 0
+  margin-bottom 0
+
+.alert-date
+  flex 1
+  font-size 2rem
+  margin-bottom (unit * 2)
+
+.alert-list
+  flex 2
+
+.alert-link
+  margin unit 0 0
+  opacity 0.5
+
+.alert-title
+  font-family Work Sans SemiBold
+
+.alert-news-headline
+  background-color rgba(255, 255, 255, 0.1)
+  font-family Atlas Typewriter Bold
+  padding unit
+  margin-top unit
+
+  .call-sign
+    margin-bottom unit
+    svg path
+      fill #fff !important

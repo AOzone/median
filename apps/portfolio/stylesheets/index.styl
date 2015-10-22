@@ -14,6 +14,8 @@
 
   +below(900px)
     margin-top 0
+    height auto
+    padding-bottom (unit * 2)
 
 .portfolio-stats
   margin-top unit * 4
@@ -52,9 +54,30 @@ table.portfolio-list.account-list
   td:last-child
     text-align right
 
+  +below(768px)
+    td:last-child
+      text-align left
+
 .node
   overflow hidden
   position absolute
   padding-left unit
+  h1
+    font-size 38.4px
+    font-size 2.4rem
+    text-rendering optimizelegibility
+    margin -0.25em 0
+    line-height 1.6em
   h5
-    font-family Atlas Typewriter Bold
+    font-family Atlas Typewriter Regular
+    font-size 16px
+    font-size 1rem
+    text-rendering optimizelegibility
+    border-bottom 1px solid transparent
+    display inline-block
+    margin 1em 0
+    line-height 1.6em
+    &:hover
+      border-bottom 1px solid border-color
+
+@import 'alerts'

@@ -1,0 +1,53 @@
+extends ../../../components/layout/templates/index
+
+mixin rank_alert(rank, title)
+  if rank < 50
+    .single-alert
+      .alert-title Congratulations!
+      .alert-body You are now the #{numeral(rank).format('0o')} ranked #{title} on the market
+      .alert-link: a(href="/leaderboard/#{title}s") See Leaderboard
+
+mixin tip_alert(reward)
+  .single-alert
+    - s = reward.citations > 1 ? 's' : ''
+    - block = blocks.get(reward.block_id)
+    .alert-title +#{reward.rewards}Å
+    .alert-body You received a hot tip reward for #{reward.citations} new trade#{s} on
+    .alert-news-headline
+      .alert-news-headline__callsigns
+        for contract in reward.contracts
+          a.call-sign.call-sign--sm(
+            data-contract_id=contract
+            href="/investing/futures/" + contract
+          )
+            .call-sign__icon
+              include ../../../public/images/callsign.svg
+            .call-sign__id
+              .v-outer
+                .v-inner=contract
+      | #{block.get('title')}
+
+block vars
+  - bodyClass = 'is-dark'
+
+block tabs
+  +tab("/portfolio/" + account.id, "portfolio")
+  if account.id == user.id
+    +tab("/portfolio/" + account.id + "/alerts", "alerts")
+
+block body
+  include account-top
+  include ../../../components/tabs/templates/index
+
+  .portfolio--alerts
+    for alert, index in alerts.get('notifications')
+      .alert-block
+        .alert-date= alert.bardate
+        .alert-list
+          if index == 0
+            +rank_alert(alerts.get('activist_rank'), 'activist')
+            +rank_alert(alerts.get('forecaster_rank'), 'forecaster')
+            +rank_alert(alerts.get('influencer_rank'), 'influencer')
+
+          for reward in alert.all_rewards
+            +tip_alert(reward)

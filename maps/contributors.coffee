@@ -12,7 +12,7 @@ module.exports = [
     name: 'Raphaël Bastide'
     location: 'Paris'
     links: ['[raphaelbastide.com](http://www.raphaelbastide.com/)', '[@raphaelbastide](https://twitter.com/raphaelbastide)', '[are.na/raphael-bastide](https://www.are.na/raphael-bastide)']
-    bio: 'Raphaël Bastide is an artist, independent graphic designer and teacher based in Paris. He studied digital art and typography in Brussels where he began to delete the proprietary software from his hard drive. He recently had solo exhibitions in Belgium where he shown #[em Branch] and #[em Diff], two installations inspired by versioning and revision control systems. He is also involved in several collectives related to free culture, design and typography.'
+    bio: 'Raphaël Bastide is an artist, independent graphic designer and teacher based in Paris. He studied digital art and typography in Brussels where he began to delete the proprietary software from his hard drive. He recently had solo exhibitions in Belgium where he showed _Branch_ and _Diff_, two installations inspired by versioning and revision control systems. He is also involved in several collectives related to free culture, design and typography.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -31,7 +31,7 @@ module.exports = [
     name: 'Douglas Coupland'
     location: 'Vancouver'
     links: ['[coupland.com](http://coupland.com/)', '[@DougCoupland](https://twitter.com/DougCoupland)']
-    bio: 'Douglas Coupland is a Canadian writer and visual artist whose practise involves crossing the borders of all media, as well as the creation of cross-media projects. He exhibits internationally and currently has a solo exhibition at Rotterdam\'s #[em Witte de With Center for Contemporary Art].'
+    bio: 'Douglas Coupland is a Canadian writer and visual artist whose practise involves crossing the borders of all media, as well as the creation of cross-media projects. He exhibits internationally and currently has a solo exhibition at Rotterdam\'s _Witte de With Center for Contemporary Art.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -151,7 +151,7 @@ module.exports = [
     name: 'Marvin Jordan'
     location: 'New York City'
     links: ['[dismagazine.com](http://dismagazine.com/author/marvin-jordan/)']
-    bio: 'Marvin Jordan is an editorial assistant at #[em DIS Magazine] and Black Market co-founder. Black Market is a program highlighting the practices of mostly under-recognized, young artists of color that "focuses on deconstructing and reinventing current themes central to hip hop—such as finance, determination, and celebration—in the context of contemporary art."–conceived in collaboration with artist James Allister Sprang, who raps under the name GAZR.'
+    bio: 'Marvin Jordan is an editorial assistant at _DIS Magazine_ and Black Market co-founder. Black Market is a program highlighting the practices of mostly under-recognized, young artists of color that "focuses on deconstructing and reinventing current themes central to hip hop—such as finance, determination, and celebration—in the context of contemporary art."–conceived in collaboration with artist James Allister Sprang, who raps under the name GAZR.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -171,7 +171,7 @@ module.exports = [
     name: 'Daniel Keller'
     location: 'Berlin'
     links: [ '[dnlklr.com](dnlklr.com)', '[@dnlklr](https://twitter.com/dnlklr)','[are.na/daniel-keller](https://www.are.na/daniel-keller)']
-    bio: 'Daniel Keller, born 1986, is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d since 2007 and independently since 2012. He was co-organizer of TEDxVaduz in 2012 and Director and CEO of Absolute Vitality Inc., a Wyoming-incorporated sculpture.'
+    bio: 'Daniel Keller, is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d since 2007 and independently since 2012. He was co-organizer of TEDxVaduz in 2012 and Director and CEO of Absolute Vitality Inc., a Wyoming-incorporated sculpture.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -211,7 +211,7 @@ module.exports = [
     name: 'Marina Otero Verzier'
     location: 'Rotterdam'
     links: ['[@marina_ov](https://twitter.com/marina_ov)']
-    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut, and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X, and Adjunct Assistant Professor at Columbia University GSAPP. Her work, has been published in different publications including #[em sqm: The quantified Home], #[em Arquitectura Viva], #[em The Avery Review], and #[em Domus].'
+    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut, and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X, and Adjunct Assistant Professor at Columbia University GSAPP. Her work, has been published in different publications including _sqm: The quantified Home_, _Arquitectura Viva_, _The Avery Review_, and _Domus_.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -229,9 +229,9 @@ module.exports = [
   ,
   {
     name: 'Sascha Pohflepp'
-    location: 'San Diego'
+    location: 'Berlin'
     links: ['[pohflepp.net](http://pohflepp.net/)', '[@plugimi](https://twitter.com/plugimi)']
-    bio: 'Sascha Pohflepp is a German-born artist, researcher and writer. Notable exhibitions include Talk To Me at MoMA New York, #[em Hyperlinks] at the Art Institute of Chicago, #[em Micro Impact] at Boijmans Van Beuningen Museum Rotterdam, #[em Pre-History of the Image] at STUK Kunstencentrum Leuven, and #[em Science Fiction: New Death] at FACT Liverpool. Pohflepp’s work has won two Honorary Mentions from the VIDA Art and Artificial Life Awards and in June 2015 was shortlisted for the Berlin Art Prize.'
+    bio: 'Sascha Pohflepp is a German-born artist, researcher and writer. Notable exhibitions include Talk To Me at MoMA New York, _Hyperlinks_ at the Art Institute of Chicago, _ Micro Impact_ at Boijmans Van Beuningen Museum Rotterdam, _Pre-History of the Image_ at STUK Kunstencentrum Leuven, and _Science Fiction: New Death_ at FACT Liverpool. Pohflepp’s work has won two Honorary Mentions from the VIDA Art and Artificial Life Awards and in June 2015 was shortlisted for the Berlin Art Prize.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -271,7 +271,7 @@ module.exports = [
     name: 'Jessy Kate Schingler'
     location: 'San Francisco'
     links: ['[embassynetwork.com](https://embassynetwork.com/)', '[@jessykate](https://twitter.com/jessykate)']
-    bio: 'Jessy Kate Schingler is a space geek turned computer scientist designing human settlements on a planet called Earth. She is a founding member of #[em Embassy Network], a collective of people and places using physical place and the built environment to experiment with new modes of human organizing, and push the boundaries of how we live.'
+    bio: 'Jessy Kate Schingler is a space geek turned computer scientist designing human settlements on a planet called Earth. She is a founding member of _Embassy Network_, a collective of people and places using physical place and the built environment to experiment with new modes of human organizing, and push the boundaries of how we live.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -281,7 +281,7 @@ module.exports = [
     name: 'Jack Self'
     location: 'London'
     links: ['[jackself.com](http://www.jackself.com/)', '[@jack_self](https://twitter.com/jack_self)']
-    bio: 'Jack Self is an architect and writer based in London. He is Director of the REAL Foundation, Contributing Editor for the #[em Architectural Review] and author of #[em Real Estates: Life Without Debt]. He has worked for the #[em Architectural Review] in a number of capacities since 2009, and was previously Associate Editor at Strelka Press. His writing has appeared in #[em Architectural Design], the #[em Guardian], #[em Blueprint] and #[em Dezeen], as well as elsewhere.'
+    bio: 'Jack Self is an architect and writer based in London. He is Director of the REAL Foundation, Contributing Editor for the _Architectural Review_ and author of_Real Estates: Life Without Debt_. He has worked for the _Architectural Review_ in a number of capacities since 2009, and was previously Associate Editor at Strelka Press. His writing has appeared in _Architectural Design_, the _Guardian_, _Blueprint_ and _Dezeen_, as well as elsewhere.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -301,7 +301,7 @@ module.exports = [
     name: 'Nick Srnicek'
     location: 'London'
     links: ['[@n_srnck](https://twitter.com/n_srnck)']
-    bio: 'Nick Srnicek is the author of #[em Postcapitalist Technologies] (Polity, 2016) and #[em Inventing the Future: Postcapitalism] and a #[em World Without Work] (Verso, 2015 with Alex Williams), and editor of #[em The Speculative Turn] (Re.press, 2011 with Levi Bryant and Graham Harman).'
+    bio: 'Nick Srnicek is the author of _Postcapitalist Technologies_ (Polity, 2016) and _Inventing the Future: Postcapitalism_ and a _World Without Work_ (Verso, 2015 with Alex Williams), and editor of _The Speculative Turn_ (Re.press, 2011 with Levi Bryant and Graham Harman).'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -311,7 +311,7 @@ module.exports = [
     name: 'Jenna Sutela'
     location: 'Helsinki - Berlin'
     links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)', '[are.na/jenna-sutela](https://www.are.na/jenna-sutela)']
-    bio: "Jenna Sutela is an artist and writer based between Helsinki and Berlin. Her projects seek to identify and react to precarious social and material moments—most recently, the relationship between the body and its technologically-mediated environment. She is a contributor to several international publications, such as #[em Frieze] and #[em Harvard Design Magazine], and her work has been presented at, for example, Haus der Kulturen der Welt, Museum of Contemporary Art Kiasma and South London Gallery."
+    bio: "Jenna Sutela is an artist and writer based between Helsinki and Berlin. Her projects seek to identify and react to precarious social and material moments—most recently, the relationship between the body and its technologically-mediated environment. She is a contributor to several international publications, such as _Frieze_ and _Harvard Design Magazine_, and her work has been presented at, for example, Haus der Kulturen der Welt, Museum of Contemporary Art Kiasma and South London Gallery."
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -321,7 +321,7 @@ module.exports = [
     name: 'Morgan Sutherland'
     location: 'New York City'
     links: ['[morgansutherland.com](http://morgansutherland.com/)', '[@msutherl](https://twitter.com/msutherl)', '[are.na/morgan-sutherland](https://www.are.na/morgan-sutherland)']
-    bio: 'Morgan Suther­land works between the art and tech worlds as consul­tant, researcher, designer, and devel­oper. Currently he works with Are.na, Diakron, and OS Fund. Previ­ously he was artist-in-residence at Intel Labs, UX designer at Octopart, and research assis­tant devel­op­ing respon­sive environ­ments with the Topological Media Lab.'
+    bio: 'Morgan Suther­land works between the art and tech worlds as consul­tant, researcher, designer, and developer. Currently he works with Diakron and OS Fund. Previously he was artist-in-residence at Intel Labs, UX designer at Octopart, and research assistant devel­op­ing responsive environments with the Topological Media Lab.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -341,7 +341,7 @@ module.exports = [
     name: 'McKenzie Wark'
     location: 'New York City'
     links: ['[publicseminar.org](http://www.publicseminar.org/author/kenwark/)', '[@mckenziewark](https://twitter.com/mckenziewark)']
-    bio: 'Mckenzie Wark is an Australian-born writer and scholar. Wark is known for his writings on media theory, critical theory, new media, and the Situationist International. His best known works are #[em A Hacker Manifesto] and #[em Gamer Theory]. He is professor of culture and media at the New School for Social Research and Eugene Lang College, in New York City.'
+    bio: 'Mckenzie Wark is an Australian-born writer and scholar. Wark is known for his writings on media theory, critical theory, new media, and the Situationist International. His best known works are _A Hacker Manifesto_ and _Gamer Theory_. He is professor of culture and media at the New School for Social Research and Eugene Lang College, in New York City.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -351,7 +351,7 @@ module.exports = [
     name: 'Molly Wright Steenson'
     location: 'Pittsburgh'
     links: ['[girlwonder.com](http://www.girlwonder.com/)', '[@maximolly](https://twitter.com/maximolly)']
-    bio: 'Molly Wright Steenson is an associate professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation and artificial intelligence, and is completing a book titled #[em Architecting Interactivity] that explores these linkages, with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
+    bio: 'Molly Wright Steenson is an associate professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation and artificial intelligence, and is completing a book titled _Architecting Interactivity_ that explores these linkages, with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []

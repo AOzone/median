@@ -18,6 +18,15 @@ module.exports = class Block extends BaseArenaModel
       parsed = parseDomain(url)
       "#{parsed?.domain}.#{parsed?.tld}"
 
+  smartTruncate: (attr, limit=40) ->
+    return unless @get(attr)
+    size = 0
+    textArray = for token in @get(attr).split(' ')
+      size += (token.length + 1)
+      break if size > limit
+      token
+    textArray.join(" ") + (if @get(attr).length > limit then "..." else "")
+
   callSignArray: ->
     if @has('channel_ids')
       callSigns = _.keys contractMap

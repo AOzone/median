@@ -1,4 +1,4 @@
-table.contract-list.is-large
+table.contract-list
   thead
     tr
       td Symbol
@@ -9,11 +9,12 @@ table.contract-list.is-large
   tbody
     for contract, index in contracts.models
       tr(class= index == 0 ? 'is-active' : '')
-        td(data-th="callsign") #{contract.get('contract')}
-        td(data-th="name")
+        td(data-th="callsign")
+          include ../callsign/templates/index
+        td.is-large(data-th="name")
           a(href="#{contract.href()}") #{contract.get('title')}
           p=contract.get('abstract')
-        td(data-th="buy") #{contract.get('ask')}Å
-        td(data-th="sell") #{contract.get('bid')}Å
-        td(data-th="gain").js-gain-color(data-gain="#{contract.get('gain_percent')}")
+        td.is-large(data-th="buy") #{contract.get('ask')}Å
+        td.is-large(data-th="sell") #{contract.get('bid')}Å
+        td.is-large(data-th="gain").js-gain-color(data-gain="#{contract.get('gain_percent')}")
           | #{contract.get('gain_percent')}%

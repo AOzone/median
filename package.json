@@ -6,8 +6,8 @@
     "start": "make s"
   },
   "dependencies": {
-    "artsy-error-handler": "git://github.com/artsy/artsy-error-handler.git",
     "artsy-backbone-mixins": "git://github.com/artsy/artsy-backbone-mixins.git",
+    "artsy-error-handler": "git://github.com/artsy/artsy-error-handler.git",
     "axis": "^0.4.3",
     "backbone": "*",
     "backbone-super-sync": "^1.1.1",
@@ -25,6 +25,7 @@
     "express-session": "^1.11.3",
     "ezel-assets": "0.0.13",
     "forever": "^0.15.1",
+    "headroom.js": "^0.7.1",
     "heatmap.js": "^2.0.1",
     "jade": "*",
     "jeet": "^6.1.2",
@@ -40,6 +41,7 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "q": "https://registry.npmjs.org/q/-/q-1.4.1.tgz",
+    "qs": "^5.2.0",
     "query-params": "0.0.1",
     "redis": "^0.12.1",
     "rupture": "^0.6.1",

@@ -1,25 +1,48 @@
 .callsign__bubble
- text-align center
- width 140px
- height 230px
- position relative
- border-radius 10px
+  text-align center
+  width 140px
+  height 230px
+  position relative
+  border-radius 10px
 
- > h6
+  > h6
    font-size 0.7rem
+
+  a
+    color light-text-color
+
+  &.callsign__bubble--closed
+    background-color background-blue-color
 
 .callsign__title
   font-family Atlas Typewriter Bold
-  padding-bottom (unit / 2)
-  font-size 0.8rem
+  font-size 0.85rem
+  color light-text-color
 
 .callsign__gain
   font-size 0.7rem
 
-.callsign__transactions
+.callsign__transactions, .callsign__prompt
   position absolute
   bottom 0
   width 100%
+
+.callsign__prompt
+  padding 5px
+
+  h6
+    font-size 0.7rem
+    font-family Work Sans Medium
+
+  h6 > a
+    font-family Work Sans SemiBold
+
+.callsign__mark
+  padding-top unit
+  width 20px
+  margin 0 auto
+  svg path
+    fill light-text-color
 
 .js-make-transaction
   clearfix()
@@ -28,7 +51,7 @@
   border-top 1px solid rgba(255,255,255,0.2)
 
   &:hover
-    background-color rgba(255,255,255,0.05)
+    background-color rgba(255,255,255,0.1)
 
   h6
     float left
@@ -36,13 +59,14 @@
     margin 0
     line-height 50px
     padding-left (unit / 2)
+    font-family Work Sans Medium
 
   h3
     float right
     color light-text-color
     margin 0
     line-height 50px
-    font-family Work Sans Light
+    font-family Work Sans Medium
     padding-right (unit / 2)
 
 .tooltipster-azone

@@ -3,6 +3,9 @@
   color text-color
   font-size 1.2rem
 
+  +below(768px)
+    padding unit
+
 .tip-item
   clearfix()
   border-bottom 1px solid border-color
@@ -13,6 +16,10 @@
 .tip-transactions
   width 45%
   margin unit auto 0
+
+  +below(768px)
+    width 100%
+    padding unit
 
 .transaction
   margin 0 0 unit

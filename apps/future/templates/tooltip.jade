@@ -1,35 +1,7 @@
-- mark = contract.get('gain_percent') > 0 ? "+" : ""
-.callsign__bubble(
-  data-contract_id=contract.get('contract')
-  style="background-color:#" + bgColor
-)
-  h6 Trade
-  .callsign__title= contract.get('title')
-  .callsign__gain #{mark}#{contract.get('gain_percent')}%
-
-  .callsign__transactions
-    - canBuy = user.canMakeTransaction('buy', contract).success
-    a.js-make-transaction(
-      data-transaction="buy"
-      class=canBuy ? '' : 'disabled'
-      data-item_id=item_id
-      data-item_title=item_title
-      data-contract_id=contract.get('contract')
-      data-contract_title=contract.get('title')
-      data-contract_bid=contract.get('bid')
-      data-contract_ask=contract.get('ask')
-    )
-      h6 Buy
-      h3 #{contract.get('ask')}Å
-    if user.canMakeTransaction('sell', contract).success
-      a.js-make-transaction(
-        data-transaction="sell"
-        data-item_id=item_id
-        data-item_title=item_title
-        data-contract_id=contract.get('contract')
-        data-contract_title=contract.get('title')
-        data-contract_bid=contract.get('bid')
-        data-contract_ask=contract.get('ask')
-      )
-        h6 Sell
-        h3 #{contract.get('bid')}Å
+if user
+  if status && !status.get('open')
+    include tooltip/_market_closed
+  else
+    include tooltip/_transaction
+else
+  include tooltip/_logged_out
