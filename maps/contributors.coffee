@@ -51,7 +51,7 @@ module.exports = [
     name: 'Louise Drulhe'
     location: 'Paris'
     links: ['[louisedrulhe.fr](http://louisedrulhe.fr/)', '[@louisedrulhe](https://twitter.com/louisedrulhe)']
-    bio: 'Louise Drulhe is a graphic designer working in Paris. She authored #[em Critical Atlas of the Internet] (an adaption of her thesis project at École nationale supérieure des arts décoratifs, Paris)which uses spatial analysis as a tool for political and social purposes.'
+    bio: 'Louise Drulhe is a graphic designer working in Paris. She authored _Critical Atlas of the Internet_ (an adaption of her thesis project at École nationale supérieure des arts décoratifs, Paris)which uses spatial analysis as a tool for political and social purposes.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
