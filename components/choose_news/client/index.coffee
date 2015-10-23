@@ -75,6 +75,12 @@ module.exports.ChooseNewsView = class ChooseNewsView extends Backbone.View
       query: @getQuery()
 
   selectOrCreateNews: (e) ->
+    if $(e.target).hasClass 'news__grid-item__source-domain'
+      # visit source
+      url = $(e.target).data 'href'
+      win = window.open url, '_blank'
+      return win.focus()
+
     @$(e.currentTarget).addClass 'is-disabled'
 
     if $(e.currentTarget).data('query')
