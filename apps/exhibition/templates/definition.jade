@@ -3,6 +3,9 @@ extends ../../../components/layout/templates/index--exhibition
 block body
   section.contract__about.contract__about--terminal
     .contract__copy
+      .contract__callsign--terminal
+        - var shouldSetBorder = true
+        include ../../../components/callsign/templates/index
       h2.contract__title= contract.get('title')
       .contract__abstract= contract.get('abstract')
       .contract__meta
