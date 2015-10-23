@@ -30,7 +30,7 @@ pickRandomCallsign = ->
   .done()
 
 @futureDefinition = (req, res, next) ->
-  callSign = req.params.callsign?.toUppercase() || pickRandomCallsign()
+  callSign = req.params.callsign?.toUpperCase() || pickRandomCallsign()
   contract = new Contract id: callSign
 
   Q.all [
@@ -46,7 +46,7 @@ pickRandomCallsign = ->
 
 @allFutures  = (req, res, next) ->
   contracts = new Contracts []
-  highlighted = req.params.callsign?.toUppercase() || pickRandomCallsign()
+  highlighted = req.params.callsign?.toUpperCase() || pickRandomCallsign()
 
   Q.all [
     contracts.fetch cache: true
@@ -61,7 +61,7 @@ pickRandomCallsign = ->
   .done()
 
 @futureTips = (req, res, next) ->
-  callSign = req.params.callsign?.toUppercase() || pickRandomCallsign()
+  callSign = req.params.callsign?.toUpperCase() || pickRandomCallsign()
   channelId = contractMap[callSign]?.channel_id
   blocks = new Blocks [], id: channelId
 
@@ -77,7 +77,7 @@ pickRandomCallsign = ->
   .done()
 
 @futureTick = (req, res, next) ->
-  callSign = req.params.callsign?.toUppercase() || pickRandomCallsign()
+  callSign = req.params.callsign?.toUpperCase() || pickRandomCallsign()
   contract = new Contract id: callSign
   chart = new Chart [], { id: callSign, type: '1tick' }
 
