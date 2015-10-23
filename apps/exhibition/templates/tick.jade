@@ -2,13 +2,19 @@ extends ../../../components/layout/templates/index--exhibition
 
 block body
   section.contract__tick-chart
-    .contract__title History
+    .contract__title #{contract.get('title')}
     .contract__meta
       .contract__value
-        .contract__meta__label Value
+        .contract__meta__label
+          | Current
+          br
+          | Value
         h1.contract__meta__value #{contract.formattedPrice('bid')}
       .contract__value
-        .contract__meta__label Gain
+        .contract__meta__label
+          | Current
+          br
+          | Gain
         h1.contract__meta__value #{contract.formattedGain()}
     #chart
       //- rendered via client
