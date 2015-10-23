@@ -9,12 +9,6 @@ module.exports = class Account extends Backbone.Model
 
   url: -> "#{KERNAL_API_URL}/accounts/#{@idOr_id()}"
 
-  sync: (method, model, options = {})->
-    { authId, authToken } = authTokenPair()
-    options.data ?= {}
-    options.data = _.extend options.data, { auth_id: authId, auth_token: authToken }
-    super
-
   idOr_id: ->
     @id or @get('_id')
 
