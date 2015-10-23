@@ -11,7 +11,7 @@ Positions = require '../../collections/positions.coffee'
 Contracts = require '../../collections/contracts.coffee'
 
 @index = (req, res, next) ->
-  id = req.params.id or req.user.id
+  id = req.params.id or req.user?.id
   account = new Account id: id
   contracts = new Contracts []
 
@@ -35,7 +35,7 @@ Contracts = require '../../collections/contracts.coffee'
   .done()
 
 @alerts = (req, res, next) ->
-  id = req.params.id or req.user.id
+  id = req.params.id or req.user?.id
 
   account = new Account id: id
   alerts = new Alerts user_id: id
