@@ -5,15 +5,11 @@ block body
     .list--news
       each item, index in news.models
         .news__item
-          .news__item__top
-            .news__item__relative-date= item.updatedAtAgo()
+          .news__item__relative-date= item.updatedAtAgo()
 
-          a(href="/investing/futures/#{item.callSignArray()[0]}#tip/#{item.id}")
-            h2.news__item__title= item.get('title')
-            p.news__item__description
-              | #{item.get('description')}
+          h2.news__item__title= item.get('title')
 
-          a(href="#{item.get('source').url}", target="_blank").news__item__source-domain= item.sourceDomain()
+          .news__item__source-domain= item.sourceDomain()
 
         hr.news-divider
 
