@@ -5,7 +5,7 @@ module.exports =
     width = $container.width()
     height = $container.height()
     margin = {top: 40, right: 0, bottom: 30, left: 40}
-    ticks = tickNum || parseInt(height/25)
+    tickCount = tickNum || parseInt(height/25)
 
     x = d3.scale.linear().range [0, width - 52]
     y = d3.scale.linear().range [height, 0]
@@ -16,7 +16,8 @@ module.exports =
       .orient("left")
       .innerTickSize(-width)
       .tickFormat((d) -> "#{d}Å")
-      .ticks(10)
+      .tickPadding(10)
+      .ticks(tickCount)
 
     line = d3.svg.line()
       .x((point, index) -> x(index))
@@ -42,6 +43,7 @@ module.exports =
       .call(yAxis)
       .append("text")
       .attr("transform", "rotate(-90)")
+      .attr("transform", "translate(-10,0)")
       .attr("y", 6)
       .attr("dy", ".71em")
 
