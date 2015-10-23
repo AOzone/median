@@ -18,8 +18,8 @@ pickRandomCallsign = ->
   indices = new Indices []
 
   Q.all [
-    contracts.fetch()
-    indices.fetch()
+    contracts.fetch cache: true
+    indices.fetch cache: true
   ]
   .then ->
     res.locals.sd.CONTRACTS = contracts
@@ -34,7 +34,7 @@ pickRandomCallsign = ->
   contract = new Contract id: callSign
 
   Q.all [
-    contract.fetch()
+    contract.fetch cache: true
   ]
   .then ->
     res.locals.sd.CONTRACT = contract.toJSON()
@@ -49,7 +49,7 @@ pickRandomCallsign = ->
   highlighted = req.params.callsign || pickRandomCallsign()
 
   Q.all [
-    contracts.fetch()
+    contracts.fetch cache: true
   ]
   .then ->
     res.locals.sd.CONTRACTS = contracts
@@ -66,7 +66,7 @@ pickRandomCallsign = ->
   blocks = new Blocks [], id: channelId
 
   Q.all [
-    blocks.fetch()
+    blocks.fetch cache: true
   ]
   .then ->
     res.locals.sd.BLOCKS = blocks
@@ -82,8 +82,8 @@ pickRandomCallsign = ->
   chart = new Chart [], { id: callSign, type: '1tick' }
 
   Q.all [
-    contract.fetch()
-    chart.fetch()
+    contract.fetch cache: true
+    chart.fetch cache: true
   ]
   .then ->
     res.locals.sd.TICK_CHART = chart.toJSON()

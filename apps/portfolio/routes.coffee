@@ -49,6 +49,7 @@ Contracts = require '../../collections/contracts.coffee'
   .then ->
     blocks.fetch
       data: Qs.stringify { block_ids: alerts.allBlockIds() }, arrayFormat: 'brackets'
+      cache: true
       success: ->
         res.render 'alerts',
           account: account

@@ -56,6 +56,7 @@ module.exports = (app) ->
   # Override Backbone to use server-side sync
   Backbone.sync = require "backbone-super-sync"
   Backbone.sync.cacheClient = cache.client
+  Backbone.sync.defaultCacheTime = 600
 
   # Mount sharify
   app.use sharify
