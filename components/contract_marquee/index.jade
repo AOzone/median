@@ -1,0 +1,9 @@
+.contract-ticker
+  span.marquee-rtl.marquee-rtl--contract-ticker
+    for contract in contracts.models
+      - var arrow = contract.get('gain_percent') > 0 ? "↑" : "↓"
+      span.ticker-contract-title #{contract.get('title')}
+      span.ticket-contract-gain.js-gain-color(data-gain=contract.get('gain_percent'))
+       | #{contract.formattedPrice('ask')}
+       | #{arrow}
+       | #{contract.formattedGain('gain_percent')}

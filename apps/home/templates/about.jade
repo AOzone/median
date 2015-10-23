@@ -1,14 +1,13 @@
 section.about
   .container
-    .section-header
-      .section-header__title About
-      .section-header__description
-        | #[em Åzone Futures Market] is a Guggenheim online exhibition that enables you to take a position on the future of a world increasingly shaped by emerging technologies.
-        br
-        a(href="/overview") Read more
-    #about__spinning-globe-container
-      canvas#about__spinning-globe(width="1200" height="400")
-        //- rendered on the client
-      #about__spinning-globe-future-list
-        for title in tech
-          h3= title
+    .section-header--span
+      | #[em Åzone Futures Market] is a Guggenheim online exhibition that enables you to take a position on the future of a world increasingly shaped by emerging technologies&nbsp;
+      a(href="/overview") Read more
+      br
+      br
+      | Sign up and receive 10,000Å of Åzone currency to invest in a dynamic market of future conditions.
+
+  .about--ticker
+    include ../../../components/contract_marquee/index
+
+
