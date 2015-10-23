@@ -6,15 +6,11 @@ block body
     .contract__meta
       .contract__value
         .contract__meta__label
-          | Current
-          br
-          | Value
+          | Current Value
         h1.contract__meta__value #{contract.formattedPrice('bid')}
       .contract__value
         .contract__meta__label
-          | Current
-          br
-          | Gain
+          | Current Gain
         h1.contract__meta__value #{contract.formattedGain()}
     #chart
       //- rendered via client
