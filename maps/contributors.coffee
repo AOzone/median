@@ -318,6 +318,16 @@ module.exports = [
   }
   ,
   {
+    name: 'Molly Wright Steenson'
+    location: 'Pittsburgh'
+    links: ['[girlwonder.com](http://www.girlwonder.com/)', '[@maximolly](https://twitter.com/maximolly)']
+    bio: 'Molly Wright Steenson is an Associate Professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation, and artificial intelligence and is completing a book titled _Architecting Interactivity_ that explores these linkages with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
+    azone_username: ''
+    azone_reviews: []
+    azone_funds: []
+  }
+  ,
+  {
     name: 'Jenna Sutela'
     location: 'Helsinki and Berlin'
     links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)', '[are.na/jenna-sutela](https://www.are.na/jenna-sutela)']
@@ -352,16 +362,6 @@ module.exports = [
     location: 'New York'
     links: ['[publicseminar.org](http://www.publicseminar.org/author/kenwark/)', '[@mckenziewark](https://twitter.com/mckenziewark)']
     bio: 'McKenzie Wark is an Australian–born writer and scholar. Wark is known for his writings on media theory, critical theory, new media, and the Situationist International organization. His best-known works are _A Hacker Manifesto_ (2004) and _Gamer Theory_ (2007). He is Professor of Culture and Media Studies, Eugene Lang College of Liberal Arts, The New School for Social Research.'
-    azone_username: ''
-    azone_reviews: []
-    azone_funds: []
-  }
-  ,
-  {
-    name: 'Molly Wright Steenson'
-    location: 'Pittsburgh'
-    links: ['[girlwonder.com](http://www.girlwonder.com/)', '[@maximolly](https://twitter.com/maximolly)']
-    bio: 'Molly Wright Steenson is an Associate Professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation, and artificial intelligence and is completing a book titled _Architecting Interactivity_ that explores these linkages with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
