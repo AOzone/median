@@ -20,4 +20,4 @@ app.get "/terminal/news/tick", routes.futureTips
 app.get "/terminal/news/tick/:callsign", routes.futureTips
 app.get "/terminal/futures/tick", routes.futureTick
 app.get "/terminal/futures/tick/:callsign", routes.futureTick
-# app.get "/terminal/ticker", routes.contractTicker
+app.get "/terminal/ticker", routes.ticker

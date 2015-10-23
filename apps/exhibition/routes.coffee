@@ -94,3 +94,20 @@ pickRandomCallsign = ->
       chart: chart
   .catch next
   .done()
+
+@ticker = (req, res, next) ->
+  blocks = new Blocks [], id: 'the-hottest-tips'
+  contracts = new Contracts []
+
+  Q.all [
+    blocks.fetch cache: true
+    contracts.fetch cache:true
+  ]
+  .then ->
+    res.locals.sd.BLOCKS = blocks
+
+    res.render 'ticker',
+      news: blocks
+      contracts: contracts
+  .catch next
+  .done()
