@@ -120,8 +120,8 @@ module.exports = [
   {
     name: 'IF'
     location: 'London'
-    links: ['[project-if.com](project-if.com)', '[@sarahtgold](https://twitter.com/sarahtgold)', '[@ihutc](https://twitter.com/ihutc)']
-    bio: 'IF is a design collective, London-based but working globally, that is proactively engaged with the evolution of the Internet. They imagine, build, and test radical tools that are capable of providing more democratic futures, seeking to unlock the potential of emerging technologies by focusing on real user needs. Through these technologies and their civic frameworks, IF interrogates the issues of governance, ownership, and control that sit behind products and services.'
+    links: ['[@sarahtgold](https://twitter.com/sarahtgold)', '[@ihutc](https://twitter.com/ihutc)']
+    bio: 'IF is a design collective that is proactively engaged with the evolution of the Internet. They imagine, build, and test radical tools that are capable of providing more democratic futures, seeking to unlock the potential of emerging technologies by focusing on real user needs. Through these technologies and their civic frameworks, IF interrogates the issues of governance, ownership, and control that sit behind products and services.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
