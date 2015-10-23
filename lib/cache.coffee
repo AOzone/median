@@ -9,8 +9,10 @@ redis = require 'redis'
   red = require("url").parse(REDIS_URL)
   @client = redis.createClient(red.port, red.hostname)
   @client.on 'error', _.once (err) =>
+    console.log 'redis error'
     @client = null
     callback()
+  console.log 'redis ready'
   @client.on 'ready', _.once callback
   @client.auth(red.auth.split(":")[1]) if @client and red.auth
 

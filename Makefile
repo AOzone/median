@@ -12,6 +12,9 @@ BIN = node_modules/.bin
 s:
 	foreman start
 
+sp:
+	REDIS_URL=redis://127.0.0.1:6379 foreman start
+
 # Start the server using forever
 sf:
 	$(BIN)/forever $(BIN)/coffee --nodejs --max_old_space_size=960 index.coffee
