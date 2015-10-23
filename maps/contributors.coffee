@@ -211,7 +211,7 @@ module.exports = [
     name: 'Marina Otero Verzier'
     location: 'Rotterdam'
     links: ['[@marina_ov](https://twitter.com/marina_ov)']
-    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation. Her work has been published in _Arquitectura Viva_, _The Avery Review_, _Domus_, and _SQM: The Quantified Home_.'
+    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation. Her work has been recently published in _Arquitectura Viva_, _The Avery Review_, _Domus_, and _SQM: The Quantified Home_.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
