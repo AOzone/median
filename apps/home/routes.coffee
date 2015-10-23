@@ -1,14 +1,14 @@
 Q = require 'bluebird-q'
 _ = require 'underscore'
 sd = require("sharify").data
-News = require '../../collections/news.coffee'
+Blocks = require '../../collections/blocks.coffee'
 Contracts = require '../../collections/contracts.coffee'
 Indices = require '../../collections/indices.coffee'
 contributors = require '../../maps/contributors.coffee'
 tech = require '../../maps/tech.coffee'
 
 @index = (req, res, next) ->
-  blocks = new News []
+  blocks = new Blocks [], id: 'the-hottest-tips'
   contracts = new Contracts []
   indices = new Indices []
 
