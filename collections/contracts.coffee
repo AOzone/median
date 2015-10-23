@@ -13,4 +13,4 @@ module.exports = class Contracts extends Backbone.Collection
       (memo || 0) + Math.log(contract.getMarketCap())
 
     mc = (Math.log(contract.getMarketCap()) / totalMarketCap) or .01
-    return (mc * 15) * 100
+    return (mc * 6) * 100
