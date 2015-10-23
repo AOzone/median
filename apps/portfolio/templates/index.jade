@@ -5,7 +5,7 @@ block vars
 
 block tabs
   +tab("/portfolio/" + account.id, "portfolio")
-  if account.id == user.id
+  if user && account.id == user.id
     +tab("/portfolio/" + account.id + "/alerts", "alerts")
 
 block body
