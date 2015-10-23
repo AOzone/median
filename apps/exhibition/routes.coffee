@@ -52,6 +52,9 @@ pickRandomCallsign = ->
     contracts.fetch cache: true
   ]
   .then ->
+    contracts.comparator = (contract) ->
+      contract.get('title')
+    contracts.sort()
     res.locals.sd.CONTRACTS = contracts
 
     res.render 'all_futures',
