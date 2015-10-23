@@ -2,6 +2,14 @@ extends ../../../components/layout/templates/index--exhibition
 
 block body
   section.contract__tick-chart
+    .contract__title History
+    .contract__meta
+      .contract__value
+        .contract__meta__label Value
+        h1.contract__meta__value #{contract.formattedPrice('bid')}
+      .contract__value
+        .contract__meta__label Gain
+        h1.contract__meta__value #{contract.formattedGain()}
     #chart
       //- rendered via client
 
