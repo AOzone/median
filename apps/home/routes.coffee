@@ -13,7 +13,9 @@ tech = require '../../maps/tech.coffee'
   indices = new Indices []
 
   Q.all [
-    blocks.fetch data: per: 10
+    blocks.fetch
+      data: per: 10
+      cache: true
     contracts.fetch()
     indices.fetch()
   ]
