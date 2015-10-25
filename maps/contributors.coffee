@@ -61,7 +61,7 @@ module.exports = [
     name: 'Keller Easterling'
     location: 'New York'
     links: ['[kellereasterling.com](http://kellereasterling.com/)', '[extrastatecraft.net](http://extrastatecraft.net/Projects)']
-    bio: 'Keller Easterling is an architect, writer, and professor at Yale University who considers space as a heavy information system, a portfolio of assets, and a medium of global polity. Two of Easterling’s most recent books are #[em Extrastatecraft: the power of Infrastructure Space] (2014) and #[em Subtraction] (2014). Her research and writing was included in the 2014 Venice Biennale.'
+    bio: 'Keller Easterling is an architect, writer, and professor at Yale University who considers space as a heavy information system, a portfolio of assets, and a medium of global polity. Two of Easterling’s most recent books are _Extrastatecraft: the power of Infrastructure Space_ (2014) and _Subtraction_ (2014). Her research and writing was included in the 2014 Venice Biennale.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -201,7 +201,7 @@ module.exports = [
     name: 'Metahaven'
     location: 'Amsterdam'
     links: ['[metahaven.net](http://metahaven.net/Site/Metahaven.html)', '[@mthvn](https://twitter.com/mthvn)']
-    bio: 'Metahaven operates on the cutting blade between aesthetics and (geo)politics. Recent books include #[em Black Transparency] (2015), #[em Can Jokes Bring Down Governments?] (2013), and #[em Uncorporate Identity] (2010). They created products for WikiLeaks, music videos with progressive EDM composer Holy Herndon, and are currently finishing a moving image project about perception, propaganda and the internet to be released online early 2016.'
+    bio: 'Metahaven operates on the cutting blade between aesthetics and (geo)politics. Recent books include _Black Transparency_ (2015), _Can Jokes Bring Down Governments?_ (2013), and _Uncorporate Identity_ (2010). They created products for WikiLeaks, music videos with progressive EDM composer Holy Herndon, and are currently finishing a moving image project about perception, propaganda and the internet to be released online early 2016.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
