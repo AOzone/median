@@ -12,7 +12,7 @@ block body
             input(type="text" name="username" required)
           .field.field--username
             label E-mail
-            input(type="email" name="email" required)
+            input(type="email" name="email" required pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Valid email address only (no special chars)")
           .field.field--password
             label Password
             input(type="password" name="password" required)

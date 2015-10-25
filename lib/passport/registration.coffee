@@ -12,7 +12,7 @@ module.exports = (passport) ->
     passReqToCallback: true
   }, (req, username, password, done) ->
     findOrCreateUser = ->
-      User.findOne { 'username' :  username }, (err, user) ->
+      User.findOne { $or: [{email: req.param 'email'}, {username: username}] }, (err, user) ->
 
         # In case of any error, return using the done method
         if err
@@ -21,8 +21,8 @@ module.exports = (passport) ->
 
         # user already exists
         if user
-          console.log "User already exists with username: #{username}"
-          return done null, false, message: "User already exists with username: #{username}"
+          console.log "User already exists with username: #{username} or email: #{req.param('email')}"
+          return done null, false, message: "User already exists"
 
         if !password
           console.log "No password: #{username}"
