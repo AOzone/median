@@ -59,9 +59,9 @@ module.exports = [
   ,
   {
     name: 'Keller Easterling'
-    location: 'New York and New Haven'
+    location: 'New York'
     links: ['[kellereasterling.com](http://kellereasterling.com/)', '[extrastatecraft.net](http://extrastatecraft.net/Projects)']
-    bio: 'Keller Easterling is an architect, writer, and professor at Yale University. Easterling’s research and writing was included in the 2014 Venice Biennale, and her work has been exhibited at the Architectural League, New York; the Rotterdam Biennale; and Storefront for Art and Architecture, New York. Easterling has lectured and published widely in the United States and abroad.'
+    bio: 'Keller Easterling is an architect, writer, and professor at Yale University who considers space as a heavy information system, a portfolio of assets, and a medium of global polity. Two of Easterling’s most recent books are #[em Extrastatecraft: the power of Infrastructure Space] (2014) and #[em Subtraction] (2014). Her research and writing was included in the 2014 Venice Biennale.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -201,7 +201,7 @@ module.exports = [
     name: 'Metahaven'
     location: 'Amsterdam'
     links: ['[metahaven.net](http://metahaven.net/Site/Metahaven.html)', '[@mthvn](https://twitter.com/mthvn)']
-    bio: 'A studio for design, research, and art, based in Amsterdam. Founded by Vinca Kruk and Daniel van der Velden in 2007 as a design and research studio, Metahaven has come to define a new methodology in graphic design. The studio’s speculative practice privileges the vocabulary of graphic design as a means of knowledge production, using it as a tool to analyze organizational models and power structures.'
+    bio: 'Metahaven operates on the cutting blade between aesthetics and (geo)politics. Recent books include #[em Black Transparency] (2015), #[em Can Jokes Bring Down Governments?] (2013), and #[em Uncorporate Identity] (2010). They created products for WikiLeaks, music videos with progressive EDM composer Holy Herndon, and are currently finishing a moving image project about perception, propaganda and the internet to be released online early 2016.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -330,7 +330,7 @@ module.exports = [
   {
     name: 'Jenna Sutela'
     location: 'Helsinki and Berlin'
-    links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)', '[are.na/jenna-sutela](https://www.are.na/jenna-sutela)']
+    links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)']
     bio: "Jenna Sutela is an artist and writer based in Helsinki and Berlin. Her projects seek to identify and react to precarious social and material moments—most recently, the relationship between the body and its technologically mediated environment. She is a contributor to several international publications such as _Frieze_ and _Harvard Design Magazine_, and her work has been presented at Haus der Kulturen der Welt, Berlin; Museum of Contemporary Art Kiasma, Helsinki; and the South London Gallery."
     azone_username: ''
     azone_reviews: []
