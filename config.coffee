@@ -30,6 +30,8 @@ module.exports =
   S3_SECRET: null
   S3_BUCKET: null
   CDN_URL: null
+  CAPTCHA_KEY: null
+  CAPTHCA_SECRET: null
   RESTART_INTERVAL: 1000 * 60 * 60
   WORDPRESS_API_URL: 'https://public-api.wordpress.com/rest/v1.1/sites/azonemarket.wordpress.com'
 
