@@ -181,7 +181,7 @@ module.exports = [
     name: 'Nora N. Khan'
     location: 'Boston'
     links: ['[noranahidkhan.com](http://noranahidkhan.com/)', '[@noranahidkhan](https://twitter.com/noranahidkhan)']
-    bio: 'Nora N. Khan explores issues in technology, literature, games, and electronic music through fiction, essays, and reviews. A contributing editor at _Rhizome_, she writes regularly for _Kill Screen_ and has published recent work in _Conjunctions_, _DIS_, _After Us_, _AVANT.org_, and _American Literary Review_. She studied literature, history, and theory at Harvard University and fiction writing at the Iowa Writers’ Workshop.'
+    bio: 'Nora N. Khan explores issues in technology, literature, games, and electronic music through fiction, essays, and reviews. A contributing editor at _Rhizome_, she writes regularly for both _Rhizome_ and _Kill Screen_ and has published most recently in _Conjunctions_, _DIS_, _After Us_, _AVANT.org_, and _American Literary Review_. She studied literature, history, and theory at Harvard University and fiction writing at the Iowa Writers’ Workshop.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
