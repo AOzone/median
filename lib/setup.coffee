@@ -8,7 +8,7 @@
 SESSION_COOKIE_MAX_AGE, SESSION_COOKIE_KEY,
 COOKIE_DOMAIN, GOOGLE_ANALYTICS_ID, SENDGRID_API_KEY,
 MONGO_URL, KERNAL_API_URL, ARENA_API_URL, ARENA_API_TOKEN, OPENING_CREDIT,
-S3_KEY, S3_SECRET, S3_BUCKET, CDN_URL } = config = require "../config"
+S3_KEY, S3_SECRET, S3_BUCKET, CDN_URL, CAPTCHA_KEY, CAPTCHA_SECRET } = config = require "../config"
 
 path = require 'path'
 stylus = require "stylus"
@@ -48,7 +48,7 @@ module.exports = (app) ->
     NODE_ENV: NODE_ENV
     KERNAL_API_URL: KERNAL_API_URL
     ARENA_API_URL: ARENA_API_URL
-    ARENA_API_TOKEN: ARENA_API_TOKEN
+    CAPTCHA_KEY: CAPTCHA_KEY
     APP_URL:  APP_URL
     JS_EXT: (if 'production' is process.env.NODE_ENV then '.min.js' else '.js')
     CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
