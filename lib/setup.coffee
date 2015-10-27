@@ -48,6 +48,7 @@ module.exports = (app) ->
     NODE_ENV: NODE_ENV
     KERNAL_API_URL: KERNAL_API_URL
     ARENA_API_URL: ARENA_API_URL
+    ARENA_API_TOKEN: ARENA_API_TOKEN
     CAPTCHA_KEY: CAPTCHA_KEY
     APP_URL:  APP_URL
     JS_EXT: (if 'production' is process.env.NODE_ENV then '.min.js' else '.js')
