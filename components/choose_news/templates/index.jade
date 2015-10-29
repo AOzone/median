@@ -1,7 +1,7 @@
 .modal-body--choose-news.center
   .choose-news-dialog.center
     .choose-news-dialog--inner
-      h4 Connect a news item to make the trade
+      h4 Add or choose an existing hot tip to make the trade
       h2
         span.capitalize #{transaction}&nbsp;
         strong #{contract.formattedPrice(map[transaction])}&nbsp;
@@ -9,6 +9,6 @@
         strong #{contract.get('title')}&nbsp;
         | based on:
   .choose-news-search
-    input(id="choose-news-search-input" placeholder="Search Åzone or type URL" type="text")
+    input(id="choose-news-search-input" placeholder="Add new link or search Åzone" type="text")
   .choose-news-grid
     include ../../news_grid/templates/index

@@ -1,3 +1,5 @@
+{ CAPTCHA_KEY } = require('sharify').data
+_ = require 'underscore'
 Backbone = require 'backbone'
 modalize = require '../../modalize/index.coffee'
 mediator = require '../../../lib/mediator.coffee'
@@ -27,7 +29,18 @@ module.exports.ConfirmTradeView = class ConfirmTradeView extends Backbone.View
       map: transactionMap
       is_new: @is_new
 
+    _.defer => @postRender()
+
     return this
+
+  postRender: ->
+    grecaptcha.render 'recaptcha',
+      sitekey: CAPTCHA_KEY
+      theme: 'dark'
+      callback: =>
+        @$('.button--modal').attr 'disabled', false
+      'expired-callback': =>
+        @$('.button--modal').attr 'disabled', true
 
 module.exports.initConfirmTrade = ->
   mediator.on 'confirm:trade', (options) ->

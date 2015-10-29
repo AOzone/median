@@ -51,7 +51,7 @@ module.exports = [
     name: 'Louise Drulhe'
     location: 'Paris'
     links: ['[louisedrulhe.fr](http://louisedrulhe.fr/)', '[@louisedrulhe](https://twitter.com/louisedrulhe)']
-    bio: 'Louise Drulhe is a graphic designer working in Paris. She authored Critical Atlas of the Internet _Critical Atlas of the Internet_ (an adaption of her thesis project at École nationale supérieure des arts décoratifs, Paris)which uses spatial analysis as a tool for political and social purposes.'
+    bio: 'Louise Drulhe is a graphic designer working in Paris. She authored _Critical Atlas of the Internet_ (an adaption of her thesis project at École nationale supérieure des arts décoratifs, Paris)which uses spatial analysis as a tool for political and social purposes.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -59,9 +59,9 @@ module.exports = [
   ,
   {
     name: 'Keller Easterling'
-    location: 'New York and New Haven'
+    location: 'New York'
     links: ['[kellereasterling.com](http://kellereasterling.com/)', '[extrastatecraft.net](http://extrastatecraft.net/Projects)']
-    bio: 'Keller Easterling is an architect, writer, and professor at Yale University. Easterling’s research and writing was included in the 2014 Venice Biennale, and her work has been exhibited at the Architectural League, New York; the Rotterdam Biennale; and Storefront for Art and Architecture, New York. Easterling has lectured and published widely in the United States and abroad.'
+    bio: 'Keller Easterling is an architect, writer, and professor at Yale University who considers space as a heavy information system, a portfolio of assets, and a medium of global polity. Two of Easterling’s most recent books are _Extrastatecraft: the power of Infrastructure Space_ (2014) and _Subtraction_ (2014). Her research and writing was included in the 2014 Venice Biennale.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -111,7 +111,7 @@ module.exports = [
     name: 'Sam Hart'
     location: 'New York'
     links: ['[hxrts.com](http://hxrts.com/)', '[AVANT.org](http://avant.org)', '[@hxrts](https://twitter.com/hxrts)']
-    bio: 'Sam Hart is a scientist, publisher, and artist based in New York. His interests include complex systems modeling and developing strategies that advance a more ethical technoculture. Hart works as a Bioinformatician at Memorial Sloan Kettering Cancer Center’s Jorge S. Reis-Filho Lab, where he investigates mechanisms of cancer evolution. He is also Cofounder and Editor-in-Chief of AVANT.org, an Internet project space for critical interdisciplinarity.'
+    bio: 'Sam Hart is a scientist, publisher, and artist concentrating on complex systems modelling and strategies advancing a more ethically sound technoculture. Sam works as a Bioinformatician at Sloan Kettering\'s Reis Lab, where he investigates mechanisms of cancer evolution and is Co-Founder + Editor-in-Chief of AVANT.org, an internet project space for critical interdisciplinarity.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -120,8 +120,8 @@ module.exports = [
   {
     name: 'IF'
     location: 'London'
-    links: ['[project-if.com](project-if.com)', '[@sarahtgold](https://twitter.com/sarahtgold)', '[@ihutc](https://twitter.com/ihutc)']
-    bio: 'IF is a design collective, London-based but working globally, that is proactively engaged with the evolution of the Internet. They imagine, build, and test radical tools that are capable of providing more democratic futures, seeking to unlock the potential of emerging technologies by focusing on real user needs. Through these technologies and their civic frameworks, IF interrogates the issues of governance, ownership, and control that sit behind products and services.'
+    links: ['[@sarahtgold](https://twitter.com/sarahtgold)', '[@ihutc](https://twitter.com/ihutc)']
+    bio: 'IF is a design collective that is proactively engaged with the evolution of the Internet. They imagine, build, and test radical tools that are capable of providing more democratic futures, seeking to unlock the potential of emerging technologies by focusing on real user needs. Through these technologies and their civic frameworks, IF interrogates the issues of governance, ownership, and control that sit behind products and services.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -201,7 +201,7 @@ module.exports = [
     name: 'Metahaven'
     location: 'Amsterdam'
     links: ['[metahaven.net](http://metahaven.net/Site/Metahaven.html)', '[@mthvn](https://twitter.com/mthvn)']
-    bio: 'A studio for design, research, and art, based in Amsterdam. Founded by Vinca Kruk and Daniel van der Velden in 2007 as a design and research studio, Metahaven has come to define a new methodology in graphic design. The studio’s speculative practice privileges the vocabulary of graphic design as a means of knowledge production, using it as a tool to analyze organizational models and power structures.'
+    bio: 'Metahaven operates on the cutting blade between aesthetics and (geo)politics. Recent books include _Black Transparency_ (2015), _Can Jokes Bring Down Governments?_ (2013), and _Uncorporate Identity_ (2010). They created products for WikiLeaks, music videos with progressive EDM composer Holy Herndon, and are currently finishing a moving image project about perception, propaganda and the internet to be released online early 2016.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -211,7 +211,7 @@ module.exports = [
     name: 'Marina Otero Verzier'
     location: 'Rotterdam'
     links: ['[@marina_ov](https://twitter.com/marina_ov)']
-    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation. Her work has been published in _Arquitectura Viva_, _The Avery Review_, _Domus_, and _SQM: The Quantified Home_.'
+    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation. Her work has been recently published in _Arquitectura Viva_, _The Avery Review_, _Domus_, and _SQM: The Quantified Home_.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -318,9 +318,19 @@ module.exports = [
   }
   ,
   {
+    name: 'Molly Wright Steenson'
+    location: 'Pittsburgh'
+    links: ['[girlwonder.com](http://www.girlwonder.com/)', '[@maximolly](https://twitter.com/maximolly)']
+    bio: 'Molly Wright Steenson is an Associate Professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation, and artificial intelligence and is completing a book titled _Architecting Interactivity_ that explores these linkages with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
+    azone_username: ''
+    azone_reviews: []
+    azone_funds: []
+  }
+  ,
+  {
     name: 'Jenna Sutela'
     location: 'Helsinki and Berlin'
-    links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)', '[are.na/jenna-sutela](https://www.are.na/jenna-sutela)']
+    links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)']
     bio: "Jenna Sutela is an artist and writer based in Helsinki and Berlin. Her projects seek to identify and react to precarious social and material moments—most recently, the relationship between the body and its technologically mediated environment. She is a contributor to several international publications such as _Frieze_ and _Harvard Design Magazine_, and her work has been presented at Haus der Kulturen der Welt, Berlin; Museum of Contemporary Art Kiasma, Helsinki; and the South London Gallery."
     azone_username: ''
     azone_reviews: []
@@ -352,16 +362,6 @@ module.exports = [
     location: 'New York'
     links: ['[publicseminar.org](http://www.publicseminar.org/author/kenwark/)', '[@mckenziewark](https://twitter.com/mckenziewark)']
     bio: 'McKenzie Wark is an Australian–born writer and scholar. Wark is known for his writings on media theory, critical theory, new media, and the Situationist International organization. His best-known works are _A Hacker Manifesto_ (2004) and _Gamer Theory_ (2007). He is Professor of Culture and Media Studies, Eugene Lang College of Liberal Arts, The New School for Social Research.'
-    azone_username: ''
-    azone_reviews: []
-    azone_funds: []
-  }
-  ,
-  {
-    name: 'Molly Wright Steenson'
-    location: 'Pittsburgh'
-    links: ['[girlwonder.com](http://www.girlwonder.com/)', '[@maximolly](https://twitter.com/maximolly)']
-    bio: 'Molly Wright Steenson is an Associate Professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation, and artificial intelligence and is completing a book titled _Architecting Interactivity_ that explores these linkages with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []

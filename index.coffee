@@ -5,16 +5,18 @@
 #
 express = require "express"
 setup = require "./lib/setup"
+cache = require './lib/cache'
 { RESTART_INTERVAL } = require "./config"
 
 app = module.exports = express()
-setup app
 
-# Start the server and send a message to IPC for the integration test
-# helper to hook into.
-app.listen process.env.PORT, ->
-  console.log "Listening on port " + process.env.PORT
-  process.send? "listening"
+cache.setup ->
+  setup app
+
+  app.listen process.env.PORT, ->
+    console.log "Listening on port " + process.env.PORT
+    process.send? "listening"
+
 
 # Reboot for memory leak
 setTimeout process.exit, RESTART_INTERVAL

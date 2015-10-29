@@ -26,15 +26,24 @@
 
 .news__item__title
   font-family Atlas Typewriter Bold
-  font-size 1.25rem
-  line-height 1.8rem
 
   +below(900px)
     h5()
     word-break break-word
+    font-size 2.0rem
+
+  +below(768px)
+    font-size 1.5rem
 
 .news__item__description
   padding-bottom unit * 2
+  font-size 1.2rem
+
+  +below(900px)
+    font-size 1.1rem
+
+  +below(768px)
+    font-size 1.0rem
 
 .news__item__meta
   position absolute

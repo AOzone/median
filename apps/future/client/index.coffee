@@ -74,12 +74,6 @@ module.exports.init = ->
 
   Backbone.history.start()
 
-  # handle news clicks
-  $('body').on 'click', '.news__item', (e)->
-    e.preventDefault()
-    id = $(e.currentTarget).data('block-id')
-    router.navigate "tip/#{id}", trigger: true
-
   # tick chart
   initTickChart chart, $('#chart')
   $(window).on 'resize', -> updateTickChart chart, $('#chart')

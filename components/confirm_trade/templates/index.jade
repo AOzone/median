@@ -16,4 +16,5 @@
         input(type="hidden", name="is_new", value="#{is_new}")
       .field
         input.comment(type="text", name="comment", placeholder="Add a comment (optional)", maxlength="140")
-      input.button--modal(type="submit", value="Trade")
+      #recaptcha.field
+      input.button--modal(type="submit", value="Trade" disabled=true)

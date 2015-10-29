@@ -11,15 +11,30 @@
   form
     margin-top unit * 4
 
-.modal-body--confirm-trade
   .field
     margin 0 auto
     width 350px
     margin-bottom unit * 2
 
+  #recaptcha > div > div
+    margin 0 auto
+
   input[type='text']
     width 350px
     color light-text-color
+
+  +below(768px)
+    h2
+      margin-top (unit * 5)
+
+    .field
+      width 90%
+
+    input[type='text']
+      width 100%
+
+    form
+      margin-top unit * 2
 
   ::-webkit-input-placeholder
     color rgba(255, 255, 255, 0.5)

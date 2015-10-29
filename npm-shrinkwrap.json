@@ -2419,6 +2419,11 @@
         }
       }
     },
+    "express-recaptcha": {
+      "version": "2.0.0",
+      "from": "express-recaptcha@",
+      "resolved": "https://registry.npmjs.org/express-recaptcha/-/express-recaptcha-2.0.0.tgz"
+    },
     "express-session": {
       "version": "1.11.3",
       "from": "express-session@",

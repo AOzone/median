@@ -16,6 +16,15 @@
     vertically-align()
     top 35%
 
+  +below(768px)
+    max-width 100vw
+    padding unit
+    h4
+      padding-top (unit * 4)
+
+    h2
+      top 20%
+
 .choose-news-grid
   clearfix()
   padding 3%
@@ -40,3 +49,6 @@
     color text-color
   :-ms-input-placeholder
     color text-color
+
+  +below(768px)
+    width 90%

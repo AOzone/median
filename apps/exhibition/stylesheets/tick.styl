@@ -1,6 +1,38 @@
-.is-exhibition
-  .contract__tick-chart, #chart
-    height 1080px
+.contract__tick-chart--terminal
+  .contract__title
+    position absolute
+    left 55px
+    top 75px
+    color light-text-color
+    font-size 3.6rem
+    font-family Work Sans Light
+
+  .contract__meta
+    position absolute
+    right 30px
+    top 10px
+    color light-text-color
+    text-align right
+
+    .contract__value
+      width 200px
+
+    .contract__meta__label
+      font-size 1.5rem
+
+    h1
+      margin-top 0
+      font-size 3rem
+
+  #chart
+    margin-top 60px
+    height 600px
+
+    .tick
+      line
+        display none
+      text
+        margin-left -100px
 
     .focusLine
       stroke rgb(255, 255, 255)
@@ -9,4 +41,5 @@
 
       &.animated
         transform translateX(1920px)
+
 

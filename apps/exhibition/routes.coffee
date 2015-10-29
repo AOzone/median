@@ -18,8 +18,8 @@ pickRandomCallsign = ->
   indices = new Indices []
 
   Q.all [
-    contracts.fetch()
-    indices.fetch()
+    contracts.fetch cache: true
+    indices.fetch cache: true
   ]
   .then ->
     res.locals.sd.CONTRACTS = contracts
@@ -30,11 +30,11 @@ pickRandomCallsign = ->
   .done()
 
 @futureDefinition = (req, res, next) ->
-  callSign = req.params.callsign || pickRandomCallsign()
+  callSign = req.params.callsign?.toUpperCase() || pickRandomCallsign()
   contract = new Contract id: callSign
 
   Q.all [
-    contract.fetch()
+    contract.fetch cache: true
   ]
   .then ->
     res.locals.sd.CONTRACT = contract.toJSON()
@@ -46,12 +46,15 @@ pickRandomCallsign = ->
 
 @allFutures  = (req, res, next) ->
   contracts = new Contracts []
-  highlighted = req.params.callsign || pickRandomCallsign()
+  highlighted = req.params.callsign?.toUpperCase() || pickRandomCallsign()
 
   Q.all [
-    contracts.fetch()
+    contracts.fetch cache: true
   ]
   .then ->
+    contracts.comparator = (contract) ->
+      contract.get('title')
+    contracts.sort()
     res.locals.sd.CONTRACTS = contracts
 
     res.render 'all_futures',
@@ -61,12 +64,12 @@ pickRandomCallsign = ->
   .done()
 
 @futureTips = (req, res, next) ->
-  callSign = req.params.callsign || pickRandomCallsign()
+  callSign = req.params.callsign?.toUpperCase() || pickRandomCallsign()
   channelId = contractMap[callSign]?.channel_id
   blocks = new Blocks [], id: channelId
 
   Q.all [
-    blocks.fetch()
+    blocks.fetch cache: true
   ]
   .then ->
     res.locals.sd.BLOCKS = blocks
@@ -77,13 +80,13 @@ pickRandomCallsign = ->
   .done()
 
 @futureTick = (req, res, next) ->
-  callSign = req.params.callsign || pickRandomCallsign()
+  callSign = req.params.callsign?.toUpperCase() || pickRandomCallsign()
   contract = new Contract id: callSign
   chart = new Chart [], { id: callSign, type: '1tick' }
 
   Q.all [
-    contract.fetch()
-    chart.fetch()
+    contract.fetch cache: true
+    chart.fetch cache: true
   ]
   .then ->
     res.locals.sd.TICK_CHART = chart.toJSON()
@@ -92,5 +95,22 @@ pickRandomCallsign = ->
     res.render 'tick',
       contract: contract
       chart: chart
+  .catch next
+  .done()
+
+@ticker = (req, res, next) ->
+  blocks = new Blocks [], id: 'the-hottest-tips'
+  contracts = new Contracts []
+
+  Q.all [
+    blocks.fetch cache: true
+    contracts.fetch cache:true
+  ]
+  .then ->
+    res.locals.sd.BLOCKS = blocks
+
+    res.render 'ticker',
+      news: blocks
+      contracts: contracts
   .catch next
   .done()

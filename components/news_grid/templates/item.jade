@@ -5,4 +5,4 @@ if item.get('source')
     h3.news__grid-item__title= item.get('title')
 
     .news__grid-item__meta
-      .news__grid-item__source-domain= item.sourceDomain()
+      .news__grid-item__source-domain(data-href=item.get('source').url)= item.sourceDomain()

@@ -1,0 +1,16 @@
+extends ../../../components/layout/templates/index--exhibition
+
+block body
+  section.terminal-ticker
+    include ../../../components/contract_marquee/index
+
+    .contract-ticker.contract-ticker--news
+      span.marquee-rtl.marquee-rtl--contract-ticker
+        for item in news.models
+          span.ticket-contract-source.ticket-contract-gain |
+          span.ticket-contract-source.ticket-contract-gain #{item.updatedAtAgo()}
+          span.ticker-contract-title #{item.get('title')}
+          span.ticket-contract-source.ticket-contract-gain #{item.sourceDomain()}
+    .terminal-ticker-overlay
+
+
