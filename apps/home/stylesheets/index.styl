@@ -32,20 +32,17 @@
     font-size 1.2rem
 
 .section-header--span
-  width 60%
+  width 62%
   margin 0 auto
   padding (unit * 3) 0
   font-size 1.8rem
 
   > a
-    opacity 0.5
+    display block
 
   +below(768px)
     width 100%
     font-size 1.2rem
-
-    a
-      display block
 
 .section-header__title
   flex 1
@@ -58,11 +55,18 @@
 .section-header__description
   flex 1
   padding-right 20%
-  > a
-    opacity 0.5
 
   +below(768px)
     padding-right 0
+
+.section-header--span, .section-header__description
+  > a
+    color #14143
+    opacity 0.5
+    transition 0.4s opacity
+
+  > a:hover
+    opacity 1
 
 @import 'about'
 @import 'futures'
