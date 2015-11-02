@@ -5,7 +5,7 @@ color2 = '#235AFF'
 
 module.exports =
   normalizeIndexPlot: normalizeIndexPlot = (plot, scale) ->
-    (scale / 4) + ((plot + 1) * scale / 4)
+    (scale / 3) + ((plot + 0.5) * scale / 3)
 
   initHeatmap: initHeatmap = (container_id, map, contracts) ->
     plotHeatmapKeys container_id, map

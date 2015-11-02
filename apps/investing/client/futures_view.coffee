@@ -8,7 +8,7 @@ module.exports.init = ->
   contracts = new Contracts sd.CONTRACTS
 
   contracts.each (contract) ->
-    mc = Math.min(contracts.relativeMarketCap(contract), 100)
+    mc = Math.min((contract.get('radius') * 100), 80)
 
     $("#contract_#{contract.get('contract')} .future-circle__circle").css
       width: "#{mc}%"
