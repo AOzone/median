@@ -10,4 +10,4 @@ module.exports = class BlogPost extends Backbone.Model
     authorDescriptions[@get('author').login] || ''
 
   getFormattedDate: ->
-    moment(@get('date')).format('d MMMM YYYY')
+    moment(@get('date')).format('D MMMM YYYY')
