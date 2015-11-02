@@ -36,7 +36,7 @@ block body
               td.is-active(data-th="no. of shares") #{position.get('qty')}
               td.is-active(data-th="current price") #{position.formattedPrice('current_price')}
               td.is-active(data-th="purchase price") #{position.formattedPrice('avg_price')}
-              td.is-active.js-gain-color(data-th="total gain / loss" data-gain="#{position.get('gain_loss')}") #{position.formattedGain('gain_loss')}
+              td.is-active.js-gain-color(data-th="total gain / loss" data-gain="#{position.get('gain_loss')}") #{position.formattedPrice('gain_loss')}
               td.is-active.js-gain-color(data-th="market value" data-gain="#{position.get('gain_loss')}") #{position.formattedPrice('current_value')}
 
     else
