@@ -4,7 +4,7 @@ module.exports =
   initTickChart: initTickChart = (chart, $container, tickNum = null) ->
     width = $container.width()
     height = $container.height()
-    margin = {top: 40, right: 0, bottom: 30, left: 40}
+    margin = {top: 40, right: 0, bottom: 30, left: 50}
     tickCount = tickNum || parseInt(height/25)
 
     x = d3.scale.linear().range [0, width - 52]
