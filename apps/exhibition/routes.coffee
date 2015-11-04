@@ -46,7 +46,7 @@ pickRandomCallsign = ->
 
 @allFutures  = (req, res, next) ->
   contracts = new Contracts []
-  highlighted = req.params.callsign?.toUpperCase() || pickRandomCallsign()
+  highlighted = req.params.callsign?.toUpperCase()
 
   Q.all [
     contracts.fetch cache: true

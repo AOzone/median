@@ -3,7 +3,7 @@ extends ../../../components/layout/templates/index--exhibition
 //- 1920 x 1080
 
 block body
-  section.future-circles.future-circles--bigboard
+  section.future-circles.future-circles--bigboard(class=highlighted ? '' : 'all-highlighted' )
     - row = 1
     for contract, index in contracts.models
       - highlightClass = contract.get('contract') == highlighted ? 'is-highlighted' : ''
