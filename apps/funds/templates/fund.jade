@@ -1,0 +1,31 @@
+extends ../../../components/layout/templates/index
+block vars
+  - pageTitle = 'Fund'
+
+block tabs
+  +tab("/investing/funds/" + fund.get('callsign'), "Fund")
+
+block body
+  .container.container--fund
+    .fund-top
+      .contract__copy
+        h5 #{fund.get('callsign')}
+        h2.contract__title #{fund.get('name')}
+        .contract__abstract #{fund.get('snippet')}
+        .contract__meta
+          .contract__value
+            .contract__meta__label Volume
+            h3.contract__meta__value #{account.formatCurrency('net_liquidation_value')}
+      .fund-circles
+        //- rendered on the client
+  include ../../../components/tabs/templates/index
+  .container.container--fund
+    .fund-copy!= md(fund.get('essay'))
+    .fund-contributor
+      .fund-contributor__label Contributed by
+      .fund-contributor__copy
+        strong= contributor.name
+        p!= md(contributor.bio)
+
+block scripts
+  script( src=asset('/assets/fund.js') )
