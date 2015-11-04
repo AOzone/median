@@ -16,7 +16,10 @@ block body
           .contract__value
             .contract__meta__label Volume
             h3.contract__meta__value #{account.formatCurrency('net_liquidation_value')}
-      .fund-circles
+          .contract__value
+            .contract__meta__label Gain
+            h3.contract__meta__value #{account.totalGainPercentage()}
+      #fund-circles
         //- rendered on the client
   include ../../../components/tabs/templates/index
   .container.container--fund

@@ -3,6 +3,31 @@
     float none
     clearfix()
 
+.fund-top
+  min-height 500px
+  height calc(100vh \- 200px)
+  position relative
+
+  +below(1100px)
+    height auto
+
+#fund-circles
+  width 600px
+  height 600px
+  position absolute
+  right unit
+  bottom unit
+
+  +below(1100px)
+    position static
+    width 100%
+    height auto
+    margin-bottom (unit*4)
+
+  .node text
+    fill light-text-color
+    font-family Atlas Typewriter Regular
+
 .fund-copy
   width 65%
   margin 0 auto
