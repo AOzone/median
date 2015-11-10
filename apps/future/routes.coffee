@@ -94,6 +94,10 @@ fetchContract = (callSign, next, cb)->
 
   fetchContract(callSign, next).then ({ contract, blocks }) ->
 
+    if req.recaptcha.error
+      req.flash 'error', "Apparently you are a robot and robots are not allowed."
+      return res.redirect contract.href()
+
     { success, reason } = req.user.canMakeTransaction transaction, contract
     unless success
       req.flash 'error', reason
