@@ -7,7 +7,7 @@ routes = require "./routes"
 recaptcha = require "express-recaptcha"
 { CAPTCHA_KEY, CAPTCHA_SECRET } = require '../../config.coffee'
 
-recaptcha.init CAPTCHA_KEY, CAPTCHA_SECRET
+recaptcha.init(CAPTCHA_KEY, CAPTCHA_SECRET) if CAPTCHA_SECRET and CAPTCHA_KEY
 
 app = module.exports = express()
 app.set "views", __dirname + "/templates"
