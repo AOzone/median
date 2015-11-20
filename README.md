@@ -1,6 +1,7 @@
 # Median
 
 Middleware + front end for Åzone Terminal, built with [Are.na](https://www.are.na) and [Ezel](http://ezeljs.com/)
+
 http://azone.guggenheim.org
 
 Median connects Åzone's Kernal API (built by Hugo Liu), the Are.na API, a Wordpress.com blog and a local database to facilitate transactions, display market data, and connect relevant news to various futures.
