@@ -3,7 +3,8 @@
     a(href="/review/" + post.get('slug'))
       .blog-post__header-image(style="background-image: url(#{post.get('featured_image')}?w=1400)")
   .blog-post__container
-    h1.blog-post__title=post.get('title')
+    a(href="/review/" + post.get('slug'))
+      h1.blog-post__title=post.get('title')
 
     .blog-post__main
       .blog-post__date=post.getFormattedDate()
