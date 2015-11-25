@@ -27,6 +27,7 @@ test: assets
 # Generate minified assets from the /assets folder and output it to /public.
 assets:
 	$(BIN)/ezel-assets
+	cp ./assets/tooltipster.css ./public/assets
 
 deploy:
 	$(BIN)/ezel-assets

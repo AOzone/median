@@ -20,6 +20,7 @@ Median keeps with the conventions established in the [Ezel](http://ezeljs.com/) 
 * `nvm alias default 0.12`
 * Fork, clone, cd
 * `npm install`
+* `npm make assets`
 * `npm run dev`
 
 ## Credits
