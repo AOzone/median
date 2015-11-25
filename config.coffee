@@ -21,7 +21,7 @@ module.exports =
   GOOGLE_ANALYTICS_ID: null
   SENDGRID_API_KEY: null
   REDIS_URL: null
-  KERNAL_API_URL: null
+  KERNAL_API_URL: "http://52.91.104.43"
   KERNAL_SECRET: null
   ARENA_API_URL: 'http://api.are.na/v2'
   ARENA_API_TOKEN: null
