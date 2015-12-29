@@ -52,3 +52,29 @@ Account = require '../../models/account.coffee'
       account: account
   .catch next
   .done()
+
+# executes purchase of good and redirects to that good's page
+@makePurchase = (req, res, next) ->
+  return next() unless req.user
+
+  good_type = req.body.good_type
+  good_id = req.body.good_id
+  price = req.body.price
+  comment = req.body.comment
+
+  Q.all [
+    # make the transfer with the kernel
+    req.user.makePurchaseTransfer { good_type: good_type, good_id: good_id, price: price, comment: comment }
+  ]
+  .then -> # returns a {success, reason} object
+    # refresh user balance
+    req.logIn req.user, (err) ->
+      # todo: catch error
+      # send user to the good page
+      res.redirect '/goods/' + good_type + '/' + good_id
+
+  .catch (err) ->
+    console.log "There was an error with Q promises in @makePurchase"
+    console.dir err
+    next
+  .done()
