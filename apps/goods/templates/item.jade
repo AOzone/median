@@ -3,9 +3,11 @@ if good.id
     button.goods__grid-item-button(type="submit")
       img.goods__grid-item__image(class="grid_img", src= "/images/goods/" + good.id + ".png")
       .goods__grid-item__text
-        h3.goods__grid-item__title= good.name
-        .goods__grid-item__creator
-        | By: #{good.creator}
+        h3.goods__grid-item__title= good.title
+        if good.contributor
+          .goods__grid-item__contributor
+          | By: #{good.contributor}
+
         .goods__grid-item__description
         | #{good.description}
 

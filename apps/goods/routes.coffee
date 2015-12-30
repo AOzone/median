@@ -33,21 +33,19 @@ Account = require '../../models/account.coffee'
   id = req.params.id or req.user?.id
   account = new Account id: id
 
-  good_id = req.params.property_id
+  good_id = req.params.good_id
   good_type = req.params.good_type
 
-  go = _.find goods, (g) ->
+  go = _.find goods[good_type], (g) ->
     if g.id == good_id
       return g
-
-  good = go[0]
 
   Q.all [
     account.fetch()
   ]
   .then ->
     res.render 'good',
-      good: good
+      good: go
       good_type: good_type
       markdown: markdown
       account: account

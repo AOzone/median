@@ -18,17 +18,17 @@ block body
             include item.jade
 
       .choose-goods-section
-        h3 CONTENT
-      .choose-goods-grid
-        .grid.grid--goods
-          each good, index in goods.content
-            include item.jade
-
-      .choose-goods-section
         h3 ADS
       .choose-goods-grid
         .grid.grid--goods
           each good, index in goods.ads
+            include item.jade
+
+      .choose-goods-section
+        h3 CONTENT
+      .choose-goods-grid
+        .grid.grid--goods
+          each good, index in goods.content
             include item.jade
 
       .choose-goods-section
