@@ -90,14 +90,14 @@ module.exports = {
 
   ]
   ,
-  "open source": [
+  "brand": [
     {
       name: 'Åzone Brand'
       price: 100000
       description: 'Get a license to use cåin, the Åzone currency, denoted by Å, for your own projects.'
       body: ''
       creator: 'Åzone'
-      id: 'brand'
+      id: 'azone-brand'
     }
   ]
   ,
