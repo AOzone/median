@@ -1,0 +1,19 @@
+if good.id
+  form.goods____grid-item(method="POST", action="/goods/purchase/#{good.id}")
+    button.goods__grid-item-button(type="submit")
+      img.goods__grid-item__image(class="grid_img", src= "/images/goods/" + good.id + ".png")
+      .goods__grid-item__text
+        h3.goods__grid-item__title= good.name
+        .goods__grid-item__creator
+        | By: #{good.creator}
+        .goods__grid-item__description
+        | #{good.description}
+
+        .goods__grid-item__meta
+          .goods__grid-item__price
+          | Price: #{good.price}Å
+
+      input(type="hidden", name="good_type", value="content")
+      input(type="hidden", name="good_id", value="#{good.id}")
+      input(type="hidden", name="price", value="#{good.price}")
+      input(type="hidden", name="comment", value="#{account.id}+purchased+#{good.id}+for+#{good.price}")
