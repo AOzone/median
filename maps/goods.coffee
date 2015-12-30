@@ -86,8 +86,33 @@ module.exports = {
     }
   ]
   ,
-  "experience": [
-
+  "investing": [
+    {
+      name: 'Hedge Fund License'
+      price: 250000
+      description: 'Get a license to set up your own hedge fund.'
+      body: ''
+      creator: 'Åzone'
+      id: 'fund-license'
+    }
+    ,
+    {
+      name: 'Future Listing'
+      price: 100000
+      description: 'List your own future.'
+      body: ''
+      creator: 'Åzone'
+      id: 'future-listing'
+    }
+    ,
+    {
+      name: 'Bot Trading License'
+      price: 200000
+      description: 'Get a license to legally trade using bots.'
+      body: ''
+      creator: 'Åzone'
+      id: 'bot-license'
+    }
   ]
   ,
   "brand": [
@@ -107,7 +132,7 @@ module.exports = {
       price: 100000
       description: 'Advertise on Åzone using custom-designed ads by Metahaven.'
       body: ''
-      creator: 'Åzone'
+      creator: 'Metahaven'
       id: 'metahaven-ad-one'
     }
     ,
@@ -116,7 +141,7 @@ module.exports = {
       price: 100000
       description: 'Advertise on Åzone using custom-designed ads by Metahaven.'
       body: ''
-      creator: 'Åzone'
+      creator: 'Metahaven'
       id: 'metahaven-ad-two'
     }
   ]

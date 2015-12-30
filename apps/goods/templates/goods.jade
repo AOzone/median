@@ -11,10 +11,10 @@ block body
 
     .choose-goods.center
       .choose-goods-section
-        h3 COMMUNITY
+        h3 INVESTING
       .choose-goods-grid
         .grid.grid--goods
-          each good, index in goods.community
+          each good, index in goods.investing
             include item.jade
 
       .choose-goods-section
@@ -29,6 +29,13 @@ block body
       .choose-goods-grid
         .grid.grid--goods
           each good, index in goods.ads
+            include item.jade
+
+      .choose-goods-section
+        h3 COMMUNITY
+      .choose-goods-grid
+        .grid.grid--goods
+          each good, index in goods.community
             include item.jade
 
       .choose-goods-section
