@@ -1,0 +1,81 @@
+.choose-goods
+  min-height 100%
+
+.choose-goods-section
+  padding-top unit
+
+.choose-goods-grid
+  clearfix()
+  padding 3%
+  height auto
+
+.grid--goods
+  clearfix()
+  height auto
+
+.goods____grid-item
+  column(1/4, cycle: 4)
+  height 550px
+  margin-bottom 3%
+  text-align left
+  cursor pointer
+  transition all 0.2s ease-in-out-sine
+  position relative
+  padding 0
+
+  &:hover
+    opacity 0.8
+
+  +above(1300px)
+    column(1/5, cycle: 5, uncycle: 4)
+    text-align left
+
+  +below(900px)
+    column(1/3, cycle: 3, uncycle: 4)
+    text-align left
+
+  +below(700px)
+    column(1/2, cycle: 2, uncycle: 3)
+    text-align left
+
+  +below(500px)
+    column(1, cycle: 1, uncycle: 2)
+    text-align left
+
+.goods__grid-item-button
+  padding 0
+  text-align left
+  cursor pointer
+  color inherit
+  border-image-source none
+  border-image-slice none
+  border-image-width none
+  border-image-outset none
+  border-image-repeat none
+  background-color inherit
+  box-sizing border-box
+  border none
+
+.goods__grid-item__image
+  width 100%
+  margin-bottom (unit * 0.5)
+
+.goods__grid-item__title
+  font-family Atlas Typewriter Bold
+  font-size 1.1rem
+
+  +below(700px)
+    font-size .9rem
+
+.goods__grid-item__creator
+  margin-bottom (unit * 0.5)
+
+.goods____grid-item
+  text-align left
+
+.goods__grid-item__meta
+  position absolute
+  bottom unit
+  right 0
+  text-align right
+  font-weight bold
