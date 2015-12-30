@@ -1,0 +1,16 @@
+extends ../../../components/layout/templates/index
+
+block vars
+  - pageTitle = 'Good'
+  - bodyClass = 'is-dark'
+
+block body
+  .container.container--good
+    .information-pull-quote= good.title
+    .information-pull-quote= good.description
+
+    if good.contributor
+      .information-pull-quote
+        | Contributed by #{good.contributor}
+
+    .information-body.good-content!= markdown(good.body)
