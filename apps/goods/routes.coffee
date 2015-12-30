@@ -2,7 +2,7 @@ contributors = require '../../maps/contributors.coffee'
 markdown = require '../../components/util/markdown'
 goods = require '../../maps/goods.coffee'
 _ = require 'underscore'
-
+numeral = require 'numeral'
 Q = require 'bluebird-q'
 sd = require("sharify").data
 Account = require '../../models/account.coffee'
@@ -23,6 +23,7 @@ Account = require '../../models/account.coffee'
       goods: goods
       markdown: markdown
       account: account
+      numeral: numeral
   .catch next
   .done()
 

@@ -11,7 +11,7 @@ if good.id
 
         .goods__grid-item__meta
           .goods__grid-item__price
-          | Price: #{good.price}Å
+          | Price: #{numeral(good.price).format('0,0')}Å
 
       input(type="hidden", name="good_type", value="content")
       input(type="hidden", name="good_id", value="#{good.id}")
