@@ -7,3 +7,4 @@ module.exports = mongoose.model 'User',
   gender: String
   birthday: Date
   city: String
+  goods: Array
