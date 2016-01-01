@@ -52,7 +52,8 @@
     "sharify": "*",
     "underscore": "^1.8.3",
     "url-to-title": "^1.0.6",
-    "waypoints": "^4.0.0"
+    "waypoints": "^4.0.0",
+    "request": "2.67.0"
   },
   "devDependencies": {
     "jquery": "*",
