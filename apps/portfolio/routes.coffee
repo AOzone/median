@@ -59,3 +59,17 @@ Contracts = require '../../collections/contracts.coffee'
   .catch next
   .done()
 
+@goods = (req, res, next) ->
+  id = req.params.id or req.user?.id
+
+  account = new Account id: id
+
+  Q.all [
+    account.fetch()
+  ]
+  .then ->
+    res.render 'goods',
+      account: account
+      numeral: numeral
+  .catch next
+  .done()
