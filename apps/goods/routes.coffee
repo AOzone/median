@@ -6,6 +6,10 @@ numeral = require 'numeral'
 Q = require 'bluebird-q'
 sd = require("sharify").data
 Account = require '../../models/account.coffee'
+{ CENTRAL_BANK_ACCOUNT } = require '../../config.coffee'
+
+testFunc = (foo) ->
+  return foo + 'bar'
 
 # renders /goods template with list of goods from map
 @goods = (req, res, next) ->
@@ -61,19 +65,31 @@ Account = require '../../models/account.coffee'
   price = req.body.price
   comment = req.body.comment
 
-  Q.all [
-    # make the transfer with the kernel
-    req.user.makePurchaseTransfer { good_type: good_type, good_id: good_id, price: price, comment: comment }
-  ]
-  .then -> # returns a {success, reason} object
-    # refresh user balance
-    req.logIn req.user, (err) ->
-      # todo: catch error
-      # send user to the good page
-      res.redirect '/goods/' + good_type + '/' + good_id
+  # check if the user can make the purchase
+  req.user.canMakePurchase { good_id: good_id, price: price },
+    (success, err) ->
+      unless success
+        req.flash 'error', err
+        return res.redirect "/goods"
 
-  .catch (err) ->
-    console.log "There was an error with Q promises in @makePurchase"
-    console.dir err
-    next
-  .done()
+      else
+        # make the transfer with the kernel
+        req.user.makeKernelTransfer { to_account: CENTRAL_BANK_ACCOUNT, amount: price, comment: comment },
+          (success, error) ->
+            unless success
+              req.flash 'error', err
+              return res.redirect "/goods"
+
+            else
+              # log the transfer in the User database
+              req.user.updateAccountWithPurchase { good_type: good_type, good_id: good_id, price: price },
+                (success, error) ->
+                  unless success
+                    req.flash 'error', err
+                    return res.redirect "/goods"
+
+                  else
+                    req.logIn req.user, (err) ->
+                      # todo: catch error
+                      # send user to the good page
+                      res.redirect '/goods/' + good_type + '/' + good_id
