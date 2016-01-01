@@ -34,6 +34,7 @@ module.exports =
   CAPTCHA_SECRET: null
   RESTART_INTERVAL: 1000 * 60 * 60
   WORDPRESS_API_URL: 'https://public-api.wordpress.com/rest/v1.1/sites/azonemarket.wordpress.com'
+  CENTRAL_BANK_ACCOUNT: 'Azone'
 
 # Override any values with env variables if they exist
 for key, val of module.exports
