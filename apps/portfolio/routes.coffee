@@ -68,8 +68,19 @@ Contracts = require '../../collections/contracts.coffee'
     account.fetch()
   ]
   .then ->
-    res.render 'goods',
-      account: account
-      numeral: numeral
+    User.findOne { 'username' :  id }, (err, user) ->
+      if err
+        console.log "Error: " + err
+        return false
+
+      # Username does not exist, log the error and redirect back
+      unless user
+        console.log "User Not Found with username: #{username} "
+        return false
+
+      res.render 'goods',
+        account: account
+        goods: user.goods
+        numeral: numeral
   .catch next
   .done()
