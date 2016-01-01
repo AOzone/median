@@ -1,0 +1,18 @@
+extends ../../../components/layout/templates/index
+
+block vars
+  - bodyClass = 'is-dark'
+
+block tabs
+  +tab("/portfolio/" + account.id, "portfolio")
+  if account.id == user.id
+    +tab("/portfolio/" + account.id + "/alerts", "alerts")
+    +tab("/portfolio/" + account.id + "/goods", "goods")
+
+block body
+  include account-top
+  include ../../../components/tabs/templates/index
+
+  .portfolio--goods
+    for good in goods
+      .temp= good.title
