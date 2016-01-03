@@ -288,8 +288,6 @@ module.exports = [
   }
   ,
   {
-  ,
-  {
     name: 'Benedict Singleton'
     location: 'London'
     links: ['[benedictsingleton.com](http://www.benedictsingleton.com/)', '[@benedict](https://twitter.com/benedict)', '[are.na/benedict-singleton](https://www.are.na/benedict-singleton--2)']
@@ -339,15 +337,16 @@ module.exports = [
     azone_funds: []
   }
   ,
-    {
-      name: 'Dan Taeyoung'
-      location: 'London'
-      links: ['[dantaeyoung.com](http://dantaeyoung.com/)', '[@dantaeyoung](https://twitter.com/dantaeyoung)']
-      bio: 'Dan Taeyoung operates at the intersection of architecture, technology, community, and believes that radical architecture is achieved through applied anthropology, activist real estate, and critical engineering. He is a Co-founder of Prime Produce, an intentional guild for social good in New York City, and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation, where he teaches on representational strategies and experimental design tools.'
-      azone_username: ''
-      azone_reviews: []
-      azone_funds: []
-    }
+  {
+    name: 'Dan Taeyoung'
+    location: 'New York'
+    links: ['[dantaeyoung.com](http://dantaeyoung.com/)', '[@dantaeyoung](https://twitter.com/dantaeyoung)']
+    bio: 'Dan Taeyoung operates at the intersection of architecture, technology, community, and believes that radical architecture is achieved through applied anthropology, activist real estate, and critical engineering. He is a Co-founder of Prime Produce, an intentional guild for social good in New York City, and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation, where he teaches on representational strategies and experimental design tools.'
+    azone_username: ''
+    azone_reviews: []
+    azone_funds: []
+  }
+  ,
   {
     name: 'Ben Vickers'
     location: 'Nomadic'
