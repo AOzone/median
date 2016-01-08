@@ -12,14 +12,14 @@ module.exports = [
     name: 'Raphaël Bastide'
     location: 'Paris'
     links: ['[raphaelbastide.com](http://www.raphaelbastide.com/)', '[@raphaelbastide](https://twitter.com/raphaelbastide)', '[are.na/raphael-bastide](https://www.are.na/raphael-bastide)']
-    bio: 'Raphaël Bastide is an artist, independent graphic designer, and teacher based in Paris. He studied digital art and typography in Brussels, where he began to delete the proprietary software from his hard drive. He recently had solo exhibitions in Belgium that showed _Branch_ and _Diff_, two installations inspired by versioning and revision control systems. He is also involved in several collectives related to free culture, design and typography.'
+    bio: 'Raphaël Bastide is an artist, independent graphic designer, and teacher based in Paris. He studied digital art and typography in Brussels, where he began to delete the proprietary software from his hard drive. He recently had solo exhibitions in Belgium that showed _Branch_ (2013) and _Diff_ (2015), two installations inspired by versioning and revision control systems. He is also involved in several collectives related to free culture, design, and typography.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
   },
   {
     name: 'Carson Chan'
-    location: 'Princeton'
+    location: 'Princeton, New Jersey'
     links: ['[carsonchan.net](http://www.carsonchan.net/)']
     bio: 'Carson Chan is an architecture writer and curator pursuing a Ph.D. in architecture at Princeton University. In 2006 he cofounded PROGRAM in Berlin, a nonprofit initiative for art and architecture collaborations. In 2012 he cocurated the Marrakech Biennial, and he was Executive Curator of the 2013 Biennial of the Americas in Denver. He served as Guest Curator for Aurora Dallas 2015, an outdoor public art biennial. Chan is Contributing Editor at _Kaleidoscope_, and Editor-at-Large at _032c_.'
     azone_username: ''
@@ -31,7 +31,7 @@ module.exports = [
     name: 'Douglas Coupland'
     location: 'Vancouver'
     links: ['[coupland.com](http://coupland.com/)', '[@DougCoupland](https://twitter.com/DougCoupland)']
-    bio: 'Douglas Coupland is a Canadian writer and visual artist whose practise involves crossing the borders of all media, as well as the creation of cross-media projects. He exhibits internationally and currently has a solo exhibition at Rotterdam\'s _Witte de With Center for Contemporary Art.'
+    bio: 'Douglas Coupland is a Canadian writer and visual artist whose practice involves crossing the borders of all media, as well as the creation of cross-media projects. He exhibits internationally and currently has a solo exhibition at Rotterdam\'s Witte de With Center for Contemporary Art.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -51,7 +51,7 @@ module.exports = [
     name: 'Louise Drulhe'
     location: 'Paris'
     links: ['[louisedrulhe.fr](http://louisedrulhe.fr/)', '[@louisedrulhe](https://twitter.com/louisedrulhe)']
-    bio: 'Louise Drulhe is a graphic designer working in Paris. She authored _Critical Atlas of the Internet_ (an adaption of her thesis project at École nationale supérieure des arts décoratifs, Paris)which uses spatial analysis as a tool for political and social purposes.'
+    bio: 'Louise Drulhe is a graphic designer working in Paris. She authored _Critical Atlas of the Internet_ (an adaption of her thesis project at École nationale supérieure des arts décoratifs, Paris), which uses spatial analysis as a tool for political and social purposes.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -61,7 +61,7 @@ module.exports = [
     name: 'Keller Easterling'
     location: 'New York'
     links: ['[kellereasterling.com](http://kellereasterling.com/)', '[extrastatecraft.net](http://extrastatecraft.net/Projects)']
-    bio: 'Keller Easterling is an architect, writer, and professor at Yale University who considers space as a heavy information system, a portfolio of assets, and a medium of global polity. Two of Easterling’s most recent books are _Extrastatecraft: the power of Infrastructure Space_ (2014) and _Subtraction_ (2014). Her research and writing was included in the 2014 Venice Biennale.'
+    bio: 'Keller Easterling is an architect, writer, and professor at Yale University who considers space as a heavy information system, a portfolio of assets, and a medium of global polity. Two of Easterling’s most recent books are _Extrastatecraft: The Power of Infrastructure Space_ (2014) and _Subtraction_ (2014). Her research and writing were included in the 2014 Venice Biennale.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -79,7 +79,7 @@ module.exports = [
   ,
   {
     name: 'Patri Friedman'
-    location: 'Berkeley'
+    location: 'Berkeley, California'
     links: ['[patrifriedman.com](http://patrifriedman.com/)', '[@patrissimo](https://twitter.com/patrissimo)']
     bio: 'Patri Friedman, former Google engineer and grandson of Nobel Prize–winning economist Milton Friedman, wants to build “start-up countries”: autonomous dwellings in the middle of the ocean. An American libertarian activist and theorist of political economy, Friedman founded the nonprofit Seasteading Institute, which explores the creation of sovereign ocean colonies. He later cofounded the Future Cities Development Corporation, a project to establish a self-governing charter city within the borders of Honduras.'
     azone_username: ''
@@ -111,7 +111,7 @@ module.exports = [
     name: 'Sam Hart'
     location: 'New York'
     links: ['[hxrts.com](http://hxrts.com/)', '[AVANT.org](http://avant.org)', '[@hxrts](https://twitter.com/hxrts)']
-    bio: 'Sam Hart is a scientist, publisher, and artist concentrating on complex systems modelling and strategies advancing a more ethically sound technoculture. Sam works as a Bioinformatician at Sloan Kettering\'s Reis Lab, where he investigates mechanisms of cancer evolution and is Co-Founder + Editor-in-Chief of AVANT.org, an internet project space for critical interdisciplinarity.'
+    bio: 'Sam Hart is a scientist, publisher, and artist who concentrates on complex systems modeling and developing strategies advancing a more ethically sound technoculture. Hart works as a Bioinformatician at Memorial Sloan Kettering Cancer Center\'s Jorge S. Reis Lab, where he investigates mechanisms of cancer evolution. He is also Cofounder + Editor-in-Chief of AVANT.org, an Internet project space for critical interdisciplinarity.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -120,7 +120,7 @@ module.exports = [
   {
     name: 'IF'
     location: 'London'
-    links: ['[@sarahtgold](https://twitter.com/sarahtgold)', '[@ihutc](https://twitter.com/ihutc)']
+    links: ['[project-if.com](https://project-if.com/)', '[@projectsbyif](https://twitter.com/projectsbyif)']
     bio: 'IF is a design collective that is proactively engaged with the evolution of the Internet. They imagine, build, and test radical tools that are capable of providing more democratic futures, seeking to unlock the potential of emerging technologies by focusing on real user needs. Through these technologies and their civic frameworks, IF interrogates the issues of governance, ownership, and control that sit behind products and services.'
     azone_username: ''
     azone_reviews: []
@@ -129,9 +129,9 @@ module.exports = [
   ,
   {
     name: 'Zoltan Istvan'
-    location: 'Mill Valley'
+    location: 'Mill Valley, California'
     links: ['[zoltanistvan.com](http://www.zoltanistvan.com/)', '[@zoltan_istvan](https://twitter.com/zoltan_istvan)']
-    bio: 'Zoltan Istvan is a San Francisco–based futurist and journalist, and the author of the novel _The Transhumanist Wager_. He is also the 2016 U.S. Presidential candidate of the Transhumanist Party, a political organization dedicated to putting science, health, and technology at the forefront of American politics. He is driving the Immortality Bus—a 40-foot vehicle that looks like a giant coffin—across America to raise life extension science issues.'
+    bio: 'Zoltan Istvan is a San Francisco–based futurist and journalist, and the author of the novel _The Transhumanist Wager_. He is also the 2016 U.S. Presidential candidate of the Transhumanist Party, a political organization dedicated to putting science, health, and technology at the forefront of American politics. He is driving the Immortality Bus—a 40-foot vehicle that looks like a giant coffin—across America to draw attention to issues around life-extension science.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -151,7 +151,7 @@ module.exports = [
     name: 'Marvin Jordan'
     location: 'New York'
     links: ['[dismagazine.com](http://dismagazine.com/author/marvin-jordan/)']
-    bio: 'Marvin Jordan is a _DIS_ Magazine Editorial Assistant and cofounder of Black Market, a program highlighting the practices of mostly under-recognized, young artists of color. Black Market “focuses on deconstructing and reinventing current themes central to hip hop—such as finance, determination, and celebration—in the context of contemporary art.” The project was conceived in collaboration with artist James Allister Sprang, who raps under the name GAZR.'
+    bio: 'Marvin Jordan is a _DIS_ magazine Editorial Assistant and cofounder of Black Market, a program highlighting the practices of mostly under-recognized young artists of color. Black Market “focuses on deconstructing and reinventing current themes central to hip hop—such as finance, determination, and celebration—in the context of contemporary art.” The project was conceived in collaboration with artist James Allister Sprang, who raps under the name GAZR.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -161,7 +161,7 @@ module.exports = [
     name: 'Martti Kalliala'
     location: 'Berlin and Helsinki'
     links: ['[marttikalliala.com](http://marttikalliala.com/)', '[@marttikalliala](https://twitter.com/marttikalliala)']
-    bio: 'Martti Kalliala is an architect based in Berlin and Helsinki whose work focuses on the intersection of technology, architectural form, and social innovation across a variety of mediums and practices: architectural and urban design, writing, curating, video, software, and sound. Alongside his work as an architect, he has sustained an international career in electronic music for the past ten years¬¬ under several aliases.'
+    bio: 'Martti Kalliala is an architect based in Berlin and Helsinki whose work focuses on the intersection of technology, architectural form, and social innovation across a variety of mediums and practices: architectural and urban design, writing, curating, video, software, and sound. Alongside his work as an architect, he has sustained an international career in electronic music for the past ten years under several aliases.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -170,8 +170,8 @@ module.exports = [
   {
     name: 'Daniel Keller'
     location: 'Berlin'
-    links: [ '[dnlklr.com](dnlklr.com)', '[@dnlklr](https://twitter.com/dnlklr)','[are.na/daniel-keller](https://www.are.na/daniel-keller)']
-    bio: 'Daniel Keller is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture, and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d (since 2007) and independently (since 2012). He co-organized TEDxVaduz in 2012 and is Director and CEO of Absolute Vitality Inc., a Wyoming–based corporation that functions as a vehicle for his artistic projects.'
+    links: [ '[dnlklr.com](http://www.dnlklr.com/)', '[@dnlklr](https://twitter.com/dnlklr)','[are.na/daniel-keller](https://www.are.na/daniel-keller)']
+    bio: 'Daniel Keller is an American artist based in Berlin. His wide-ranging output engages with issues at the intersection of economics, technology, culture, and collaboration from the perspective of the prosumer imagineer artist operating within global networks. He has exhibited internationally as part of art collective Aids-3d (since 2007) and independently (since 2012). He co-organized TEDxVaduz in 2012 and is Director and CEO of Absolute Vitality Inc., a Wyoming-based corporation that functions as a vehicle for his artistic projects.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -201,7 +201,7 @@ module.exports = [
     name: 'Metahaven'
     location: 'Amsterdam'
     links: ['[metahaven.net](http://metahaven.net/Site/Metahaven.html)', '[@mthvn](https://twitter.com/mthvn)']
-    bio: 'Metahaven operates on the cutting blade between aesthetics and (geo)politics. Recent books include _Black Transparency_ (2015), _Can Jokes Bring Down Governments?_ (2013), and _Uncorporate Identity_ (2010). They created products for WikiLeaks, music videos with progressive EDM composer Holly Herndon, and are currently finishing a moving image project about perception, propaganda and the internet to be released online early 2016.'
+    bio: 'Metahaven operates on the cutting edge between aesthetics and (geo)politics. Recent books include _Black Transparency_ (2015), _Can Jokes Bring Down Governments?_ (2013), and _Uncorporate Identity_ (2010). They have created products for WikiLeaks and music videos with progressive EDM (electronic dance music) composer Holly Herndon, and are currently finishing a moving image project about perception, propaganda, and the Internet that will be released online in early 2016.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -211,7 +211,7 @@ module.exports = [
     name: 'Marina Otero Verzier'
     location: 'Rotterdam'
     links: ['[@marina_ov](https://twitter.com/marina_ov)']
-    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation. Her work has been recently published in _Arquitectura Viva_, _The Avery Review_, _Domus_, and _SQM: The Quantified Home_.'
+    bio: 'Marina Otero Verzier is an architect based in Rotterdam. She is Head of Research at Het Nieuwe Instituut and Chief Curator of the Oslo Architecture Triennale 2016 together with After Belonging Agency. Previously, she was Director of Global Network Programming at Studio-X and Adjunct Assistant Professor at Columbia University’s Graduate School of Architecture, Planning and Preservation. Her work has been published in _Arquitectura Viva_, _The Avery Review_, _Domus_, and _SQM: The Quantified Home_.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -231,7 +231,7 @@ module.exports = [
     name: 'Sascha Pohflepp'
     location: 'Berlin'
     links: ['[pohflepp.net](http://pohflepp.net/)', '[@plugimi](https://twitter.com/plugimi)']
-    bio: 'Sascha Pohflepp is a German–born artist, researcher, and writer. Notable exhibitions include _Talk To Me_, Museum of Modern Art, New York; _Hyperlinks_, Art Institute of Chicago; _Micro Impact_, Boijmans Van Beuningen Museum, Rotterdam; _Pre-History of the Image_, STUK Kunstencentrum, Leuven, Belgium; and _Science Fiction: New Death_, FACT, Liverpool. Pohflepp’s work has won two Honorary Mentions from the VIDA Art and Artificial Life Awards, and in June 2015 he was shortlisted for the Berlin Art Prize.'
+    bio: 'Sascha Pohflepp is a German-born artist, researcher, and writer. Notable exhibitions include _Talk To Me_, Museum of Modern Art, New York; _Hyperlinks_, Art Institute of Chicago; _Micro Impact_, Boijmans Van Beuningen Museum, Rotterdam; _Pre-History of the Image_, STUK Kunstencentrum, Leuven, Belgium; and _Science Fiction: New Death_, FACT, Liverpool. Pohflepp’s work has won two Honorary Mentions from the VIDA Art and Artificial Life Awards, and in June 2015 he was shortlisted for the Berlin Art Prize.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -251,7 +251,7 @@ module.exports = [
     name: 'Venkatesh Rao'
     location: 'Seattle'
     links: ['[ribbonfarm.com](http://www.ribbonfarm.com/)', '[@vgr](https://twitter.com/vgr)']
-    bio: 'Venkatesh Rao is a Seattle–based independent researcher and technology consultant. He is the founder of the popular _ribbonfarm_ blog, and the author of three books on decision-making and organizational behavior. He earned his Ph.D. in aerospace engineering with a focus on systems and control theory from the University of Michigan in 2003.'
+    bio: 'Venkatesh Rao is a Seattle-based independent researcher and technology consultant. He is the founder of the popular _Ribbonfarm_ blog, and the author of three books on decision-making and organizational behavior. He earned his Ph.D. in aerospace engineering with a focus on systems and control theory from the University of Michigan in 2003.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -281,7 +281,7 @@ module.exports = [
     name: 'Emily Segal'
     location: 'New York'
     links: ['[khole.net](http://khole.net/)', '[emilysegal.net](http://emilysegal.net/)', '[@khole_emily](https://twitter.com/khole_emily)', '[are.na/emily-segal](https://www.are.na/emily-segal)']
-    bio: 'Emily Segal is an artist and brand consultant based in in New York. She co-founded K-HOLE, the trend forecasting group and art collective. Previously, she was a strategist for corporate branding projects at Wolff Olins and a contributing editor at the contemporary culture magazine _032c_ in Berlin. She has lectured on branding and consumer culture at the DLD conference, MoMA PS1, Serpentine Gallery, and TEDxVaduz, among others.'
+    bio: 'Emily Segal is an artist and brand consultant based in New York. She co-founded K-HOLE, a trend forecasting group and art collective. Previously, she was a strategist for corporate branding projects at Wolff Olins and a contributing editor at the contemporary culture magazine _032c_ in Berlin. She has lectured on branding and consumer culture at the DLD (Digital-Life-Design) conference; MoMA PS1, New York; Serpentine Gallery, London; and TEDxVaduz,Liechtenstein, among other venues.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -301,7 +301,7 @@ module.exports = [
     name: 'Nick Srnicek'
     location: 'London'
     links: ['[@n_srnck](https://twitter.com/n_srnck)']
-    bio: 'Nick Srnicek is the author of two forthcoming works, _Postcapitalist Technologies and Inventing the Future: Postcapitalism_ and a _World Without Work_ with Alex Williams, both of which investigate the possibilities of life after capitalism and neoliberalism. He is also an editor of _The Speculative Turn: Continental Materialism and Realism_ (2011), an anthology that explores continental philosophy.'
+    bio: 'Nick Srnicek is the author of two forthcoming works, _Postcapitalist Technologies_ and _Inventing the Future: Postcapitalismand a World Without Work_ (with Alex Williams), both of which investigate the possibilities of life after capitalism and neoliberalism. He is also an editor of _The Speculative Turn: Continental Materialism and Realism_ (2011), an anthology that explores continental philosophy.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -309,9 +309,9 @@ module.exports = [
   ,
   {
     name: 'Molly Wright Steenson'
-    location: 'Pittsburgh'
+    location: 'Pittsburgh, Pennsylvania'
     links: ['[girlwonder.com](http://www.girlwonder.com/)', '[@maximolly](https://twitter.com/maximolly)']
-    bio: 'Molly Wright Steenson is an Associate Professor in the School of Design at Carnegie Mellon University. She researches the history of design, architecture, computation, and artificial intelligence and is completing a book titled _Architecting Interactivity_ that explores these linkages with a focus on the practices of Nicholas Negroponte, Cedric Price, Christopher Alexander, and Richard Saul Wurman.'
+    bio: 'Molly Wright Steenson is an Associate Professor in the School of Design at Carnegie Mellon University, Pittsburgh. She researches the history of design, architecture, computation, and artificial intelligence and is completing a book titled _Architecting Interactivity_ that explores these linkages with a focus on the practices of Christopher Alexander, Nicholas Negroponte, Cedric Price, and Richard Saul Wurman.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -319,9 +319,9 @@ module.exports = [
   ,
   {
     name: 'Jenna Sutela'
-    location: 'Helsinki and Berlin'
+    location: 'Berlin and Helsinki'
     links: ['[jennasutela.com](http://jennasutela.com/)', '[@jennaemilia](https://twitter.com/jennaemilia)']
-    bio: "Jenna Sutela is an artist and writer based in Helsinki and Berlin. Her projects seek to identify and react to precarious social and material moments—most recently, the relationship between the body and its technologically mediated environment. She is a contributor to several international publications such as _Frieze_ and _Harvard Design Magazine_, and her work has been presented at Haus der Kulturen der Welt, Berlin; Museum of Contemporary Art Kiasma, Helsinki; and the South London Gallery."
+    bio: "Jenna Sutela is an artist and writer based in Berlin and Helsinki. Her projects seek to identify and react to precarious social and material moments—most recently, the relationship between the body and its technologically mediated environment. She is a contributor to several international publications such as _Frieze_ and _Harvard Design Magazine_, and her work has been presented at Haus der Kulturen der Welt, Berlin; Museum of Contemporary Art Kiasma, Helsinki; and the South London Gallery."
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -329,9 +329,9 @@ module.exports = [
   ,
   {
     name: 'Morgan Sutherland'
-    location: 'New York'
+    location: 'San Francisco'
     links: ['[morgansutherland.com](http://morgansutherland.com/)', '[@msutherl](https://twitter.com/msutherl)', '[are.na/morgan-sutherland](https://www.are.na/morgan-sutherland)']
-    bio: 'Morgan Suther¬land works between the art and tech worlds as consul¬tant, researcher, designer, and devel¬oper. Currently he works with Diakron, and OS Fund. Previ¬ously he was an Artist-in-Residence at Intel Labs, a UX Designer at Octopart, and a Research Assis¬tant devel¬op¬ing respon¬sive environ¬ments with the Topological Media Lab.'
+    bio: 'Morgan Sutherland works between the art and tech worlds as consultant, researcher, designer, and developer. Currently he works with Diakron, and OS Fund. Previously he was an Artist-in-Residence at Intel Labs, a UX Designer at Octopart, and a Research Assistant developing responsive environments with the Topological Media Lab.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -361,7 +361,7 @@ module.exports = [
     name: 'McKenzie Wark'
     location: 'New York'
     links: ['[publicseminar.org](http://www.publicseminar.org/author/kenwark/)', '[@mckenziewark](https://twitter.com/mckenziewark)']
-    bio: 'McKenzie Wark is an Australian–born writer and scholar. Wark is known for his writings on media theory, critical theory, new media, and the Situationist International organization. His best-known works are _A Hacker Manifesto_ (2004) and _Gamer Theory_ (2007). He is Professor of Culture and Media Studies, Eugene Lang College of Liberal Arts, The New School for Social Research.'
+    bio: 'McKenzie Wark is an Australian-born writer and scholar. Wark is known for his writings on media theory, critical theory, new media, and the Situationist International organization. His best-known works are _A Hacker Manifesto_ (2004) and _Gamer Theory_ (2007). He is Professor of Culture and Media Studies, Eugene Lang College of Liberal Arts, The New School for Social Research.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
@@ -369,9 +369,9 @@ module.exports = [
   ,
   {
     name: 'Damon Zucconi'
-    location: 'New York'
+    location: 'Providence, Rhode Island'
     links: ['[damonzucconi.com](http://www.damonzucconi.com/)', '[@dzucconi](https://twitter.com/dzucconi)', '[are.na/damon-zucconi](https://www.are.na/damon-zucconi)']
-    bio: 'Damon Zucconi is an artist who lives and works in Providence, Rhode Island. He has presented solo exhibitions with JTT, New York, and Gentili Apri, Italy. Most recently his work has been included in group exhibitions at the Institute of Contemporary Art, Miami, and Het Nieuwe Instituut, Rotterdam.'
+    bio: 'Damon Zucconi is an artist who lives and works in Providence, Rhode Island. He has presented solo exhibitions at JTT, New York, and Gentili Apri, Italy. Most recently his work has been included in group exhibitions at the Institute of Contemporary Art, Miami, and Het Nieuwe Instituut, Rotterdam.'
     azone_username: ''
     azone_reviews: []
     azone_funds: []
