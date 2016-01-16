@@ -10,44 +10,7 @@ block body
       | Goods are different types of things you can buy with cåin (Å). Select those below that you wish to purchase and they will be added to your profile page so you can retrieve them at any time.
 
     .choose-goods.center
-      .choose-goods-section
-        h3 INVESTING
       .choose-goods-grid
         .grid.grid--goods
-          each good, index in goods.investing
-            include item.jade
-
-      .choose-goods-section
-        h3 ADS
-      .choose-goods-grid
-        .grid.grid--goods
-          each good, index in goods.ads
-            include item.jade
-
-      .choose-goods-section
-        h3 CONTENT
-      .choose-goods-grid
-        .grid.grid--goods
-          each good, index in goods.content
-            include item.jade
-
-      .choose-goods-section
-        h3 COMMUNITY
-      .choose-goods-grid
-        .grid.grid--goods
-          each good, index in goods.community
-            include item.jade
-
-      .choose-goods-section
-        h3 DEVELOPER TOOLS
-      .choose-goods-grid
-        .grid.grid--goods
-          each good, index in goods.development
-            include item.jade
-
-      .choose-goods-section
-        h3 BRAND
-      .choose-goods-grid
-        .grid.grid--goods
-          each good, index in goods.brand
+          each good, index in goods.goods
             include item.jade

@@ -3,6 +3,8 @@ if good.id
     button.goods__grid-item-button(type="submit")
       img.goods__grid-item__image(class="grid_img", src= "/images/goods/" + good.id + ".png")
       .goods__grid-item__text
+        .goods__grid-item__price #{numeral(good.price).format('0,0')}Å
+
         h3.goods__grid-item__title= good.title
         if good.contributor
           .goods__grid-item__contributor
@@ -11,11 +13,12 @@ if good.id
         .goods__grid-item__description
         | #{good.description}
 
-        .goods__grid-item__meta
-          .goods__grid-item__price
-          | Price: #{numeral(good.price).format('0,0')}Å
+        .goods__grid-item__tags
+          each tag in good.tags
+            ul
+              li.goods__grid-item__tag= tag
 
-      input(type="hidden", name="good_type", value="content")
+
       input(type="hidden", name="good_id", value="#{good.id}")
       input(type="hidden", name="price", value="#{good.price}")
       input(type="hidden", name="comment", value="#{account.id}+purchased+#{good.id}+for+#{good.price}")

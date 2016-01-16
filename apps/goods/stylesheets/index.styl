@@ -73,11 +73,29 @@
 .goods____grid-item
   text-align left
 
-.goods__grid-item__meta
+.goods__grid-item__tags
+  border 1px solid light-text-color
+  padding 0.25rem
+
+goods__grid-item__tags
+  ul
+    list-style none
+    padding 0
+    
+  li
+    float left
+    margin-right 0.25rem
+
+.goods__grid-item__price
   position absolute
   bottom unit
+  top 0
   right 0
+  height 1.25rem
   text-align right
   font-weight bold
+  padding 0 0.25rem
+  background-color background-blue-color
+  color light-text-color
 
 @import 'good'
