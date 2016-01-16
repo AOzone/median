@@ -5,7 +5,7 @@ transactionMap = require '../maps/transactions.coffee'
 numeral = require 'numeral'
 _ = require 'underscore'
 
-User = require '../db/models/user'
+User = require '../db/models/user.coffee'
 request = require 'request'
 
 module.exports = class Account extends Backbone.Model
@@ -80,30 +80,47 @@ module.exports = class Account extends Backbone.Model
     { authId, authToken } = authTokenPair()
     params = "?auth_id=#{authId}&auth_token=#{authToken}"
 
-    # todo: replace this with tokenizer that sanitizes for URL transfer
-    comment = "comment=testing"
+    commentData = {"comment": comment}
 
-    url = "#{@url()}/transfer/#{to_account}/#{amount}/#{params}" # &#{comment}
+    url = "#{@url()}/transfer/#{to_account}/#{amount}#{params}"
 
     console.log "-------sending PUT to: " + url
 
     # execute the transfer via the kernel using a PUT request
-    request.put url, (error, response, body) ->
+    request.put {url: url, formData: commentData}, (error, response, body) ->
       if error or response.statusCode != 200
-        console.log "response.statusCode: " + response.statusCode
-        console.log "Error completing purchase transfer with kernel: " + error
-        callback(false, "Error completing transaction with kernel: " + error )
+        if error
+          console.log "Error in URL format for transfer with kernel: " + error
+          callback(false, "Error in URL format for transfer with kernel: " + error )
+        else
+          console.log "Kernel server error code on transfer attempt: " + response.statusCode
+          callback(false, "Kernel server error code: " + response.statusCode )
       else
-        console.log "***Successfully completed purchase transfer with kernel"
-        callback(true, null)
+        console.log "+++++++success:"
+        body_json = JSON.parse body
+        console.log body_json.success
+
+        console.log "body:" + body
+
+        if body_json.success
+          idx = body_json.transfer_id.indexOf " "
+          console.log "***idx: " + idx
+          idx++
+          console.log "***idx: " + idx
+          t_id = body_json.transfer_id.substring idx
+          console.log "***Successfully completed purchase transfer with kernel: " + t_id
+          callback(true, t_id)
+        else
+          console.log "Error completing purchase transfer with kernel: " + body_json.message
+          callback(false, "Error completing purchase transfer with kernel: " + body_json.message )
 
 
   # update the User db with the new balance and account information
-  updateAccountWithPurchase: ({ good_type, good_id, price }, callback) ->
+  updateAccountWithPurchase: ({ good_type, good_id, price, transfer_id }, callback) ->
     username = @id or @get('_id')
 
     # add the new good to the mongo User's params
-    User.update { "username": username }, { $push: goods: { "type": good_type, "id": good_id , "price": price } }, { upsert: true }, (err) ->
+    User.update { "username": username }, { $push: goods: { "type": good_type, "id": good_id , "price": price, "transfer_id": transfer_id } }, { upsert: true }, (err) ->
       if err
         console.log "Error updating User in mongo db: " + err
         callback(false, "Error updating User in mongo db: " + err )
