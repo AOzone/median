@@ -9,6 +9,8 @@ Alerts = require '../../models/alerts.coffee'
 Blocks = require '../../collections/blocks.coffee'
 Positions = require '../../collections/positions.coffee'
 Contracts = require '../../collections/contracts.coffee'
+User = require '../../db/models/user'
+Goods = require '../../maps/goods'
 
 @index = (req, res, next) ->
   id = req.params.id or req.user?.id
@@ -78,9 +80,31 @@ Contracts = require '../../collections/contracts.coffee'
         console.log "User Not Found with username: #{username} "
         return false
 
+      console.log "Goods:"
+      console.dir Goods
+
+      console.log "user.goods:"
+      console.dir user.goods
+
+      purchased_goods = []
+
+      g = 0
+      while g < Goods.length
+        p = 0
+        while p < user.goods.length
+          if Goods[g].id == user.goods[p]
+            purchased_goods.push user.goods[p]
+          p++
+        g++
+
+
+
+      console.log "purchased_goods: "
+      console.dir purchased_goods
+
       res.render 'goods',
         account: account
-        goods: user.goods
+        goods: purhcased_goods
         numeral: numeral
   .catch next
   .done()
