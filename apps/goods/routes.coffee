@@ -75,14 +75,14 @@ testFunc = (foo) ->
       else
         # make the transfer with the kernel
         req.user.makeKernelTransfer { to_account: CENTRAL_BANK_ACCOUNT, amount: price, comment: comment },
-          (success, error) ->
+          (success, msg) ->
             unless success
-              req.flash 'error', err
+              req.flash 'error', msg
               return res.redirect "/goods"
 
             else
               # log the transfer in the User database
-              req.user.updateAccountWithPurchase { good_type: good_type, good_id: good_id, price: price },
+              req.user.updateAccountWithPurchase { good_type: good_type, good_id: good_id, price: price, transfer_id: msg },
                 (success, error) ->
                   unless success
                     req.flash 'error', err
