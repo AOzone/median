@@ -20,14 +20,30 @@ testFunc = (foo) ->
     account.fetch()
   ]
   .then ->
-    res.locals.sd.GOODS = goods
+    res.locals.sd.GOODS = goods.goods
     res.locals.sd.ACCOUNT = account.toJSON()
 
-    res.render 'goods',
-      goods: goods
-      markdown: markdown
-      account: account
-      numeral: numeral
+    console.log "account:"
+    console.dir account
+
+    req.user.getPurchasedGoodsByID (purchased_goods, error) ->
+      if error == null
+        # prune out any goods already purchased by the user
+        unpurchased_goods = []
+        _.each goods.goods, (good) ->
+          _.each purchased_goods, (pg) ->
+            if good.id != pg
+              unpurchased_goods.push(good)
+
+        res.render 'goods',
+          unpurchased_goods: unpurchased_goods
+          markdown: markdown
+          account: account
+          numeral: numeral
+      else
+        req.flash 'error', error
+        return res.redirect "/investing"
+
   .catch next
   .done()
 

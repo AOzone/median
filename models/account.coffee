@@ -42,6 +42,26 @@ module.exports = class Account extends Backbone.Model
     _.any @get('open_positions'), (position) ->
       position.contract is contract.get('contract')
 
+  # return an array of all the goods the user owns by ID
+  getPurchasedGoodsByID: (callback) ->
+    username = @id or @get('_id')
+
+    User.findOne { 'username' :  username }, (err, user) ->
+      if err
+        console.log "Cannot find user in the User database: " + err
+        callback(null, "Cannot find user in the User database: " + err)
+      else # check if already purchased
+        if user.goods
+          already_purchased = _.map user.goods, (good) ->
+            good.id
+
+          callback(already_purchased, null)
+        else
+          console.log "-------doesn't own anything"
+          callback(null, null)
+
+
+
   # check if Account is able to make the purchase
   canMakePurchase: ({ good_id, price }, callback) ->
     # if Account has enough in it to make the purchase
