@@ -13,7 +13,7 @@ module.exports = {
     {
       title: 'Watch a discussion of Åzone Futures Market'
       price: 10
-      description: 'Watch the discussion moderated by Aslak Aamot Kjaelruff (Diakron) between Rob Giampietro (Google), Marina Otero (Het Nieuwe Instituut), Marvin Jordan (DIS), and Nora N. Khan (Rhizome) at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
+      description: 'Watch the discussion moderated by Aslak Aamot Kjaelruff (Diakron) between Rob Giampietro (Google), Marvin Jordan (DIS), Nora N. Khan (Rhizome), and Marina Otero (Het Nieuwe Instituut) at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
       body: '<iframe src="https://player.vimeo.com/video/149807331" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br><br>Panel discussion moderated by Aslak Aamot Kjærulff of Diakron<br>Rob Giampietro, Creative Lead, Google Design NY<br>Marvin Jordan, Associate Editor, DIS Magazine<br>Nora Nahid Khan, Contributing Editor, Rhizome<br>Marina Otero Verzier, Head of Research and Development, Het Nieuwe Instituut; Chief Curator, with After Belonging Agency, Oslo Architecture Triennale 2016'
       contributor: null
       id: 'summit-panel'

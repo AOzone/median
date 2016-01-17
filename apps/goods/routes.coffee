@@ -23,17 +23,23 @@ testFunc = (foo) ->
     res.locals.sd.GOODS = goods.goods
     res.locals.sd.ACCOUNT = account.toJSON()
 
-    console.log "account:"
-    console.dir account
-
     req.user.getPurchasedGoodsByID (purchased_goods, error) ->
       if error == null
         # prune out any goods already purchased by the user
-        unpurchased_goods = []
-        _.each goods.goods, (good) ->
-          _.each purchased_goods, (pg) ->
-            if good.id != pg
-              unpurchased_goods.push(good)
+        if purchased_goods != null and purchased_goods.length > 0
+          unpurchased_goods = []
+          _.each goods.goods, (good) ->
+            _.each purchased_goods, (pg) ->
+              if good.id != pg
+                unpurchased_goods.push(good)
+        else # account for empty array of purchased_goods
+          unpurchased_goods = goods.goods
+
+        console.log "purchased_goods: "
+        console.dir purchased_goods
+
+        console.log "unpurchased_goods:"
+        console.dir unpurchased_goods
 
         res.render 'goods',
           unpurchased_goods: unpurchased_goods
@@ -54,9 +60,8 @@ testFunc = (foo) ->
   account = new Account id: id
 
   good_id = req.params.good_id
-  good_type = req.params.good_type
 
-  go = _.find goods[good_type], (g) ->
+  go = _.find goods.goods, (g) ->
     if g.id == good_id
       return g
 
@@ -66,7 +71,6 @@ testFunc = (foo) ->
   .then ->
     res.render 'good',
       good: go
-      good_type: good_type
       markdown: markdown
       account: account
   .catch next
@@ -76,7 +80,6 @@ testFunc = (foo) ->
 @makePurchase = (req, res, next) ->
   return next() unless req.user
 
-  good_type = req.body.good_type
   good_id = req.body.good_id
   price = req.body.price
   comment = req.body.comment
@@ -98,7 +101,7 @@ testFunc = (foo) ->
 
             else
               # log the transfer in the User database
-              req.user.updateAccountWithPurchase { good_type: good_type, good_id: good_id, price: price, transfer_id: msg },
+              req.user.updateAccountWithPurchase { good_id: good_id, price: price, transfer_id: msg },
                 (success, error) ->
                   unless success
                     req.flash 'error', err
@@ -108,4 +111,4 @@ testFunc = (foo) ->
                     req.logIn req.user, (err) ->
                       # todo: catch error
                       # send user to the good page
-                      res.redirect '/goods/' + good_type + '/' + good_id
+                      res.redirect '/goods/' + good_id
