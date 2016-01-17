@@ -6,19 +6,19 @@ block vars
 block tabs
   +tab("/portfolio/" + account.id, "portfolio")
   if account.id == user.id
-    +tab("/portfolio/" + account.id + "/alerts", "alerts")
     +tab("/portfolio/" + account.id + "/goods", "goods")
+    +tab("/portfolio/" + account.id + "/alerts", "alerts")
 
 block body
   include account-top
   include ../../../components/tabs/templates/index
 
   .container.container--goods
-    .information-pull-quote
-      | Visit the #[a(href="/goods") Goods Marketplace] to purchase additional goods.
+    .is-centered
+      h3 Visit the #[a(href="/goods") Goods Marketplace] to purchase goods.
 
     .choose-goods.center
       .choose-goods-grid
         .grid.grid--goods
-          for good in goods
+          for good in purchased_goods
             include item.jade

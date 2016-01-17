@@ -138,9 +138,10 @@ module.exports = class Account extends Backbone.Model
   # update the User db with the new balance and account information
   updateAccountWithPurchase: ({ good_id, price, transfer_id }, callback) ->
     username = @id or @get('_id')
+    timestamp = new Date
 
     # add the new good to the mongo User's params
-    User.update { "username": username }, { $push: goods: { "id": good_id , "price": price, "transfer_id": transfer_id } }, { upsert: true }, (err) ->
+    User.update { "username": username }, { $push: goods: { "id": good_id , "price": price, "transfer_id": transfer_id, "timestamp": timestamp } }, { upsert: true }, (err) ->
       if err
         console.log "Error updating User in mongo db: " + err
         callback(false, "Error updating User in mongo db: " + err )

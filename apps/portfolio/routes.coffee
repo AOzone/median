@@ -64,7 +64,6 @@ markdown = require '../../components/util/markdown'
 
 @goods = (req, res, next) ->
   id = req.params.id or req.user?.id
-  all_goods = Goods.goods
 
   account = new Account id: id
 
@@ -85,17 +84,14 @@ markdown = require '../../components/util/markdown'
 
       # extract the goods purchased by the user
       purchased_goods = []
-      _.each all_goods, (good) ->
+      _.each Goods, (good) ->
         _.each user.goods, (ug) ->
           if good.id == ug.id
             purchased_goods.push(good)
 
-      console.log "markdown:"
-      console.dir markdown
-
       res.render 'goods',
         account: account
-        goods: purchased_goods
+        purchased_goods: purchased_goods
         markdown: markdown
         numeral: numeral
   .catch next

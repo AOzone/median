@@ -1,0 +1,14 @@
+if good.id
+  .goods____grid-item
+    img.goods__grid-item__image(class="grid_img", src= "/images/goods/" + good.id + ".png")
+    .goods__grid-item__text
+      .goods__grid-item__header
+        .goods__grid-item__title= good.title
+
+        if good.contributor
+          .goods__grid-item__contributor
+          | Contributed by #{good.contributor}
+
+      .goods__grid-item__description!= markdown(good.description)
+
+    .goods__grid-item__meta #[a.button--modal(href="/goods/#{good.id}") Claim this good]

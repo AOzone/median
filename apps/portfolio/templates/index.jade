@@ -6,8 +6,8 @@ block vars
 block tabs
   +tab("/portfolio/" + account.id, "portfolio")
   if user && account.id == user.id
-    +tab("/portfolio/" + account.id + "/alerts", "alerts")
     +tab("/portfolio/" + account.id + "/goods", "goods")
+    +tab("/portfolio/" + account.id + "/alerts", "alerts")
 
 block body
   include account-top
