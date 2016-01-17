@@ -20,20 +20,20 @@ testFunc = (foo) ->
     account.fetch()
   ]
   .then ->
-    res.locals.sd.GOODS = goods.goods
+    res.locals.sd.GOODS = goods
     res.locals.sd.ACCOUNT = account.toJSON()
 
     req.user.getPurchasedGoodsByID (purchased_goods, error) ->
       if error == null
         # prune out any goods already purchased by the user
         if purchased_goods != null and purchased_goods.length > 0
-          unpurchased_goods = []
-          _.each goods.goods, (good) ->
+          unpurchased_goods = goods
+          _.each goods, (good) ->
             _.each purchased_goods, (pg) ->
-              if good.id != pg
-                unpurchased_goods.push(good)
+              unpurchased_goods = _.without unpurchased_goods, _.findWhere(unpurchased_goods, id: pg)
+
         else # account for empty array of purchased_goods
-          unpurchased_goods = goods.goods
+          unpurchased_goods = goods
 
         res.render 'goods',
           unpurchased_goods: unpurchased_goods
@@ -55,7 +55,7 @@ testFunc = (foo) ->
 
   good_id = req.params.good_id
 
-  go = _.find goods.goods, (g) ->
+  go = _.find goods, (g) ->
     if g.id == good_id
       return g
 

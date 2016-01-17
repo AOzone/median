@@ -13,8 +13,12 @@ block body
   include account-top
   include ../../../components/tabs/templates/index
 
-  .choose-goods.center
-    .choose-goods-grid
-      .grid.grid--goods
-        for good in goods
-          include item.jade
+  .container.container--goods
+    .information-pull-quote
+      | Visit the #[a(href="/goods") Goods Marketplace] to purchase additional goods.
+
+    .choose-goods.center
+      .choose-goods-grid
+        .grid.grid--goods
+          for good in goods
+            include item.jade
