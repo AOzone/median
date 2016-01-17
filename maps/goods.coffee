@@ -1,9 +1,9 @@
 module.exports = {
   "goods": [
     {
-      title: 'Åzone Summit Video: Venkatesh Rao and Mark Wigley'
+      title: 'Watch Venkatesh Rao and Mark Wigley in Discussion'
       price: 10
-      description: 'Watch the discussion between blogger Venkatesh Rao and architecture theorist Mark Wigley at the Åzone Summit on November 7, 2015 at the Guggenheim Museum in New York City.'
+      description: 'Watch the discussion on "Visual Bias in Architecture" between blogger Venkatesh Rao (ribbonfarm.com) and architecture theorist Mark Wigley (Columbia) at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
       body: '<iframe src="https://player.vimeo.com/video/149807331" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
       contributor: null
       id: 'summit-rao-wigley'
@@ -11,9 +11,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Summit Video: Panel moderated by Aslak Aamot Kjaelruff'
+      title: 'Watch a discussion of Åzone Futures Market'
       price: 10
-      description: 'Watch the panel discussion of the Åzone Summit on November 7, 2015 at the Guggenheim Museum in New York City.'
+      description: 'Watch the discussion moderated by Aslak Aamot Kjaelruff (Diakron) between Rob Giampietro (Google), Marina Otero (Het Nieuwe Instituut), Marvin Jordan (DIS), and Nora N. Khan (Rhizome) at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
       body: '<iframe src="https://player.vimeo.com/video/149807331" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br><br>Panel discussion moderated by Aslak Aamot Kjærulff of Diakron<br>Rob Giampietro, Creative Lead, Google Design NY<br>Marvin Jordan, Associate Editor, DIS Magazine<br>Nora Nahid Khan, Contributing Editor, Rhizome<br>Marina Otero Verzier, Head of Research and Development, Het Nieuwe Instituut; Chief Curator, with After Belonging Agency, Oslo Architecture Triennale 2016'
       contributor: null
       id: 'summit-panel'
@@ -21,9 +21,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Summit Video: Keller Easterling and McKenzie Wark'
+      title: 'Watch Keller Easterling and McKenzie Wark in Discussion'
       price: 10
-      description: 'Watch the discussion between blogger Venkatesh Rao and architecture theorist Mark Wigley at the Åzone Summit on November 7, 2015 at the Guggenheim Museum in New York City.'
+      description: 'Watch the discussion on "Information Space" between scholars Keller Easterling (Yale) and McKenzie Wark (The New School) at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
       body: '<iframe src="https://player.vimeo.com/video/150184342" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
       contributor: null
       id: 'summit-easterling-wark'
@@ -31,9 +31,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Summit Video: Indy Johar, The Hackitecture of Place'
+      title: 'Watch Indy Johar on "The Hackitecture of Place"'
       price: 10
-      description: 'Watch the panel discussion of the Åzone Summit on November 7, 2015 at the Guggenheim Museum in New York City.'
+      description: 'Watch architect Indy Johar of the London practice Architecture 00 present his work in the context of the relationship between hacking and architecture at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
       body: '<iframe src="https://player.vimeo.com/video/148917063" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
       contributor: null
       id: 'summit-johar'
@@ -41,9 +41,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Summit Video: Vinay Gupta, Broken Elastic'
-      price: 10
-      description: 'Watch the discussion between blogger Venkatesh Rao and architecture theorist Mark Wigley at the Åzone Summit on November 7, 2015 at the Guggenheim Museum in New York City.'
+      title: 'Watch Vinay Gupta on Housing and the Abundance Economy'
+      price: 1000
+      description: 'Watch ambassador of Ethereum, the world\'s first "planetary scale computer", Vinay Gupta\'s presentation "Broken Elastic: Housing as the Last Hold Out Against a Post-Scarcity Abundance Economy" for the Åzone Summit on November 7, 2015.'
       body: '<iframe src="https://player.vimeo.com/video/149807331" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
       contributor: null
       id: 'summit-gupta'
@@ -51,9 +51,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Summit Video: Molly Wright Steenson, Substrate Culture'
-      price: 10
-      description: 'Watch the panel discussion of the Åzone Summit on November 7, 2015 at the Guggenheim Museum in New York City.'
+      title: 'Watch Molly Wright Steenson on "Substrate Culture"'
+      price: 1000
+      description: 'Watch architecture historian Molly Wright Steenson of Carnegie Mellon University present on the relationship between information and architecture at the Åzone Summit on November 7, 2015 at the Guggenheim Museum.'
       body: '<iframe src="https://player.vimeo.com/video/148974118" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
       contributor: null
       id: 'summit-steenson'
@@ -61,9 +61,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Slack'
+      title: 'Åzone Slack Invitation'
       price: 1000
-      description: 'Join the discussion about Åzone with Guggenheim curators.'
+      description: 'Discuss _Åzone Futures Market_ and the issues it intersects with other investors, exhibition contributors, and the Guggenheim curators behind the project.'
       body: ''
       contributor: null
       id: 'slack-invite'
@@ -73,20 +73,10 @@ module.exports = {
     {
       title: 'ÅPI Key'
       price: 250000
-      description: 'Get an API key to make direct calls to the kernel.'
+      description: 'Receive a key to make direct calls to the Åzone application programming interface (API) for doing programmatic trading.'
       body: ''
       contributor: null
       id: 'api-key'
-      tags: ['developer']
-    }
-    ,
-    {
-      title: 'ÅPI Docs'
-      price: 100000
-      description: 'Read the API docs.'
-      body: ''
-      contributor: null
-      id: 'api-docs'
       tags: ['developer']
     }
     ,
@@ -101,9 +91,9 @@ module.exports = {
     }
     ,
     {
-      title: 'Future Listing'
-      price: 100000
-      description: 'List your own future.'
+      title: 'List Your Own Future'
+      price: 250000
+      description: 'Add a future to the market by providing a name, symbol, and description. You will receive 100 shares of the future which will be initially listed at 100Å per share. Note that all futures are subject to approval by Guggenheim curators.'
       body: ''
       contributor: null
       id: 'future-listing'
@@ -112,8 +102,8 @@ module.exports = {
     ,
     {
       title: 'Bot Trading License'
-      price: 200000
-      description: 'Get a license to legally trade using bots.'
+      price: 20000
+      description: 'Receive a license to legally trade using bots. Any investors using unlicensed bot trading will immediately have their accounts seized and their earnings dissolved, per _Åzone Futures Market_ regulations.'
       body: ''
       contributor: null
       id: 'bot-license'
@@ -121,7 +111,7 @@ module.exports = {
     }
     ,
     {
-      title: 'Åzone Brand'
+      title: 'License the Åzone Cåin Trademark'
       price: 100000
       description: 'Get a license to use cåin, the Åzone currency, denoted by Å, for your own projects.'
       body: ''
@@ -131,22 +121,32 @@ module.exports = {
     }
     ,
     {
-      title: 'Metahaven Health Collection 1'
-      price: 100000
-      description: 'Advertise on Åzone using custom-designed ads by Metahaven.'
+      title: 'Advertise on the Åzone Homepage'
+      price: 150000
+      description: 'Advertise your message on the Åzone homepage with a collection of ads designed by Metahaven. You will be prompted to add your own custom text copy and a URL that users will be directed to when they click on the ad. The ad will remain on the homepage for 100 users have clicked on it.'
       body: ''
       contributor: 'Metahaven'
-      id: 'metahaven-ad-one'
+      id: 'metahaven-ad-homepage'
       tags: ['ads']
     }
     ,
     {
-      title: 'Metahaven Health Collection 2'
-      price: 100000
-      description: 'Advertise on Åzone using custom-designed ads by Metahaven.'
+      title: 'Advertise on an Åzone Future Page'
+      price: 20000
+      description: 'Advertise your message on the Åzone futures pages with a collection of ads designed by Metahaven. You will be prompted to add your own custom text copy and a URL that users will be directed to when they click on the ad. The ad will be displayed until 100 users have clicked on it.'
       body: ''
       contributor: 'Metahaven'
-      id: 'metahaven-ad-two'
+      id: 'metahaven-ad-future'
+      tags: ['ads']
+    }
+    ,
+    {
+      title: 'Advertise at the Guggenheim in New York'
+      price: 1000000
+      description: 'Advertise your message on information screens in the Guggenheim Museum in New York City with a collection of ads designed by Metahaven. You will be prompted to add your own custom text copy. The ad will remain on the screen for 1 hour.'
+      body: ''
+      contributor: 'Metahaven'
+      id: 'metahaven-ad-guggenheim-ny'
       tags: ['ads']
     }
   ]

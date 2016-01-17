@@ -1,5 +1,6 @@
 .choose-goods
   min-height 100%
+  margin-top unit * 4
 
 .choose-goods-section
   padding-top unit
@@ -14,27 +15,19 @@
   height auto
 
 .goods____grid-item
-  column(1/4, cycle: 4)
-  height 550px
-  margin-bottom 3%
+  column(1/3, cycle: 3)
+  height 670px
+  margin-bottom unit * 5
   text-align left
-  cursor pointer
   transition all 0.2s ease-in-out-sine
   position relative
   padding 0
 
-  &:hover
-    opacity 0.8
-
   +above(1300px)
-    column(1/5, cycle: 5, uncycle: 4)
+    column(1/4, cycle: 4, uncycle: 3)
     text-align left
 
   +below(900px)
-    column(1/3, cycle: 3, uncycle: 4)
-    text-align left
-
-  +below(700px)
     column(1/2, cycle: 2, uncycle: 3)
     text-align left
 
@@ -60,42 +53,39 @@
   width 100%
   margin-bottom (unit * 0.5)
 
-.goods__grid-item__title
-  font-family Atlas Typewriter Bold
-  font-size 1.1rem
 
-  +below(700px)
-    font-size .9rem
-
-.goods__grid-item__contributor
-  margin-bottom (unit * 0.5)
 
 .goods____grid-item
   text-align left
 
-.goods__grid-item__tags
-  border 1px solid light-text-color
-  padding 0.25rem
+  .goods__grid-item__header
+    font-size 1.25rem
+    margin-bottom unit
 
-goods__grid-item__tags
-  ul
-    list-style none
-    padding 0
-    
-  li
+    +below(700px)
+      font-size .9rem
+
+    .goods__grid-item__title
+      font-family Work Sans Medium
+      text-rendering optimizelegibility
+      margin-bottom (.25 * unit)
+
+  .goods__grid-item__description
+    font-size .9rem
+
+
+  .button--modal
     float left
-    margin-right 0.25rem
+    display block
+    margin-right unit
+    font-size 0.8rem
+    padding (0.75 * unit) (unit)
 
-.goods__grid-item__price
-  position absolute
-  bottom unit
-  top 0
-  right 0
-  height 1.25rem
-  text-align right
-  font-weight bold
-  padding 0 0.25rem
-  background-color background-blue-color
-  color light-text-color
+  .goods__grid-item__meta
+    position absolute
+    bottom 0
+    font-size 0.8rem
+    width 100%
+
 
 @import 'good'
