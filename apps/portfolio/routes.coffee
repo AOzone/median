@@ -11,6 +11,7 @@ Positions = require '../../collections/positions.coffee'
 Contracts = require '../../collections/contracts.coffee'
 User = require '../../db/models/user'
 Goods = require '../../maps/goods'
+markdown = require '../../components/util/markdown'
 
 @index = (req, res, next) ->
   id = req.params.id or req.user?.id
@@ -63,6 +64,7 @@ Goods = require '../../maps/goods'
 
 @goods = (req, res, next) ->
   id = req.params.id or req.user?.id
+  all_goods = Goods.goods
 
   account = new Account id: id
 
@@ -70,6 +72,7 @@ Goods = require '../../maps/goods'
     account.fetch()
   ]
   .then ->
+
     User.findOne { 'username' :  id }, (err, user) ->
       if err
         console.log "Error: " + err
@@ -80,31 +83,20 @@ Goods = require '../../maps/goods'
         console.log "User Not Found with username: #{username} "
         return false
 
-      console.log "Goods:"
-      console.dir Goods
-
-      console.log "user.goods:"
-      console.dir user.goods
-
+      # extract the goods purchased by the user
       purchased_goods = []
+      _.each all_goods, (good) ->
+        _.each user.goods, (ug) ->
+          if good.id == ug.id
+            purchased_goods.push(good)
 
-      g = 0
-      while g < Goods.length
-        p = 0
-        while p < user.goods.length
-          if Goods[g].id == user.goods[p]
-            purchased_goods.push user.goods[p]
-          p++
-        g++
-
-
-
-      console.log "purchased_goods: "
-      console.dir purchased_goods
+      console.log "markdown:"
+      console.dir markdown
 
       res.render 'goods',
         account: account
-        goods: purhcased_goods
+        goods: purchased_goods
+        markdown: markdown
         numeral: numeral
   .catch next
   .done()

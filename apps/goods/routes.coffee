@@ -35,12 +35,6 @@ testFunc = (foo) ->
         else # account for empty array of purchased_goods
           unpurchased_goods = goods.goods
 
-        console.log "purchased_goods: "
-        console.dir purchased_goods
-
-        console.log "unpurchased_goods:"
-        console.dir unpurchased_goods
-
         res.render 'goods',
           unpurchased_goods: unpurchased_goods
           markdown: markdown
@@ -69,10 +63,27 @@ testFunc = (foo) ->
     account.fetch()
   ]
   .then ->
-    res.render 'good',
-      good: go
-      markdown: markdown
-      account: account
+    # check if user has purchased this good, else redirect to /goods with error flash msg
+    req.user.getPurchasedGoodsByID (purchased_goods_ids, error) ->
+      if error == null
+        if purchased_goods_ids != null and purchased_goods_ids.length > 0
+          owned = false
+          _.each purchased_goods_ids, (gid) ->
+            if gid == good_id
+              owned = true
+
+          if owned
+            res.render 'good',
+              good: go
+              markdown: markdown
+              account: account
+          else
+            req.flash 'error', "You must purchase goods before you can claim them."
+            return res.redirect "/goods"
+        else
+          req.flash 'error', "You must purchase goods before you can claim them."
+          return res.redirect "/goods"
+
   .catch next
   .done()
 

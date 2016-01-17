@@ -13,6 +13,8 @@ block body
   include account-top
   include ../../../components/tabs/templates/index
 
-  .portfolio--goods
-    for good in goods
-      .temp= good.id
+  .choose-goods.center
+    .choose-goods-grid
+      .grid.grid--goods
+        for good in goods
+          include item.jade
