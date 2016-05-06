@@ -35,6 +35,15 @@ module.exports = class Account extends Backbone.Model
 
     "#{numeral(total).format('0,0')}Å"
 
+  totalGainPercentage: ->
+    total = _.reduce @get('open_positions'), (memo, position) ->
+      memo + position.gain_loss
+    , 0
+
+    percentage = total / (total - @get('net_liquidation_value'))
+    mark = if percentage > 0 then "+" else ""
+    "#{mark}#{percentage.toFixed(2)}%"
+
   holdsPosition: (contract) ->
     _.any @get('open_positions'), (position) ->
       position.contract is contract.get('contract')
